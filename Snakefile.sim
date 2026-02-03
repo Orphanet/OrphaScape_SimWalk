@@ -1,0 +1,146 @@
+# Snakefile.sim — Optimisé
+"""
+Snakefile pour le calcul MM/MP et concaténation.
+Usage:
+  snakemake -s Snakefile.sim --configfile config_sm_mm.yaml --cores all
+  snakemake -s Snakefile.sim --configfile config_sm_mp.yaml --cores all
+"""
+import os
+import re
+import path_variable as PV
+
+# =============================================================================
+# HELPERS
+# =============================================================================
+
+def as_list(x, default):
+    """Convertit en liste si nécessaire."""
+    if x is None:
+        return list(default)
+    if isinstance(x, (list, tuple, set)):
+        return list(x)
+    return [str(x)]
+
+
+def to_compact(v: str) -> str:
+    """'1_1_1_1_1' -> '11111'"""
+    return v.replace("_", "")
+
+
+def s(p) -> str:
+    """Convertit Path en string."""
+    return str(p)
+
+# =============================================================================
+# CONFIGURATION
+# =============================================================================
+
+cfg = config
+mode = cfg.get("mode", "mm")
+mini_rd_csv = cfg.get("mini_rd_csv", "")
+mini_patient_csv = cfg.get("mini_patient_csv", "")
+
+weight_flag = "n"
+product4 = cfg.get("product4", "pd4_match_rsd")
+
+combine_list = as_list(cfg.get("combine"), ["funSimMax"])
+sm_list = as_list(cfg.get("sm_method"), ["resnik"])
+
+# Vecteurs
+vecs_cfg = cfg.get("vector_strs")
+if vecs_cfg:
+    selected_vectors_raw = [str(v) for v in as_list(vecs_cfg, [])]
+elif cfg.get("vector_str") is not None:
+    selected_vectors_raw = [str(cfg.get("vector_str"))]
+else:
+    selected_vectors_raw = ["1_1_1_1_1"]
+
+selected_vectors_compact = [to_compact(v) for v in selected_vectors_raw]
+
+# Répertoire de sortie
+OUT_BASE = s(PV.PATH_OUTPUT_MM) if mode == "mm" else s(PV.PATH_OUTPUT_SM)
+
+# Helpers pour la règle make_yaml
+combine0 = combine_list[0]
+sm0 = sm_list[0]
+vec0_c = selected_vectors_compact[0]
+
+# Choix selon mode
+AGG_CMD = "concat_matrix" if mode == "mm" else "process_similarity"
+COL1 = "OC1" if mode == "mm" else "patients"
+COL2 = "OC2" if mode == "mm" else "RDs"
+
+# Option patients (MP only)
+MP_EXTRA = f'--mini-patient-csv "{mini_patient_csv}"' if mode == "mp" and mini_patient_csv else ""
+
+# =============================================================================
+# PATTERNS
+# =============================================================================
+
+def vec_dir_pattern():
+    return os.path.join(OUT_BASE, "{combine}", "{sm}", weight_flag, product4, "{vector_str}")
+
+
+def agg_file_pattern():
+    return os.path.join(OUT_BASE, "{combine}_{sm}_n_" + product4 + "_{vector_str}.xlsx")
+
+# =============================================================================
+# RULES
+# =============================================================================
+
+rule all:
+    input:
+        expand(agg_file_pattern(),
+               combine=combine_list, sm=sm_list, vector_str=selected_vectors_compact)
+
+
+rule make_yaml:
+    input:
+        s(PV.PATH_OUTPUT_DF_PRODUCT4)
+    output:
+        s(PV.PATH_YAML_PRODUCT4)
+    shell:
+        r"""
+        mkdir -p $(dirname {output})
+        python -m bin.main_sm {mode} 0 ORPHA:none {combine0} {sm0} {weight_flag} {product4} "{vec0_c}" \
+            --only-yaml --mini-rd-csv "{mini_rd_csv}" {MP_EXTRA}
+        """
+
+
+rule run_combo:
+    input:
+        s(PV.PATH_YAML_PRODUCT4)
+    output:
+        directory(vec_dir_pattern())
+    wildcard_constraints:
+        vector_str=r"[0-9]{5}",
+        combine="|".join(map(re.escape, combine_list)),
+        sm="|".join(map(re.escape, sm_list))
+    shell:
+        r"""
+        set -euo pipefail
+        echo "Computing {wildcards.combine}/{wildcards.sm}/{wildcards.vector_str}"
+        python -m bin.main_sm {mode} 0 ORPHA:none {wildcards.combine} {wildcards.sm} {weight_flag} {product4} "{wildcards.vector_str}" \
+            --run-all --mini-rd-csv "{mini_rd_csv}" {MP_EXTRA}
+        """
+
+
+rule aggregate_sm:
+    input:
+        vec_dir_pattern()
+    output:
+        agg_file_pattern()
+    wildcard_constraints:
+        vector_str=r"[0-9]{5}",
+        combine="|".join(map(re.escape, combine_list)),
+        sm="|".join(map(re.escape, sm_list))
+    shell:
+        r"""
+        python -m bin.main_concat {AGG_CMD} \
+          -v "{wildcards.vector_str}" \
+          --col1 {COL1} \
+          --col2 {COL2} \
+          --product4 {product4} \
+          --combine "{wildcards.combine}" --sm "{wildcards.sm}" \
+          --outxlsx "{output}"
+        """

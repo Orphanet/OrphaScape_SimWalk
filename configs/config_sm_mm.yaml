@@ -1,0 +1,14 @@
+# config_sm_mm.yaml  Disease-Disease similarity matrix
+# Usage: snakemake -s Snakefile.sim --configfile config_sm_mm.yaml --cores all
+
+mode: mm
+# Combination methods (can be a list)
+combine: ["funSimMax"]
+# Similarity methods (can be a list)
+sm_method: ["resnik"]
+# Weight vectors (can be a list)
+vector_strs: ["1_1_1_1_1"]
+# Version of Orphanet product4
+product4: pd4_may_2025_exejan2026
+# Restriction to a subset of RDs (optional)
+mini_rd_csv: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:610,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949"

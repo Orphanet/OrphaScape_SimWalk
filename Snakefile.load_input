@@ -1,0 +1,47 @@
+# Snakefile.load_input — Optimisé
+"""
+Automation pour:
+1. main_load_data.py (build products, classifs)
+2. main_create_patient.py (build patient datasets)
+"""
+import path_variable as PV
+
+# Convertit les Path en strings pour Snakemake
+def s(p):
+    return str(p)
+
+rule all:
+    input:
+        s(PV.PATH_OUTPUT_DF_PATIENT),
+        s(PV.PATH_OUTPUT_DF_PRODUCT1),
+        s(PV.PATH_OUTPUT_DF_PRODUCT4),
+        s(PV.PATH_OUTPUT_DF_PRODUCT6),
+        s(PV.PATH_OUTPUT_DF_PRODUCT7),
+        s(PV.PATH_OUTPUT_DF_PC_v2),
+        s(PV.PATH_OUTPUT_DF_PC_CLASSIF_v2),
+        s(PV.PATH_YAML_PRODUCT4),
+
+
+rule load_all_products:
+    output:
+        s(PV.PATH_OUTPUT_DF_PRODUCT1),
+        s(PV.PATH_OUTPUT_DF_PRODUCT4),
+        s(PV.PATH_OUTPUT_DF_PRODUCT6),
+        s(PV.PATH_OUTPUT_DF_PRODUCT7),
+        s(PV.PATH_OUTPUT_DF_PC_v2),
+        s(PV.PATH_OUTPUT_DF_PC_CLASSIF_v2),
+        s(PV.PATH_YAML_PRODUCT4),
+    log:
+        "logs/load_all_products.log"
+    shell:
+        "mkdir -p logs && PYTHONPATH=.:bin python -u bin/main_load_data.py > {log} 2>&1"
+
+rule create_patients:
+    input:
+        s(PV.PATH_OUTPUT_DF_PRODUCT6),
+    output:
+        s(PV.PATH_OUTPUT_DF_PATIENT),
+    log:
+        "logs/create_patients.log"
+    shell:
+        "mkdir -p logs && PYTHONPATH=.:bin python -u bin/main_create_patient.py > {log} 2>&1"

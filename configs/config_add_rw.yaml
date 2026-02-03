@@ -1,0 +1,20 @@
+# config_add_rw.yaml  Configuration for RARW pipeline
+# Usage: snakemake -s Snakefile.add_rw --configfile config_add_rw.yaml --cores 4
+
+
+# MM matrix file (Disease-Disease similarity)
+# Can be an absolute or relative path to PATH_OUTPUT_MM
+mm_file: "funSimMax_resnik_n_pd4_may_2025_exejan2026_11111.parquet"
+
+
+# MP similarity file (Patient-Disease similarity)  
+# Can be an absolute or relative path to PATH_OUTPUT_SM
+sm_file: "rsd_resnik_n_pd4_may_2025_exejan2026_11111.parquet"
+# Damping factor for PageRank
+alpha: 0.3
+
+# Joint mode: creates a complete parquet matrix with patient included (for RARW)
+# Split mode: creates individual parquet vectors
+output_mode: joint
+
+ 
