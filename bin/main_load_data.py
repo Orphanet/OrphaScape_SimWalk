@@ -17,12 +17,7 @@ import path_variable as PV
 from set_log import setup_logging, get_logger
 
 
-def convert_and_build_dataframe(
-    path_xml: Path,
-    path_json: Path,
-    nb_type: int,
-    log: logging.Logger
-) -> pd.DataFrame:
+def convert_and_build_dataframe(path_xml: Path,path_json: Path,nb_type: int,log: logging.Logger) -> pd.DataFrame:
     """
     Converts XML -> JSON -> DataFrame.
     Uses JSON cache if available and up to date.
@@ -49,8 +44,7 @@ def convert_and_build_dataframe(
     build_df = DataSet(str(path_json), "")
     
     type_handlers = {
-        4: build_df.build_orpha_df,
-        44: build_df.from_rsd_build_orpha_df,
+        4: build_df.df_pd4,
         6: build_df.df_pd6,
         1: build_df.df_pd1,
         7: build_df.df_pd7,
@@ -63,11 +57,7 @@ def convert_and_build_dataframe(
     return handler()
 
 
-def build_classif(
-    path_input_classif: Path,
-    path_output_classif: Path,
-    log: logging.Logger
-) -> None:
+def build_classif(path_input_classif: Path,path_output_classif: Path,log: logging.Logger) -> None:
     """Converts all classification files XML -> JSON -> XLSX."""
     pin = Path(path_input_classif)
     pout = Path(path_output_classif)
@@ -180,30 +170,22 @@ def main():
     log = get_logger(Path(__file__).stem)
     
     # PD4
-    df4 = convert_and_build_dataframe(
-        PV.PATH_INPUT_PRODUCT4_XML, PV.PATH_OUTPUT_PRODUCT4_JSON, 4, log
-    )
+    df4 = convert_and_build_dataframe(PV.PATH_INPUT_PRODUCT4_XML, PV.PATH_OUTPUT_PRODUCT4_JSON, 4, log    )
     ensure_parent(Path(PV.PATH_OUTPUT_DF_PRODUCT4))
     df4.to_excel(PV.PATH_OUTPUT_DF_PRODUCT4)
     
     # PD6
-    df6 = convert_and_build_dataframe(
-        PV.PATH_INPUT_PRODUCT6_XML, PV.PATH_OUTPUT_PRODUCT6_JSON, 6, log
-    )
+    df6 = convert_and_build_dataframe(PV.PATH_INPUT_PRODUCT6_XML, PV.PATH_OUTPUT_PRODUCT6_JSON, 6, log  )
     ensure_parent(Path(PV.PATH_OUTPUT_DF_PRODUCT6))
     df6.to_excel(PV.PATH_OUTPUT_DF_PRODUCT6)
     
     # PD1
-    df1 = convert_and_build_dataframe(
-        PV.PATH_INPUT_PRODUCT1_XML, PV.PATH_OUTPUT_PRODUCT1_JSON, 1, log
-    )
+    df1 = convert_and_build_dataframe(PV.PATH_INPUT_PRODUCT1_XML, PV.PATH_OUTPUT_PRODUCT1_JSON, 1, log    )
     ensure_parent(Path(PV.PATH_OUTPUT_DF_PRODUCT1))
     df1.to_excel(PV.PATH_OUTPUT_DF_PRODUCT1)
     
     # PD7
-    df7 = convert_and_build_dataframe(
-        PV.PATH_INPUT_PRODUCT7_XML, PV.PATH_OUTPUT_PRODUCT7_JSON, 7, log
-    )
+    df7 = convert_and_build_dataframe(PV.PATH_INPUT_PRODUCT7_XML, PV.PATH_OUTPUT_PRODUCT7_JSON, 7, log    )
     ensure_parent(Path(PV.PATH_OUTPUT_DF_PRODUCT7))
     df7.to_excel(PV.PATH_OUTPUT_DF_PRODUCT7)
     

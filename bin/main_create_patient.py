@@ -12,6 +12,7 @@ import warnings
 import pandas as pd
 import path_variable as PV
 from set_log import setup_logging, get_logger
+from classes.dataset import DataSet   
 
 def main():
     # Logging configuration
@@ -29,37 +30,88 @@ def main():
     Path(PV.PATH_OUTPUT_PATIENT_SOLVERD).mkdir(parents=True, exist_ok=True)
     
     # Load patients
-    patients_raw = os.listdir(PV.PATH_INPUT_PATIENTS_FOLDER)
-    log.info("%d patients in the folder study_population", len(patients_raw))
+    build_patient = DataSet(PV.PATH_INPUT_PATIENTS_FOLDER  ,"") 
+    ## patient solved and unsolved
+    df_patient = build_patient.build_patients_df()
+    df_raw_info  = df_patient[['phenopacket','hpo_id','hpo_label']]
+
+    ########################################################
+    ## Replace subtype by disorder in the patient df by disorder parent
+    ########################################################
     
-    list_case_HPO = []
-    for onefile in patients_raw:
-        filepath = Path(PV.PATH_INPUT_PATIENTS_FOLDER) / onefile
-        try:
-            with open(filepath, 'r', encoding='utf8') as f:
-                data = json.load(f)
-                patient_id = data['id']
-                phenotypes = data.get('phenotypes', [])
-                for pheno in phenotypes:
-                    pheno_type = pheno.get('type', {})
-                    list_case_HPO.append((
-                        patient_id,
-                        pheno_type.get('id', ''),
-                        pheno_type.get('label', '')
-                    ))
-        except (json.JSONDecodeError, KeyError, TypeError) as e:
-            log.warning("Error reading %s: %s", onefile, e)
-            continue
-    
-    df_raw_info = pd.DataFrame(
-        list_case_HPO,
-        columns=["phenopacket", "hpo_id", "hpo_label"]
-    )
-    log.info("%d Patients solved confirmed with ontologyX", 
-        df_raw_info["phenopacket"].nunique())
-    
-    df_raw_info.to_excel(PV.PATH_OUTPUT_DF_PATIENT)
-    log.info("Saved patients to %s", PV.PATH_OUTPUT_DF_PATIENT)
+    orpha_map = build_patient.parse_orpha_file(PV.PATH_ORPHA_RDI_FILE)
+    df_raw_info["Disease"] = df_raw_info["phenopacket"].map(orpha_map)
+
+    df_parent_child_noclassif = pd.read_excel(PV.PATH_OUTPUT_DF_PC_v2,index_col=0)
+
+
+    df1 = pd.read_excel(PV.PATH_OUTPUT_DF_PRODUCT1,index_col=0)
+    df1 = df1[['ORPHAcode',"Type","Group"]]
+    df1.columns = ['Disease','Type','Group']
+
+    valid_types = df1[df1["Group"] == "Disorder"]['Type'].drop_duplicates().tolist()
+    all_interactions= []
+    dict_df_patient_f =  df_raw_info.to_dict('index')
+    for value in dict_df_patient_f.values():
+        patient = value['phenopacket']
+        hpoid = value['hpo_id']
+        disease = value['Disease']
+
+        # test the disease type 
+        type_disease = ""
+        df_get_type = df_parent_child_noclassif[(df_parent_child_noclassif['parent_id'] ==disease ) | (df_parent_child_noclassif['child_id'] ==disease) ]
+        # print(disease)
+        # print(df_get_type)
+        dict_df_get_type =  df_get_type.to_dict('index')
+        for value in dict_df_get_type.values():
+            parent_id = value['parent_id']
+            parent_type = value['parent_type'].strip()
+            child_id = value['child_id']
+            child_type = value['child_type'].strip()
+            
+            foundin = ""
+            # si la maladie est dans la colonne child 
+            if disease in child_id:
+                if child_type in valid_types:
+                    type_disease = child_type
+                    foundin = "child_id"
+                # si non trouver alors il est dans la col parent  
+                elif disease in parent_id: 
+                    type_disease = parent_type
+                    foundin = "child_id but parent "
+                # sinon c'est un subtype meaning the parent are disorder
+                elif parent_type in valid_types:
+                    foundin = "child_id_subtype"
+                    # get the related parent
+                    new_disease = parent_id 
+                    disease = parent_id 
+
+                    print(f"before {disease}, after {new_disease}")
+                            
+            elif disease in parent_id:
+                if parent_type in valid_types:
+                    type_disease = parent_type
+                    foundin = "parent_id"
+                    print(f"before {disease}, after {new_disease}")
+                elif child_type in valid_types:
+                    foundin = "parent_id_is_category"
+                    new_disease = child_id 
+                    disease = child_id 
+                    print(f"before {disease}, after {new_disease}")
+            # else :
+            #     print(disease)
+            
+
+        print(f"{disease} type is {type_disease} found in {foundin}")
+        all_interactions.append((patient,hpoid,disease))
+
+    df_patient_only_disorder = pd.DataFrame(all_interactions,columns=["phenopacket",'hpo_id','Disease'])
+    df_final = df_patient_only_disorder.merge(df1,on = ['Disease'], how='inner').dropna(subset=['phenopacket'])
+
+    df_final.to_excel(PV.PATH_OUTPUT_DF_PATIENT)
+    print("Saved patients to %s", PV.PATH_OUTPUT_DF_PATIENT)
+
+
 
 if __name__ == "__main__":
     main()

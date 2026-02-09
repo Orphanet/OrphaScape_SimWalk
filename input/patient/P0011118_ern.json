@@ -1,0 +1,143 @@
+{
+  "id": "P0011118",
+  "subject": {
+    "id": "P0011118",
+    "alternateIds": [
+      "16619"
+    ],
+    "vitalStatus": {
+      "status": "ALIVE"
+    }
+  },
+  "phenotypicFeatures": [
+    {
+      "type": {
+        "id": "HP:0001258",
+        "label": "Spastic paraplegia"
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0001288",
+        "label": "Gait disturbance"
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0001348",
+        "label": "Brisk reflexes"
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0003552",
+        "label": "Muscle stiffness"
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0011964",
+        "label": "Intermittent painful muscle spasms"
+      }
+    }
+  ],
+  "interpretations": [
+    {
+      "id": "P0011118",
+      "progressStatus": "SOLVED",
+      "diagnosis": {
+        "disease": {
+          "id": "OMIM:607259",
+          "label": "Spastic Paraplegia 7, Autosomal Recessive"
+        },
+        "genomicInterpretations": [
+          {
+            "subjectOrBiosampleId": "P0011118",
+            "gene": {
+              "valueId": "HGNC:"
+            }
+          },
+          {
+            "subjectOrBiosampleId": "P0011118",
+            "variantInterpretation": {
+              "acmgPathogenicityClassification": "LIKELY_PATHOGENIC",
+              "variationDescriptor": {
+                "geneContext": {
+                  "valueId": "HGNC:11237",
+                  "symbol": "SPG7"
+                },
+                "vcfRecord": {
+                  "genomeAssembly": "GRCh37",
+                  "chrom": "16",
+                  "pos": "89592787",
+                  "ref": "AGAGAAGCTTC",
+                  "alt": "A",
+                  "info": "Likely pathogenic"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "diseases": [
+    {
+      "term": {
+        "id": "Orphanet:99013",
+        "label": "Spastic paraplegia type 7"
+      }
+    },
+    {
+      "term": {
+        "id": "OMIM:607259",
+        "label": "Spastic Paraplegia 7, Autosomal Recessive"
+      }
+    }
+  ],
+  "metaData": {
+    "created": "2024-02-15T11:55:58Z",
+    "createdBy": "rdconnect",
+    "submittedBy": "ucl-hanna",
+    "resources": [
+      {
+        "id": "hp",
+        "name": "Human Phenotype Ontology",
+        "url": "https://purl.obolibrary.org/obo/hp.owl",
+        "version": "2020-12-07",
+        "namespacePrefix": "HP",
+        "iriPrefix": "https://purl.obolibrary.org/obo/HP_"
+      },
+      {
+        "id": "orphanet",
+        "name": "Orphanet Rare Disease Ontology",
+        "url": "https://orpha.net/ontology/ORDO_en_3.1.owl",
+        "version": "3.1",
+        "namespacePrefix": "Orphanet",
+        "iriPrefix": "https://www.orpha.net/ORDO/Orphanet_"
+      },
+      {
+        "id": "hgnc",
+        "name": "HUGO Gene Nomenclature Committee",
+        "url": "https://www.genenames.org",
+        "version": "2021-01-13",
+        "namespacePrefix": "HGNC",
+        "iriPrefix": "https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/"
+      },
+      {
+        "id": "mim",
+        "name": "Online Mendelian Inheritance in Man",
+        "url": "https://omim.org/",
+        "version": "2021-01-21",
+        "namespacePrefix": "OMIM",
+        "iriPrefix": "https://omim.org/entry/"
+      }
+    ],
+    "phenopacketSchemaVersion": "2.0",
+    "externalReferences": [
+      {
+        "id": "ERN-RND"
+      }
+    ]
+  }
+}

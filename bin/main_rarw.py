@@ -8,12 +8,11 @@ Two sub-commands:
 """
 from pathlib import Path
 import argparse
-import time
 import logging
 
 import pandas as pd
 import networkx as nx
-import yaml
+import os
 
 import path_variable as PV
 from set_log import setup_logging, get_logger
@@ -32,8 +31,9 @@ def alpha_folder(alpha: float) -> str:
 # =============================================================================
 # RUN COMMAND - PageRank for one patient
 # =============================================================================
+ 
 
-def cmd_run(args, log: logging.Logger):
+def cmd_run_rarw(args, log: logging.Logger):
     """
     Executes PageRank for one or more patients.
     Uses NetworkX as in the original version.
@@ -45,91 +45,40 @@ def cmd_run(args, log: logging.Logger):
         seeds = [s.strip() for s in args.seeds.split(",") if s.strip()]
     
     alpha = args.alpha
-    matrix_subdir = args.matrix_subdir
+
+    matrix_dir =max(PV.PATH_OUTPUT_PATIENT_ADDED.glob("*/"), key=os.path.getmtime)
+    matrix_subdir_file = str(matrix_dir).split("/")[-1]
     
     log.info("Seeds: %s", seeds)
     log.info("Alpha: %s", alpha)
-    log.info("Matrix subdir: %s", matrix_subdir)
+    log.info("Matrix subdir: %s", matrix_dir)
     
     # Directory where patient-added matrices are stored
-    matrix_dir = Path(PV.PATH_OUTPUT_PATIENT_ADDED) / matrix_subdir
     if not matrix_dir.exists():
         raise FileNotFoundError(f"Matrix directory not found: {matrix_dir}")
     
     # Output directory for RW results
     alpha_str = alpha_folder(alpha)
-    output_dir = Path(PV.PATH_OUTPUT_FOLDER_RW) / alpha_str / matrix_subdir
+    output_dir = Path(PV.PATH_OUTPUT_FOLDER_RW) / alpha_str / matrix_subdir_file
     output_dir.mkdir(parents=True, exist_ok=True)
     
     # Check if patient is already done
     existing = [f.stem for f in output_dir.glob("*.xlsx")]
-    
+    # loop for patient 
     for seed in seeds:
         if seed in existing:
             log.info("Patient %s already done, skipping", seed)
             continue
         
         log.info("Processing patient: %s", seed)
-        t0 = time.perf_counter()
         
-        # Search for patient CSV file
-        # Can be either {seed}.csv or in by_patient/{seed}_to_RDs.parquet
-        parquet_path = matrix_dir / "by_patient" / f"{seed}_to_RDs.parquet"
+
         
         joint_path = matrix_dir / f"{seed}.parquet"
         if joint_path.exists():
             df_m = pd.read_parquet(joint_path)
             log.info("Loaded matrix from Parquet: %s (shape=%s)", joint_path, df_m.shape)
-
-        elif parquet_path.exists():
-            # Parquet mode: patient vector -> must load MM and add patient
-            log.info("Loading patient vector from parquet: %s", parquet_path)
-            
-            # Load patient vector
-            df_vec = pd.read_parquet(parquet_path)
-            if "RD" in df_vec.columns:
-                df_vec = df_vec.set_index("RD")
-            
-            # Load MM matrix from PROVENANCE
-            prov_path = matrix_dir / "PROVENANCE.yaml"
-            if not prov_path.exists():
-                raise FileNotFoundError(f"PROVENANCE.yaml not found in {matrix_dir}")
-            
-            prov = yaml.safe_load(prov_path.read_text(encoding="utf-8"))
-            mm_path = prov["MM"]["path"]
-            
-            # Load MM
-            if mm_path.endswith(".parquet"):
-                df_mm = pd.read_parquet(mm_path)
-            else:
-                df_mm = pd.read_excel(mm_path, index_col=0, engine="openpyxl")
-            
-            log.info("Loaded MM matrix: %s (shape=%s)", mm_path, df_mm.shape)
-            
-            # Build matrix with patient added
-            df_m = df_mm.copy()
-            
-            # Align patient vector on matrix RDs
-            patient_scores = df_vec["score"].reindex(df_m.index).fillna(0.0)
-            
-            # Add patient as new row and column
-            df_m[seed] = patient_scores.values
-            df_m.loc[seed] = patient_scores.reindex(df_m.columns).fillna(0.0).values
-            df_m.at[seed, seed] = 0.0  # No self-loop
-            
-            log.info("Built patient-added matrix (shape=%s)", df_m.shape)
-        else:
-            log.error("No matrix found for patient %s", seed)
-            continue
-        
-        # # ===== TEMPORARY MATRIX DISPLAY =====
-        # log.info("=" * 60)
-        # log.info("PATIENT-ADDED MATRIX (preview):")
-        # log.info("Shape: %s", df_m.shape)
-        # log.info("Index (first 10): %s", list(df_m.index[:10]))
-        # log.info("Columns (first 10): %s", list(df_m.columns[:10]))
-        # log.info("Patient '%s' present in index: %s", seed, seed in df_m.index)
-        # log.info("Patient '%s' present in columns: %s", seed, seed in df_m.columns)
+ 
         
         # Display patient scores to RDs (top 5)
         if seed in df_m.index:
@@ -141,8 +90,7 @@ def cmd_run(args, log: logging.Logger):
         # Display total sum of degrees
         log.info("Total sum of matrix: %.2f", df_m.values.sum())
         log.info("=" * 60)
-        # ===== END TEMPORARY DISPLAY =====
-        
+         
         # Build NetworkX graph
         G_raw = nx.from_pandas_adjacency(df_m)
         G_raw.remove_edges_from(nx.selfloop_edges(G_raw))
@@ -186,29 +134,27 @@ def cmd_run(args, log: logging.Logger):
         out_path = output_dir / f"{seed}.xlsx"
         df_pr.to_excel(out_path, engine='openpyxl')
         
-        log.info("Wrote %s (%.1fs)", out_path, time.perf_counter() - t0)
+        log.info("Wrote %s ", out_path)
         
-        # Display top 5 results
-        top5 = df_pr.nsmallest(5, 'rank_pg')
-        log.info("Top 5 RDs for %s:", seed)
-        for rd, row in top5.iterrows():
-            log.info("  Rank %d: %s (score=%.6f)", int(row['rank_pg']), rd, row['pg'])
-
+ 
 
 # =============================================================================
 # COLLECT COMMAND - Aggregates results into RDI file
 # =============================================================================
-
-def cmd_collect(args, log: logging.Logger):
+ 
+def cmd_aggregate_rdi(args, log: logging.Logger):
     """
     Collects all PageRank results and creates the RDI file.
     Compares with confirmed diagnoses of patients.
     """
-    matrix_subdir = args.matrix_subdir
+
+    matrix_subdir =max(PV.PATH_OUTPUT_PATIENT_ADDED.glob("*/"), key=os.path.getmtime)
+    matrix_subdir_file = str(matrix_subdir).split("/")[-1]
+
     alpha_str = alpha_folder(args.alpha)
     
     # Directory of RARW results
-    rarw_dir = Path(PV.PATH_OUTPUT_FOLDER_RW) / alpha_str / matrix_subdir
+    rarw_dir = Path(PV.PATH_OUTPUT_FOLDER_RW) / alpha_str / matrix_subdir_file
     if not rarw_dir.exists():
         raise FileNotFoundError(f"RARW directory not found: {rarw_dir}")
     
@@ -216,7 +162,7 @@ def cmd_collect(args, log: logging.Logger):
     
     # List of xlsx files (PageRank results)
     xlsx_files = list(rarw_dir.glob("*.xlsx"))
-    xlsx_files = [f for f in xlsx_files if not f.name.startswith("RDI_") and not f.name.startswith("RARW_")]
+    xlsx_files = [f for f in xlsx_files if not f.name.startswith("RDI_") ]
     
     log.info("Found %d patient result files", len(xlsx_files))
     
@@ -226,7 +172,7 @@ def cmd_collect(args, log: logging.Logger):
     
     # Expected columns
     col_patient = PV.COL_DF_PATIENT_PATIENT
-    col_disease = "Disease" if "Disease" in df_patient.columns else "Orphanet"
+    col_disease = "Disease"  
     
     if col_disease not in df_patient.columns:
         log.warning("No Disease/Orphanet column found. Will collect all rank-1 results.")
@@ -245,42 +191,37 @@ def cmd_collect(args, log: logging.Logger):
             if df_rarw.index.name is None or df_rarw.index.name == "Unnamed: 0":
                 df_rarw.index.name = "RD"
             
-            # Find confirmed diagnosis for this patient
-            if col_disease:
-                patient_data = df_patient[df_patient[col_patient] == patient_id]
-                if patient_data.empty:
-                    log.warning("Patient %s not found in patient table", patient_id)
-                    # Take rank 1 by default
-                    best_row = df_rarw.nsmallest(1, 'rank_pg').iloc[0]
-                    rdi = best_row.name
-                    score = best_row['pg']
-                    rank = int(best_row['rank_pg'])
-                else:
-                    rdi = patient_data[col_disease].values[0]
-                    
-                    # Normalize RDI identifier
-                    if pd.isna(rdi):
-                        log.warning("Patient %s has no confirmed diagnosis", patient_id)
-                        continue
-                    
-                    rdi = str(rdi)
-                    if not rdi.startswith("ORPHA:") and rdi.replace(".", "").isdigit():
-                        rdi = f"ORPHA:{int(float(rdi))}"
-                    
-                    # Find rank of this RDI
-                    if rdi in df_rarw.index:
-                        row = df_rarw.loc[rdi]
-                        score = row['pg']
-                        rank = int(row['rank_pg'])
-                    else:
-                        log.warning("RDI %s not found in results for patient %s", rdi, patient_id)
-                        continue
-            else:
-                # No diagnosis column: take rank 1
+ 
+            ## load patient input df depending on the patientid 
+            patient_data = df_patient[df_patient[col_patient] == patient_id]
+            if patient_data.empty:
+                log.warning("Patient %s not found in patient table", patient_id)
+                # Take rank 1 by default
                 best_row = df_rarw.nsmallest(1, 'rank_pg').iloc[0]
                 rdi = best_row.name
                 score = best_row['pg']
                 rank = int(best_row['rank_pg'])
+            else:
+                # extract the confirmed diagnosis
+                rdi = patient_data[col_disease].values[0]
+                
+                # TEST if rdi is NaN
+                if pd.isna(rdi):
+                    log.warning("Patient %s has no confirmed diagnosis", patient_id)
+                    continue
+                
+                rdi = str(rdi)
+
+                
+                # Find rank of this RDI
+                if rdi in df_rarw.index:
+                    row = df_rarw.loc[rdi]
+                    score = row['pg']
+                    rank = int(row['rank_pg'])
+                else:
+                    log.warning("RDI %s not found in results for patient %s", rdi, patient_id)
+                    continue
+ 
             
             all_interactions.append((patient_id, rdi, score, rank))
             log.info("Patient %s: RDI=%s, rank=%d", patient_id, rdi, rank)
@@ -317,14 +258,11 @@ def cmd_collect(args, log: logging.Logger):
     log.info("=" * 60)
     
     # Save
-    output_path = rarw_dir / f"RDI_{matrix_subdir}.xlsx"
+    output_path = rarw_dir / f"RDI.xlsx"
     df_rdi.to_excel(output_path, index=False, engine="openpyxl")
     log.info("Wrote RDI file: %s", output_path)
     
-    # Also in RARW_ format for compatibility
-    output_path2 = rarw_dir.parent / f"RARW_{matrix_subdir}.xlsx"
-    df_rdi.to_excel(output_path2, index=False, engine="openpyxl")
-    log.info("Wrote RARW file: %s", output_path2)
+ 
 
 
 # =============================================================================
@@ -339,21 +277,20 @@ def build_parser():
     
     # RUN command
     run_p = sub.add_parser("run", help="Run PageRank for patient(s)")
+    run_p.add_argument("--alpha","-a",default=0.3,type=float,help="Alpha value used for the run")
+
     run_p.add_argument("--seeds", required=True,
                        help="Patient IDs (space or comma separated): 'P1 P2' or 'P1,P2'")
-    run_p.add_argument("--alpha", type=float, required=True,
-                       help="Damping factor for PageRank (e.g., 0.85)")
-    run_p.add_argument("--matrix_subdir", required=True,
-                       help="Subdirectory in patient_added containing the matrices")
+
+
     
     # COLLECT command
     col_p = sub.add_parser("collect", help="Collect results into RDI file")
-    col_p.add_argument("--matrix_subdir", required=True,
-                       help="Subdirectory name")
-    col_p.add_argument("--alpha", type=float, required=True,
-                       help="Alpha value used for the run")
+    col_p.add_argument("--alpha", "-a",default=0.3,type=float,help="Alpha value used for the run")
     
     return p
+
+
 
 
 def main():
@@ -367,9 +304,9 @@ def main():
     args = build_parser().parse_args()
     
     if args.cmd == "run":
-        cmd_run(args, log)
+        cmd_run_rarw(args, log)
     elif args.cmd == "collect":
-        cmd_collect(args, log)
+        cmd_aggregate_rdi(args, log)
 
 
 if __name__ == "__main__":

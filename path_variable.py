@@ -1,15 +1,15 @@
-# path_variable.py — Optimisé
+# path_variable.py 
 """
 Variables de chemins centralisées pour le pipeline.
 IMPORTANT: Ne contient PAS de code exécutable au chargement (pas de pd.read_excel, etc.)
 """
-import os
 from pathlib import Path
 
 # =============================================================================
 # RACINE DU PROJET
 # =============================================================================
 PROJECT_ROOT = Path(__file__).resolve().parent
+# PROJECT_ROOT = Path(__file__).resolve().parent.parent # for exe 
 
 # =============================================================================
 # DOSSIERS PRINCIPAUX
@@ -84,8 +84,9 @@ PATH_INPUT_PREVALENCE = PATH_INPUT_PRODUCT / "prevalences.json"
 # =============================================================================
 # INPUT PATIENTS
 # =============================================================================
-PATH_INPUT_PATIENTS_FOLDER = PATH_INPUT / "patient" / "study_population"
-PATH_INPUT_PATIENTS_FC = PATH_INPUT / "patient" / "PATIENTS_SOLVED_FC_v2.xlsx"
+PATH_INPUT_PATIENTS_FOLDER = PATH_INPUT / "patient" 
+PATH_ORPHA_RDI_FILE = PATH_INPUT /"patient_RDI.txt"
+# PATH_INPUT_PATIENTS_FC = PATH_INPUT / "patient" / "PATIENTS_SOLVED_FC_v2.xlsx"
 
 
 # =============================================================================

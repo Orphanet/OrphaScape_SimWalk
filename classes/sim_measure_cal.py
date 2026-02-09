@@ -33,19 +33,22 @@ _SIM_CACHE: dict[tuple[str, str, str], float] = {}  # (hpoA, hpoB, method) -> sc
 
 
 def _get_hpo_obj(hpo_id: str):
-    """Gets an HPO object with caching."""
+    """Gets an HPO object with caching.
+        exemple : hpo_id = "HP:0001250 """
     if hpo_id in _HPO_OBJ_CACHE:
         return _HPO_OBJ_CACHE[hpo_id]
     try:
         obj = Ontology.get_hpo_object(hpo_id)
     except RuntimeError:
         obj = None
+    # store it in the cache in dict format 
     _HPO_OBJ_CACHE[hpo_id] = obj
     return obj
 
 
 def _sim_cached(hpo_a: str, hpo_b: str, method: str) -> float:
-    """Computes similarity between two HPO with caching (symmetric)."""
+    """Computes similarity between two HPO with caching (symmetric).
+    example : hpo_a = "HP:0001250"  hpo_b = "HP:0001251 method = resnik"""
     # Canonicalization of pair (symmetry)
     key = (hpo_a, hpo_b, method) if hpo_a <= hpo_b else (hpo_b, hpo_a, method)
     
@@ -113,17 +116,19 @@ class Sim_measure:
         self,
         hpo_obj,
         mini_df: pd.DataFrame,
-        vector_weight: list[float],
-        is_freq: str
+        vector_weight: list[float]
     ) -> float:
         """
         Computes weight based on HPO frequency.
         
         Args:
-            hpo_obj: HPO object
+            hpo_obj: HPO object from hpo3 eg Ontology.get_hpo_object("HP:0001250")
             mini_df: Filtered DataFrame for an entity
-            vector_weight: Weight vector [obligate, very_freq, freq, occ, very_rare]
-            is_freq: 'y' to apply frequency * weight, 'n' for weight only
+            eg mini_df = pd.DataFrame({
+                            'hpo_id': ['HP:0001250'],
+                            'hpo_frequency': [0.8]
+                            })
+            vector_weight: Weight vector [obligate, very_freq, freq, occ, very_rare] [1.0, 1.0, 1.0, 1.0, 1.0]
         """
         try:
             freq = mini_df[mini_df['hpo_id'] == hpo_obj.id]['hpo_frequency'].values[0]
@@ -133,7 +138,7 @@ class Sim_measure:
             freq = 1.0
             add_weight = 1.0
         
-        return (freq * add_weight) if is_freq == 'y' else add_weight
+        return  add_weight
     
     # =========================================================================
     # SCORE COMBINATION
@@ -150,8 +155,10 @@ class Sim_measure:
         """
         Combines max scores of rows/columns according to chosen method.
         
-        max_row: best match for each HPO of B (size len_b)
+        max_row: best match for each HPO of B (size len_b) 
+        eg : np.array([0.8, 0.6, 0.9])  # 3 HPOs len b
         max_col: best match for each HPO of A (size len_a)
+        eg :  np.array([0.7, 0.85])  # 2 HPOs len a
         """
         if combine == "funSimAvg":
             avg_row = max_row.mean() if len_b else 0.0
@@ -184,14 +191,13 @@ class Sim_measure:
         rd_id_list: list[str],
         combine: str,
         method: str,
-        is_freq: str,
         vector_weight: list[float]
     ) -> pd.DataFrame:
         """
         Calculates RD (element2) ↔ RDs (rd_id_list) similarity.
-        
-        Optimizations:
-        - No S matrix: streaming of max
+        eg:element2 = "ORPHA:123", rd_id_list = ["ORPHA:123", "ORPHA:456", "ORPHA:789"]
+        combine="funSimMax", method="resnik", vector_weight=[1.0, 1.0, 1.0, 1.0, 1.0]
+
         - Cache of HPO similarities
         - Triangularization (computes only element1 >= element2)
         """
@@ -202,11 +208,11 @@ class Sim_measure:
         hpo_el_2 = minidf_2['hpo_id'].drop_duplicates().tolist()
         len_b = len(hpo_el_2)
         
-        # Numeric index for triangularization
-        e2n = orpha_num(element2)
+        # Numeric index for triangularization 
+        e2n = orpha_num(element2) # get the numeric part of ORPHAcode
         
         for element1 in rd_id_list:
-            # Triangularization: compute only if element1 >= element2
+            # Triangularization: compute only if element1 >= element2 because matrix is symmetric
             if orpha_num(element1) < e2n:
                 continue
             
@@ -227,10 +233,11 @@ class Sim_measure:
                     if obj2 is None:
                         continue
                     
-                    w2 = self._get_freq_weight(obj2, minidf_2, vector_weight, is_freq)
+                    w2 = self._get_freq_weight(obj2, minidf_2, vector_weight)
                     best_i = 0.0
                     
                     for j, h1 in enumerate(hpo_el_1):
+                        # compute sm symmetric
                         ic = _sim_cached(h2, h1, method)
                         s = ic * w2
                         
@@ -257,13 +264,15 @@ class Sim_measure:
         patient_id_list: list[str],
         combine: str,
         method: str,
-        is_freq: str,
         vector_weight: list[float]
     ) -> pd.DataFrame:
         """
         Calculates RD (element2) ↔ patients (patient_id_list) similarity.
-        
-        Handles exclusion rule (HPO with frequency = 0).
+        eg : element2 = "ORPHA:123", patient_id_list = ["P1", "P2", "P3"]
+        combine="funSimMax", method="resnik", vector_weight=[1.0, 1.0, 1.0, 1.0, 1.0]
+
+        Handles exclusion rule (HPO with frequency = 0), 
+        if patient have hpo_frequency=0 the result is 0 between patient and RD.(avoid useless calculation)
         """
         interactions = []
         
@@ -294,7 +303,7 @@ class Sim_measure:
                     for i, h2 in enumerate(hpo_el_2):
                         try:
                             obj2 = Ontology.get_hpo_object(h2)
-                            w2 = self._get_freq_weight(obj2, minidf_2, vector_weight, is_freq)
+                            w2 = self._get_freq_weight(obj2, minidf_2, vector_weight)
                         except RuntimeError:
                             continue
                         
@@ -315,7 +324,8 @@ class Sim_measure:
             interactions.append((element2, element1, float(score)))
         
         return pd.DataFrame(interactions, columns=['RDs', 'patients', 'score'])
-    
+
+
     # =========================================================================
     # PP CALCULATION (Patient × Patient)
     # =========================================================================
@@ -328,6 +338,7 @@ class Sim_measure:
     ) -> pd.DataFrame:
         """
         Calculates Patient ↔ Patient similarity (without frequencies).
+        eg :patients_list = ["P001", "P002", "P003"]
         Returns a symmetric square matrix.
         """
         # Unique while preserving order
@@ -384,7 +395,7 @@ class Sim_measure:
                 M[j, i] = score  # Symmetric
         
         return pd.DataFrame(M, index=pats, columns=pats)
-    
+
 
     
     # =========================================================================
@@ -406,13 +417,13 @@ class Sim_measure:
         rd_id_list: list[str],
         combine: str,
         method: str,
-        is_freq: str,
         weights: list[float],
         out_dir: str
     ) -> None:
-        """Wrapper for Snakefile: computes and exports MM."""
+        """Wrapper for Snakefile: computes and also  exports MM.
+        eg     out_dir="./output/mm"""
         rd_file = rd.replace(":", "-")
-        df_sm = self.run_mm_freq(rd, rd_id_list, combine, method, is_freq, weights)
+        df_sm = self.run_mm_freq(rd, rd_id_list, combine, method,  weights)
         df_sm.rename(columns={'patients': 'OC2', 'RDs': 'OC1'}, inplace=True)
         
         sm_path = f"{out_dir}/{index}_{rd_file}.parquet"
@@ -426,13 +437,12 @@ class Sim_measure:
         patients: list[str],
         combine: str,
         method: str,
-        is_freq: str,
         weights: list[float],
         out_dir: str
     ) -> None:
-        """Wrapper for Snakefile: computes and exports MP."""
+        """Wrapper for Snakefile: computes and also exports MP."""
         rd_file = rd.replace(":", "-")
-        df_sm = self.run_sm_freq(rd, patients, combine, method, is_freq, weights)
+        df_sm = self.run_sm_freq(rd, patients, combine, method,  weights)
         
         sm_path = f"{out_dir}/{index}_{rd_file}.parquet"
         self.export_sm(df_sm, sm_path)

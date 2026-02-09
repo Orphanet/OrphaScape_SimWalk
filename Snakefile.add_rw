@@ -1,17 +1,12 @@
-# Snakefile.add_rw — add_patients -> rarw_run -> rarw_collect
-"""
-IMPORTANT: Les fichiers MM et SM doivent exister avant d'exécuter ce pipeline!
-Si non, exécutez d'abord Snakefile.sim pour les créer.
 
-Usage:
-  cd ~/Bureau/my_pipeline_v5
-  snakemake -s Snakefile.add_rw --configfile configs/config_add_rw.yaml -j 4
+
+"""
+Pipeline RARW avec auto-détection des fichiers.
+PRÉREQUIS: Les fichiers MM et SM doivent exister dans PATH_OUTPUT_MM et PATH_OUTPUT_SM
 """
 import os
-import re
-import pandas as pd
 from pathlib import Path
-
+import pandas as pd
 import path_variable as PV
 
 # =============================================================================
@@ -20,209 +15,76 @@ import path_variable as PV
 
 configfile: "configs/config_add_rw.yaml"
 
-# ---- Abréviations (identiques à vos scripts) ----
-COMB_ABBR = {
-    "funsimmax": "fsm", "funSimMax": "fsm", 
-    "funsimavg": "fsa", "funSimAvg": "fsa",
-    "bma": "bma", "rsd": "rsd", "bums": "bums", "BUMS": "bums"
-}
-METH_ABBR = {
-    "resnik": "r", "lin": "l", "jiang": "jc", "jc": "jc",
-    "graphic": "g", "ic": "ic", "rel": "rel"
-}
-
-def abbr_combine(x):
-    return COMB_ABBR.get(str(x).lower(), str(x)[:3])
-
-def abbr_method(x):
-    return METH_ABBR.get(str(x).lower(), str(x)[:2])
-
-AGG_RE = re.compile(r"^(?P<combine>[^_]+)_(?P<method>[^_]+)_(?P<wf>[^_]+)_(?P<product4>.+)_(?P<vector>[0-9_]+)$")
-
-def parse_agg_filename(stem: str):
-    m = AGG_RE.match(stem)
-    if not m:
-        raise ValueError(f"Bad aggregated filename: {stem}")
-    d = m.groupdict()
-    d["vector_compact"] = d["vector"].replace("_", "")
-    return d
+def s(p):
+    return str(p)
 
 def alpha_tag(a) -> str:
     s = f"{float(a):.2f}"
     return s.rstrip("0").rstrip(".")
 
-def s(p):
-    """Convert Path to string."""
-    return str(p)
+# Paramètres depuis config
+ALPHA = config.get("alpha", 0.3)
+ALPHA_STR = alpha_tag(ALPHA)
 
 # =============================================================================
-# LECTURE CONFIG
+# RÈGLES
 # =============================================================================
-
-mm_file = config["mm_file"]
-sm_file = config["sm_file"]
-ALPHAS = [alpha_tag(a) for a in config.get("alphas", [0.3])]
-
-# Parse des métadonnées
-mm_meta = parse_agg_filename(Path(mm_file).stem)
-mp_meta = parse_agg_filename(Path(sm_file).stem)
-
-mm_tag = f'{abbr_combine(mm_meta["combine"])}_{abbr_method(mm_meta["method"])}_{mm_meta["vector_compact"]}'
-mp_tag = f'{abbr_combine(mp_meta["combine"])}_{abbr_method(mp_meta["method"])}_{mp_meta["vector_compact"]}'
-MATRIX_SUBDIR = f"mm_{mm_tag}_mp_{mp_tag}"
-
-# Chemins complets des fichiers d'entrée
-def find_input_file(base_dir, filename):
-    """Trouve le fichier avec différentes extensions possibles."""
-    base_dir = Path(base_dir)
-    stem = Path(filename).stem
-    
-    extensions = [".xlsx", ".parquet", ".csv", ".csv.gz"]
-    
-    exact = base_dir / filename
-    if exact.exists():
-        return str(exact)
-    
-    for ext in extensions:
-        candidate = base_dir / f"{stem}{ext}"
-        if candidate.exists():
-            return str(candidate)
-    
-    return str(base_dir / filename)
-
-MM_PATH = find_input_file(PV.PATH_OUTPUT_MM, mm_file)
-SM_PATH = find_input_file(PV.PATH_OUTPUT_SM, sm_file)
-
-# Dossiers de sortie
-RUN_DIR = s(Path(PV.PATH_OUTPUT_PATIENT_ADDED) / MATRIX_SUBDIR)
-
-# =============================================================================
-# TARGETS
-# =============================================================================
-
-TARGET_RDI = [
-    s(Path(PV.PATH_OUTPUT_FOLDER_RW) / alpha / MATRIX_SUBDIR / f"RDI_{MATRIX_SUBDIR}.xlsx")
-    for alpha in ALPHAS
-]
 
 rule all:
     input:
-        TARGET_RDI
+        "results/rdi_done.flag"
 
-# =============================================================================
-# 1) ADD PATIENTS (checkpoint)
-# =============================================================================
-
-checkpoint add_patients:
-    input:
-        mm = MM_PATH,
-        sm = SM_PATH,
+rule add_patients:
+    """Étape 1: Ajoute les patients à la matrice MM (auto-détecte les fichiers)"""
     output:
-        index = os.path.join(RUN_DIR, "INDEX.csv"),
-        prov = os.path.join(RUN_DIR, "PROVENANCE.yaml"),
-    params:
-        patients_opt = (f"--patients @{config['patients_file']}" 
-                       if config.get("patients_file") else ""),
-        output_mode = config.get("output_mode", "joint"),
+        flag = "results/patients_added.flag"
     log:
         "logs/add_patients.log"
     shell:
         r"""
-        mkdir -p "{RUN_DIR}" logs
-        cd "{workflow.basedir}" && \
-        python -m bin.main_add_patients_to_mm \
-        --mm-file "{input.mm}" \
-        --sm-file "{input.sm}" \
-        --output-mode {params.output_mode} \
-        {params.patients_opt} \
-        > "{log}" 2>&1
-        test -s "{output.index}" && test -s "{output.prov}"
+        mkdir -p logs results
+        python -m bin.main_add_patients_to_mm > {log} 2>&1
+        touch {output.flag}
         """
 
-# =============================================================================
-# HELPER: Récupère la liste des patients après le checkpoint
-# =============================================================================
-
-def seeds_from_index():
-    """Lit INDEX.csv pour obtenir la liste des patients."""
-    ck = checkpoints.add_patients.get()
-    df = pd.read_csv(ck.output.index)
-    for col in ("patient", "patients"):
-        if col in df.columns:
-            return df[col].astype(str).tolist()
-    return df.iloc[:, 0].astype(str).tolist()
-
-
-def rarw_inputs_for_alpha(wc):
-    """Retourne la liste des fichiers RARW attendus pour un alpha donné."""
-    seeds = seeds_from_index()
-    return [
-        s(Path(PV.PATH_OUTPUT_FOLDER_RW) / wc.alpha / MATRIX_SUBDIR / f"{seed}.xlsx")
-        for seed in seeds
-    ]
-
-def get_patient_file(wc):
-    """Retourne le chemin du fichier patient (parquet joint, ou parquet split)."""
-    joint_path = os.path.join(RUN_DIR, f"{wc.seed}.parquet")
-    if os.path.exists(joint_path):
-        return joint_path
-
-    parquet_path = os.path.join(RUN_DIR, "by_patient", f"{wc.seed}_to_RDs.parquet")
-    if os.path.exists(parquet_path):
-        return parquet_path
-
-    # fallback ancien (au cas où)
-    csv_path = os.path.join(RUN_DIR, f"{wc.seed}.csv")
-    return csv_path
-
-
-# =============================================================================
-# 2) RARW RUN (par patient et alpha)
-# =============================================================================
-
-rule rarw_run:
+rule rarw_run_all:
+    """Étape 2: Exécute PageRank pour tous les patients"""
     input:
-        patient_file = get_patient_file,
+        "results/patients_added.flag"
     output:
-        xlsx = s(Path(PV.PATH_OUTPUT_FOLDER_RW) / "{alpha}" / MATRIX_SUBDIR / "{seed}.xlsx"),
+        flag = "results/rarw_run_done.flag"
     params:
-        matrix_subdir = MATRIX_SUBDIR,
-    threads: config.get("threads_per_seed", 1)
+        alpha = ALPHA
     log:
-        "logs/rarw_run_{alpha}_{seed}.log"
-    shell:
-        r"""
-        mkdir -p $(dirname "{output.xlsx}") logs
-        export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
-        cd "{workflow.basedir}" && \
-        python -m bin.main_rarw run \
-        --seeds "{wildcards.seed}" \
-        --alpha {wildcards.alpha} \
-        --matrix_subdir "{params.matrix_subdir}" \
-        > "{log}" 2>&1
-        test -s "{output.xlsx}"
-        """
-
-# =============================================================================
-# 3) RARW COLLECT (un par alpha)
-# =============================================================================
-
-rule rarw_collect:
-    input:
-        rarw_inputs_for_alpha
-    output:
-        xlsx = s(Path(PV.PATH_OUTPUT_FOLDER_RW) / "{alpha}" / MATRIX_SUBDIR / f"RDI_{MATRIX_SUBDIR}.xlsx"),
-    params:
-        matrix_subdir = MATRIX_SUBDIR,
-    log:
-        "logs/rarw_collect_{alpha}.log"
+        "logs/rarw_run.log"
     shell:
         r"""
         mkdir -p logs
-        cd "{workflow.basedir}" && \
-        python -m bin.main_rarw collect \
-        --alpha {wildcards.alpha} \
-        --matrix_subdir "{params.matrix_subdir}" \
-        > "{log}" 2>&1
-        test -s "{output.xlsx}"
+        # Trouve le dossier patient_added le plus récent
+        MATRIX_DIR=$(ls -td {PV.PATH_OUTPUT_PATIENT_ADDED}/*/ | head -1)
+        
+        # Liste tous les patients (fichiers .parquet)
+        for pq in "$MATRIX_DIR"/*.parquet; do
+            PATIENT=$(basename "$pq" .parquet)
+            echo "Running RARW for $PATIENT"
+            python -m bin.main_rarw run --seeds "$PATIENT" --alpha {params.alpha} >> {log} 2>&1
+        done
+        touch {output.flag}
+        """
+
+rule rarw_collect:
+    """Étape 3: Collecte les résultats en un fichier RDI"""
+    input:
+        "results/rarw_run_done.flag"
+    output:
+        flag = "results/rdi_done.flag"
+    params:
+        alpha = ALPHA
+    log:
+        "logs/rarw_collect.log"
+    shell:
+        r"""
+        mkdir -p logs
+        python -m bin.main_rarw collect --alpha {params.alpha} > {log} 2>&1
+        touch {output.flag}
         """

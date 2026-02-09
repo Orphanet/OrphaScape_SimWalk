@@ -400,9 +400,11 @@ def safe_to_excel(
                 sheet_name = f"{sheet_base}_{i+1}" if chunks > 1 else sheet_base
                 df.iloc[start:end].to_excel(writer, index=False, sheet_name=sheet_name)
     
-    # CSV.gz backup
-    try:
-        df.to_csv(out_xlsx.with_suffix(".csv.gz"), index=False, compression="gzip")
-    except Exception as e:
-        if log:
-            log.warning("Failed to write CSV.gz for %s: %s", out_xlsx, e)
+    # # CSV.gz backup
+    # try:
+    #     df.to_csv(out_xlsx.with_suffix(".csv.gz"), index=False, compression="gzip")
+    # except Exception as e:
+    #     if log:
+    #         log.warning("Failed to write CSV.gz for %s: %s", out_xlsx, e)
+
+

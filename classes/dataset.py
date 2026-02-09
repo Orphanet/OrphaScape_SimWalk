@@ -22,12 +22,47 @@ from set_log import get_logger
 log = get_logger(__name__)
 
 
+from pyhpo import Ontology   
+
+def minimal_hpo_ids(hp_ids):
+    """
+    Remove redundant ancestors:
+    if an HPO term is an ancestor of another term in the set, drop it.
+    Keep only the most specific terms.
+    """
+
+    ## first loop to extract all parents of all hpo in the hpo list 
+    all_parents = set()
+    for hp in hp_ids:
+        pyhpo_term = Ontology.get_hpo_object(hp)
+
+        # all ancestors (parents, grandparents, ...)
+        ancestors = pyhpo_term.parents
+        # print(f'{hp} : \t {ancestors}')
+        for anc in ancestors:
+            # from hpo term type to str 
+            anc_id = anc.id
+            all_parents.add(anc_id)
+
+    # extract the hpo that are parents inside the hpo list
+    hp_ids_that_are_parent = all_parents.intersection(hp_ids)
+
+    ## keep only hpo that are not in hp_ids_that_are_parent
+    # minimal_set = []
+    # for hp in hp_ids:
+    #     if hp not in hp_ids_that_are_parent:
+    #         minimal_set.append(hp)
+    
+    minimal_set = set(hp_ids).difference(hp_ids_that_are_parent)
+    return minimal_set
+
+
 class DataSet(DataGenerate):
     """Class for construction and manipulation of Orphanet/patient datasets."""
     
     def __init__(self, input_path: str | Path, output_path: str | Path = ""):
         super().__init__(input_path, output_path)
-    
+
     # =========================================================================
     # PATIENTS
     # =========================================================================
@@ -37,11 +72,12 @@ class DataSet(DataGenerate):
         Builds a DataFrame of patients from phenopacket files.
         Handles variable JSON formats and extracts HPO, diseases, genes.
         """
+        # input_path = PV.PATH_INPUT_PATIENTS_FOLDER
         pheno_with_invalid_id = set()
-        list_case_HPO = []
-        
+        list_case_HPO_f = []
+
         patients_raw = os.listdir(self.input_path)
-        
+
         for onefile in patients_raw:
             filepath = self.input_path / onefile
             try:
@@ -86,75 +122,91 @@ class DataSet(DataGenerate):
                 # HPO phenotypes
                 phenotypes = data.get('phenotypicFeatures', [])
                 if not phenotypes:
-                    continue
+                    pass
                 
+                patient_rows = []  # <-- collect only this patient's rows here
+
                 for pheno in phenotypes:
-                    if not pheno:
-                        continue
-                    
-                    # Handle two possible formats
-                    try:
-                        if 'type.label' in pheno:
-                            type_data = pheno['type.label']
-                            if type_data == 'Invalid id':
-                                pheno_with_invalid_id.add(patient_id)
-                                continue
-                            if 'type.negated' in pheno:
-                                continue
-                            id_hpo = type_data.get('id', '')
-                            label_hpo = type_data.get('label', '')
-                        else:
-                            type_data = pheno.get('type', {})
-                            if type_data.get('label') == 'Invalid id':
-                                pheno_with_invalid_id.add(patient_id)
-                                continue
-                            if pheno.get('negated'):
-                                continue
-                            id_hpo = type_data.get('id', '')
-                            label_hpo = type_data.get('label', '')
-                        
-                        if id_hpo and patient_id not in pheno_with_invalid_id:
-                            list_case_HPO.append((
-                                patient_id, progress_status, disease_orphanet, disease_omim,
-                                ern, gene, type_gene, variant, id_hpo, label_hpo
-                            ))
-                    except (KeyError, TypeError):
-                        continue
+                    # don't take into account the excluded phenotype
+                    if 'excluded' in pheno.keys():
+                        # excluded == True : on ignore
+                        pass
+                    else:
+                        try:
+                            if 'type.label' in pheno:
+                                type_data = pheno['type.label']
+                                if type_data == 'Invalid id':
+                                    pheno_with_invalid_id.add(patient_id)
+                                    pass
+                                if 'type.negated' in pheno:
+                                    pass
+                                id_hpo = type_data.get('id', '')
+                                label_hpo = type_data.get('label', '')
+                            else:
+                                type_data = pheno.get('type', {})
+                                if type_data.get('label') == 'Invalid id':
+                                    pheno_with_invalid_id.add(patient_id)
+                                    pass
+                                if pheno.get('negated'):
+                                    pass
+
+                                id_hpo = type_data.get('id', '')
+                                label_hpo = type_data.get('label', '')
+
+                            if id_hpo and patient_id not in pheno_with_invalid_id:
+                                patient_rows.append((
+                                    patient_id, progress_status, disease_orphanet, disease_omim,
+                                    ern, gene, type_gene, variant, id_hpo, label_hpo
+                                ))
+                        except (KeyError, TypeError):
+                            pass
+
+                # ---- REMOVE REDUNDANT TERMS (minimal set) ----
+                hp_ids_in_order = [row[8] for row in patient_rows]
+                keep_ids = minimal_hpo_ids(hp_ids_in_order)
+                
+                for one_row in patient_rows:
+                    if one_row[8] in keep_ids:
+                        list_case_HPO_f.append(one_row)
+
                         
             except (json.JSONDecodeError, UnicodeDecodeError) as e:
                 log.warning("Cannot read %s: %s", onefile, e)
                 continue
         
         return pd.DataFrame(
-            list_case_HPO,
+            list_case_HPO_f,
             columns=['phenopacket', 'status', 'Orphanet', 'OMIM', 'ern', 
                     'gene', 'type_gene', 'variant', 'hpo_id', 'hpo_label']
         )
     
-    def filter_df_keep_confirmed_only(
-        self, 
-        path_input_p: str | Path, 
-        df_input_p: pd.DataFrame, 
-        col_patient: str
-    ) -> pd.DataFrame:
-        """Filters to keep only confirmed patients."""
-        df_confirmed = pd.read_excel(path_input_p, engine='openpyxl', sheet_name='Feuil2')
-        df_confirmed = df_confirmed[df_confirmed['Result'] == 'yes']
+
+
+    # get the orphanet confirmed (RDI) for each patient
+    def parse_orpha_file(self, txt_path)-> pd.DataFrame:
+        """
+        Parse a file of the form:
+        P1,ORPHA:610
+        P2,ORPHA:35689
+        """
+        orpha_map = {}
+
+        with open(txt_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+
+                patient_id, orpha = line.split(",")
+                orpha_map[patient_id] = orpha
+
+        return orpha_map
         
-        patients_c = df_confirmed['Patient ID'].drop_duplicates().tolist()
-        df_confirmed = df_confirmed[['Patient ID', 'Gene', 'Disease found ORPHA']]
-        df_confirmed.columns = [col_patient, 'Gene_p', 'Disease']
-        
-        df_filtered = df_input_p[df_input_p[col_patient].isin(patients_c)]
-        df_merged = pd.merge(df_filtered, df_confirmed, on=col_patient, how='outer')
-        
-        return df_merged.dropna(subset=['hpo_id'])
-    
     # =========================================================================
     # ORPHANET PRODUCTS
     # =========================================================================
-    
-    def build_orpha_df(self) -> pd.DataFrame:
+    # ok 
+    def df_pd4(self) -> pd.DataFrame:
         """Builds RD DataFrame with HPO from product4 JSON."""
         with open(self.input_path, 'r') as f:
             root = json.load(f)
@@ -196,45 +248,7 @@ class DataSet(DataGenerate):
             all_interactions,
             columns=['ORPHAcode', 'hpo_id', 'hpo_frequency']
         )
-    
-    def from_rsd_build_orpha_df(self) -> pd.DataFrame:
-        """Builds RD DataFrame from RSD format."""
-        with open(self.input_path, 'r') as f:
-            data = json.load(f)
-        
-        rows = []
-        missing = []
-        
-        for disorder in data['JDBOR']['DisorderList']['Disorder']:
-            orpha = disorder.get('OrphaCode')
-            assoc = disorder.get('HPODisorderAssociationList', {}).get('HPODisorderAssociation', [])
-            
-            if isinstance(assoc, dict):
-                assoc = [assoc]
-            
-            if not assoc:
-                missing.append(f"ORPHA:{orpha}")
-                continue
-            
-            for a in assoc:
-                hpo = a.get('HPO', {})
-                freq_text = a.get('HPOFrequency', {}).get('Name', {}).get('#text')
-                freq = freq_to_score(freq_text)
-                
-                rows.append({
-                    'ORPHAcode': f"ORPHA:{orpha}",
-                    'hpo_id': hpo.get('HPOId'),
-                    'hpo_frequency': freq
-                })
-        
-        df = pd.DataFrame(rows)
-        log.info("%d RDs with HPO associations.", df['ORPHAcode'].nunique())
-        
-        if missing:
-            log.info("Warning: %d disorders have no HPO associations.", len(missing))
-        
-        return df
-    
+
     def df_pd1(self) -> pd.DataFrame:
         """Builds product1 DataFrame (nomenclature)."""
         with open(self.input_path, 'r') as f:
@@ -411,65 +425,7 @@ class DataSet(DataGenerate):
             'param_RD': {i + 1: code for i, code in enumerate(sorted(rds))}
         }
     
-    # =========================================================================
-    #  OTHER
-    # =========================================================================
-    
-    def df_omim_orpha(self, root: dict) -> pd.DataFrame:
-        """Builds OMIM <-> ORPHA mapping."""
-        interactions = []
-        
-        for disorder in root['JDBOR']['DisorderList']['Disorder']:
-            disease_id = disorder['OrphaCode']
-            refs = disorder.get('ExternalReferenceList', {}).get('ExternalReference', [])
-            
-            if not isinstance(refs, list):
-                refs = [refs]
-            
-            for ref in refs:
-                if ref.get('Source') == 'OMIM':
-                    interactions.append((disease_id, ref.get('Reference', '')))
-        
-        log.info("Built df pd1 OMIM-ORPHA mapping")
-        return pd.DataFrame(interactions, columns=['ORPHAcode', 'OMIM'])
-    
-    def build_df_prevalence(self) -> pd.DataFrame:
-        """Builds DataFrame of prevalences."""
-        with open(self.input_path, 'r', encoding='ISO-8859-1') as f:
-            root = json.load(f)
-        
-        all_prev = [(d['orpha'], d['preval']) for d in root]
-        return pd.DataFrame(all_prev, columns=['ORPHAcode', 'Estimated_prevalence'])
-    
-    def from_dict_to_df(self, dict_patient: dict, prefix: str) -> pd.DataFrame:
-        """Converts a patient dict->HPOs into DataFrame."""
-        interactions = [
-            (f"{prefix}{key}", hpo)
-            for key, hpos in dict_patient.items()
-            for hpo in hpos
-        ]
-        return pd.DataFrame(interactions, columns=['Patient', 'hpo_id'])
-    
-    def build_noisy_patient(
-        self, 
-        list_random_hpo: list[str], 
-        dict_omim: dict
-    ) -> dict:
-        """Generates noisy patients (half original HPO + half random)."""
-        result = {}
-        for key, value in dict_omim.items():
-            half_stop = len(value) // 2
-            half_value = list(value[half_stop:])
-            
-            while len(half_value) != len(value):
-                random_hpo = list_random_hpo[np.random.randint(0, len(list_random_hpo))].strip()
-                if random_hpo not in value:
-                    half_value.append(random_hpo)
-            
-            result[key] = half_value
-        return result
-    
-    def load_build_mm(self, json_to_extract: list[str]) -> pd.DataFrame:
+ 
         """Loads and builds MM matrix from Excel files."""
         all_files = glob.glob(str(self.input_path / "*.xlsx"))
         

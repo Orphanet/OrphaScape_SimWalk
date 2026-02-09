@@ -51,25 +51,33 @@ Before running any step, ensure the following:
 -  All Python dependencies installed (see Requirements section)
 -  HPO data files present in `input/hpo/`
 -  Orphanet product files present in `input/pd_orphanet/`
+-  All patients are added in the `patient/` 
+-  The text file is filled to get the ORPHAcode confirmed for each patient `patient_RDI.txt`
+Example : 
+```text
+P1,ORPHA:610
+P2,ORPHA:35689
+P3,ORPHA:100985
+```
 **Step 2-3 Requirements:**
 -  Step 1 completed successfully
 -  Output files from Step 1 exist in `output/`
 -  Complete the config file `config_sm_mm.yaml` and `config_sm_mp.yaml`
 **Step 4-5 Requirements:**
 -  Steps 2 and 3 completed
--  Config file `config_add_rw.yaml` correctly populated with MM and MP output filenames
+-  Complete the config file `config_add_rw.yaml`
 
 ---
 
 ## Project architecture
 `[project_name]/
 ├── bin/
-│   ├── main_*.py
-│   └── logs/
+│   └── main_*.py
+│   
 ├── classes/
 ├── configs/
 │   └── config_*.yaml/
-
+├── logs/
 ├── input/
 │ ├── hpo/
 │ ├── patient/
@@ -127,16 +135,76 @@ Do **not rename, move, or restructure** folders or files.
 
 ## Step-by-step usage
 
-### Step 1 - Load and normalize input data
+### Step 1 - Load and normalise input data
 
 ```bash
-snakemake -s Snakefile.load_input --cores 8  # Replace 8 with your desired number
+snakemake -s Snakefile.load_input --cores 8  # Replace 8 with your desired number of cores
+
+# python commands if you don't want to use snakemake
+python -m bin.main_load_data
+python -m bin.main_create_patient
+ 
+
 ```
-n number of cores 
+ 
+
 
 Executes Snakefile.load_input
 Runs main_load_data.py and main_create_patient.py
-Converts raw input files into the internal standardized format used by the pipeline
+Converts raw input files into the internal standardised format used by the pipeline
+
+### Patients format type 
+```json
+{
+  "id": "P1",
+  "subject": {
+    "id": "P1",
+    "alternateIds": [
+      "xxx"
+    ],
+    "vitalStatus": {
+      ..
+    },
+    ...
+  },
+
+  "phenotypicFeatures": [
+    {
+      "type": {
+        "id": "HP:xxx",
+        "label": "xxxx"
+      },
+      "excluded": true
+    },
+    {
+      "type": {
+        "id": "HP:yyy",
+        "label": "yyy"
+      }
+    },
+    ...
+    
+  ],
+
+  "interpretations": [
+    {
+      ...
+    }
+  ],
+  "metaData": {
+    "resources": [
+      {
+        ...
+      },
+      ...
+    ],
+    ...
+  }
+}
+
+```
+The most important part here is `phenotypicFeatures` and `id`
+
 
 ### Step 2 - Build the Disease-Disease (MM) similarity matrix
 Configuration file to change : `config_sm_mm.yaml`
@@ -164,6 +232,25 @@ mini_rd_csv: "ORPHA:xxx,ORPHA:xxx..."
 **Execution**
 ```bash
 snakemake -s Snakefile.sim --configfile configs/config_sm_mm.yaml --cores[n]
+
+#python command example 
+python -m bin.main_sm mp  -c BMA -m resnik -v "1_1_1_1_1" -pd4 pd4name --mini-rd "ORPHA:610,ORPHA:100985" --mini-patient "P1"
+
+python -m bin.main_sm mm  -c BMA -m resnik -v "1_1_1_1_1" -pd4 pd4name --mini-rd "ORPHA:610,ORPHA:100985" 
+
+python -m bin.main_concat concat_mp -c BMA -m resnik -v "1_1_1_1_1" --pd4 pd4name 
+
+python -m bin.main_concat concat_mm -c BMA -m resnik -v "1_1_1_1_1" --pd4 pd4name
+
+# Go get more info related to python parameters :
+# python -m bin.main_sm  --help
+# python -m bin.main_sm mp --help 
+# python -m bin.main_sm mm --help 
+# python -m bin.main_concat --help 
+# python -m bin.main_concat concat_mp --help 
+# python -m bin.main_concat concat_mm --help 
+
+
 ```
 
 Output files are saved in `output/mm_sm/` with the following structure:
@@ -184,7 +271,7 @@ Example: `2_2_2_2_1`
 - Position 4: Weight for Occasional terms (default: 1.0)
 - Position 5: Weight for Very Rare terms (default: 1.0)
 
-Higher values = emphasize that frequency category
+Higher values = emphasise that frequency category
 
 
 ### Step 3 - Build the Disease-Patient (MP) similarity vectors
@@ -240,6 +327,16 @@ output_mode: joint # better be joint to create a matrix instead of a vector
 **Execution**
 ```bash
 snakemake -s Snakefile.add_rw --configfile configs/config_add_rw.yaml --cores 8  # Replace 8 with your desired number
+
+#python 
+python -m bin.main_add_patients_to_mm
+python -m bin.main_rarw run -a 0.3 --seeds "P1"
+python -m bin.main_rarw collect -a 0.3
+
+#python help for parameters
+#python -m bin.main_rarw --help
+#python -m bin.main_rarw run --help
+#python -m bin.main_rarw collect --help
 
 
 ```

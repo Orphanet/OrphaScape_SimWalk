@@ -6,7 +6,6 @@ Aggregation of SM/MM files by RD into a single workbook.
 - Removal of commented code
 """
 import glob
-import time
 import logging
 from pathlib import Path
 
@@ -19,7 +18,7 @@ class ConcatSm:
     """
     Aggregates SM/RDI files by RD into a single workbook.
     
-    For MP: base_dir/combine/sm/{y|n}/product4/vector_str/*.parquet
+    For MP: base_dir/combine/method/pd4/vector_str/*.parquet
     For MM: same structure
     """
     
@@ -29,9 +28,9 @@ class ConcatSm:
         col1: str,
         col2: str,
         base_dir: Path | str,
-        product4: str,
+        pd4: str,
         combine: str | None,
-        sm: str | None,
+        method: str | None,
         logger: logging.Logger,
         out_path: Path | str | None = None
     ):
@@ -39,9 +38,9 @@ class ConcatSm:
         self.col1 = col1
         self.col2 = col2
         self.base_dir = Path(base_dir)
-        self.product4 = product4
+        self.pd4 = pd4
         self.combine = combine
-        self.sm = sm
+        self.method = method
         self.log = logger
         self.out_path = Path(out_path) if out_path else None
     
@@ -49,15 +48,15 @@ class ConcatSm:
     # HELPERS
     # =========================================================================
     
-    def _find_vector_dir(self, weight_flag: str = "n") -> Path:
+    def _find_vector_dir(self) -> Path:
         """Finds the directory containing files for a given vector."""
+        
         pattern = (
-            self.base_dir 
-            / (self.combine or "*") 
-            / (self.sm or "*") 
-            / weight_flag 
-            / self.product4 
-            / self.vector_str
+        self.base_dir 
+        / (self.combine or "*") 
+        / (self.method or "*") 
+        / self.pd4 
+        / self.vector_str
         )
         
         if "*" in str(pattern):
@@ -70,51 +69,34 @@ class ConcatSm:
             raise RuntimeError(f"Directory does not exist: {pattern}")
         return pattern
     
-    def _load_files(self, in_dir: Path) -> tuple[list[pd.DataFrame], str]:
-        """
-        Loads all files from a directory (Parquet preferred, otherwise Excel).
-        
-        Returns:
-            Tuple (list of DataFrames, mode: 'parquet' or 'xlsx')
-        """
-        parquet_files = sorted(glob.glob(str(in_dir / "*.parquet")))
-        xlsx_files = sorted(glob.glob(str(in_dir / "*.xlsx")))
-        
-        if parquet_files:
-            files, mode = parquet_files, "parquet"
-        elif xlsx_files:
-            files, mode = xlsx_files, "xlsx"
-        else:
-            raise RuntimeError(f"No SM files found in {in_dir}")
-        
-        dfs = []
-        for fn in files:
-            try:
-                if mode == "parquet":
-                    df = pd.read_parquet(fn)
-                else:
-                    df = pd.read_excel(fn, engine="openpyxl")
-                
-                if df is not None and not df.empty:
-                    dfs.append(df)
-            except Exception as e:
-                self.log.warning("Error reading %s: %s", fn, e)
-        
-        return dfs, mode
-    
     # =========================================================================
     # MP AGGREGATION (Patients × RDs)
     # =========================================================================
     
-    def process_similarity(self) -> None:
+    def concat_mp(self,path_patient,) -> None:
         """
         Aggregates MP files into a single Excel + Parquet.
         Also generates RDI file (rank 1 per patient).
         """
-        t0 = time.perf_counter()
         
-        in_dir = self._find_vector_dir("n")
-        dfs_sm, mode = self._load_files(in_dir)
+        in_dir = self._find_vector_dir()
+
+        parquet_files = sorted(glob.glob(str(in_dir / "*.parquet")))
+        
+        if parquet_files:
+            files, mode = parquet_files, "parquet"
+        else:
+            raise RuntimeError(f"No SM files found in {in_dir}")
+        
+        dfs_sm = []
+        for fn in files:
+            try:
+                if mode == "parquet":
+                    df = pd.read_parquet(fn)
+                if df is not None and not df.empty:
+                    dfs_sm.append(df)
+            except Exception as e:
+                self.log.warning("Error reading %s: %s", fn, e)
         
         if not dfs_sm:
             raise RuntimeError(f"No valid SM files in {in_dir}")
@@ -132,13 +114,13 @@ class ConcatSm:
         if self.out_path:
             out_sm_xlsx = self.out_path
         else:
-            tag = f"{self.combine}_{self.sm}_n_{self.product4}_{self.vector_str}.xlsx"
+            tag = f"{self.combine}_{self.method}_{self.pd4}_{self.vector_str}.xlsx"
             out_sm_xlsx = self.base_dir / tag
         
         out_sm_xlsx = Path(out_sm_xlsx)
         
-        # Export Excel
-        safe_to_excel(df_sm, out_sm_xlsx, sheet_base="SM", log=self.log)
+        # # Export Excel
+        # safe_to_excel(df_sm, out_sm_xlsx, sheet_base="SM", log=self.log)
         
         # Export Parquet
         try:
@@ -148,37 +130,38 @@ class ConcatSm:
         except Exception as e:
             self.log.warning("Failed to write SM parquet: %s", e)
         
-        self.log.info("Wrote SM to %s (%.1fs)", out_sm_xlsx, time.perf_counter() - t0)
         
-        # RDI: best RD per patient (rank == 1)
-        df_rdi = df_sm[df_sm['rank'] == 1].copy()
+                
+        # # RDI: best RD per patient (rank == 1)
+        # df_rdi = df_sm[df_sm['rank'] == 1].copy()
+        # RDI get the orpha of the patient
+        # load input patient to get the RDI
+        df_p = pd.read_excel(path_patient,  index_col=0)
+        df_p.columns = ["patients","hpo_id","RDs",'type','Group']
+        df_p = df_p[[ "patients","RDs"]].drop_duplicates()
+        df_rdi = df_sm.merge(df_p, on=["patients","RDs"], how="inner")
+    
         rdi_xlsx = out_sm_xlsx.with_name(f"RDI_{out_sm_xlsx.name}")
         safe_to_excel(df_rdi, rdi_xlsx, sheet_base="RDI", log=self.log)
+    
         self.log.info("Wrote RDI to %s", rdi_xlsx)
     
     # =========================================================================
     # MM AGGREGATION (RDs × RDs - Matrix)
     # =========================================================================
     
-    def concat_matrix(self) -> None:
+ 
+    def concat_mm(self) -> None:
         """
         Aggregates partial MM matrices into a symmetric square matrix.
         Reads Parquet, pivots, symmetrizes, and writes Parquet + Excel.
         """
-        # Pattern to find files
-        pattern = str(
-            self.base_dir 
-            / (self.combine or "*") 
-            / (self.sm or "*") 
-            / "*" 
-            / self.product4 
-            / self.vector_str 
-            / "*.parquet"
-        )
-        files = sorted(glob.glob(pattern))
+
+        in_dir = self._find_vector_dir()
+        files = sorted(glob.glob(str(in_dir)+"/*.parquet"))
         
         if not files:
-            raise RuntimeError(f"No MM matrices found with pattern {pattern}")
+            raise RuntimeError(f"No MM matrices found with pattern {in_dir}")
         
         # Load and pivot each file
         mats = []
@@ -212,16 +195,16 @@ class ConcatSm:
         if self.out_path:
             out_xlsx = Path(self.out_path)
         else:
-            tag = f"{self.combine or 'comb'}_{self.sm or 'sm'}_n_{self.product4}_{self.vector_str}.xlsx"
+            tag = f"{self.combine or 'comb'}_{self.method or 'sm'}_{self.pd4}_{self.vector_str}.xlsx"
             out_xlsx = self.base_dir / tag
         
         out_xlsx.parent.mkdir(parents=True, exist_ok=True)
         
-        # Write Parquet (recommended)
+        # Write Parquet  
         out_parquet = out_xlsx.with_suffix(".parquet")
         M.to_parquet(out_parquet)
         self.log.info("Wrote MM matrix (parquet) → %s", out_parquet)
         
-        # Write Excel
-        M.to_excel(out_xlsx, engine="openpyxl")
-        self.log.info("Wrote MM matrix → %s (shape=%s)", out_xlsx, M.shape)
+        # # Write Excel
+        # M.to_excel(out_xlsx, engine="openpyxl")
+        # self.log.info("Wrote MM matrix → %s (shape=%s)", out_xlsx, M.shape)
