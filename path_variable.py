@@ -9,7 +9,6 @@ from pathlib import Path
 # RACINE DU PROJET
 # =============================================================================
 PROJECT_ROOT = Path(__file__).resolve().parent
-# PROJECT_ROOT = Path(__file__).resolve().parent.parent # for exe 
 
 # =============================================================================
 # DOSSIERS PRINCIPAUX
@@ -54,6 +53,9 @@ PATH_OUTPUT_PRODUCT_CLASSIF = PATH_OUTPUT_PRODUCT / "Classifications"
 PATH_OUTPUT_DF_PC_CLASSIF_v2 = PATH_OUTPUT_PRODUCT / "parent_child_classif_v2.xlsx"
 PATH_OUTPUT_DF_PC_v2 = PATH_OUTPUT_PRODUCT / "parent_child_noclassif_v2.xlsx"
 
+
+PATH_OUTPUT_DF_CLASSIF_NOG = PATH_OUTPUT_PRODUCT / "classifs_nogenetic.xlsx"
+
 # JSON et Excel de sortie
 PATH_OUTPUT_PRODUCT4_JSON = PATH_OUTPUT_PRODUCT / "all_enpd_mai_2025.json"
 PATH_OUTPUT_DF_PRODUCT4 = PATH_OUTPUT_PRODUCT / "all_enpd_mai_2025.xlsx"
@@ -73,13 +75,11 @@ PATH_OUTPUT_DF_PRODUCT6 = PATH_OUTPUT_PRODUCT / "en_product6.xlsx"
 # INPUT PRODUCTS
 # =============================================================================
 PATH_INPUT_PRODUCT = PATH_INPUT / "pd_orphanet"
-PATH_INPUT_PRODUCT4RSD_XML = PATH_INPUT_PRODUCT / "all_rsdpd4_mai_2025.xml"
-PATH_INPUT_PRODUCT4_XML = PATH_INPUT_PRODUCT / "all_enpd_mai_2025.xml"
+PATH_INPUT_PRODUCT4_XML = PATH_INPUT_PRODUCT / "en_product4.xml"
 PATH_INPUT_PRODUCT1_XML = PATH_INPUT_PRODUCT / "en_product1.xml"
 PATH_INPUT_PRODUCT7_XML = PATH_INPUT_PRODUCT / "en_product7.xml"
 PATH_INPUT_PRODUCT6_XML = PATH_INPUT_PRODUCT / "en_product6.xml"
 PATH_INPUT_PRODUCTCLASSIF_XML = PATH_INPUT_PRODUCT / "Classifications"
-PATH_INPUT_PREVALENCE = PATH_INPUT_PRODUCT / "prevalences.json"
 
 # =============================================================================
 # INPUT PATIENTS

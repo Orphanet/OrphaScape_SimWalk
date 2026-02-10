@@ -1,41 +1,36 @@
-
-
 """
-Pipeline RARW avec auto-détection des fichiers.
-PRÉREQUIS: Les fichiers MM et SM doivent exister dans PATH_OUTPUT_MM et PATH_OUTPUT_SM
+RARW Pipeline with auto-detection of files.
+PREREQUISITES: MM and SM files must exist in PATH_OUTPUT_MM and PATH_OUTPUT_SM
 """
+
 import os
 from pathlib import Path
 import pandas as pd
 import path_variable as PV
 
-# =============================================================================
-# CONFIGURATION
-# =============================================================================
 
 configfile: "configs/config_add_rw.yaml"
 
 def s(p):
     return str(p)
 
+
 def alpha_tag(a) -> str:
     s = f"{float(a):.2f}"
     return s.rstrip("0").rstrip(".")
 
-# Paramètres depuis config
+
+# Parameters from config
 ALPHA = config.get("alpha", 0.3)
 ALPHA_STR = alpha_tag(ALPHA)
 
-# =============================================================================
-# RÈGLES
-# =============================================================================
+
 
 rule all:
     input:
         "results/rdi_done.flag"
-
 rule add_patients:
-    """Étape 1: Ajoute les patients à la matrice MM (auto-détecte les fichiers)"""
+    """Step 1: Adds patients to the MM matrix (auto-detects files)"""
     output:
         flag = "results/patients_added.flag"
     log:
@@ -47,8 +42,9 @@ rule add_patients:
         touch {output.flag}
         """
 
+
 rule rarw_run_all:
-    """Étape 2: Exécute PageRank pour tous les patients"""
+    """Step 2: Runs PageRank for all patients"""
     input:
         "results/patients_added.flag"
     output:
@@ -60,10 +56,10 @@ rule rarw_run_all:
     shell:
         r"""
         mkdir -p logs
-        # Trouve le dossier patient_added le plus récent
+        # Find the most recent patient_added folder
         MATRIX_DIR=$(ls -td {PV.PATH_OUTPUT_PATIENT_ADDED}/*/ | head -1)
         
-        # Liste tous les patients (fichiers .parquet)
+        # List all patients (.parquet files)
         for pq in "$MATRIX_DIR"/*.parquet; do
             PATIENT=$(basename "$pq" .parquet)
             echo "Running RARW for $PATIENT"
@@ -72,8 +68,9 @@ rule rarw_run_all:
         touch {output.flag}
         """
 
+
 rule rarw_collect:
-    """Étape 3: Collecte les résultats en un fichier RDI"""
+    """Step 3: Collects results into a single RDI file"""
     input:
         "results/rarw_run_done.flag"
     output:

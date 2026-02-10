@@ -43,6 +43,14 @@ The pipeline also relies on Python standard libraries, including:
 math, os, json, re, logging, warnings, pathlib, argparse,
 time, datetime, glob, sys.
 
+## Pipeline overview
+
+1. Input data   
+2. Disease-Disease semantic similarity (MM)  
+3. Disease-Patient semantic similarity (MP)  
+4. Patient integration into the disease network 
+5. Random Walk with Restart (RWR)
+6. Results part 
 
 ### Prerequisites
 Before running any step, ensure the following:
@@ -59,11 +67,11 @@ P1,ORPHA:610
 P2,ORPHA:35689
 P3,ORPHA:100985
 ```
-**Step 2-3 Requirements:**
+**Step 2-4 Requirements:**
 -  Step 1 completed successfully
 -  Output files from Step 1 exist in `output/`
 -  Complete the config file `config_sm_mm.yaml` and `config_sm_mp.yaml`
-**Step 4-5 Requirements:**
+**Step 5-6 Requirements:**
 -  Steps 2 and 3 completed
 -  Complete the config file `config_add_rw.yaml`
 
@@ -123,15 +131,8 @@ Do **not rename, move, or restructure** folders or files.
 
 ---
 
-## Pipeline overview
 
-1. Input data   
-2. Disease-Disease semantic similarity (MM)  
-3. Disease-Patient semantic similarity (MP)  
-4. Patient integration into the disease network 
-5. Random Walk with Restart (RWR)
 
----
 
 ## Step-by-step usage
 
@@ -339,7 +340,9 @@ python -m bin.main_rarw collect -a 0.3
 #python -m bin.main_rarw collect --help
 
 
+
 ```
+
 
 Executes main_add_patients_to_mm.py and main_rarw.py
 Integrates patient nodes into the disease similarity matrix
@@ -355,6 +358,26 @@ Summary file including the selected alpha value(s)
 Final result file : RDI_[MM+MP config]. This file rank 1 disease per patient.
 The [MM+MP config] file store the full PageRank scores per patient.
 
+### Step 6 - Results execution and provenance
+
+The Results section of the paper is reproducible using the scripts orchestrated by the Snakefile.rslt
+These analyses are computed from the final outputs of the semantic similarity (RA) and random-walk  (RARW) pipelines.
+
+The first results script (`results_CDFs_hm.py`) aggregates all ranking outputs across patients and methods, extracts the rank of the true diagnosis (RDI), and computes global performance summaries, including the harmonic mean of ranks and empirical cumulative distribution functions (CDFs). These analyses correspond to the global ranking comparison presented in the Results section (Tables 1–3 and Figure CDF).
+
+The second results script (`results_GDs.py`) produces the classification-based comparisons reported in the Results section (Tables 4 and 5).
+**Execution**
+```bash
+snakemake -s Snakefile.rslt --cores 8  # Replace 8 with your desired number
+
+#python 
+python -u bin/results_CDFs_hm.py 
+python -u bin/results_GDs.py 
+
+
+```
+
+----
 ### Computational considerations
 Building full disease-disease similarity matrices can be computationally expensive.
 For development, testing, or exploratory analyses, it is strongly recommended to restrict computations using the `mini_rd_csv` parameter.
@@ -419,6 +442,11 @@ output_mode: joint
 ```
 ```bash
 snakemake -s Snakefile.add_rw --configfile configs/config_add_rw.yaml --cores 4
+```
+
+6. **Results**
+```bash
+snakemake -s Snakefile.rslt --cores 4
 ```
 
 ## Troubleshooting
