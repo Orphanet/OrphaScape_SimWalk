@@ -44,7 +44,8 @@ def main():
     
     args = p.parse_args()
     
-    setup_logging(level=logging.INFO, console=False, filename=f"{Path(__file__).stem}.log")
+    # Logging configuration
+    setup_logging(level=logging.INFO,console=False,filename=f"{Path(__file__).stem}.log"    )  
     log = get_logger(Path(__file__).stem)
     
     base_dir = PV.PATH_OUTPUT_MM if args.cmd == "concat_mm" else PV.PATH_OUTPUT_SM

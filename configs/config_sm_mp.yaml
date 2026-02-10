@@ -9,14 +9,13 @@ combine: ["rsd"]
 sm_method: ["resnik"]
 
 # Weight vectors
-vector_strs: ["3_2_2_2_1"]  # 1_1_1_1_1, 2_2_2_2_1
+vector_strs: ["3_2_2_2_1"]  
 
 # Version of Orphanet product4
 product4: pd4_may_2025_exejan2026
 
 # Restriction to a subset of RDs (optional)
-mini_rd: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:610,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949"
+mini_rd: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:610,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949,ORPHA:35689"
 
 # Restriction to certain patients (optional)
-# mini_patient_csv: "P1,P2"
-mini_patient: "P0001068" # ,P0011118,P0011117
+mini_patient: "P1,P2" 

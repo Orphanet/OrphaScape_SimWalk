@@ -1,0 +1,74 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: 40W88
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+add_patients        1
+all                 1
+rarw_collect        1
+rarw_run_all        1
+total               4
+
+Select jobs to execute...
+Execute 1 jobs...
+[Tue Feb 10 16:34:19 2026]
+localrule add_patients:
+    output: results/patients_added.flag
+    log: logs/add_patients.log
+    jobid: 3
+    reason: Missing output files: results/patients_added.flag
+    resources: tmpdir=/tmp
+
+Waiting for more resources.
+[Tue Feb 10 16:34:20 2026]
+Finished jobid: 3 (Rule: add_patients)
+1 of 4 steps (25%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Tue Feb 10 16:34:20 2026]
+localrule rarw_run_all:
+    input: results/patients_added.flag
+    output: results/rarw_run_done.flag
+    log: logs/rarw_run.log
+    jobid: 2
+    reason: Missing output files: results/rarw_run_done.flag; Input files updated by another job: results/patients_added.flag
+    resources: tmpdir=/tmp
+
+Waiting for more resources.
+[Tue Feb 10 16:34:22 2026]
+Finished jobid: 2 (Rule: rarw_run_all)
+2 of 4 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Tue Feb 10 16:34:22 2026]
+localrule rarw_collect:
+    input: results/rarw_run_done.flag
+    output: results/rdi_done.flag
+    log: logs/rarw_collect.log
+    jobid: 1
+    reason: Missing output files: results/rdi_done.flag; Input files updated by another job: results/rarw_run_done.flag
+    resources: tmpdir=/tmp
+
+Waiting for more resources.
+[Tue Feb 10 16:34:22 2026]
+Finished jobid: 1 (Rule: rarw_collect)
+3 of 4 steps (75%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Tue Feb 10 16:34:22 2026]
+localrule all:
+    input: results/rdi_done.flag
+    jobid: 0
+    reason: Input files updated by another job: results/rdi_done.flag
+    resources: tmpdir=/tmp
+
+Waiting for more resources.
+[Tue Feb 10 16:34:22 2026]
+Finished jobid: 0 (Rule: all)
+4 of 4 steps (100%) done
+Complete log(s): /home/maroua/Bureau/OrphaScape_SimWalk/.snakemake/log/2026-02-10T163419.859093.snakemake.log

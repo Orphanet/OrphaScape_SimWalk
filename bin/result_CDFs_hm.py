@@ -17,27 +17,21 @@ from matplotlib import pyplot as plt
 
 
 
-setup_logging(
-    level=logging.INFO,
-    console=True,  # Also display in console for debug
-    filename=f"{Path(__file__).stem}.log"
-)
+# Logging configuration
+setup_logging(level=logging.INFO,console=False,filename=f"results.log"    )  
 log = get_logger(Path(__file__).stem)
-
 
 ## script to calculate harmonic mean and get the CDF of each method (no group of disorder analysis here )
 
 ## files that will regroup all mp_sm results for each patient and disorder (from /mp_sm folder)
  
 patients = pd.read_excel(PV.PATH_OUTPUT_DF_PATIENT)
-list_patients = patients["phenopacket"].drop_duplicates().tolist()
 couple_patients = patients[["phenopacket","Disease"]].drop_duplicates()
 # rename for the merge with sm df
 couple_patients.columns = ["patients","RDs"]
  
 dict_df_ra_sm = {}
 
-#"/home/maroua/Bureau/wip/my_pipeline_v2/output/mp_sm/"
 list_ra= os.listdir(PV.PATH_OUTPUT_SM)
  
 
@@ -52,11 +46,12 @@ for ra in list_ra_sm:
 
     ## list of df from RA but with different vector 
     df_sm = pd.read_parquet(f"{PV.PATH_OUTPUT_SM}/{ra}")
+ 
     list_sm = df_sm["patients"].drop_duplicates().tolist()
     dict_df_ra_sm[ra_rslt] = df_sm
+ 
 
-
-    print(f"for ra : {ra_rslt}, nb of patient is {len(list_sm)}")
+    log.info(f"for ra : {ra_rslt}, nb of patient is {len(list_sm)}")
 
 
  
@@ -65,8 +60,8 @@ for ra in list_ra_sm:
 
 list_rank_all = []
 all_interactions = set()
-for one_patient in list_patients:
-    # print(one_patient)
+for one_patient in list_sm:
+    # log.info(one_patient)
     one_couple = couple_patients[couple_patients["patients"]==one_patient]
  
     rdi = one_couple["RDs"].values[0]
@@ -114,10 +109,7 @@ df_hm_general.to_excel(f"{PV.PATH_OUTPUT}/hm_table_1-3.xlsx")
 #######################################################################################
 # -----------  CDF-related to cdf and table hm in the results section---------------#
 #######################################################################################
- 
-
-print(f"START  make cdf.py")
-
+  
 rank_f = 11                              
   
 methods = df_compare_rank_wide.columns.tolist()
@@ -196,4 +188,3 @@ plt.savefig(f"{PV.PATH_OUTPUT}/CDF.svg", dpi=300)
 
 plt.show()
 
-print(f"END  8_cdf_auc_mrr.py")

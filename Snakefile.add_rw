@@ -1,87 +1,37 @@
-"""
-RARW Pipeline with auto-detection of files.
-PREREQUISITES: MM and SM files must exist in PATH_OUTPUT_MM and PATH_OUTPUT_SM
-"""
-
-import os
-from pathlib import Path
-import pandas as pd
-import path_variable as PV
-
-
 configfile: "configs/config_add_rw.yaml"
 
-def s(p):
-    return str(p)
+import path_variable as PV
+from pathlib import Path
 
+def s(p): return str(p)
 
-def alpha_tag(a) -> str:
-    s = f"{float(a):.2f}"
-    return s.rstrip("0").rstrip(".")
-
-
-# Parameters from config
 ALPHA = config.get("alpha", 0.3)
-ALPHA_STR = alpha_tag(ALPHA)
 
-
+DONE = PV.PATH_OUTPUT / "ADD_RW_DONE.txt"
 
 rule all:
     input:
-        "results/rdi_done.flag"
-rule add_patients:
-    """Step 1: Adds patients to the MM matrix (auto-detects files)"""
+        s(DONE)
+
+rule add_rw_pipeline:
     output:
-        flag = "results/patients_added.flag"
-    log:
-        "logs/add_patients.log"
+        s(DONE)
     shell:
         r"""
-        mkdir -p logs results
-        python -m bin.main_add_patients_to_mm > {log} 2>&1
-        touch {output.flag}
-        """
+        set -euo pipefail
 
+        echo "STEP 1: add patients"
+        python -m bin.main_add_patients_to_mm
 
-rule rarw_run_all:
-    """Step 2: Runs PageRank for all patients"""
-    input:
-        "results/patients_added.flag"
-    output:
-        flag = "results/rarw_run_done.flag"
-    params:
-        alpha = ALPHA
-    log:
-        "logs/rarw_run.log"
-    shell:
-        r"""
-        mkdir -p logs
-        # Find the most recent patient_added folder
+        echo "STEP 2: RARW run"
         MATRIX_DIR=$(ls -td {PV.PATH_OUTPUT_PATIENT_ADDED}/*/ | head -1)
-        
-        # List all patients (.parquet files)
         for pq in "$MATRIX_DIR"/*.parquet; do
             PATIENT=$(basename "$pq" .parquet)
-            echo "Running RARW for $PATIENT"
-            python -m bin.main_rarw run --seeds "$PATIENT" --alpha {params.alpha} >> {log} 2>&1
+            python -m bin.main_rarw run --seeds "$PATIENT" --alpha {ALPHA}
         done
-        touch {output.flag}
-        """
 
+        echo "STEP 3: collect"
+        python -m bin.main_rarw collect --alpha {ALPHA}
 
-rule rarw_collect:
-    """Step 3: Collects results into a single RDI file"""
-    input:
-        "results/rarw_run_done.flag"
-    output:
-        flag = "results/rdi_done.flag"
-    params:
-        alpha = ALPHA
-    log:
-        "logs/rarw_collect.log"
-    shell:
-        r"""
-        mkdir -p logs
-        python -m bin.main_rarw collect --alpha {params.alpha} > {log} 2>&1
-        touch {output.flag}
+        echo "DONE" > {output}
         """

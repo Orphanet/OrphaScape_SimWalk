@@ -1,0 +1,416 @@
+2026-02-10 17:06:49,771 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:70 | MM file (latest): funSimMax_resnik_pd4_may_2025_exefev2026_11111.parquet
+2026-02-10 17:06:49,771 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:77 | SM file (latest): rsd_resnik_pd4_may_2025_exejan2026_32221.parquet
+2026-02-10 17:06:49,771 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:86 | MM metadata: {'combine': 'funSimMax', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exefev2026', 'vector': '11111', 'vector_compact': '11111'}
+2026-02-10 17:06:49,771 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:87 | SM metadata: {'combine': 'rsd', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exejan2026', 'vector': '32221', 'vector_compact': '32221'}
+2026-02-10 17:06:49,771 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:99 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 17:06:49,771 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:105 | --------------------------------------------------
+2026-02-10 17:06:49,771 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:106 | Loading MM matrix...
+2026-02-10 17:06:49,794 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:108 | MM shape: (11, 11)
+2026-02-10 17:06:49,795 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:109 | Total MM sum: 140.17
+2026-02-10 17:06:49,795 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:110 | Min/Max: 0.0000 / 2.9318
+2026-02-10 17:06:49,795 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:112 | Loading MP scores (patients-RDs)...
+2026-02-10 17:06:49,797 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:114 | SM shape: (22, 3)
+2026-02-10 17:06:49,797 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:115 | SM unique patients: 2
+2026-02-10 17:06:49,797 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:116 | SM unique RDs: 11
+2026-02-10 17:06:49,799 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:120 | Pivot shape: (2, 11)
+2026-02-10 17:06:49,799 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:124 | Selected patients: 2
+2026-02-10 17:06:49,799 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:126 | Patients: ['P1', 'P2']
+2026-02-10 17:06:49,800 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 17:06:49,800 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P1
+2026-02-10 17:06:49,800 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 17:06:49,800 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 4.2562
+2026-02-10 17:06:49,801 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.6086
+2026-02-10 17:06:49,802 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P1.parquet
+2026-02-10 17:06:49,802 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 17:06:49,803 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P2
+2026-02-10 17:06:49,803 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 17:06:49,803 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 3.3634
+2026-02-10 17:06:49,803 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.1266
+2026-02-10 17:06:49,804 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P2.parquet
+2026-02-10 17:06:49,804 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:200 | PROVENANCE.yaml saved
+2026-02-10 17:06:49,804 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:203 | DONE: 2 patients written, 0 skipped
+2026-02-10 17:06:49,804 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:204 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 17:34:57,026 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:70 | MM file (latest): funSimMax_resnik_pd4_may_2025_exefev2026_11111.parquet
+2026-02-10 17:34:57,026 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:77 | SM file (latest): rsd_resnik_pd4_may_2025_exejan2026_32221.parquet
+2026-02-10 17:34:57,026 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:86 | MM metadata: {'combine': 'funSimMax', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exefev2026', 'vector': '11111', 'vector_compact': '11111'}
+2026-02-10 17:34:57,026 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:87 | SM metadata: {'combine': 'rsd', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exejan2026', 'vector': '32221', 'vector_compact': '32221'}
+2026-02-10 17:34:57,026 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:99 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 17:34:57,026 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:105 | --------------------------------------------------
+2026-02-10 17:34:57,026 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:106 | Loading MM matrix...
+2026-02-10 17:34:57,049 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:108 | MM shape: (11, 11)
+2026-02-10 17:34:57,049 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:109 | Total MM sum: 140.17
+2026-02-10 17:34:57,049 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:110 | Min/Max: 0.0000 / 2.9318
+2026-02-10 17:34:57,049 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:112 | Loading MP scores (patients-RDs)...
+2026-02-10 17:34:57,052 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:114 | SM shape: (22, 3)
+2026-02-10 17:34:57,052 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:115 | SM unique patients: 2
+2026-02-10 17:34:57,052 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:116 | SM unique RDs: 11
+2026-02-10 17:34:57,054 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:120 | Pivot shape: (2, 11)
+2026-02-10 17:34:57,054 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:124 | Selected patients: 2
+2026-02-10 17:34:57,054 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:126 | Patients: ['P1', 'P2']
+2026-02-10 17:34:57,055 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 17:34:57,055 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P1
+2026-02-10 17:34:57,055 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 17:34:57,055 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 4.2562
+2026-02-10 17:34:57,055 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.6086
+2026-02-10 17:34:57,057 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P1.parquet
+2026-02-10 17:34:57,057 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 17:34:57,057 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P2
+2026-02-10 17:34:57,057 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 17:34:57,058 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 3.3634
+2026-02-10 17:34:57,058 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.1266
+2026-02-10 17:34:57,058 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P2.parquet
+2026-02-10 17:34:57,059 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:200 | PROVENANCE.yaml saved
+2026-02-10 17:34:57,059 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:203 | DONE: 2 patients written, 0 skipped
+2026-02-10 17:34:57,059 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:204 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 17:37:45,990 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:70 | MM file (latest): funSimMax_resnik_pd4_may_2025_exefev2026_11111.parquet
+2026-02-10 17:37:45,990 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:77 | SM file (latest): rsd_resnik_pd4_may_2025_exejan2026_32221.parquet
+2026-02-10 17:37:45,990 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:86 | MM metadata: {'combine': 'funSimMax', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exefev2026', 'vector': '11111', 'vector_compact': '11111'}
+2026-02-10 17:37:45,990 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:87 | SM metadata: {'combine': 'rsd', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exejan2026', 'vector': '32221', 'vector_compact': '32221'}
+2026-02-10 17:37:45,991 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:99 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 17:37:45,991 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:105 | --------------------------------------------------
+2026-02-10 17:37:45,991 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:106 | Loading MM matrix...
+2026-02-10 17:37:46,013 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:108 | MM shape: (11, 11)
+2026-02-10 17:37:46,013 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:109 | Total MM sum: 140.17
+2026-02-10 17:37:46,013 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:110 | Min/Max: 0.0000 / 2.9318
+2026-02-10 17:37:46,013 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:112 | Loading MP scores (patients-RDs)...
+2026-02-10 17:37:46,016 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:114 | SM shape: (22, 3)
+2026-02-10 17:37:46,016 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:115 | SM unique patients: 2
+2026-02-10 17:37:46,016 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:116 | SM unique RDs: 11
+2026-02-10 17:37:46,017 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:120 | Pivot shape: (2, 11)
+2026-02-10 17:37:46,017 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:124 | Selected patients: 2
+2026-02-10 17:37:46,017 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:126 | Patients: ['P1', 'P2']
+2026-02-10 17:37:46,019 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 17:37:46,019 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P1
+2026-02-10 17:37:46,019 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 17:37:46,019 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 4.2562
+2026-02-10 17:37:46,019 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.6086
+2026-02-10 17:37:46,020 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P1.parquet
+2026-02-10 17:37:46,021 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 17:37:46,021 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P2
+2026-02-10 17:37:46,021 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 17:37:46,021 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 3.3634
+2026-02-10 17:37:46,021 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.1266
+2026-02-10 17:37:46,022 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P2.parquet
+2026-02-10 17:37:46,023 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:200 | PROVENANCE.yaml saved
+2026-02-10 17:37:46,023 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:203 | DONE: 2 patients written, 0 skipped
+2026-02-10 17:37:46,023 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:204 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:01:24,061 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:70 | MM file (latest): funSimMax_resnik_pd4_may_2025_exefev2026_11111.parquet
+2026-02-10 18:01:24,062 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:77 | SM file (latest): rsd_resnik_pd4_may_2025_exejan2026_32221.parquet
+2026-02-10 18:01:24,062 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:86 | MM metadata: {'combine': 'funSimMax', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exefev2026', 'vector': '11111', 'vector_compact': '11111'}
+2026-02-10 18:01:24,062 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:87 | SM metadata: {'combine': 'rsd', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exejan2026', 'vector': '32221', 'vector_compact': '32221'}
+2026-02-10 18:01:24,062 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:99 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:01:24,062 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:105 | --------------------------------------------------
+2026-02-10 18:01:24,062 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:106 | Loading MM matrix...
+2026-02-10 18:01:24,084 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:108 | MM shape: (11, 11)
+2026-02-10 18:01:24,084 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:109 | Total MM sum: 140.17
+2026-02-10 18:01:24,084 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:110 | Min/Max: 0.0000 / 2.9318
+2026-02-10 18:01:24,084 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:112 | Loading MP scores (patients-RDs)...
+2026-02-10 18:01:24,086 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:114 | SM shape: (22, 3)
+2026-02-10 18:01:24,087 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:115 | SM unique patients: 2
+2026-02-10 18:01:24,087 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:116 | SM unique RDs: 11
+2026-02-10 18:01:24,088 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:120 | Pivot shape: (2, 11)
+2026-02-10 18:01:24,088 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:124 | Selected patients: 2
+2026-02-10 18:01:24,088 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:126 | Patients: ['P1', 'P2']
+2026-02-10 18:01:24,090 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:01:24,090 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P1
+2026-02-10 18:01:24,090 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:01:24,090 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 4.2562
+2026-02-10 18:01:24,090 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.6086
+2026-02-10 18:01:24,091 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P1.parquet
+2026-02-10 18:01:24,092 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:01:24,092 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P2
+2026-02-10 18:01:24,092 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:01:24,092 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 3.3634
+2026-02-10 18:01:24,092 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.1266
+2026-02-10 18:01:24,093 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P2.parquet
+2026-02-10 18:01:24,094 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:200 | PROVENANCE.yaml saved
+2026-02-10 18:01:24,094 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:203 | DONE: 2 patients written, 0 skipped
+2026-02-10 18:01:24,094 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:204 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:03:57,022 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:70 | MM file (latest): funSimMax_resnik_pd4_may_2025_exefev2026_11111.parquet
+2026-02-10 18:03:57,022 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:77 | SM file (latest): rsd_resnik_pd4_may_2025_exejan2026_32221.parquet
+2026-02-10 18:03:57,022 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:86 | MM metadata: {'combine': 'funSimMax', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exefev2026', 'vector': '11111', 'vector_compact': '11111'}
+2026-02-10 18:03:57,022 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:87 | SM metadata: {'combine': 'rsd', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exejan2026', 'vector': '32221', 'vector_compact': '32221'}
+2026-02-10 18:03:57,022 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:99 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:03:57,022 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:105 | --------------------------------------------------
+2026-02-10 18:03:57,022 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:106 | Loading MM matrix...
+2026-02-10 18:03:57,045 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:108 | MM shape: (11, 11)
+2026-02-10 18:03:57,045 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:109 | Total MM sum: 140.17
+2026-02-10 18:03:57,045 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:110 | Min/Max: 0.0000 / 2.9318
+2026-02-10 18:03:57,045 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:112 | Loading MP scores (patients-RDs)...
+2026-02-10 18:03:57,048 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:114 | SM shape: (22, 3)
+2026-02-10 18:03:57,048 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:115 | SM unique patients: 2
+2026-02-10 18:03:57,048 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:116 | SM unique RDs: 11
+2026-02-10 18:03:57,049 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:120 | Pivot shape: (2, 11)
+2026-02-10 18:03:57,049 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:124 | Selected patients: 2
+2026-02-10 18:03:57,049 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:126 | Patients: ['P1', 'P2']
+2026-02-10 18:03:57,051 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:03:57,051 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P1
+2026-02-10 18:03:57,051 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:03:57,051 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 4.2562
+2026-02-10 18:03:57,051 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.6086
+2026-02-10 18:03:57,052 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P1.parquet
+2026-02-10 18:03:57,053 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:03:57,053 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P2
+2026-02-10 18:03:57,053 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:03:57,053 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 3.3634
+2026-02-10 18:03:57,053 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.1266
+2026-02-10 18:03:57,054 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P2.parquet
+2026-02-10 18:03:57,055 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:200 | PROVENANCE.yaml saved
+2026-02-10 18:03:57,055 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:203 | DONE: 2 patients written, 0 skipped
+2026-02-10 18:03:57,055 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:204 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:07:32,344 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:70 | MM file (latest): funSimMax_resnik_pd4_may_2025_exefev2026_11111.parquet
+2026-02-10 18:07:32,344 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:77 | SM file (latest): rsd_resnik_pd4_may_2025_exejan2026_32221.parquet
+2026-02-10 18:07:32,344 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:86 | MM metadata: {'combine': 'funSimMax', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exefev2026', 'vector': '11111', 'vector_compact': '11111'}
+2026-02-10 18:07:32,344 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:87 | SM metadata: {'combine': 'rsd', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exejan2026', 'vector': '32221', 'vector_compact': '32221'}
+2026-02-10 18:07:32,344 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:99 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:07:32,345 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:105 | --------------------------------------------------
+2026-02-10 18:07:32,345 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:106 | Loading MM matrix...
+2026-02-10 18:07:32,367 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:108 | MM shape: (11, 11)
+2026-02-10 18:07:32,367 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:109 | Total MM sum: 140.17
+2026-02-10 18:07:32,367 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:110 | Min/Max: 0.0000 / 2.9318
+2026-02-10 18:07:32,367 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:112 | Loading MP scores (patients-RDs)...
+2026-02-10 18:07:32,369 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:114 | SM shape: (22, 3)
+2026-02-10 18:07:32,369 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:115 | SM unique patients: 2
+2026-02-10 18:07:32,370 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:116 | SM unique RDs: 11
+2026-02-10 18:07:32,371 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:120 | Pivot shape: (2, 11)
+2026-02-10 18:07:32,371 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:124 | Selected patients: 2
+2026-02-10 18:07:32,371 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:126 | Patients: ['P1', 'P2']
+2026-02-10 18:07:32,372 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:07:32,372 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P1
+2026-02-10 18:07:32,372 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:07:32,373 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 4.2562
+2026-02-10 18:07:32,373 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.6086
+2026-02-10 18:07:32,374 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P1.parquet
+2026-02-10 18:07:32,375 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:07:32,375 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P2
+2026-02-10 18:07:32,375 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:07:32,375 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 3.3634
+2026-02-10 18:07:32,375 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.1266
+2026-02-10 18:07:32,376 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P2.parquet
+2026-02-10 18:07:32,377 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:200 | PROVENANCE.yaml saved
+2026-02-10 18:07:32,377 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:203 | DONE: 2 patients written, 0 skipped
+2026-02-10 18:07:32,377 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:204 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:10:12,884 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:70 | MM file (latest): funSimMax_resnik_pd4_may_2025_exefev2026_11111.parquet
+2026-02-10 18:10:12,884 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:77 | SM file (latest): rsd_resnik_pd4_may_2025_exejan2026_32221.parquet
+2026-02-10 18:10:12,884 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:86 | MM metadata: {'combine': 'funSimMax', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exefev2026', 'vector': '11111', 'vector_compact': '11111'}
+2026-02-10 18:10:12,884 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:87 | SM metadata: {'combine': 'rsd', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exejan2026', 'vector': '32221', 'vector_compact': '32221'}
+2026-02-10 18:10:12,884 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:99 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:10:12,884 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:105 | --------------------------------------------------
+2026-02-10 18:10:12,884 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:106 | Loading MM matrix...
+2026-02-10 18:10:12,907 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:108 | MM shape: (11, 11)
+2026-02-10 18:10:12,907 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:109 | Total MM sum: 140.17
+2026-02-10 18:10:12,907 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:110 | Min/Max: 0.0000 / 2.9318
+2026-02-10 18:10:12,907 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:112 | Loading MP scores (patients-RDs)...
+2026-02-10 18:10:12,909 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:114 | SM shape: (22, 3)
+2026-02-10 18:10:12,909 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:115 | SM unique patients: 2
+2026-02-10 18:10:12,910 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:116 | SM unique RDs: 11
+2026-02-10 18:10:12,911 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:120 | Pivot shape: (2, 11)
+2026-02-10 18:10:12,911 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:124 | Selected patients: 2
+2026-02-10 18:10:12,911 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:126 | Patients: ['P1', 'P2']
+2026-02-10 18:10:12,913 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:10:12,913 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P1
+2026-02-10 18:10:12,913 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:10:12,913 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 4.2562
+2026-02-10 18:10:12,913 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.6086
+2026-02-10 18:10:12,914 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P1.parquet
+2026-02-10 18:10:12,915 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:10:12,915 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P2
+2026-02-10 18:10:12,915 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:10:12,915 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 3.3634
+2026-02-10 18:10:12,915 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.1266
+2026-02-10 18:10:12,916 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P2.parquet
+2026-02-10 18:10:12,917 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:200 | PROVENANCE.yaml saved
+2026-02-10 18:10:12,917 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:203 | DONE: 2 patients written, 0 skipped
+2026-02-10 18:10:12,917 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:204 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:15:31,324 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:70 | MM file (latest): funSimMax_resnik_pd4_may_2025_exefev2026_11111.parquet
+2026-02-10 18:15:31,324 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:77 | SM file (latest): rsd_resnik_pd4_may_2025_exejan2026_32221.parquet
+2026-02-10 18:15:31,324 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:86 | MM metadata: {'combine': 'funSimMax', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exefev2026', 'vector': '11111', 'vector_compact': '11111'}
+2026-02-10 18:15:31,325 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:87 | SM metadata: {'combine': 'rsd', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exejan2026', 'vector': '32221', 'vector_compact': '32221'}
+2026-02-10 18:15:31,325 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:99 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:15:31,325 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:105 | --------------------------------------------------
+2026-02-10 18:15:31,325 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:106 | Loading MM matrix...
+2026-02-10 18:15:31,347 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:108 | MM shape: (11, 11)
+2026-02-10 18:15:31,347 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:109 | Total MM sum: 140.17
+2026-02-10 18:15:31,347 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:110 | Min/Max: 0.0000 / 2.9318
+2026-02-10 18:15:31,347 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:112 | Loading MP scores (patients-RDs)...
+2026-02-10 18:15:31,350 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:114 | SM shape: (22, 3)
+2026-02-10 18:15:31,350 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:115 | SM unique patients: 2
+2026-02-10 18:15:31,350 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:116 | SM unique RDs: 11
+2026-02-10 18:15:31,351 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:120 | Pivot shape: (2, 11)
+2026-02-10 18:15:31,351 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:124 | Selected patients: 2
+2026-02-10 18:15:31,351 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:126 | Patients: ['P1', 'P2']
+2026-02-10 18:15:31,352 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:15:31,352 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P1
+2026-02-10 18:15:31,352 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:15:31,353 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 4.2562
+2026-02-10 18:15:31,353 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.6086
+2026-02-10 18:15:31,357 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P1.parquet
+2026-02-10 18:15:31,358 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:15:31,358 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P2
+2026-02-10 18:15:31,358 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:15:31,358 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 3.3634
+2026-02-10 18:15:31,358 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.1266
+2026-02-10 18:15:31,359 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P2.parquet
+2026-02-10 18:15:31,359 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:200 | PROVENANCE.yaml saved
+2026-02-10 18:15:31,359 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:203 | DONE: 2 patients written, 0 skipped
+2026-02-10 18:15:31,359 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:204 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:17:05,905 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:70 | MM file (latest): funSimMax_resnik_pd4_may_2025_exefev2026_11111.parquet
+2026-02-10 18:17:05,905 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:77 | SM file (latest): rsd_resnik_pd4_may_2025_exejan2026_32221.parquet
+2026-02-10 18:17:05,905 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:86 | MM metadata: {'combine': 'funSimMax', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exefev2026', 'vector': '11111', 'vector_compact': '11111'}
+2026-02-10 18:17:05,905 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:87 | SM metadata: {'combine': 'rsd', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exejan2026', 'vector': '32221', 'vector_compact': '32221'}
+2026-02-10 18:17:05,905 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:99 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:17:05,905 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:105 | --------------------------------------------------
+2026-02-10 18:17:05,905 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:106 | Loading MM matrix...
+2026-02-10 18:17:05,928 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:108 | MM shape: (11, 11)
+2026-02-10 18:17:05,928 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:109 | Total MM sum: 140.17
+2026-02-10 18:17:05,928 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:110 | Min/Max: 0.0000 / 2.9318
+2026-02-10 18:17:05,928 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:112 | Loading MP scores (patients-RDs)...
+2026-02-10 18:17:05,932 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:114 | SM shape: (22, 3)
+2026-02-10 18:17:05,932 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:115 | SM unique patients: 2
+2026-02-10 18:17:05,932 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:116 | SM unique RDs: 11
+2026-02-10 18:17:05,933 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:120 | Pivot shape: (2, 11)
+2026-02-10 18:17:05,933 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:124 | Selected patients: 2
+2026-02-10 18:17:05,933 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:126 | Patients: ['P1', 'P2']
+2026-02-10 18:17:05,935 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:17:05,935 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P1
+2026-02-10 18:17:05,935 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:17:05,935 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 4.2562
+2026-02-10 18:17:05,935 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.6086
+2026-02-10 18:17:05,936 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P1.parquet
+2026-02-10 18:17:05,937 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:17:05,937 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P2
+2026-02-10 18:17:05,937 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:17:05,937 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 3.3634
+2026-02-10 18:17:05,937 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.1266
+2026-02-10 18:17:05,938 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P2.parquet
+2026-02-10 18:17:05,939 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:200 | PROVENANCE.yaml saved
+2026-02-10 18:17:05,939 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:203 | DONE: 2 patients written, 0 skipped
+2026-02-10 18:17:05,939 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:204 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:17:54,186 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:70 | MM file (latest): funSimMax_resnik_pd4_may_2025_exefev2026_11111.parquet
+2026-02-10 18:17:54,186 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:77 | SM file (latest): rsd_resnik_pd4_may_2025_exejan2026_32221.parquet
+2026-02-10 18:17:54,186 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:86 | MM metadata: {'combine': 'funSimMax', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exefev2026', 'vector': '11111', 'vector_compact': '11111'}
+2026-02-10 18:17:54,186 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:87 | SM metadata: {'combine': 'rsd', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exejan2026', 'vector': '32221', 'vector_compact': '32221'}
+2026-02-10 18:17:54,186 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:99 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:17:54,186 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:105 | --------------------------------------------------
+2026-02-10 18:17:54,187 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:106 | Loading MM matrix...
+2026-02-10 18:17:54,209 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:108 | MM shape: (11, 11)
+2026-02-10 18:17:54,209 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:109 | Total MM sum: 140.17
+2026-02-10 18:17:54,209 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:110 | Min/Max: 0.0000 / 2.9318
+2026-02-10 18:17:54,209 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:112 | Loading MP scores (patients-RDs)...
+2026-02-10 18:17:54,212 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:114 | SM shape: (22, 3)
+2026-02-10 18:17:54,212 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:115 | SM unique patients: 2
+2026-02-10 18:17:54,212 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:116 | SM unique RDs: 11
+2026-02-10 18:17:54,213 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:120 | Pivot shape: (2, 11)
+2026-02-10 18:17:54,213 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:124 | Selected patients: 2
+2026-02-10 18:17:54,213 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:126 | Patients: ['P1', 'P2']
+2026-02-10 18:17:54,215 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:17:54,215 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P1
+2026-02-10 18:17:54,215 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:17:54,215 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 4.2562
+2026-02-10 18:17:54,215 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.6086
+2026-02-10 18:17:54,216 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P1.parquet
+2026-02-10 18:17:54,217 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:17:54,217 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P2
+2026-02-10 18:17:54,217 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:17:54,217 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 3.3634
+2026-02-10 18:17:54,217 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.1266
+2026-02-10 18:17:54,218 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P2.parquet
+2026-02-10 18:17:54,219 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:200 | PROVENANCE.yaml saved
+2026-02-10 18:17:54,219 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:203 | DONE: 2 patients written, 0 skipped
+2026-02-10 18:17:54,219 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:204 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:19:43,841 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:70 | MM file (latest): funSimMax_resnik_pd4_may_2025_exefev2026_11111.parquet
+2026-02-10 18:19:43,841 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:77 | SM file (latest): rsd_resnik_pd4_may_2025_exejan2026_32221.parquet
+2026-02-10 18:19:43,841 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:86 | MM metadata: {'combine': 'funSimMax', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exefev2026', 'vector': '11111', 'vector_compact': '11111'}
+2026-02-10 18:19:43,841 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:87 | SM metadata: {'combine': 'rsd', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exejan2026', 'vector': '32221', 'vector_compact': '32221'}
+2026-02-10 18:19:43,841 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:99 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:19:43,841 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:105 | --------------------------------------------------
+2026-02-10 18:19:43,841 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:106 | Loading MM matrix...
+2026-02-10 18:19:43,864 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:108 | MM shape: (11, 11)
+2026-02-10 18:19:43,864 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:109 | Total MM sum: 140.17
+2026-02-10 18:19:43,864 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:110 | Min/Max: 0.0000 / 2.9318
+2026-02-10 18:19:43,864 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:112 | Loading MP scores (patients-RDs)...
+2026-02-10 18:19:43,866 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:114 | SM shape: (22, 3)
+2026-02-10 18:19:43,866 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:115 | SM unique patients: 2
+2026-02-10 18:19:43,866 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:116 | SM unique RDs: 11
+2026-02-10 18:19:43,868 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:120 | Pivot shape: (2, 11)
+2026-02-10 18:19:43,868 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:124 | Selected patients: 2
+2026-02-10 18:19:43,868 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:126 | Patients: ['P1', 'P2']
+2026-02-10 18:19:43,869 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:19:43,869 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P1
+2026-02-10 18:19:43,869 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:19:43,869 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 4.2562
+2026-02-10 18:19:43,870 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.6086
+2026-02-10 18:19:43,871 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P1.parquet
+2026-02-10 18:19:43,872 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:19:43,872 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P2
+2026-02-10 18:19:43,872 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:19:43,872 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 3.3634
+2026-02-10 18:19:43,872 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.1266
+2026-02-10 18:19:43,873 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P2.parquet
+2026-02-10 18:19:43,873 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:200 | PROVENANCE.yaml saved
+2026-02-10 18:19:43,874 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:203 | DONE: 2 patients written, 0 skipped
+2026-02-10 18:19:43,874 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:204 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:20:41,410 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:70 | MM file (latest): funSimMax_resnik_pd4_may_2025_exefev2026_11111.parquet
+2026-02-10 18:20:41,410 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:77 | SM file (latest): rsd_resnik_pd4_may_2025_exejan2026_32221.parquet
+2026-02-10 18:20:41,410 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:86 | MM metadata: {'combine': 'funSimMax', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exefev2026', 'vector': '11111', 'vector_compact': '11111'}
+2026-02-10 18:20:41,410 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:87 | SM metadata: {'combine': 'rsd', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exejan2026', 'vector': '32221', 'vector_compact': '32221'}
+2026-02-10 18:20:41,411 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:99 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:20:41,411 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:105 | --------------------------------------------------
+2026-02-10 18:20:41,411 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:106 | Loading MM matrix...
+2026-02-10 18:20:41,433 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:108 | MM shape: (11, 11)
+2026-02-10 18:20:41,433 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:109 | Total MM sum: 140.17
+2026-02-10 18:20:41,433 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:110 | Min/Max: 0.0000 / 2.9318
+2026-02-10 18:20:41,433 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:112 | Loading MP scores (patients-RDs)...
+2026-02-10 18:20:41,435 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:114 | SM shape: (22, 3)
+2026-02-10 18:20:41,435 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:115 | SM unique patients: 2
+2026-02-10 18:20:41,435 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:116 | SM unique RDs: 11
+2026-02-10 18:20:41,437 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:120 | Pivot shape: (2, 11)
+2026-02-10 18:20:41,437 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:124 | Selected patients: 2
+2026-02-10 18:20:41,437 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:126 | Patients: ['P1', 'P2']
+2026-02-10 18:20:41,438 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:20:41,438 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P1
+2026-02-10 18:20:41,438 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:20:41,438 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 4.2562
+2026-02-10 18:20:41,438 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.6086
+2026-02-10 18:20:41,440 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P1.parquet
+2026-02-10 18:20:41,440 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:20:41,440 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P2
+2026-02-10 18:20:41,440 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:20:41,441 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 3.3634
+2026-02-10 18:20:41,441 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.1266
+2026-02-10 18:20:41,441 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P2.parquet
+2026-02-10 18:20:41,442 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:200 | PROVENANCE.yaml saved
+2026-02-10 18:20:41,442 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:203 | DONE: 2 patients written, 0 skipped
+2026-02-10 18:20:41,442 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:204 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:21:50,163 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:70 | MM file (latest): funSimMax_resnik_pd4_may_2025_exefev2026_11111.parquet
+2026-02-10 18:21:50,163 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:77 | SM file (latest): rsd_resnik_pd4_may_2025_exejan2026_32221.parquet
+2026-02-10 18:21:50,163 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:86 | MM metadata: {'combine': 'funSimMax', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exefev2026', 'vector': '11111', 'vector_compact': '11111'}
+2026-02-10 18:21:50,163 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:87 | SM metadata: {'combine': 'rsd', 'method': 'resnik', 'wf': 'pd4', 'product4': 'may_2025_exejan2026', 'vector': '32221', 'vector_compact': '32221'}
+2026-02-10 18:21:50,163 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:99 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
+2026-02-10 18:21:50,163 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:105 | --------------------------------------------------
+2026-02-10 18:21:50,163 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:106 | Loading MM matrix...
+2026-02-10 18:21:50,186 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:108 | MM shape: (11, 11)
+2026-02-10 18:21:50,187 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:109 | Total MM sum: 140.17
+2026-02-10 18:21:50,187 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:110 | Min/Max: 0.0000 / 2.9318
+2026-02-10 18:21:50,187 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:112 | Loading MP scores (patients-RDs)...
+2026-02-10 18:21:50,190 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:114 | SM shape: (22, 3)
+2026-02-10 18:21:50,190 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:115 | SM unique patients: 2
+2026-02-10 18:21:50,190 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:116 | SM unique RDs: 11
+2026-02-10 18:21:50,191 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:120 | Pivot shape: (2, 11)
+2026-02-10 18:21:50,191 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:124 | Selected patients: 2
+2026-02-10 18:21:50,191 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:126 | Patients: ['P1', 'P2']
+2026-02-10 18:21:50,193 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:21:50,193 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P1
+2026-02-10 18:21:50,193 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:21:50,193 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 4.2562
+2026-02-10 18:21:50,193 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.6086
+2026-02-10 18:21:50,194 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P1.parquet
+2026-02-10 18:21:50,195 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:162 | --------------------------------------------------
+2026-02-10 18:21:50,195 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:163 | PATIENT: P2
+2026-02-10 18:21:50,195 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:164 | Matrix shape: (12, 12)
+2026-02-10 18:21:50,195 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:165 | Max patient->RDs score: 3.3634
+2026-02-10 18:21:50,195 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:166 | Mean patient->RDs score: 2.1266
+2026-02-10 18:21:50,196 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:171 | Saved: P2.parquet
+2026-02-10 18:21:50,197 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:200 | PROVENANCE.yaml saved
+2026-02-10 18:21:50,197 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:203 | DONE: 2 patients written, 0 skipped
+2026-02-10 18:21:50,197 | INFO | main_add_patients_to_mm | main_add_patients_to_mm.py:204 | Output directory: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221

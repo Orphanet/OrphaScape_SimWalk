@@ -1,18 +1,9 @@
-# Snakefile.sim 
-"""
-Snakefile pour le calcul MM/MP et concaténation.
-Usage:
-  snakemake -s Snakefile.sim --configfile config_sm_mm.yaml --cores all
-  snakemake -s Snakefile.sim --configfile config_sm_mp.yaml --cores all
-"""
+ 
 import os
 import re
 import path_variable as PV
 
-# =============================================================================
-# HELPERS
-# =============================================================================
-
+ 
 def as_list(x, default):
     """Convertit en liste si nécessaire."""
     if x is None:

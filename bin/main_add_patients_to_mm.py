@@ -55,13 +55,11 @@ def get_latest_file(directory: Path, pattern: str = "*.parquet") -> Path:
 # =============================================================================
 
 def main():
-    # Logging
-    setup_logging(level=logging.INFO, console=True, filename=f"{Path(__file__).stem}.log")
+    # Logging configuration
+    setup_logging(level=logging.INFO,console=False,filename=f"{Path(__file__).stem}.log"    )  
     log = get_logger(Path(__file__).stem)
     
-    log.info("=" * 70)
-    log.info("ADD PATIENTS TO MM MATRIX")
-    log.info("=" * 70)
+ 
     
     # ==========================================================================
     # AUTO-DETECTION OF LATEST FILES
@@ -141,9 +139,7 @@ def main():
     # MATRIX CREATION (1 per patient)
     # ==========================================================================
     
-    log.info("=" * 50)
-    log.info("Creating one parquet matrix per patient")
-    log.info("=" * 50)
+ 
     
     for pat in patient_sel:
         if pat not in pivot.index:
@@ -203,10 +199,10 @@ def main():
     )
     log.info("PROVENANCE.yaml saved")
     
-    log.info("=" * 70)
+ 
     log.info("DONE: %d patients written, %d skipped", len(written), len(skipped))
     log.info("Output directory: %s", run_dir)
-    log.info("=" * 70)
+ 
 
 
 if __name__ == "__main__":

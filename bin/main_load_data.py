@@ -166,7 +166,8 @@ def process_classifications(log: logging.Logger) -> None:
 
 
 def main():
-    setup_logging(level=logging.INFO, console=False, filename=f"{Path(__file__).stem}.log")
+    # Logging configuration
+    setup_logging(level=logging.INFO,console=False,filename=f"{Path(__file__).stem}.log"    )  
     log = get_logger(Path(__file__).stem)
     
     # PD4

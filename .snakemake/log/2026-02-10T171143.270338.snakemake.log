@@ -1,0 +1,8 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: 40W88
+Building DAG of jobs...
+MissingInputException in rule all in file "/home/maroua/Bureau/OrphaScape_SimWalk/Snakefile.add_rw", line 26:
+Missing input files for rule all:
+    affected files:
+        /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/RDI.xlsx

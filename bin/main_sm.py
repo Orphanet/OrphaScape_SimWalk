@@ -148,7 +148,8 @@ def _add_common_args(sp: argparse.ArgumentParser) -> None:
 
 
 def main():
-    setup_logging(level=logging.INFO, console=False, filename=f"{Path(__file__).stem}.log")
+    # Logging configuration
+    setup_logging(level=logging.INFO,console=False,filename=f"{Path(__file__).stem}.log"    )  
     log = get_logger(Path(__file__).stem)
     
     p = argparse.ArgumentParser(prog="main_sm")

@@ -1,0 +1,66 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: 40W88
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+all                           1
+results_classification        1
+results_rank_cdf              1
+total                         3
+
+Select jobs to execute...
+Execute 2 jobs...
+[Tue Feb 10 18:00:07 2026]
+localrule results_classification:
+    output: /home/maroua/Bureau/OrphaScape_SimWalk/output/nb_gp_match_rdi_table5.xlsx, /home/maroua/Bureau/OrphaScape_SimWalk/output/hm_group_table4.xlsx
+    jobid: 2
+    reason: Missing output files: /home/maroua/Bureau/OrphaScape_SimWalk/output/hm_group_table4.xlsx, /home/maroua/Bureau/OrphaScape_SimWalk/output/nb_gp_match_rdi_table5.xlsx; Code has changed since last execution
+    resources: tmpdir=/tmp
+
+[Tue Feb 10 18:00:07 2026]
+localrule results_rank_cdf:
+    output: /home/maroua/Bureau/OrphaScape_SimWalk/output/hm_table_1-3.xlsx, /home/maroua/Bureau/OrphaScape_SimWalk/output/CDF.svg
+    jobid: 1
+    reason: Missing output files: /home/maroua/Bureau/OrphaScape_SimWalk/output/hm_table_1-3.xlsx, /home/maroua/Bureau/OrphaScape_SimWalk/output/CDF.svg
+    resources: tmpdir=/tmp
+
+Waiting for more resources.
+RuleException:
+CalledProcessError in file "/home/maroua/Bureau/OrphaScape_SimWalk/Snakefile.rslt", line 36:
+Command 'set -euo pipefail;  
+        PYTHONPATH=.:bin python -u bin/result_GD.py' returned non-zero exit status 1.
+[Tue Feb 10 18:00:08 2026]
+Error in rule results_classification:
+    message: None
+    jobid: 2
+    output: /home/maroua/Bureau/OrphaScape_SimWalk/output/nb_gp_match_rdi_table5.xlsx, /home/maroua/Bureau/OrphaScape_SimWalk/output/hm_group_table4.xlsx
+    shell:
+        
+        PYTHONPATH=.:bin python -u bin/result_GD.py 
+
+        
+        (command exited with non-zero exit code)
+[Tue Feb 10 18:00:08 2026]
+Finished jobid: 1 (Rule: results_rank_cdf)
+1 of 3 steps (33%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Tue Feb 10 18:00:08 2026]
+Error in rule results_classification:
+    message: None
+    jobid: 2
+    output: /home/maroua/Bureau/OrphaScape_SimWalk/output/nb_gp_match_rdi_table5.xlsx, /home/maroua/Bureau/OrphaScape_SimWalk/output/hm_group_table4.xlsx
+    shell:
+        
+        PYTHONPATH=.:bin python -u bin/result_GD.py 
+
+        
+        (command exited with non-zero exit code)
+Complete log(s): /home/maroua/Bureau/OrphaScape_SimWalk/.snakemake/log/2026-02-10T180007.682409.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

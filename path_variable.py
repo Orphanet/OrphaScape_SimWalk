@@ -55,6 +55,7 @@ PATH_OUTPUT_DF_PC_v2 = PATH_OUTPUT_PRODUCT / "parent_child_noclassif_v2.xlsx"
 
 
 PATH_OUTPUT_DF_CLASSIF_NOG = PATH_OUTPUT_PRODUCT / "classifs_nogenetic.xlsx"
+PATH_OUTPUT_DF_CLASSIF   = PATH_OUTPUT_PRODUCT / "classifs.xlsx"
 
 # JSON et Excel de sortie
 PATH_OUTPUT_PRODUCT4_JSON = PATH_OUTPUT_PRODUCT / "all_enpd_mai_2025.json"

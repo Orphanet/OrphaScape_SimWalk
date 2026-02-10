@@ -21,7 +21,7 @@ rule results_rank_cdf:
 
     shell:
         r"""
-        PYTHONPATH=.:bin python -u bin/results_CDFs_hm.py 
+        PYTHONPATH=.:bin python -u bin/result_CDFs_hm.py 
 
         """
 
@@ -34,6 +34,6 @@ rule results_classification:
 
     shell:
         r"""
-        PYTHONPATH=.:bin python -u bin/results_GDs.py 
+        PYTHONPATH=.:bin python -u bin/result_GD.py 
 
-            """
+        """

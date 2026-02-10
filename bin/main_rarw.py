@@ -33,7 +33,7 @@ def alpha_folder(alpha: float) -> str:
 # =============================================================================
  
 
-def cmd_run_rarw(args, log: logging.Logger):
+def cmd_run_rarw(args, log):
     """
     Executes PageRank for one or more patients.
     Uses NetworkX as in the original version.
@@ -63,7 +63,7 @@ def cmd_run_rarw(args, log: logging.Logger):
     output_dir.mkdir(parents=True, exist_ok=True)
     
     # Check if patient is already done
-    existing = [f.stem for f in output_dir.glob("*.xlsx")]
+    existing = [f.stem for f in output_dir.glob("*.parquet")]
     # loop for patient 
     for seed in seeds:
         if seed in existing:
@@ -131,9 +131,9 @@ def cmd_run_rarw(args, log: logging.Logger):
         df_pr['rank_sum_degres_pg'] = df_pr['sum_degres'].rank(ascending=False, method='min')
         
         # Save
-        out_path = output_dir / f"{seed}.xlsx"
-        df_pr.to_excel(out_path, engine='openpyxl')
-        
+        out_path = output_dir / f"{seed}.parquet"
+
+        df_pr.to_parquet(out_path)
         log.info("Wrote %s ", out_path)
         
  
@@ -141,8 +141,8 @@ def cmd_run_rarw(args, log: logging.Logger):
 # =============================================================================
 # COLLECT COMMAND - Aggregates results into RDI file
 # =============================================================================
- 
-def cmd_aggregate_rdi(args, log: logging.Logger):
+
+def cmd_aggregate_rdi(args, log):
     """
     Collects all PageRank results and creates the RDI file.
     Compares with confirmed diagnoses of patients.
@@ -161,10 +161,9 @@ def cmd_aggregate_rdi(args, log: logging.Logger):
     log.info("Collecting results from: %s", rarw_dir)
     
     # List of xlsx files (PageRank results)
-    xlsx_files = list(rarw_dir.glob("*.xlsx"))
-    xlsx_files = [f for f in xlsx_files if not f.name.startswith("RDI_") ]
+    result_files = list(rarw_dir.glob("*.parquet"))
     
-    log.info("Found %d patient result files", len(xlsx_files))
+    log.info("Found %d patient result files", len(result_files))
     
     # Load patient table with their confirmed diagnoses
     df_patient = pd.read_excel(PV.PATH_OUTPUT_DF_PATIENT, index_col=0, engine="openpyxl")
@@ -180,12 +179,12 @@ def cmd_aggregate_rdi(args, log: logging.Logger):
     
     all_interactions = []
     
-    for xlsx_path in xlsx_files:
-        patient_id = xlsx_path.stem
+    for pq_path in result_files:
+        patient_id = pq_path.stem
         
         try:
             # Load PageRank results
-            df_rarw = pd.read_excel(xlsx_path, index_col=0, engine="openpyxl")
+            df_rarw = pd.read_parquet(pq_path)
             
             # Rename index column if necessary
             if df_rarw.index.name is None or df_rarw.index.name == "Unnamed: 0":
@@ -227,7 +226,7 @@ def cmd_aggregate_rdi(args, log: logging.Logger):
             log.info("Patient %s: RDI=%s, rank=%d", patient_id, rdi, rank)
             
         except Exception as e:
-            log.error("Error processing %s: %s", xlsx_path, e)
+            log.error("Error processing %s: %s", pq_path, e)
             continue
     
     if not all_interactions:
@@ -255,10 +254,9 @@ def cmd_aggregate_rdi(args, log: logging.Logger):
     log.info("Patients with rank<=10: %d (%.1f%%)",
              (df_rdi['rank'] <= 10).sum(),
              100 * (df_rdi['rank'] <= 10).mean())
-    log.info("=" * 60)
-    
+     
     # Save
-    output_path = rarw_dir / f"RDI.xlsx"
+    output_path =Path(PV.PATH_OUTPUT_FOLDER_RW) / alpha_str /"RDI.xlsx"
     df_rdi.to_excel(output_path, index=False, engine="openpyxl")
     log.info("Wrote RDI file: %s", output_path)
     
@@ -281,8 +279,6 @@ def build_parser():
 
     run_p.add_argument("--seeds", required=True,
                        help="Patient IDs (space or comma separated): 'P1 P2' or 'P1,P2'")
-
-
     
     # COLLECT command
     col_p = sub.add_parser("collect", help="Collect results into RDI file")
@@ -294,11 +290,8 @@ def build_parser():
 
 
 def main():
-    setup_logging(
-        level=logging.INFO,
-        console=True,  # Also display in console for debug
-        filename=f"{Path(__file__).stem}.log"
-    )
+    # Logging configuration
+    setup_logging(level=logging.INFO,console=False,filename=f"{Path(__file__).stem}.log"    )  
     log = get_logger(Path(__file__).stem)
     
     args = build_parser().parse_args()

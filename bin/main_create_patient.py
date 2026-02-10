@@ -5,10 +5,7 @@ Script to create patients DataFrame from Phenopacket files.
 """
 
 from pathlib import Path
-import os
-import json
 import logging
-import warnings
 import pandas as pd
 import path_variable as PV
 from set_log import setup_logging, get_logger
@@ -16,16 +13,9 @@ from classes.dataset import DataSet
 
 def main():
     # Logging configuration
-    warnings.filterwarnings(
-        "ignore",
-        message="Data Validation extension is not supported and will be removed",
-        category=UserWarning,
-        module="openpyxl",
-    )
-    logging.captureWarnings(True)
-    setup_logging(level=logging.INFO, console=False, filename=f"{Path(__file__).stem}.log")
+    setup_logging(level=logging.INFO,console=False,filename=f"{Path(__file__).stem}.log"    )  
     log = get_logger(Path(__file__).stem)
-    
+
     # Create output directory
     Path(PV.PATH_OUTPUT_PATIENT_SOLVERD).mkdir(parents=True, exist_ok=True)
     
@@ -60,8 +50,8 @@ def main():
         # test the disease type 
         type_disease = ""
         df_get_type = df_parent_child_noclassif[(df_parent_child_noclassif['parent_id'] ==disease ) | (df_parent_child_noclassif['child_id'] ==disease) ]
-        # print(disease)
-        # print(df_get_type)
+        # log.info(disease)
+        # log.info(df_get_type)
         dict_df_get_type =  df_get_type.to_dict('index')
         for value in dict_df_get_type.values():
             parent_id = value['parent_id']
@@ -86,30 +76,30 @@ def main():
                     new_disease = parent_id 
                     disease = parent_id 
 
-                    print(f"before {disease}, after {new_disease}")
+                    log.info(f"before {disease}, after {new_disease}")
                             
             elif disease in parent_id:
                 if parent_type in valid_types:
                     type_disease = parent_type
                     foundin = "parent_id"
-                    print(f"before {disease}, after {new_disease}")
+                    log.info(f"before {disease}, after {new_disease}")
                 elif child_type in valid_types:
                     foundin = "parent_id_is_category"
                     new_disease = child_id 
                     disease = child_id 
-                    print(f"before {disease}, after {new_disease}")
+                    log.info(f"before {disease}, after {new_disease}")
             # else :
-            #     print(disease)
+            #     log.info(disease)
             
 
-        print(f"{disease} type is {type_disease} found in {foundin}")
+        log.info(f"{disease} type is {type_disease} found in {foundin}")
         all_interactions.append((patient,hpoid,disease))
 
     df_patient_only_disorder = pd.DataFrame(all_interactions,columns=["phenopacket",'hpo_id','Disease'])
     df_final = df_patient_only_disorder.merge(df1,on = ['Disease'], how='inner').dropna(subset=['phenopacket'])
 
     df_final.to_excel(PV.PATH_OUTPUT_DF_PATIENT)
-    print("Saved patients to %s", PV.PATH_OUTPUT_DF_PATIENT)
+    log.info("Saved patients to %s", PV.PATH_OUTPUT_DF_PATIENT)
 
 
 
