@@ -1,7 +1,7 @@
 # classes/utils.py
 """
 Centralized utility module to eliminate redundancies.
-Contains: abbreviations, filename parsing, ORPHA normalization,
+Contains: abbreviations, ORPHA normalization,
           path management, file reading/writing, etc.
 """
 
@@ -45,11 +45,7 @@ METH_ABBR: dict[str, str] = {
     "ic": "ic",
     "rel": "rel",
 }
-
-# Regex to parse aggregated filenames
-AGG_FILENAME_RE = re.compile(
-    r"^(?P<combine>[^_]+)_(?P<method>[^_]+)_(?P<wf>[^_]+)_(?P<product4>.+)_(?P<vector>[0-9_]+)$"
-)
+ 
 
 # =============================================================================
 # ABBREVIATION FUNCTIONS
@@ -68,20 +64,7 @@ def abbr_method(name: str) -> str:
 # =============================================================================
 # PARSING FUNCTIONS
 # =============================================================================
-
-def parse_agg_filename(stem: str) -> dict[str, str]:
-    """
-    Parses an aggregated filename of the type:
-    '<combine>_<method>_<wf>_<product4>_<vector>'
-    
-    Returns dict with: combine, method, wf, product4, vector, vector_compact
-    """
-    m = AGG_FILENAME_RE.match(stem)
-    if not m:
-        raise ValueError(f"Filename pattern not recognized: '{stem}'")
-    d = m.groupdict()
-    d["vector_compact"] = d["vector"].replace("_", "")
-    return d
+ 
 
 
 def alpha_folder(alpha: float) -> str:

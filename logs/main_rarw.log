@@ -1,407 +1,57 @@
-2026-02-10 17:34:57,378 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P1']
-2026-02-10 17:34:57,378 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 17:34:57,378 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 17:34:57,378 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P1
-2026-02-10 17:34:57,401 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet (shape=(12, 12))
-2026-02-10 17:34:57,401 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P1 to RDs:
-2026-02-10 17:34:57,401 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 4.2562
-2026-02-10 17:34:57,402 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 4.0573
-2026-02-10 17:34:57,402 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:610 -> 3.9468
-2026-02-10 17:34:57,402 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 3.7108
-2026-02-10 17:34:57,402 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.2013
-2026-02-10 17:34:57,402 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 197.56
-2026-02-10 17:34:57,402 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 17:34:57,462 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet 
-2026-02-10 17:34:57,794 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P2']
-2026-02-10 17:34:57,794 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 17:34:57,794 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 17:34:57,794 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P2
-2026-02-10 17:34:57,817 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet (shape=(12, 12))
-2026-02-10 17:34:57,817 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P2 to RDs:
-2026-02-10 17:34:57,817 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.3634
-2026-02-10 17:34:57,817 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 3.1087
-2026-02-10 17:34:57,817 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 2.7188
-2026-02-10 17:34:57,817 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 2.5954
-2026-02-10 17:34:57,817 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:34516 -> 2.4051
-2026-02-10 17:34:57,817 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 186.96
-2026-02-10 17:34:57,817 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 17:34:57,878 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet 
-2026-02-10 17:34:58,207 | INFO | main_rarw | main_rarw.py:161 | Collecting results from: /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 17:34:58,207 | INFO | main_rarw | main_rarw.py:167 | Found 0 patient result files
-2026-02-10 17:34:58,253 | INFO | main_rarw | main_rarw.py:171 | Loaded patient table: 20 rows
-2026-02-10 17:34:58,253 | ERROR | main_rarw | main_rarw.py:234 | No interactions collected!
-2026-02-10 17:37:46,344 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P1']
-2026-02-10 17:37:46,344 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 17:37:46,345 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 17:37:46,345 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P1
-2026-02-10 17:37:46,368 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet (shape=(12, 12))
-2026-02-10 17:37:46,369 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P1 to RDs:
-2026-02-10 17:37:46,369 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 4.2562
-2026-02-10 17:37:46,369 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 4.0573
-2026-02-10 17:37:46,369 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:610 -> 3.9468
-2026-02-10 17:37:46,369 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 3.7108
-2026-02-10 17:37:46,369 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.2013
-2026-02-10 17:37:46,369 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 197.56
-2026-02-10 17:37:46,369 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 17:37:46,428 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet 
-2026-02-10 17:37:46,757 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P2']
-2026-02-10 17:37:46,757 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 17:37:46,757 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 17:37:46,758 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P2
-2026-02-10 17:37:46,780 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet (shape=(12, 12))
-2026-02-10 17:37:46,781 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P2 to RDs:
-2026-02-10 17:37:46,781 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.3634
-2026-02-10 17:37:46,781 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 3.1087
-2026-02-10 17:37:46,781 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 2.7188
-2026-02-10 17:37:46,781 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 2.5954
-2026-02-10 17:37:46,781 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:34516 -> 2.4051
-2026-02-10 17:37:46,781 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 186.96
-2026-02-10 17:37:46,781 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 17:37:46,842 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet 
-2026-02-10 17:37:47,167 | INFO | main_rarw | main_rarw.py:161 | Collecting results from: /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 17:37:47,167 | INFO | main_rarw | main_rarw.py:167 | Found 0 patient result files
-2026-02-10 17:37:47,212 | INFO | main_rarw | main_rarw.py:171 | Loaded patient table: 20 rows
-2026-02-10 17:37:47,212 | ERROR | main_rarw | main_rarw.py:234 | No interactions collected!
-2026-02-10 18:01:24,417 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P1']
-2026-02-10 18:01:24,418 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:01:24,418 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:01:24,418 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P1
-2026-02-10 18:01:24,441 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet (shape=(12, 12))
-2026-02-10 18:01:24,441 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P1 to RDs:
-2026-02-10 18:01:24,442 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 4.2562
-2026-02-10 18:01:24,442 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 4.0573
-2026-02-10 18:01:24,442 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:610 -> 3.9468
-2026-02-10 18:01:24,442 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 3.7108
-2026-02-10 18:01:24,442 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.2013
-2026-02-10 18:01:24,442 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 197.56
-2026-02-10 18:01:24,442 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:01:24,501 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet 
-2026-02-10 18:01:24,843 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P2']
-2026-02-10 18:01:24,843 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:01:24,843 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:01:24,843 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P2
-2026-02-10 18:01:24,866 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet (shape=(12, 12))
-2026-02-10 18:01:24,867 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P2 to RDs:
-2026-02-10 18:01:24,867 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.3634
-2026-02-10 18:01:24,867 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 3.1087
-2026-02-10 18:01:24,867 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 2.7188
-2026-02-10 18:01:24,867 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 2.5954
-2026-02-10 18:01:24,867 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:34516 -> 2.4051
-2026-02-10 18:01:24,867 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 186.96
-2026-02-10 18:01:24,867 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:01:24,931 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet 
-2026-02-10 18:01:25,257 | INFO | main_rarw | main_rarw.py:161 | Collecting results from: /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:01:25,257 | INFO | main_rarw | main_rarw.py:167 | Found 0 patient result files
-2026-02-10 18:01:25,302 | INFO | main_rarw | main_rarw.py:171 | Loaded patient table: 20 rows
-2026-02-10 18:01:25,302 | ERROR | main_rarw | main_rarw.py:234 | No interactions collected!
-2026-02-10 18:03:57,371 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P1']
-2026-02-10 18:03:57,372 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:03:57,372 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:03:57,372 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P1
-2026-02-10 18:03:57,395 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet (shape=(12, 12))
-2026-02-10 18:03:57,396 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P1 to RDs:
-2026-02-10 18:03:57,396 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 4.2562
-2026-02-10 18:03:57,396 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 4.0573
-2026-02-10 18:03:57,396 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:610 -> 3.9468
-2026-02-10 18:03:57,396 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 3.7108
-2026-02-10 18:03:57,396 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.2013
-2026-02-10 18:03:57,396 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 197.56
-2026-02-10 18:03:57,396 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:03:57,457 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet 
-2026-02-10 18:03:57,803 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P2']
-2026-02-10 18:03:57,803 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:03:57,803 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:03:57,803 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P2
-2026-02-10 18:03:57,826 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet (shape=(12, 12))
-2026-02-10 18:03:57,827 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P2 to RDs:
-2026-02-10 18:03:57,827 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.3634
-2026-02-10 18:03:57,827 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 3.1087
-2026-02-10 18:03:57,827 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 2.7188
-2026-02-10 18:03:57,827 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 2.5954
-2026-02-10 18:03:57,827 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:34516 -> 2.4051
-2026-02-10 18:03:57,827 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 186.96
-2026-02-10 18:03:57,827 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:03:57,887 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet 
-2026-02-10 18:03:58,226 | INFO | main_rarw | main_rarw.py:161 | Collecting results from: /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:03:58,226 | INFO | main_rarw | main_rarw.py:167 | Found 0 patient result files
-2026-02-10 18:03:58,271 | INFO | main_rarw | main_rarw.py:171 | Loaded patient table: 20 rows
-2026-02-10 18:03:58,271 | ERROR | main_rarw | main_rarw.py:234 | No interactions collected!
-2026-02-10 18:07:32,698 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P1']
-2026-02-10 18:07:32,698 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:07:32,698 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:07:32,698 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P1
-2026-02-10 18:07:32,721 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet (shape=(12, 12))
-2026-02-10 18:07:32,721 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P1 to RDs:
-2026-02-10 18:07:32,722 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 4.2562
-2026-02-10 18:07:32,722 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 4.0573
-2026-02-10 18:07:32,722 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:610 -> 3.9468
-2026-02-10 18:07:32,722 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 3.7108
-2026-02-10 18:07:32,722 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.2013
-2026-02-10 18:07:32,722 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 197.56
-2026-02-10 18:07:32,722 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:07:32,783 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet 
-2026-02-10 18:07:33,116 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P2']
-2026-02-10 18:07:33,117 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:07:33,117 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:07:33,117 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P2
-2026-02-10 18:07:33,140 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet (shape=(12, 12))
-2026-02-10 18:07:33,140 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P2 to RDs:
-2026-02-10 18:07:33,140 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.3634
-2026-02-10 18:07:33,140 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 3.1087
-2026-02-10 18:07:33,140 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 2.7188
-2026-02-10 18:07:33,140 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 2.5954
-2026-02-10 18:07:33,140 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:34516 -> 2.4051
-2026-02-10 18:07:33,140 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 186.96
-2026-02-10 18:07:33,140 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:07:33,202 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet 
-2026-02-10 18:07:33,527 | INFO | main_rarw | main_rarw.py:161 | Collecting results from: /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:07:33,528 | INFO | main_rarw | main_rarw.py:167 | Found 0 patient result files
-2026-02-10 18:07:33,573 | INFO | main_rarw | main_rarw.py:171 | Loaded patient table: 20 rows
-2026-02-10 18:07:33,573 | ERROR | main_rarw | main_rarw.py:234 | No interactions collected!
-2026-02-10 18:10:13,239 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P1']
-2026-02-10 18:10:13,239 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:10:13,239 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:10:13,239 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P1
-2026-02-10 18:10:13,262 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet (shape=(12, 12))
-2026-02-10 18:10:13,263 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P1 to RDs:
-2026-02-10 18:10:13,263 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 4.2562
-2026-02-10 18:10:13,263 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 4.0573
-2026-02-10 18:10:13,263 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:610 -> 3.9468
-2026-02-10 18:10:13,263 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 3.7108
-2026-02-10 18:10:13,263 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.2013
-2026-02-10 18:10:13,263 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 197.56
-2026-02-10 18:10:13,263 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:10:13,325 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet 
-2026-02-10 18:10:13,660 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P2']
-2026-02-10 18:10:13,660 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:10:13,660 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:10:13,660 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P2
-2026-02-10 18:10:13,682 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet (shape=(12, 12))
-2026-02-10 18:10:13,682 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P2 to RDs:
-2026-02-10 18:10:13,683 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.3634
-2026-02-10 18:10:13,683 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 3.1087
-2026-02-10 18:10:13,683 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 2.7188
-2026-02-10 18:10:13,683 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 2.5954
-2026-02-10 18:10:13,683 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:34516 -> 2.4051
-2026-02-10 18:10:13,683 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 186.96
-2026-02-10 18:10:13,683 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:10:13,745 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet 
-2026-02-10 18:10:14,077 | INFO | main_rarw | main_rarw.py:161 | Collecting results from: /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:10:14,077 | INFO | main_rarw | main_rarw.py:167 | Found 0 patient result files
-2026-02-10 18:10:14,122 | INFO | main_rarw | main_rarw.py:171 | Loaded patient table: 20 rows
-2026-02-10 18:10:14,122 | ERROR | main_rarw | main_rarw.py:234 | No interactions collected!
-2026-02-10 18:15:31,683 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P1']
-2026-02-10 18:15:31,683 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:15:31,683 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:15:31,684 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P1
-2026-02-10 18:15:31,706 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet (shape=(12, 12))
-2026-02-10 18:15:31,707 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P1 to RDs:
-2026-02-10 18:15:31,708 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 4.2562
-2026-02-10 18:15:31,708 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 4.0573
-2026-02-10 18:15:31,708 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:610 -> 3.9468
-2026-02-10 18:15:31,708 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 3.7108
-2026-02-10 18:15:31,708 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.2013
-2026-02-10 18:15:31,708 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 197.56
-2026-02-10 18:15:31,708 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:15:31,768 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet 
-2026-02-10 18:15:32,132 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P2']
-2026-02-10 18:15:32,132 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:15:32,132 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:15:32,132 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P2
-2026-02-10 18:15:32,156 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet (shape=(12, 12))
-2026-02-10 18:15:32,157 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P2 to RDs:
-2026-02-10 18:15:32,157 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.3634
-2026-02-10 18:15:32,157 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 3.1087
-2026-02-10 18:15:32,157 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 2.7188
-2026-02-10 18:15:32,157 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 2.5954
-2026-02-10 18:15:32,157 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:34516 -> 2.4051
-2026-02-10 18:15:32,157 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 186.96
-2026-02-10 18:15:32,157 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:15:32,223 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet 
-2026-02-10 18:15:32,554 | INFO | main_rarw | main_rarw.py:161 | Collecting results from: /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:15:32,555 | INFO | main_rarw | main_rarw.py:166 | Found 2 patient result files
-2026-02-10 18:15:32,599 | INFO | main_rarw | main_rarw.py:170 | Loaded patient table: 20 rows
-2026-02-10 18:15:32,600 | ERROR | main_rarw | main_rarw.py:229 | Error processing /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet: File is not a zip file
-2026-02-10 18:15:32,600 | ERROR | main_rarw | main_rarw.py:229 | Error processing /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet: File is not a zip file
-2026-02-10 18:15:32,600 | ERROR | main_rarw | main_rarw.py:233 | No interactions collected!
-2026-02-10 18:17:06,257 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P1']
-2026-02-10 18:17:06,258 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:17:06,258 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:17:06,258 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P1
-2026-02-10 18:17:06,281 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet (shape=(12, 12))
-2026-02-10 18:17:06,282 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P1 to RDs:
-2026-02-10 18:17:06,282 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 4.2562
-2026-02-10 18:17:06,282 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 4.0573
-2026-02-10 18:17:06,282 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:610 -> 3.9468
-2026-02-10 18:17:06,282 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 3.7108
-2026-02-10 18:17:06,282 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.2013
-2026-02-10 18:17:06,282 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 197.56
-2026-02-10 18:17:06,282 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:17:06,343 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet 
-2026-02-10 18:17:06,690 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P2']
-2026-02-10 18:17:06,690 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:17:06,690 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:17:06,690 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P2
-2026-02-10 18:17:06,713 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet (shape=(12, 12))
-2026-02-10 18:17:06,714 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P2 to RDs:
-2026-02-10 18:17:06,714 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.3634
-2026-02-10 18:17:06,714 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 3.1087
-2026-02-10 18:17:06,714 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 2.7188
-2026-02-10 18:17:06,714 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 2.5954
-2026-02-10 18:17:06,714 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:34516 -> 2.4051
-2026-02-10 18:17:06,714 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 186.96
-2026-02-10 18:17:06,714 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:17:06,776 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet 
-2026-02-10 18:17:07,103 | INFO | main_rarw | main_rarw.py:161 | Collecting results from: /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:17:07,103 | INFO | main_rarw | main_rarw.py:166 | Found 2 patient result files
-2026-02-10 18:17:07,148 | INFO | main_rarw | main_rarw.py:170 | Loaded patient table: 20 rows
-2026-02-10 18:17:07,149 | ERROR | main_rarw | main_rarw.py:229 | Error processing /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet: File is not a zip file
-2026-02-10 18:17:07,149 | ERROR | main_rarw | main_rarw.py:229 | Error processing /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet: File is not a zip file
-2026-02-10 18:17:07,149 | ERROR | main_rarw | main_rarw.py:233 | No interactions collected!
-2026-02-10 18:17:54,538 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P1']
-2026-02-10 18:17:54,539 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:17:54,539 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:17:54,539 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P1
-2026-02-10 18:17:54,562 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet (shape=(12, 12))
-2026-02-10 18:17:54,562 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P1 to RDs:
-2026-02-10 18:17:54,562 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 4.2562
-2026-02-10 18:17:54,562 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 4.0573
-2026-02-10 18:17:54,562 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:610 -> 3.9468
-2026-02-10 18:17:54,562 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 3.7108
-2026-02-10 18:17:54,562 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.2013
-2026-02-10 18:17:54,562 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 197.56
-2026-02-10 18:17:54,562 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:17:54,624 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet 
-2026-02-10 18:17:54,957 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P2']
-2026-02-10 18:17:54,957 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:17:54,957 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:17:54,957 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P2
-2026-02-10 18:17:54,980 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet (shape=(12, 12))
-2026-02-10 18:17:54,980 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P2 to RDs:
-2026-02-10 18:17:54,981 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.3634
-2026-02-10 18:17:54,981 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 3.1087
-2026-02-10 18:17:54,981 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 2.7188
-2026-02-10 18:17:54,981 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 2.5954
-2026-02-10 18:17:54,981 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:34516 -> 2.4051
-2026-02-10 18:17:54,981 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 186.96
-2026-02-10 18:17:54,981 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:17:55,043 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet 
-2026-02-10 18:17:55,368 | INFO | main_rarw | main_rarw.py:161 | Collecting results from: /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:17:55,368 | INFO | main_rarw | main_rarw.py:166 | Found 2 patient result files
-2026-02-10 18:17:55,414 | INFO | main_rarw | main_rarw.py:170 | Loaded patient table: 20 rows
-2026-02-10 18:17:55,415 | ERROR | main_rarw | main_rarw.py:229 | Error processing /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet: File is not a zip file
-2026-02-10 18:17:55,415 | ERROR | main_rarw | main_rarw.py:229 | Error processing /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet: File is not a zip file
-2026-02-10 18:17:55,415 | ERROR | main_rarw | main_rarw.py:233 | No interactions collected!
-2026-02-10 18:19:44,205 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P1']
-2026-02-10 18:19:44,205 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:19:44,205 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:19:44,205 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P1
-2026-02-10 18:19:44,230 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet (shape=(12, 12))
-2026-02-10 18:19:44,231 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P1 to RDs:
-2026-02-10 18:19:44,231 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 4.2562
-2026-02-10 18:19:44,231 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 4.0573
-2026-02-10 18:19:44,231 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:610 -> 3.9468
-2026-02-10 18:19:44,231 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 3.7108
-2026-02-10 18:19:44,231 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.2013
-2026-02-10 18:19:44,231 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 197.56
-2026-02-10 18:19:44,231 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:19:44,293 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet 
-2026-02-10 18:19:44,638 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P2']
-2026-02-10 18:19:44,638 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:19:44,638 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:19:44,638 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P2
-2026-02-10 18:19:44,661 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet (shape=(12, 12))
-2026-02-10 18:19:44,661 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P2 to RDs:
-2026-02-10 18:19:44,661 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.3634
-2026-02-10 18:19:44,661 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 3.1087
-2026-02-10 18:19:44,661 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 2.7188
-2026-02-10 18:19:44,661 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 2.5954
-2026-02-10 18:19:44,661 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:34516 -> 2.4051
-2026-02-10 18:19:44,661 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 186.96
-2026-02-10 18:19:44,661 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:19:44,723 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet 
-2026-02-10 18:19:45,058 | INFO | main_rarw | main_rarw.py:161 | Collecting results from: /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:19:45,058 | INFO | main_rarw | main_rarw.py:166 | Found 2 patient result files
-2026-02-10 18:20:41,770 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P1']
-2026-02-10 18:20:41,770 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:20:41,770 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:20:41,770 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P1
-2026-02-10 18:20:41,793 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet (shape=(12, 12))
-2026-02-10 18:20:41,794 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P1 to RDs:
-2026-02-10 18:20:41,794 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 4.2562
-2026-02-10 18:20:41,794 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 4.0573
-2026-02-10 18:20:41,795 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:610 -> 3.9468
-2026-02-10 18:20:41,795 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 3.7108
-2026-02-10 18:20:41,795 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.2013
-2026-02-10 18:20:41,795 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 197.56
-2026-02-10 18:20:41,795 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:20:41,857 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet 
-2026-02-10 18:20:42,203 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P2']
-2026-02-10 18:20:42,203 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:20:42,203 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:20:42,203 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P2
-2026-02-10 18:20:42,227 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet (shape=(12, 12))
-2026-02-10 18:20:42,228 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P2 to RDs:
-2026-02-10 18:20:42,228 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.3634
-2026-02-10 18:20:42,228 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 3.1087
-2026-02-10 18:20:42,228 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 2.7188
-2026-02-10 18:20:42,228 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 2.5954
-2026-02-10 18:20:42,228 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:34516 -> 2.4051
-2026-02-10 18:20:42,229 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 186.96
-2026-02-10 18:20:42,229 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:20:42,287 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet 
-2026-02-10 18:20:42,619 | INFO | main_rarw | main_rarw.py:161 | Collecting results from: /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:20:42,619 | INFO | main_rarw | main_rarw.py:166 | Found 2 patient result files
-2026-02-10 18:20:42,665 | INFO | main_rarw | main_rarw.py:170 | Loaded patient table: 20 rows
-2026-02-10 18:20:42,688 | INFO | main_rarw | main_rarw.py:226 | Patient P2: RDI=ORPHA:100985, rank=3
-2026-02-10 18:20:42,689 | INFO | main_rarw | main_rarw.py:226 | Patient P1: RDI=ORPHA:610, rank=3
-2026-02-10 18:20:42,690 | INFO | main_rarw | main_rarw.py:243 | ============================================================
-2026-02-10 18:20:42,690 | INFO | main_rarw | main_rarw.py:244 | RDI STATISTICS:
-2026-02-10 18:20:42,690 | INFO | main_rarw | main_rarw.py:245 | Number of patients: 2
-2026-02-10 18:20:42,690 | INFO | main_rarw | main_rarw.py:246 | Mean rank: 3.00
-2026-02-10 18:20:42,690 | INFO | main_rarw | main_rarw.py:247 | Median rank: 3.0
-2026-02-10 18:20:42,690 | INFO | main_rarw | main_rarw.py:248 | Patients with rank=1: 0 (0.0%)
-2026-02-10 18:20:42,690 | INFO | main_rarw | main_rarw.py:251 | Patients with rank<=5: 2 (100.0%)
-2026-02-10 18:20:42,690 | INFO | main_rarw | main_rarw.py:254 | Patients with rank<=10: 2 (100.0%)
-2026-02-10 18:21:50,520 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P1']
-2026-02-10 18:21:50,520 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:21:50,520 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:21:50,520 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P1
-2026-02-10 18:21:50,543 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet (shape=(12, 12))
-2026-02-10 18:21:50,543 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P1 to RDs:
-2026-02-10 18:21:50,543 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 4.2562
-2026-02-10 18:21:50,543 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 4.0573
-2026-02-10 18:21:50,543 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:610 -> 3.9468
-2026-02-10 18:21:50,543 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 3.7108
-2026-02-10 18:21:50,543 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.2013
-2026-02-10 18:21:50,543 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 197.56
-2026-02-10 18:21:50,544 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:21:50,604 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P1.parquet 
-2026-02-10 18:21:50,935 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P2']
-2026-02-10 18:21:50,935 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
-2026-02-10 18:21:50,935 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:21:50,936 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P2
-2026-02-10 18:21:50,958 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet (shape=(12, 12))
-2026-02-10 18:21:50,958 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P2 to RDs:
-2026-02-10 18:21:50,959 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.3634
-2026-02-10 18:21:50,959 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 3.1087
-2026-02-10 18:21:50,959 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 2.7188
-2026-02-10 18:21:50,959 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 2.5954
-2026-02-10 18:21:50,959 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:34516 -> 2.4051
-2026-02-10 18:21:50,959 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 186.96
-2026-02-10 18:21:50,959 | INFO | main_rarw | main_rarw.py:92 | ============================================================
-2026-02-10 18:21:51,018 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221/P2.parquet 
-2026-02-10 18:21:51,353 | INFO | main_rarw | main_rarw.py:161 | Collecting results from: /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/mm_fsm_r_11111_mp_rsd_r_32221
-2026-02-10 18:21:51,353 | INFO | main_rarw | main_rarw.py:166 | Found 2 patient result files
-2026-02-10 18:21:51,399 | INFO | main_rarw | main_rarw.py:170 | Loaded patient table: 20 rows
-2026-02-10 18:21:51,422 | INFO | main_rarw | main_rarw.py:226 | Patient P2: RDI=ORPHA:100985, rank=3
-2026-02-10 18:21:51,423 | INFO | main_rarw | main_rarw.py:226 | Patient P1: RDI=ORPHA:610, rank=3
-2026-02-10 18:21:51,424 | INFO | main_rarw | main_rarw.py:243 | ============================================================
-2026-02-10 18:21:51,424 | INFO | main_rarw | main_rarw.py:244 | RDI STATISTICS:
-2026-02-10 18:21:51,424 | INFO | main_rarw | main_rarw.py:245 | Number of patients: 2
-2026-02-10 18:21:51,424 | INFO | main_rarw | main_rarw.py:246 | Mean rank: 3.00
-2026-02-10 18:21:51,424 | INFO | main_rarw | main_rarw.py:247 | Median rank: 3.0
-2026-02-10 18:21:51,424 | INFO | main_rarw | main_rarw.py:248 | Patients with rank=1: 0 (0.0%)
-2026-02-10 18:21:51,424 | INFO | main_rarw | main_rarw.py:251 | Patients with rank<=5: 2 (100.0%)
-2026-02-10 18:21:51,424 | INFO | main_rarw | main_rarw.py:254 | Patients with rank<=10: 2 (100.0%)
-2026-02-10 18:21:51,432 | INFO | main_rarw | main_rarw.py:261 | Wrote RDI file: /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/RDI.xlsx
+2026-02-11 12:33:42,031 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P1']
+2026-02-11 12:33:42,031 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
+2026-02-11 12:33:42,031 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/run_20260211_123341
+2026-02-11 12:33:42,032 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P1
+2026-02-11 12:33:42,060 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/run_20260211_123341/P1.parquet (shape=(12, 12))
+2026-02-11 12:33:42,061 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P1 to RDs:
+2026-02-11 12:33:42,061 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 4.2562
+2026-02-11 12:33:42,061 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 4.0573
+2026-02-11 12:33:42,061 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:610 -> 3.9468
+2026-02-11 12:33:42,061 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 3.7108
+2026-02-11 12:33:42,061 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.2013
+2026-02-11 12:33:42,061 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 197.56
+2026-02-11 12:33:42,061 | INFO | main_rarw | main_rarw.py:92 | ============================================================
+2026-02-11 12:33:42,097 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/run_20260211_123341/P1.parquet 
+2026-02-11 12:33:42,480 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P2']
+2026-02-11 12:33:42,480 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
+2026-02-11 12:33:42,481 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/run_20260211_123341
+2026-02-11 12:33:42,481 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P2
+2026-02-11 12:33:42,508 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/run_20260211_123341/P2.parquet (shape=(12, 12))
+2026-02-11 12:33:42,509 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P2 to RDs:
+2026-02-11 12:33:42,509 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 3.3634
+2026-02-11 12:33:42,509 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 3.1087
+2026-02-11 12:33:42,509 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 2.7188
+2026-02-11 12:33:42,509 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 2.5954
+2026-02-11 12:33:42,509 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:34516 -> 2.4051
+2026-02-11 12:33:42,510 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 186.96
+2026-02-11 12:33:42,510 | INFO | main_rarw | main_rarw.py:92 | ============================================================
+2026-02-11 12:33:42,542 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/run_20260211_123341/P2.parquet 
+2026-02-11 12:33:42,915 | INFO | main_rarw | main_rarw.py:52 | Seeds: ['P3']
+2026-02-11 12:33:42,915 | INFO | main_rarw | main_rarw.py:53 | Alpha: 0.3
+2026-02-11 12:33:42,915 | INFO | main_rarw | main_rarw.py:54 | Matrix subdir: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/run_20260211_123341
+2026-02-11 12:33:42,915 | INFO | main_rarw | main_rarw.py:73 | Processing patient: P3
+2026-02-11 12:33:42,944 | INFO | main_rarw | main_rarw.py:80 | Loaded matrix from Parquet: /home/maroua/Bureau/OrphaScape_SimWalk/output/patient_added/run_20260211_123341/P3.parquet (shape=(12, 12))
+2026-02-11 12:33:42,945 | INFO | main_rarw | main_rarw.py:86 | Top 5 scores of patient P3 to RDs:
+2026-02-11 12:33:42,945 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100985 -> 4.3820
+2026-02-11 12:33:42,945 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:100991 -> 3.5342
+2026-02-11 12:33:42,945 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:663 -> 2.8708
+2026-02-11 12:33:42,945 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:99949 -> 2.7697
+2026-02-11 12:33:42,945 | INFO | main_rarw | main_rarw.py:88 |   ORPHA:412057 -> 2.3054
+2026-02-11 12:33:42,945 | INFO | main_rarw | main_rarw.py:91 | Total sum of matrix: 190.59
+2026-02-11 12:33:42,945 | INFO | main_rarw | main_rarw.py:92 | ============================================================
+2026-02-11 12:33:42,977 | INFO | main_rarw | main_rarw.py:137 | Wrote /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/run_20260211_123341/P3.parquet 
+2026-02-11 12:33:43,329 | INFO | main_rarw | main_rarw.py:161 | Collecting results from: /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/run_20260211_123341
+2026-02-11 12:33:43,330 | INFO | main_rarw | main_rarw.py:166 | Found 3 patient result files
+2026-02-11 12:33:43,381 | INFO | main_rarw | main_rarw.py:170 | Loaded patient table: 20 rows
+2026-02-11 12:33:43,410 | INFO | main_rarw | main_rarw.py:226 | Patient P3: RDI=ORPHA:35689, rank=7
+2026-02-11 12:33:43,412 | INFO | main_rarw | main_rarw.py:226 | Patient P2: RDI=ORPHA:100985, rank=3
+2026-02-11 12:33:43,413 | INFO | main_rarw | main_rarw.py:226 | Patient P1: RDI=ORPHA:610, rank=3
+2026-02-11 12:33:43,414 | INFO | main_rarw | main_rarw.py:243 | ============================================================
+2026-02-11 12:33:43,414 | INFO | main_rarw | main_rarw.py:244 | RDI STATISTICS:
+2026-02-11 12:33:43,414 | INFO | main_rarw | main_rarw.py:245 | Number of patients: 3
+2026-02-11 12:33:43,414 | INFO | main_rarw | main_rarw.py:246 | Mean rank: 4.33
+2026-02-11 12:33:43,414 | INFO | main_rarw | main_rarw.py:247 | Median rank: 3.0
+2026-02-11 12:33:43,414 | INFO | main_rarw | main_rarw.py:248 | Patients with rank=1: 0 (0.0%)
+2026-02-11 12:33:43,414 | INFO | main_rarw | main_rarw.py:251 | Patients with rank<=5: 2 (66.7%)
+2026-02-11 12:33:43,414 | INFO | main_rarw | main_rarw.py:254 | Patients with rank<=10: 3 (100.0%)
+2026-02-11 12:33:43,422 | INFO | main_rarw | main_rarw.py:261 | Wrote RDI file: /home/maroua/Bureau/OrphaScape_SimWalk/output/rarw/0.3/RDI.xlsx

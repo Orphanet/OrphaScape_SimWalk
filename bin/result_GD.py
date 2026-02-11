@@ -423,7 +423,7 @@ if __name__ == "__main__":
 
     # Compute the average HM for each method
     method_hm_group = (
-        df_hm_group
+        df_hm_group     
         .groupby('method', as_index=False)['hm']
         .mean()
         .rename(columns={'hm': 'mean_hm'})

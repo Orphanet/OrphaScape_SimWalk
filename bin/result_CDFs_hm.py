@@ -186,5 +186,5 @@ plt.tight_layout(rect=[0, 0, 0.75, 1])
 plt.savefig(f"{PV.PATH_OUTPUT}/CDF.svg", dpi=300)
 # plt.savefig(f"{PV.PATH_OUTPUT}/CDF.png", dpi=300)
 
-plt.show()
+# plt.show()
 

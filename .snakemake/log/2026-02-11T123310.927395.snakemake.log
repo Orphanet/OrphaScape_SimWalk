@@ -1,0 +1,52 @@
+Assuming unrestricted shared filesystem usage.
+host: 40W88
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 22
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+aggregate_sm        1
+all                 1
+run_combo           1
+total               3
+
+Select jobs to execute...
+Execute 1 jobs...
+[Wed Feb 11 12:33:10 2026]
+localrule run_combo:
+    input: /home/maroua/Bureau/OrphaScape_SimWalk/output/orphanet_data/config_from_product4.yaml
+    output: /home/maroua/Bureau/OrphaScape_SimWalk/output/mm_sm/funSimMax/resnik/pd4may2025exefev2026/11111
+    jobid: 2
+    reason: Missing output files: /home/maroua/Bureau/OrphaScape_SimWalk/output/mm_sm/funSimMax/resnik/pd4may2025exefev2026/11111
+    wildcards: combine=funSimMax, sm=resnik, vector_str=11111
+    resources: tmpdir=/tmp
+[Wed Feb 11 12:33:15 2026]
+Finished jobid: 2 (Rule: run_combo)
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Wed Feb 11 12:33:15 2026]
+localrule aggregate_sm:
+    input: /home/maroua/Bureau/OrphaScape_SimWalk/output/mm_sm/funSimMax/resnik/pd4may2025exefev2026/11111
+    output: /home/maroua/Bureau/OrphaScape_SimWalk/output/mm_sm/funSimMax_resnik_pd4may2025exefev2026_11111.parquet
+    jobid: 1
+    reason: Missing output files: /home/maroua/Bureau/OrphaScape_SimWalk/output/mm_sm/funSimMax_resnik_pd4may2025exefev2026_11111.parquet; Input files updated by another job: /home/maroua/Bureau/OrphaScape_SimWalk/output/mm_sm/funSimMax/resnik/pd4may2025exefev2026/11111
+    wildcards: combine=funSimMax, sm=resnik, vector_str=11111
+    resources: tmpdir=/tmp
+[Wed Feb 11 12:33:16 2026]
+Finished jobid: 1 (Rule: aggregate_sm)
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Wed Feb 11 12:33:16 2026]
+localrule all:
+    input: /home/maroua/Bureau/OrphaScape_SimWalk/output/mm_sm/funSimMax_resnik_pd4may2025exefev2026_11111.parquet
+    jobid: 0
+    reason: Input files updated by another job: /home/maroua/Bureau/OrphaScape_SimWalk/output/mm_sm/funSimMax_resnik_pd4may2025exefev2026_11111.parquet
+    resources: tmpdir=/tmp
+[Wed Feb 11 12:33:16 2026]
+Finished jobid: 0 (Rule: all)
+3 of 3 steps (100%) done
+Complete log(s): /home/maroua/Bureau/OrphaScape_SimWalk/.snakemake/log/2026-02-11T123310.927395.snakemake.log

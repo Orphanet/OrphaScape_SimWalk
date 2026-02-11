@@ -10,10 +10,8 @@ import logging
 
 import yaml
 
-from classes.utils import (
-    abbr_combine, abbr_method, parse_agg_filename,
-    load_mm_matrix, load_mp_sm
-)
+from classes.utils import load_mm_matrix, load_mp_sm
+
 import path_variable as PV
 from set_log import setup_logging, get_logger
 
@@ -79,24 +77,13 @@ def main():
         log.error("SM error: %s", e)
         return
     
-    # Parse metadata from filenames
-    mm_meta = parse_agg_filename(mm_path.stem)
-    sm_meta = parse_agg_filename(sm_path.stem)
     
-    log.info("MM metadata: %s", mm_meta)
-    log.info("SM metadata: %s", sm_meta)
-    
-    # Patient-Patient settings (inherited from SM)
-    pp_combine = sm_meta["combine"]
-    pp_method = sm_meta["method"]
-    
-    # Build output path
-    mm_tag = f"{abbr_combine(mm_meta['combine'])}_{abbr_method(mm_meta['method'])}_{mm_meta['vector_compact']}"
-    mp_tag = f"{abbr_combine(sm_meta['combine'])}_{abbr_method(sm_meta['method'])}_{sm_meta['vector_compact']}"
-    
-    run_dir = Path(PV.PATH_OUTPUT_PATIENT_ADDED) / f"mm_{mm_tag}_mp_{mp_tag}"
+    timestamp = dt.datetime.now().strftime("%Y%m%d_%H%M%S")
+    run_dir = Path(PV.PATH_OUTPUT_PATIENT_ADDED) / f"run_{timestamp}"
     run_dir.mkdir(parents=True, exist_ok=True)
     log.info("Output directory: %s", run_dir)
+
+
     
     # ==========================================================================
     # DATA LOADING
@@ -181,17 +168,12 @@ def main():
         "patients_skipped": skipped,
         "MM": {
             "path": str(mm_path),
-            **mm_meta,
         },
         "MP": {
             "path": str(sm_path),
-            **sm_meta,
-        },
-        "PP": {
-            "combine": pp_combine,
-            "method": pp_method
         },
     }
+
     
     (run_dir / "PROVENANCE.yaml").write_text(
         yaml.safe_dump(prov, sort_keys=False, allow_unicode=True),

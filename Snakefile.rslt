@@ -2,25 +2,24 @@
 import path_variable as PV
 
 
-RESULTS_DIR = str(PV.PATH_OUTPUT)
-
 
 rule all:
     input:
-        f"{RESULTS_DIR}/hm_table_1-3.xlsx",
-        f"{RESULTS_DIR}/CDF.svg",
-        f"{RESULTS_DIR}/nb_gp_match_rdi_table5.xlsx",
-        f"{RESULTS_DIR}/hm_group_table4.xlsx"
+        f"{PV.PATH_OUTPUT}/hm_table_1-3.xlsx",
+        f"{PV.PATH_OUTPUT}/CDF.svg",
+        f"{PV.PATH_OUTPUT}/nb_gp_match_rdi_table5.xlsx",
+        f"{PV.PATH_OUTPUT}/hm_group_table4.xlsx"
 
  
 #  Rank comparison + HM + CDF
 rule results_rank_cdf:
     output:
-        hm=f"{RESULTS_DIR}/hm_table_1-3.xlsx",
-        cdf=f"{RESULTS_DIR}/CDF.svg"
+        hm=f"{PV.PATH_OUTPUT}/hm_table_1-3.xlsx",
+        cdf=f"{PV.PATH_OUTPUT}/CDF.svg"
 
     shell:
         r"""
+        rm -f {PV.PATH_OUTPUT}/ADD_RW_DONE.txt
         PYTHONPATH=.:bin python -u bin/result_CDFs_hm.py 
 
         """
@@ -29,8 +28,8 @@ rule results_rank_cdf:
 #   Classification / Table 4 & 5
 rule results_classification:
     output:
-        table5=f"{RESULTS_DIR}/nb_gp_match_rdi_table5.xlsx",
-        table4=f"{RESULTS_DIR}/hm_group_table4.xlsx"
+        table5=f"{PV.PATH_OUTPUT}/nb_gp_match_rdi_table5.xlsx",
+        table4=f"{PV.PATH_OUTPUT}/hm_group_table4.xlsx"
 
     shell:
         r"""
