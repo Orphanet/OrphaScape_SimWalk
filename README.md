@@ -74,12 +74,12 @@ Because the original Solve-RD patient data are confidential and cannot be redist
 Before running any step, ensure the following:
 
 **Step 1 requirements:**
-- Python 3.12.9 and Snakemake 9.3 installed
-- All Python dependencies installed (see Requirements section)
-- HPO data files present in `input/hpo/`
-- Orphanet product files present in `input/pd_orphanet/`
-- Patient files (real or simulated) placed in `input/patient/`
-- The confirmed ORPHAcode per patient declared in `patient_RDI.txt`
+- Python 3.12.9 and Snakemake 9.3 are installed
+- All Python dependencies are installed (see Requirements section)
+- HPO data files are present in `input/hpo/`
+- Orphanet product files are present in `input/pd_orphanet/`
+- Patient files (real or simulated) are placed in `input/patient/`
+- The confirmed ORPHAcode per patient are declared in `patient_RDI.txt`
 
 Example `patient_RDI.txt`:
 ```text
