@@ -45,7 +45,7 @@ Because the original Solve-RD patient data are confidential and cannot be redist
 
 ## Requirements
 **Core environment**
-- Python 3.12.9
+- Python 3.12
 - Snakemake 9.3
 
 **Python dependencies**
@@ -74,8 +74,7 @@ Because the original Solve-RD patient data are confidential and cannot be redist
 Before running any step, ensure the following:
 
 **Step 1 requirements:**
-- Python 3.12.9 and Snakemake 9.3 are installed
-- All Python dependencies are installed (see Requirements section)
+- Python, Snakemake and libraries installed (see Requirements section)
 - HPO data files are present in `input/hpo/`
 - Orphanet product files are present in `input/pd_orphanet/`
 - Patient files (real or simulated) are placed in `input/patient/`
