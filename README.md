@@ -156,8 +156,8 @@ Contains Orphanet product DDL files downloaded from Orphadata. Required to compu
 ### Step 1 - Load and normalise input data
 
 ```bash
-snakemake -s Snakefile.load_input --cores n  #n The number of core Laurent: Meaning AT MOST 8 cores. Otherwise max. Can be removed
-
+snakemake -s Snakefile.load_input --cores all  #n The number of core Laurent: Meaning AT MOST 8 cores. Otherwise max. Can be removed
+-
 # Alternative: run Python scripts directly
 python -m bin.main_load_data
 python -m bin.main_create_patient
@@ -249,7 +249,7 @@ mini_rd_csv: "ORPHA:xxx,ORPHA:xxx..."
 
 **Execution:**
 ```bash
-snakemake -s Snakefile.sim --configfile configs/config_sm_mm.yaml --cores n
+snakemake -s Snakefile.sim --configfile configs/config_sm_mm.yaml --cores all
 
 # Alternative: run Python scripts directly
 python -m bin.main_sm mp  -c BMA -m resnik -v "1_1_1_1_1" -pd4 pd4name --mini-rd "ORPHA:610,ORPHA:100985" --mini-patient "P1"
@@ -310,7 +310,7 @@ Same configuration logic as Step 2. Computation is restricted to diseases presen
 
 **Execution:**
 ```bash
-snakemake -s Snakefile.sim --configfile configs/config_sm_mp.yaml --cores n
+snakemake -s Snakefile.sim --configfile configs/config_sm_mp.yaml --cores all
 ```
 
 **LAURENT A CHECKER PAR MAROUA:**
@@ -342,7 +342,7 @@ alphas: [0.3]  # Alpha value(s) for random walk. Multiple values run multiple wa
 
 **Execution:**
 ```bash
-snakemake -s Snakefile.add_rw --configfile configs/config_add_rw.yaml --cores 8
+snakemake -s Snakefile.add_rw --configfile configs/config_add_rw.yaml --cores all
 
 # Alternative: run Python scripts directly
 python -m bin.main_add_patients_to_mm
@@ -375,7 +375,7 @@ The results reported in the paper are reproducible using the scripts orchestrate
 
 **Execution:**
 ```bash
-snakemake -s Snakefile.rslt --cores 8
+snakemake -s Snakefile.rslt --cores all
 
 # Alternative: run Python scripts directly
 python -u bin/results_CDFs_hm.py
@@ -403,7 +403,7 @@ This quick-start example uses a small subset of diseases and the provided simula
 
 **1. Load data**
 ```bash
-snakemake -s Snakefile.load_input --cores 4
+snakemake -s Snakefile.load_input --cores all
 ```
 
 **2. Build DD matrix (10 diseases)**
@@ -418,7 +418,7 @@ product4: pd4may2025exejan2026
 mini_rd_csv: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949,ORPHA:610"
 ```
 ```bash
-snakemake -s Snakefile.sim --configfile configs/config_sm_mm.yaml --cores 4
+snakemake -s Snakefile.sim --configfile configs/config_sm_mm.yaml --cores all
 ```
 
 **3. Build DP vectors**
@@ -434,7 +434,7 @@ mini_rd_csv: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:329284,ORPHA:34516,ORPH
 mini_patient_csv: "P1"
 ```
 ```bash
-snakemake -s Snakefile.sim --configfile configs/config_sm_mp.yaml --cores 4
+snakemake -s Snakefile.sim --configfile configs/config_sm_mp.yaml --cores all
 ```
 
 **4–5. Patient integration and RWR**
@@ -444,12 +444,12 @@ Edit `configs/config_add_rw.yaml`:
 alphas: [0.3]
 ```
 ```bash
-snakemake -s Snakefile.add_rw --configfile configs/config_add_rw.yaml --cores 4
+snakemake -s Snakefile.add_rw --configfile configs/config_add_rw.yaml --cores all
 ```
 
 **6. Results**
 ```bash
-snakemake -s Snakefile.rslt --cores 4
+snakemake -s Snakefile.rslt --cores all
 ```
 
 ---
