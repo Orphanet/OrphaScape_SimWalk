@@ -1,14 +1,22 @@
 # Phenotype-based Rare Disease Prioritisation Pipeline
 
+> **Reproducibility notice**  
+> This repository contains the code used to produce all results, tables, and figures in:  
+> **"Combining phenotypic similarity and network propagation to improve performance and clinical consistency of rare disease diagnosis"** - Chahdil, M. et al.  
+>
+> The original patient data used in the study cannot be shared due to patient confidentiality constraints. Three **simulated patient datasets** are provided as substitutes to allow reviewers to run and verify the pipeline end-to-end.
+
+---
+
 ## Project overview
 
-This repository provides a phenotype-based computational pipeline for prioritising rare diseases (ORPHAcodes) from patient phenotypes. The method combines semantic similarity between clinical sign from the Human Phenotype Ontology, with network-based propagation over the Orphanet nomenclature.
+This repository provides a phenotype-based computational pipeline for prioritising rare diseases (ORPHAcodes) from patient phenotypes. The method combines semantic similarity between clinical signs from the Human Phenotype Ontology (HPO) with network-based propagation over the Orphanet nomenclature.
 
-The pipeline computes disease-disease and disease-patient semantic similarity using asymmetric aggregation of HPO terms, accounting for term subsumption and Orphanet frequency annotations. Candidate diseases are then ranked by integrating patients into a disease similarity network and applying Random Walk with Restart to improve clinical consistency among ranked hypotheses.
+The pipeline computes disease-disease and disease-patient semantic similarity using asymmetric aggregation of HPO terms, accounting for term subsumption and Orphanet frequency annotations. Candidate diseases are then ranked by integrating patients into a disease similarity network and applying Random Walk with Restart (RWR) to improve clinical consistency among ranked hypotheses.
 
-The approach was evaluated on expert-curated cases from the Solve-RD project and demonstrated improved diagnostic prioritisation and more clinically coherent candidate lists compared to baseline phenotype-matching methods. This pipeline is designed to support researchers and developers working on rare disease diagnostics hypothesis and phenotypic data integration.
+The approach was evaluated on expert-curated cases from the Solve-RD project and demonstrated improved diagnostic prioritisation and more clinically coherent candidate lists compared to baseline phenotype-matching methods.
 
-See MM section for explanation of semantic similarity,how aggregation methods differ and how RARW work for this project.
+> See the Materials and Methods section of the paper for a detailed explanation of semantic similarity measures, aggregation methods, and how RWR is applied in this pipeline.
 
 ---
 
@@ -17,6 +25,7 @@ See MM section for explanation of semantic similarity,how aggregation methods di
 This project is intended for:
 - Researchers working on rare disease diagnostics, semantic similarity, or phenotype-driven analysis
 - Developers building bioinformatics pipelines involving HPO, Orphanet, and network-based methods
+- Reviewers wishing to reproduce the results of the above publication
 
 The pipeline assumes familiarity with:
 - Command-line environments
@@ -26,10 +35,18 @@ The pipeline assumes familiarity with:
 
 ---
 
+## About the provided simulated data
+
+Because the original Solve-RD patient data are confidential and cannot be redistributed, **three simulated patient datasets** are included in this repository to enable full pipeline execution. These datasets are synthetic: they were generated to be structurally consistent with real Phenopacket files and are suitable for reproducing the pipeline steps and verifying code correctness.
+
+> **Note:** Results obtained with simulated data will differ from those reported in the paper, which used real expert-curated cases. The simulated data are provided solely for code verification and reproducibility review purposes.
+
+---
+
 ## Requirements
 **Core environment**
-Python 3.12.9
-Snakemake 9.3
+- Python 3.12.9
+- Snakemake 9.3
 
 **Python dependencies**
 - pandas 2.2.3 
@@ -43,45 +60,47 @@ Snakemake 9.3
 - pyarrow
 - fastparquet
 
-**Standard library usage**
-The pipeline also relies on Python standard libraries, including:
-math, os, json, re, logging, warnings, pathlib, argparse, time, datetime, glob, sys, yaml.
-
 ## Pipeline overview
 
-1. Input data   
-2. Disease-Disease semantic similarity   
-3. Disease-Patient semantic similarity   
-4. Patient integration into the disease network 
-5. Random Walk with Restart 
-6. Results part 
+1. Input data loading and normalisation
+2. Disease-Disease semantic similarity
+3. Disease-Patient semantic similarity
+4. Patient integration into the disease network
+5. Random Walk with Restart
+6. Results
 
 ### Prerequisites
+
 Before running any step, ensure the following:
-**Step 1 Requirements:**
--  Python 3.12.9 and Snakemake 9.3 installed
--  All Python dependencies installed (see Requirements section)
--  HPO data files present in `input/hpo/`
--  Orphanet product files present in `input/pd_orphanet/`
--  All patients are added in the `patient/` 
--  The text file is filled to get the ORPHAcode confirmed for each patient `patient_RDI.txt`
-Example : 
+
+**Step 1 requirements:**
+- Python 3.12.9 and Snakemake 9.3 installed
+- All Python dependencies installed (see Requirements section)
+- HPO data files present in `input/hpo/`
+- Orphanet product files present in `input/pd_orphanet/`
+- Patient files (real or simulated) placed in `input/patient/`
+- The confirmed ORPHAcode per patient declared in `patient_RDI.txt`
+
+Example `patient_RDI.txt`:
 ```text
 P1,ORPHA:610
 P2,ORPHA:100985
 P3,ORPHA:35689
 ```
-**Step 2-4 Requirements:**
--  Step 1 completed successfully
--  Output files from Step 1 exist in `output/`
--  Complete the config file `config_sm_mm.yaml` and `config_sm_mp.yaml`
-**Step 5-6 Requirements:**
--  Steps 2 and 3 completed
--  Complete the config file `config_add_rw.yaml`
+
+**Steps 2–4 requirements:**
+- Step 1 completed successfully
+- Output files from Step 1 present in `output/`
+- Configuration files `config_sm_mm.yaml` and `config_sm_mp.yaml` filled in
+
+**Steps 5–6 requirements:**
+- Steps 2 and 3 completed
+- Configuration file `config_add_rw.yaml` filled in
 
 ---
 
 ## Project architecture 
+
 ```text
 [project_name]/
 ├── bin/
@@ -93,76 +112,63 @@ P3,ORPHA:35689
 ├── logs/
 │
 ├── input/
-│ ├── hpo/
-│ ├── patient/
-│ └── pd_orphanet/
-│   └── Classifications/
+│   ├── hpo/
+│   ├── patient/
+│   └── pd_orphanet/
+│       └── Classifications/
 ├── output/           # Auto-generated
 │   ├── mm_sm/
 │   ├── mp_sm/
 │   ├── patient_solverd/
 │   ├── pd_orphanet/
 │   ├── patient_added/
-│   └── rarw/
+│   └── RWR/
 ```
 
 All commands must be executed from the `[project_name]/` directory.
 
 ### `bin/`
-Contains all executable elements of the pipeline:
-- Python scripts
-- YAML configuration files
+Contains all executable elements of the pipeline: Python scripts and YAML configuration files.
 
 ### `input/`
 The input directory **must strictly follow the expected architecture**.  
 Do **not rename, move, or restructure** folders or files.
 
 #### `input/hpo/`
-- Contains three HPO  files downloaded from the official HPO website
-- Required by the `hpo3` Python library
+Contains three HPO files downloaded from the official HPO website. Required by the `hpo3` Python library.
 
 #### `input/patient/study_population/`
-- Patients should be added in this folder
-- Contains patient files in **Phenopacket format**
-- One or multiple patients
-- Used for disease-patient similarity and random walk steps
+Contains patient files in **Phenopacket format** (one file per patient). The three simulated patient files are already placed here. Used for disease-patient similarity and random walk steps.
 
 #### `input/pd_orphanet/`
-- Contains Orphanet product DDL files
-- Downloaded from Orphadata
-- Required to compute disease-related similarity matrices
+Contains Orphanet product DDL files downloaded from Orphadata. Required to compute disease-related similarity matrices.
 
-#### `[project_name]`
+#### `[project_name]/` (root)
 - Snakemake workflow files (`Snakefile.*`)
-- readme.md
-- path_variable.py which set all path of the projet (no need to touch)
-- set_log.py set the log part 
+- `README.md`
+- `path_variable.py` - sets all project paths (do not edit)
+- `set_log.py` - configures logging
 
 ---
-
-
 
 ## Step-by-step usage
 
 ### Step 1 - Load and normalise input data
 
 ```bash
-snakemake -s Snakefile.load_input --cores 8  # Replace 8 with your desired number of cores
+snakemake -s Snakefile.load_input --cores 8  # Laurent: Meaning AT MOST 8 cores. Otherwise max. Can be removed
 
 # python commands if you don't want to use snakemake
 python -m bin.main_load_data
 python -m bin.main_create_patient
- 
-
 ```
- 
 
+Converts raw input files (HPO, Orphanet, patients) into the internal standardised format used by the pipeline.
 
-Executes Snakefile.load_input
-Runs main_load_data.py and main_create_patient.py
-Converts raw input files into the internal standardised format used by the pipeline
+### Patient file format
 
-### Patients format type 
+Patient files must follow the **Phenopacket** format (JSON). The most important fields are `id` and `phenotypicFeatures`. All other sections are optional.
+
 ```json
 {
   "id": "P1",
@@ -210,79 +216,79 @@ Converts raw input files into the internal standardised format used by the pipel
     ...
   }
 }
-
 ```
-The most important part here is `phenotypicFeatures` and `id`, others sections are not mandaroty.
 
+---
 
-### Step 2 - Build the Disease-Disease  similarity matrix
-Configuration file to change : `config_sm_mm.yaml`
+### Step 2 - Build the Disease-Disease (DD) similarity matrix
+
+Configuration file: `configs/config_sm_mm.yaml`
 
 ```yaml
 mode: mm  # do not change
 
-# list format can add multiple items
+# List format - multiple values allowed
 combine: ["aggregation_method_name"]
 sm_method: ["similarity_measure_name"]
-vector_strs: ["weight_vector"] # format 1_1_1_1_1
+vector_strs: ["weight_vector"]  # format: 1_1_1_1_1
 
-product4: name-to-define-which-pd4-used #  Ex: pd4may2025exejan2026 avoid '_'
+product4: name-to-define-which-pd4-used  # e.g. pd4may2025exejan2026 - avoid underscores '_'
 
-# optional
-mini_rd_csv: "ORPHA:xxx,ORPHA:xxx..." 
-# example "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949"
+# Optional: restrict to a subset of ORPHAcodes
+mini_rd_csv: "ORPHA:xxx,ORPHA:xxx..."
+
+# Example: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949"
 ```
-- `combine`: semantic aggregation function (multiple allowed)
-- `sm_method`: pairwise semantic similarity measure (multiple allowed)
-- `vector_strs`: weighting vector definitions
-- `product4`: identifier for the Orphanet product version
-- `mini_rd_csv` (optional): restricts computation to a subset of ORPHAcodes instead of taking all ORPHAcodes from the product4
+
+**Parameter descriptions:**
+- `combine`: semantic aggregation function (e.g. `funSimMax`, `BMA`, `rsd`)
+- `sm_method`: pairwise semantic similarity measure (e.g. `resnik`)
+- `vector_strs`: weighting vector (see Weight Vector section below)
+- `product4`: identifier for the Orphanet product version used
+- `mini_rd_csv` *(optional)*: restricts computation to a subset of ORPHAcodes instead of the full Orphanet catalogue `product4`
 
 **Execution**
 ```bash
-snakemake -s Snakefile.sim --configfile configs/config_sm_mm.yaml --cores[n]
+snakemake -s Snakefile.sim --configfile configs/config_sm_mm.yaml --cores 8
 
-#or with python command example 
+# Alternative: run Python scripts directly
 python -m bin.main_sm mp  -c BMA -m resnik -v "1_1_1_1_1" -pd4 pd4name --mini-rd "ORPHA:610,ORPHA:100985" --mini-patient "P1"
-
 python -m bin.main_sm mm  -c BMA -m resnik -v "1_1_1_1_1" -pd4 pd4name --mini-rd "ORPHA:610,ORPHA:100985" 
-
 python -m bin.main_concat concat_mp -c BMA -m resnik -v "1_1_1_1_1" --pd4 pd4name 
-
 python -m bin.main_concat concat_mm -c BMA -m resnik -v "1_1_1_1_1" --pd4 pd4name
 
-# Go get more info related to python parameters :
+# Help
 # python -m bin.main_sm  --help
 # python -m bin.main_sm mp --help 
 # python -m bin.main_sm mm --help 
 # python -m bin.main_concat --help 
 # python -m bin.main_concat concat_mp --help 
 # python -m bin.main_concat concat_mm --help 
-
-
 ```
 
-Output files are saved in `output/mm_sm/` with the following structure:
+**Output** (saved in `output/mm_sm/`):
 - Individual parquet files per disease into folder [aggregation_method]/[similariy_measure]/[n]/[name_to_define_which_pd4_used]/[weight_vector] (format: `{index}_{ORPHA_code}.parquet`)
-- Concatenated file: `{combine}_{method}_{product4}_{vector}.parquet` 
-  (Contains all disease-disease similarity scores)
+- Concatenated file: `{combine}_{method}_{product4}_{vector}.parquet` (all disease-disease similarity scores)
 
+---
 
 ### Weight Vector Explanation
 
 The weight vector format is: `obligate_veryfreq_freq_occ_veryrare`
 
 Example: `2_2_2_2_1`
-- Position 1: Weight for Obligate frequency terms (default: 1.0)
-- Position 2: Weight for Very Frequent terms (default: 1.0)
-- Position 3: Weight for Frequent terms (default: 1.0)
-- Position 4: Weight for Occasional terms (default: 1.0)
-- Position 5: Weight for Very Rare terms (default: 1.0)
+- Position 1: Weight for **Obligate** frequency terms
+- Position 2: Weight for **Very Frequent** terms
+- Position 3: Weight for **Frequent** terms
+- Position 4: Weight for **Occasional** terms
+- Position 5: Weight for **Very Rare** terms
 
-Higher values = emphasise that frequency category
+Default weight is `1.0` for all positions. Higher values increase emphasis on that frequency category.
 
+---
 
-### Step 3 - Build the Disease-Patient  similarity vectors
+### Step 3 - Build the Disease-Patient (DP) similarity vectors
+
 Configuration file to change: `config_sm_mp.yaml`
 
 ```yaml
@@ -293,31 +299,39 @@ combine: ["aggregation_method_name"]
 sm_method: ["similarity_measure_name"]
 vector_strs: ["weight_vector"] # format 1_1_1_1_1
 
-
 product4: name_to_define_which_pd4_used
 
-# optional (one or multiple items)
+# Optional: restrict to a subset of diseases and/or patients
 mini_rd_csv: "ORPHA:xxx,ORPHA:xxx..." 
 mini_patient_csv: "P1,P2..."
-
 ```
-Same configuration logic as MM
-Computed for one or multiple patients, if command mini_rd_csv restrict to only a subset of patients if not take all patients.
-Restricted to diseases present in the MM matrix 
+
+Same configuration logic as Step 2. Computation is restricted to diseases present in the DD matrix.
 
 **Execution**
 ```bash
-snakemake -s Snakefile.sim --configfile configs/config_sm_mp.yaml --cores 8  # Replace 8 with your desired number
+snakemake -s Snakefile.sim --configfile configs/config_sm_mp.yaml --cores 8
 ```
 
-Output files are saved in `output/mp_sm/` with the following structure:
-- Individual parquet files per disease into folder [aggregation_method]/[similariy_measure]/[n]/[name_to_define_which_pd4_used]/[weight_vector] (format: `{index}_{ORPHA_code}.parquet`)
-- Concatenated file: `{combine}_{method}_{product4}_{vector}.parquet` 
-  (Contains all patient-disease similarity scores)
+**LAURENT A CHECKER PAR MAROUA**
+```
+# Alternative: run Python scripts directly
+python -m bin.main_sm mp  -c BMA -m resnik -v "1_1_1_1_1" -pd4 pd4name --mini-rd "ORPHA:610,ORPHA:100985" --mini-patient "P1"
+python -m bin.main_concat concat_mp -c BMA -m resnik -v "1_1_1_1_1" --pd4 pd4name
 
-Additional file :`RDI_{combine}_{method}_{product4}_{vector}.xlsx`,  contains, for each patient, the disease with the highest disease-patient similarity score
+# Help
+python -m bin.main_sm mp --help
+python -m bin.main_concat concat_mp --help
+```
 
-### Step 4 and 5 - Add patients to the MM matrix and apply Random Walk with Restart
+**Output** (saved in `output/mp_sm/`):
+- Individual parquet files per disease (same folder structure as DD)
+- Concatenated file: `{combine}_{method}_{product4}_{vector}.parquet` (all patient-disease similarity scores)
+- Additional file: `RDI_{combine}_{method}_{product4}_{vector}.xlsx` - for each patient, the disease with the highest similarity score
+
+---
+
+### Step 4 and 5 - Add patients to the DD matrix and apply Random Walk with Restart
 Configuration file to change: `config_add_rw.yaml`
 
 ```yaml
@@ -396,7 +410,7 @@ The Parquet output format is recommended for large-scale analyses due to improve
 snakemake -s Snakefile.load_input --cores 4
 ```
 
-2. **Build MM matrix for 10 diseases**
+2. **Build DD matrix for 10 diseases**
 
 Edit `config_sm_mm.yaml`:
 ```yaml
@@ -428,7 +442,7 @@ snakemake -s Snakefile.sim  --configfile configs/config_sm_mp.yaml --cores 4
 ```
 
 
-4-5. **Add patient to MM matrix and run RARW**
+4-5. **Add patient to DD matrix and run RARW**
 
 Edit `config_add_rw.yaml`:
 ```yaml
