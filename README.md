@@ -88,12 +88,12 @@ P2,ORPHA:100985
 P3,ORPHA:35689
 ```
 
-**Steps 2–4 requirements:**
+**Steps 2-4 requirements:**
 - Step 1 completed successfully
 - Output files from Step 1 present in `output/`
 - Configuration files `config_sm_mm.yaml` and `config_sm_mp.yaml` filled in
 
-**Steps 5–6 requirements:**
+**Steps 5-6 requirements:**
 - Steps 2 and 3 completed
 - Configuration file `config_add_rw.yaml` filled in
 
@@ -156,7 +156,7 @@ Contains Orphanet product DDL files downloaded from Orphadata. Required to compu
 ### Step 1 - Load and normalise input data
 
 ```bash
-snakemake -s Snakefile.load_input --cores 8  # Laurent: Meaning AT MOST 8 cores. Otherwise max. Can be removed
+snakemake -s Snakefile.load_input --cores n  #n The number of core Laurent: Meaning AT MOST 8 cores. Otherwise max. Can be removed
 
 # python commands if you don't want to use snakemake
 python -m bin.main_load_data
@@ -249,7 +249,7 @@ mini_rd_csv: "ORPHA:xxx,ORPHA:xxx..."
 
 **Execution**
 ```bash
-snakemake -s Snakefile.sim --configfile configs/config_sm_mm.yaml --cores 8
+snakemake -s Snakefile.sim --configfile configs/config_sm_mm.yaml --cores n
 
 # Alternative: run Python scripts directly
 python -m bin.main_sm mp  -c BMA -m resnik -v "1_1_1_1_1" -pd4 pd4name --mini-rd "ORPHA:610,ORPHA:100985" --mini-patient "P1"
@@ -310,7 +310,7 @@ Same configuration logic as Step 2. Computation is restricted to diseases presen
 
 **Execution**
 ```bash
-snakemake -s Snakefile.sim --configfile configs/config_sm_mp.yaml --cores 8
+snakemake -s Snakefile.sim --configfile configs/config_sm_mp.yaml --cores n
 ```
 
 **LAURENT A CHECKER PAR MAROUA**
@@ -381,7 +381,7 @@ The first results script (`results_CDFs_hm.py`) aggregates all ranking outputs a
 The second results script (`results_GDs.py`) produces the classification-based comparisons reported in the Results section (Tables 4 and 5).
 **Execution**
 ```bash
-snakemake -s Snakefile.rslt --cores 8  # Replace 8 with your desired number
+snakemake -s Snakefile.rslt --cores n 
 
 #or with python commands
 python -u bin/results_CDFs_hm.py 
