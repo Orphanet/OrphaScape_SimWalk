@@ -158,7 +158,7 @@ Contains Orphanet product DDL files downloaded from Orphadata. Required to compu
 ```bash
 snakemake -s Snakefile.load_input --cores n  #n The number of core Laurent: Meaning AT MOST 8 cores. Otherwise max. Can be removed
 
-# python commands if you don't want to use snakemake
+# Alternative: run Python scripts directly
 python -m bin.main_load_data
 python -m bin.main_create_patient
 ```
