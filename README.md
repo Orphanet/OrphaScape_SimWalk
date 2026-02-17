@@ -247,7 +247,7 @@ mini_rd_csv: "ORPHA:xxx,ORPHA:xxx..."
 - `product4`: identifier for the Orphanet product version used
 - `mini_rd_csv` *(optional)*: restricts computation to a subset of ORPHAcodes instead of the full Orphanet catalogue `product4`
 
-**Execution**
+**Execution:**
 ```bash
 snakemake -s Snakefile.sim --configfile configs/config_sm_mm.yaml --cores n
 
@@ -308,12 +308,12 @@ mini_patient_csv: "P1,P2..."
 
 Same configuration logic as Step 2. Computation is restricted to diseases present in the DD matrix.
 
-**Execution**
+**Execution:**
 ```bash
 snakemake -s Snakefile.sim --configfile configs/config_sm_mp.yaml --cores n
 ```
 
-**LAURENT A CHECKER PAR MAROUA**
+**LAURENT A CHECKER PAR MAROUA:**
 ```
 # Alternative: run Python scripts directly
 python -m bin.main_sm mp  -c BMA -m resnik -v "1_1_1_1_1" -pd4 pd4name --mini-rd "ORPHA:610,ORPHA:100985" --mini-patient "P1"
@@ -331,155 +331,147 @@ python -m bin.main_concat concat_mp --help
 
 ---
 
-### Step 4 and 5 - Add patients to the DD matrix and apply Random Walk with Restart
+### Steps 4 & 5 - Patient integration and Random Walk with Restart
+
 Configuration file to change: `config_add_rw.yaml`
 
 ```yaml
-alphas: [value_alpha]  
+alphas: [0.3]  # Alpha value(s) for random walk. Multiple values run multiple walks.
 
 ```
 
-Set the value of alpha for the random walk, multiple value for multiple walk can be done, per defaults is 0.3.
-
-**Execution**
+**Execution:**
 ```bash
-snakemake -s Snakefile.add_rw --configfile configs/config_add_rw.yaml --cores 8  # Replace 8 with your desired number
+snakemake -s Snakefile.add_rw --configfile configs/config_add_rw.yaml --cores 8
 
-#or with python commands
+# Alternative: run Python scripts directly
 python -m bin.main_add_patients_to_mm
 python -m bin.main_rarw run -a 0.3 --seeds "P1"
 python -m bin.main_rarw collect -a 0.3
 
-#python help for parameters
+# Help
 #python -m bin.main_rarw --help
 #python -m bin.main_rarw run --help
 #python -m bin.main_rarw collect --help
-
-
-
 ```
 
-Executes main_add_patients_to_mm.py and main_rarw.py
-Integrates patient nodes into the disease similarity matrix
-Applies Random Walk with Restart using NetworkX library.
+This step integrates patient nodes into the disease similarity matrix, then applies Random Walk with Restart using the NetworkX library.
 
+**Output:**
+- `output/patient_added/` - one parquet file per patient containing the DD matrix extended with that patient. A `PROVENANCE.yaml` file records the configuration used.
+- `output/RWR/[alpha_value]/[config_name]/*.parquet` - ranked disease candidates per patient
 
-Output are both in patient_added/ and rarw/. in parquet format.
-patient_added/ have the matrix DD with one patient added for each patient a parquet file is created. A `PROVENANCE.yaml` file is generated which describe the config done.
-rarw/ contain the results of the ranking of each patients in `rarw/[value_alpha]/[config_name]/*.parquet`
+> **Note:** Only patients present in both the DD and DP matrices are processed.
 
-Note :Only patients available on `mp_mm` are selected.
- 
+---
 
-### Step 6 - Results execution and provenance
+### Step 6 - Results
 
-The Results section of the paper is reproducible using the scripts orchestrated by the Snakefile.rslt
-These analyses are computed from the final outputs of the semantic similarity (RA) and random-walk  (RARW) pipelines.
+The results reported in the paper are reproducible using the scripts orchestrated by `Snakefile.rslt`, computed from the final outputs of Steps 2–5.
 
-The first results script (`results_CDFs_hm.py`) aggregates all ranking outputs across patients and methods, extracts the rank of the true diagnosis (RDI), and computes global performance summaries, including the harmonic mean of ranks and empirical cumulative distribution functions (CDFs). These analyses correspond to the global ranking comparison presented in the Results section (Tables 1–3 and Figure CDF).
+`results_CDFs_hm.py` aggregates all ranking outputs across patients and methods, extracts the rank of the true diagnosis (RDI), and computes global performance summaries including the harmonic mean of ranks and empirical cumulative distribution functions (CDFs). These correspond to Tables 1–3 and the CDF figure in the paper.
 
-The second results script (`results_GDs.py`) produces the classification-based comparisons reported in the Results section (Tables 4 and 5).
-**Execution**
+`results_GDs.py` produces the classification-based comparisons reported in Tables 4 and 5.
+
+**Execution:**
 ```bash
-snakemake -s Snakefile.rslt --cores n 
+snakemake -s Snakefile.rslt --cores 8
 
-#or with python commands
-python -u bin/results_CDFs_hm.py 
-python -u bin/results_GDs.py 
-
+# Alternative: run Python scripts directly
+python -u bin/results_CDFs_hm.py
+python -u bin/results_GDs.py
 ```
 
 ----
 
+## Computational considerations
 
-### Computational considerations
-Building full disease-disease similarity matrices can be computationally expensive.
-For development, testing, or exploratory analyses, it is strongly recommended to restrict computations using the `mini_rd_csv` parameter.
-Example : 
+Building full disease-disease similarity matrices can be computationally expensive. For development, testing, or exploratory analyses (including reproducibility review), it is strongly recommended to restrict computations using the `mini_rd_csv` parameter.
+
+Example restriction:
 ```yaml
 mini_rd_csv: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949"
-
 ```
-The Parquet output format is recommended for large-scale analyses due to improved performance and reduced disk usage.
 
-## Example Workflow
-### Quick Start (Subset of 10 Diseases)
+The Parquet output format is recommended for large-scale analyses due to improved I/O performance and reduced disk usage.
 
-1. **Load data**
+---
+
+## Example workflow (subset of 10 diseases)
+
+This quick-start example uses a small subset of diseases and the provided simulated patients to verify the pipeline runs correctly end-to-end.
+
+**1. Load data**
 ```bash
 snakemake -s Snakefile.load_input --cores 4
 ```
 
-2. **Build DD matrix for 10 diseases**
+**2. Build DD matrix (10 diseases)**
 
-Edit `config_sm_mm.yaml`:
+Edit `configs/config_sm_mm.yaml`:
 ```yaml
 mode: mm
 combine: ["funSimMax"]
 sm_method: ["resnik"]
 vector_strs: ["1_1_1_1_1"]
-product4: pd4_may_2025_exejan2026
+product4: pd4may2025exejan2026
 mini_rd_csv: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949,ORPHA:610"
 ```
 ```bash
 snakemake -s Snakefile.sim --configfile configs/config_sm_mm.yaml --cores 4
 ```
 
-3. **Build MP vector**
+**3. Build DP vectors**
 
-Edit `config_sm_mp.yaml`:
+Edit `configs/config_sm_mp.yaml`:
 ```yaml
 mode: mp
 combine: ["rsd"]
 sm_method: ["resnik"]
 vector_strs: ["2_2_2_2_1"]
-product4: pd4_may_2025_exejan2026
+product4: pd4may2025exejan2026
 mini_rd_csv: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949,ORPHA:610"
 mini_patient_csv: "P1"
 ```
 ```bash
-snakemake -s Snakefile.sim  --configfile configs/config_sm_mp.yaml --cores 4
+snakemake -s Snakefile.sim --configfile configs/config_sm_mp.yaml --cores 4
 ```
 
+**4–5. Patient integration and RWR**
 
-4-5. **Add patient to DD matrix and run RARW**
-
-Edit `config_add_rw.yaml`:
+Edit `configs/config_add_rw.yaml`:
 ```yaml
-mm_file: "funSimMax_resnik_n_pd4_may_2025_exejan2026_11111.parquet"
-sm_file: "rsd_resnik_n_pd4_may_2025_exejan2026_11111.parquet"
-
-alpha: 0.3
-
-output_mode: joint
+alphas: [0.3]
 ```
 ```bash
 snakemake -s Snakefile.add_rw --configfile configs/config_add_rw.yaml --cores 4
 ```
 
-6. **Results**
+**6. Results**
 ```bash
 snakemake -s Snakefile.rslt --cores 4
 ```
 
+---
+
 ## Troubleshooting
 
-### Common Errors
+**"HPO files not found"**  
+Verify that `input/hpo/` contains the three required HPO files from the official HPO website.
 
-**Error: "HPO files not found"**
-- Solution: Verify `input/hpo/` contains three HPO files from official source
+**"No patients found"**  
+Ensure Phenopacket files are present in `input/patient/study_population/`.
 
-**Error: "No patients found"**
-- Solution: Ensure Phenopacket files are in `input/patient/study_population/`
+**"YAML parsing error"**  
+Check YAML indentation - use spaces, never tabs.
 
-**Error: "YAML parsing error"**
-- Solution: Check YAML indentation (use spaces, not tabs)
+**Memory issues on large datasets**  
+Use `mini_rd_csv` and/or `mini_patient_csv` to restrict computation to a smaller subset, and increase available RAM.
 
-**Memory issues on large datasets**
-- Solution: Use `mini_rd_csv` and/or `mini_patient_csv` to restrict to smaller subset
-- Increase `--cores` and available RAM
+---
 
 ## Citation
-If you use this pipeline in an academic or scientific context, please cite the corresponding publication describing the methodology and its evaluation on Solve-RD data.
 
-A reference to the article will be added here upon publication.
+If you use this pipeline in an academic or scientific context, please cite:
+
+> Chahdil, M. et al. *Combining phenotypic similarity and network propagation to improve performance and clinical consistency of rare disease diagnosis.* (Publication details to be added upon journal release.)
