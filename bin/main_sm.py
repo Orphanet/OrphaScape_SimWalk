@@ -40,7 +40,7 @@ def _write_yaml_from_df(df: pd.DataFrame,) -> dict:
     return cfg
 
 
-def run_mm(
+def run_dd(
     index: int, param_rd: str, combine: str, method: str, pd4: str, vector_str: str,
     mini_rd: str | None,
     log: logging.Logger = None
@@ -62,7 +62,7 @@ def run_mm(
     log.info("vector_str=%r -> weights=%s", vector_str, weights)
     
     # create output directories
-    out_dir = Path(PV.PATH_OUTPUT_MM) / combine / method  / pd4 / str(vector_str)
+    out_dir = Path(PV.PATH_OUTPUT_DD) / combine / method  / pd4 / str(vector_str)
     out_dir.mkdir(parents=True, exist_ok=True)
     
     sim = Sim_measure(df1, df1, "ORPHAcode", "ORPHAcode", logger=log)
@@ -79,7 +79,7 @@ def run_mm(
 
 
 
-def run_mp(
+def run_dp(
     index: int, param_rd: str, combine: str, method: str, pd4: str, vector_str: str,
     mini_rd: str | None,  
     mini_patient: str | None = None, log: logging.Logger = None
@@ -106,7 +106,7 @@ def run_mp(
     weights = parse_weights(vector_str)
     log.info("vector_str=%r -> weights=%s", vector_str, weights)
     
-    out_dir = Path(PV.PATH_OUTPUT_SM) / combine / method / pd4 / str(vector_str)
+    out_dir = Path(PV.PATH_OUTPUT_DP) / combine / method / pd4 / str(vector_str)
     out_dir.mkdir(parents=True, exist_ok=True)
     
     patients_ids = df_p[PV.COL_DF_PATIENT_PATIENT].drop_duplicates().tolist()
@@ -155,11 +155,11 @@ def main():
     p = argparse.ArgumentParser(prog="main_sm")
     sub = p.add_subparsers(dest="mode", required=True)
     
-    sp_mm = sub.add_parser("mm", help="RD × RD similarity")
-    _add_common_args(sp_mm)
+    sp_dd = sub.add_parser("dd", help="RD × RD similarity")
+    _add_common_args(sp_dd)
     
-    sp_mp = sub.add_parser("mp", help="Patient × RD similarity")
-    _add_common_args(sp_mp)
+    sp_dp = sub.add_parser("dp", help="Patient × RD similarity")
+    _add_common_args(sp_dp)
     
     args = p.parse_args()
     
@@ -174,10 +174,10 @@ def main():
         log=log
     )
 
-    if args.mode == "mm":
-        run_mm(**common_kwargs)
+    if args.mode == "dd":
+        run_dd(**common_kwargs)
     else:
-        run_mp(**common_kwargs, mini_patient=getattr(args, "mini_patient", None))
+        run_dp(**common_kwargs, mini_patient=getattr(args, "mini_patient", None))
  
 
 if __name__ == "__main__":

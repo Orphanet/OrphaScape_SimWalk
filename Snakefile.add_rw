@@ -21,7 +21,7 @@ rule add_rw_pipeline:
         set -euo pipefail
 
         echo "STEP 1: add patients"
-        python -m bin.main_add_patients_to_mm
+        python -m bin.main_add_patients_to_dd
 
         echo "STEP 2: RARW run"
         MATRIX_DIR=$(ls -td {PV.PATH_OUTPUT_PATIENT_ADDED}/*/ | head -1)

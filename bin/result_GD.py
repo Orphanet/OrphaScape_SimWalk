@@ -117,7 +117,7 @@ if __name__ == "__main__":
     most_recent_file_rarw = max(PV.PATH_OUTPUT_FOLDER_RW.glob("*/*/"), key=lambda f: f.stat().st_mtime if f.is_file() else 0)
      
     # Load Semantic Similarity results
-    most_recent_file_ra = max(PV.PATH_OUTPUT_SM.glob("*"), key=lambda f: f.stat().st_mtime if f.is_file() else 0)
+    most_recent_file_ra = max(PV.PATH_OUTPUT_DP.glob("*"), key=lambda f: f.stat().st_mtime if f.is_file() else 0)
     df_sm_all = pd.read_parquet( most_recent_file_ra)
 
     ## load  patient name from  df_sm_all and not from patient df output because some patient might not be there is subset was done 

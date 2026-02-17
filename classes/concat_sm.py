@@ -73,7 +73,7 @@ class ConcatSm:
     # MP AGGREGATION (Patients × RDs)
     # =========================================================================
     
-    def concat_mp(self,path_patient,) -> None:
+    def concat_dp(self,path_patient,) -> None:
         """
         Aggregates MP files into a single Excel + Parquet.
         Also generates RDI file (rank 1 per patient).
@@ -151,7 +151,7 @@ class ConcatSm:
     # =========================================================================
     
  
-    def concat_mm(self) -> None:
+    def concat_dd(self) -> None:
         """
         Aggregates partial MM matrices into a symmetric square matrix.
         Reads Parquet, pivots, symmetrizes, and writes Parquet + Excel.

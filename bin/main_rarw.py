@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # bin/main_rarw.py 
 """
-Random Walk with Restart on MM+patient graph.
+Random Walk with Restart on DD+patient graph.
 Two sub-commands:
   - run: Executes PageRank for one or more patients
   - collect: Collects results and creates the RDI file
@@ -269,7 +269,7 @@ def cmd_aggregate_rdi(args, log):
 
 def build_parser():
     p = argparse.ArgumentParser(
-        description="Random Walk with Restart on MM+patient graph."
+        description="Random Walk with Restart on DD+patient graph."
     )
     sub = p.add_subparsers(dest="cmd", required=True)
     

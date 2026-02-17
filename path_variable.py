@@ -17,10 +17,10 @@ PATH_INPUT_HPO = PATH_INPUT / "hpo"
 COL_DF_PATIENT_PATIENT = "phenopacket"
 
 # =============================================================================
-# FOLDER OUTPUT SM/MM
+# FOLDER OUTPUT DP/MM
 # =============================================================================
-PATH_OUTPUT_SM = PATH_OUTPUT / "mp_sm"
-PATH_OUTPUT_MM = PATH_OUTPUT / "mm_sm"
+PATH_OUTPUT_DP = PATH_OUTPUT / "dp_sm"
+PATH_OUTPUT_DD = PATH_OUTPUT / "dd_sm"
 
 # =============================================================================
 # FOLDER PATIENTS
@@ -35,7 +35,7 @@ PATH_OUTPUT_DF_PATIENT = PATH_OUTPUT_PATIENT_SOLVERD / "patients.xlsx"
 PATH_OUTPUT_FOLDER_RW = PATH_OUTPUT / "rarw"
 
 # =============================================================================
-# PATIENT ADDED (matrices MM avec patients)
+# PATIENT ADDED (matrices DD avec patients)
 # =============================================================================
 PATH_OUTPUT_PATIENT_ADDED = PATH_OUTPUT / "patient_added"
 

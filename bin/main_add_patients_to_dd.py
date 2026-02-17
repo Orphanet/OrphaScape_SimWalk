@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 """
-Script to add patients to an MM matrix.
-Automatically uses the latest files from PATH_OUTPUT_MM and PATH_OUTPUT_SM.
+Script to add patients to an DD matrix.
+Automatically uses the latest files from PATH_OUTPUT_DD and PATH_OUTPUT_DP.
 """
 from pathlib import Path
 import datetime as dt
@@ -10,7 +10,7 @@ import logging
 
 import yaml
 
-from classes.utils import load_mm_matrix, load_mp_sm
+from classes.utils import load_dd_matrix, load_dp_sm
 
 import path_variable as PV
 from set_log import setup_logging, get_logger
@@ -64,14 +64,14 @@ def main():
     # ==========================================================================
     
     try:
-        mm_path = get_latest_file(PV.PATH_OUTPUT_MM)
-        log.info("MM file (latest): %s", mm_path.name)
+        dd_path = get_latest_file(PV.PATH_OUTPUT_DD)
+        log.info("DD file (latest): %s", dd_path.name)
     except FileNotFoundError as e:
-        log.error("MM error: %s", e)
+        log.error("DD error: %s", e)
         return
     
     try:
-        sm_path = get_latest_file(PV.PATH_OUTPUT_SM)
+        sm_path = get_latest_file(PV.PATH_OUTPUT_DP)
         log.info("SM file (latest): %s", sm_path.name)
     except FileNotFoundError as e:
         log.error("SM error: %s", e)
@@ -90,14 +90,14 @@ def main():
     # ==========================================================================
     
     log.info("-" * 50)
-    log.info("Loading MM matrix...")
-    df_mm = load_mm_matrix(str(mm_path), log)
-    log.info("MM shape: %s", df_mm.shape)
-    log.info("Total MM sum: %.2f", df_mm.values.sum())
-    log.info("Min/Max: %.4f / %.4f", df_mm.values.min(), df_mm.values.max())
+    log.info("Loading DD matrix...")
+    df_dd = load_dd_matrix(str(dd_path), log)
+    log.info("DD shape: %s", df_dd.shape)
+    log.info("Total DD sum: %.2f", df_dd.values.sum())
+    log.info("Min/Max: %.4f / %.4f", df_dd.values.min(), df_dd.values.max())
     
-    log.info("Loading MP scores (patients-RDs)...")
-    df_sm = load_mp_sm(str(sm_path), log)
+    log.info("Loading DP scores (patients-RDs)...")
+    df_sm = load_dp_sm(str(sm_path), log)
     log.info("SM shape: %s", df_sm.shape)
     log.info("SM unique patients: %d", df_sm["patients"].nunique())
     log.info("SM unique RDs: %d", df_sm["RDs"].nunique())
@@ -115,10 +115,10 @@ def main():
         log.info("Patients (first 10): %s ...", patient_sel[:10])
     
     # RD verification
-    rd_labels = list(df_mm.columns)
+    rd_labels = list(df_dd.columns)
     unknown = [c for c in pivot.columns if c not in rd_labels]
     if unknown:
-        log.warning("SM contains %d RD(s) absent from MM (ignored)", len(unknown))
+        log.warning("SM contains %d RD(s) absent from DD (ignored)", len(unknown))
     
     skipped, written = [], []
     
@@ -134,8 +134,8 @@ def main():
             skipped.append(pat)
             continue
         
-        # Copy MM matrix
-        mat = df_mm.copy()
+        # Copy DD matrix
+        mat = df_dd.copy()
         
         # Patient scores towards RDs
         scores = pivot.loc[pat]
@@ -166,10 +166,10 @@ def main():
         "output_dir": str(run_dir.resolve()),
         "patients_written": [Path(p).stem for p in written],
         "patients_skipped": skipped,
-        "MM": {
-            "path": str(mm_path),
+        "DD": {
+            "path": str(dd_path),
         },
-        "MP": {
+        "DP": {
             "path": str(sm_path),
         },
     }

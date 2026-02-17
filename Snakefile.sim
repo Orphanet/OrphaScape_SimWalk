@@ -29,8 +29,8 @@ def s(p) -> str:
 # get value config 
 cfg = config
 
-# "mm" by default
-mode = cfg.get("mode", "mm")
+# "dd" by default
+mode = cfg.get("mode", "dd")
 
 mini_rd = cfg.get("mini_rd", "")
 mini_patient = cfg.get("mini_patient", "")
@@ -48,16 +48,16 @@ else:
 selected_vectors_compact = [to_compact(v) for v in selected_vectors_raw]
 
 # folder output 
-OUT_BASE = s(PV.PATH_OUTPUT_MM) if mode == "mm" else s(PV.PATH_OUTPUT_SM)
+OUT_BASE = s(PV.PATH_OUTPUT_DD) if mode == "dd" else s(PV.PATH_OUTPUT_DP)
 
 
 # depending on the mode the choice is different  
-AGG_CMD = "concat_mm" if mode == "mm" else "concat_mp"
-COL1 = "OC1" if mode == "mm" else "patients"
-COL2 = "OC2" if mode == "mm" else "RDs"
+AGG_CMD = "concat_dd" if mode == "dd" else "concat_dp"
+COL1 = "OC1" if mode == "dd" else "patients"
+COL2 = "OC2" if mode == "dd" else "RDs"
 
 # Option patients (MP only)
-MP_EXTRA = f'--mini-patient "{mini_patient}"' if mode == "mp" and mini_patient else ""
+MP_EXTRA = f'--mini-patient "{mini_patient}"' if mode == "dp" and mini_patient else ""
 
 # =============================================================================
 # PATTERNS

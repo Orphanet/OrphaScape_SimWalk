@@ -1,7 +1,6 @@
-# config_sm_mm.yaml  Disease-Disease similarity matrix
-# Usage: snakemake -s Snakefile.sim --configfile config_sm_mm.yaml --cores all
+ 
 
-mode: mm
+mode: dd
 # Combination methods (can be a list)  
 combine: ["funSimMax"]
 

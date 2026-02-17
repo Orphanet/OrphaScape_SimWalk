@@ -1,15 +1,14 @@
-# config_sm_mp.yaml  Disease-Patient similarity
-# Usage: snakemake -s Snakefile.sim --configfile config_sm_mp.yaml --cores all
-mode: mp
 
-# Combination methods
+mode: dp
+
+# Combination methods (can be a list)  
 combine: ["rsd"]
 
-# Similarity methods
+# Similarity methods (can be a list)  
 sm_method: ["resnik"]
 
-# Weight vectors
-vector_strs: ["3_2_2_2_1"]  
+# Weight vectors (can be a list)  
+vector_strs: ["2_2_2_2_1"]  
 
 # Version of Orphanet product4
 product4: pd4may2025exefev2026

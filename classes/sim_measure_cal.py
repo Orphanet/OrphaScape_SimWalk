@@ -3,7 +3,7 @@
 Calculation of semantic similarity measures between HPO.
 - Global cache for HPO objects and similarity scores
 - Removal of unnecessary S matrices (streaming max)
-- Triangularization for MM (symmetric calculation)
+- Triangularization for DD (symmetric calculation)
 - Type hints and docstrings
 """
 import logging
@@ -182,10 +182,10 @@ class Sim_measure:
             raise ValueError(f"Unknown combine method: {combine}")
     
     # =========================================================================
-    # MM CALCULATION (RD × RD) - OPTIMIZED
+    # DD CALCULATION (RD × RD) - OPTIMIZED
     # =========================================================================
     
-    def run_mm_freq(
+    def run_dd_freq(
         self,
         element2: str,
         rd_id_list: list[str],
@@ -255,7 +255,7 @@ class Sim_measure:
         return pd.DataFrame(interactions, columns=['RDs', 'patients', 'score'])
     
     # =========================================================================
-    # MP CALCULATION (Patient × RD) - OPTIMIZED
+    # DP CALCULATION (Patient × RD) - OPTIMIZED
     # =========================================================================
     
     def run_sm_freq(
@@ -420,10 +420,10 @@ class Sim_measure:
         weights: list[float],
         out_dir: str
     ) -> None:
-        """Wrapper for Snakefile: computes and also  exports MM.
-        eg     out_dir="./output/mm"""
+        """Wrapper for Snakefile: computes and also  exports DD.
+        eg     out_dir="./output/dd"""
         rd_file = rd.replace(":", "-")
-        df_sm = self.run_mm_freq(rd, rd_id_list, combine, method,  weights)
+        df_sm = self.run_dd_freq(rd, rd_id_list, combine, method,  weights)
         df_sm.rename(columns={'patients': 'OC2', 'RDs': 'OC1'}, inplace=True)
         
         sm_path = f"{out_dir}/{index}_{rd_file}.parquet"
@@ -440,7 +440,7 @@ class Sim_measure:
         weights: list[float],
         out_dir: str
     ) -> None:
-        """Wrapper for Snakefile: computes and also exports MP."""
+        """Wrapper for Snakefile: computes and also exports DP."""
         rd_file = rd.replace(":", "-")
         df_sm = self.run_sm_freq(rd, patients, combine, method,  weights)
         

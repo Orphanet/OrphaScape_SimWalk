@@ -90,7 +90,7 @@ P3,ORPHA:35689
 **Steps 2-4 requirements:**
 - Step 1 completed successfully
 - Output files from Step 1 present in `output/`
-- Configuration files `config_sm_mm.yaml` and `config_sm_mp.yaml` filled in
+- Configuration files `config_sm_dd.yaml` and `config_sm_dp.yaml` filled in
 
 **Steps 5-6 requirements:**
 - Steps 2 and 3 completed
@@ -113,11 +113,11 @@ P3,ORPHA:35689
 ├── input/
 │   ├── hpo/
 │   ├── patient/
-│   └── pd_orphanet/
+│   └── orphanet_data/
 │       └── Classifications/
 ├── output/           # Auto-generated
-│   ├── mm_sm/
-│   ├── mp_sm/
+│   ├── dd_sm/
+│   ├── dp_sm/
 │   ├── patient_solverd/
 │   ├── pd_orphanet/
 │   ├── patient_added/
@@ -221,10 +221,10 @@ Patient files must follow the **Phenopacket** format (JSON). The most important 
 
 ### Step 2 - Build the Disease-Disease (DD) similarity matrix
 
-Configuration file: `configs/config_sm_mm.yaml`
+Configuration file: `configs/config_sm_dd.yaml`
 
 ```yaml
-mode: mm  # do not change
+mode: dd  # do not change
 
 # List format - multiple values allowed
 combine: ["aggregation_method_name"]
@@ -248,24 +248,22 @@ mini_rd_csv: "ORPHA:xxx,ORPHA:xxx..."
 
 **Execution:**
 ```bash
-snakemake -s Snakefile.sim --configfile configs/config_sm_mm.yaml --cores all
+snakemake -s Snakefile.sim --configfile configs/config_sm_dd.yaml --cores all
 
 # Alternative: run Python scripts directly
-python -m bin.main_sm mp  -c BMA -m resnik -v "1_1_1_1_1" -pd4 pd4name --mini-rd "ORPHA:610,ORPHA:100985" --mini-patient "P1"
-python -m bin.main_sm mm  -c BMA -m resnik -v "1_1_1_1_1" -pd4 pd4name --mini-rd "ORPHA:610,ORPHA:100985" 
-python -m bin.main_concat concat_mp -c BMA -m resnik -v "1_1_1_1_1" --pd4 pd4name 
-python -m bin.main_concat concat_mm -c BMA -m resnik -v "1_1_1_1_1" --pd4 pd4name
+python -m bin.main_sm dd  -c BMA -m resnik -v "1_1_1_1_1" -pd4 pd4name --mini-rd "ORPHA:610,ORPHA:100985" 
+python -m bin.main_concat concat_dd -c BMA -m resnik -v "1_1_1_1_1" --pd4 pd4name
 
 # Help
 # python -m bin.main_sm  --help
-# python -m bin.main_sm mp --help 
-# python -m bin.main_sm mm --help 
+# python -m bin.main_sm dp --help 
+# python -m bin.main_sm dd --help 
 # python -m bin.main_concat --help 
-# python -m bin.main_concat concat_mp --help 
-# python -m bin.main_concat concat_mm --help 
+# python -m bin.main_concat concat_dp --help 
+# python -m bin.main_concat concat_dd --help 
 ```
 
-**Output** (saved in `output/mm_sm/`):
+**Output** (saved in `output/dd_sm/`):
 - Individual parquet files per disease into folder [aggregation_method]/[similariy_measure]/[n]/[name_to_define_which_pd4_used]/[weight_vector] (format: `{index}_{ORPHA_code}.parquet`)
 - Concatenated file: `{combine}_{method}_{product4}_{vector}.parquet` (all disease-disease similarity scores)
 
@@ -288,10 +286,10 @@ Default weight is `1.0` for all positions. Higher values increase emphasis on th
 
 ### Step 3 - Build the Disease-Patient (DP) similarity vectors
 
-Configuration file to change: `config_sm_mp.yaml`
+Configuration file to change: `config_sm_dp.yaml`
 
 ```yaml
-mode: mp  # do not change
+mode: dp  # do not change
 
 # list format can add multiple items
 combine: ["aggregation_method_name"]
@@ -309,21 +307,19 @@ Same configuration logic as Step 2. Computation is restricted to diseases presen
 
 **Execution:**
 ```bash
-snakemake -s Snakefile.sim --configfile configs/config_sm_mp.yaml --cores all
-```
+snakemake -s Snakefile.sim --configfile configs/config_sm_dp.yaml --cores all
 
-**LAURENT A CHECKER PAR MAROUA:**
-```
+
 # Alternative: run Python scripts directly
-python -m bin.main_sm mp  -c BMA -m resnik -v "1_1_1_1_1" -pd4 pd4name --mini-rd "ORPHA:610,ORPHA:100985" --mini-patient "P1"
-python -m bin.main_concat concat_mp -c BMA -m resnik -v "1_1_1_1_1" --pd4 pd4name
+python -m bin.main_sm dp  -c BMA -m resnik -v "1_1_1_1_1" -pd4 pd4name --mini-rd "ORPHA:610,ORPHA:100985" --mini-patient "P1"
+python -m bin.main_concat concat_dp -c BMA -m resnik -v "1_1_1_1_1" --pd4 pd4name
 
 # Help
-python -m bin.main_sm mp --help
-python -m bin.main_concat concat_mp --help
+python -m bin.main_sm dp --help
+python -m bin.main_concat concat_dp --help
 ```
 
-**Output** (saved in `output/mp_sm/`):
+**Output** (saved in `output/dp_sm/`):
 - Individual parquet files per disease (same folder structure as DD)
 - Concatenated file: `{combine}_{method}_{product4}_{vector}.parquet` (all patient-disease similarity scores)
 - Additional file: `RDI_{combine}_{method}_{product4}_{vector}.xlsx` - for each patient, the disease with the highest similarity score
@@ -344,7 +340,7 @@ alphas: [0.3]  # Alpha value(s) for random walk. Multiple values run multiple wa
 snakemake -s Snakefile.add_rw --configfile configs/config_add_rw.yaml --cores all
 
 # Alternative: run Python scripts directly
-python -m bin.main_add_patients_to_mm
+python -m bin.main_add_patients_to_dd
 python -m bin.main_rarw run -a 0.3 --seeds "P1"
 python -m bin.main_rarw collect -a 0.3
 
@@ -407,9 +403,9 @@ snakemake -s Snakefile.load_input --cores all
 
 **2. Build DD matrix (10 diseases)**
 
-Edit `configs/config_sm_mm.yaml`:
+Edit `configs/config_sm_dd.yaml`:
 ```yaml
-mode: mm
+mode: dd
 combine: ["funSimMax"]
 sm_method: ["resnik"]
 vector_strs: ["1_1_1_1_1"]
@@ -417,14 +413,14 @@ product4: pd4may2025exejan2026
 mini_rd_csv: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949,ORPHA:610"
 ```
 ```bash
-snakemake -s Snakefile.sim --configfile configs/config_sm_mm.yaml --cores all
+snakemake -s Snakefile.sim --configfile configs/config_sm_dd.yaml --cores all
 ```
 
 **3. Build DP vectors**
 
-Edit `configs/config_sm_mp.yaml`:
+Edit `configs/config_sm_dp.yaml`:
 ```yaml
-mode: mp
+mode: dp
 combine: ["rsd"]
 sm_method: ["resnik"]
 vector_strs: ["2_2_2_2_1"]
@@ -433,7 +429,7 @@ mini_rd_csv: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:329284,ORPHA:34516,ORPH
 mini_patient_csv: "P1"
 ```
 ```bash
-snakemake -s Snakefile.sim --configfile configs/config_sm_mp.yaml --cores all
+snakemake -s Snakefile.sim --configfile configs/config_sm_dp.yaml --cores all
 ```
 
 **4–5. Patient integration and RWR**

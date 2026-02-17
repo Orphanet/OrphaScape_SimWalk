@@ -78,14 +78,14 @@ def slug(x: str) -> str:
     return re.sub(r"[^A-Za-z0-9._-]+", "-", str(x))
 
 
-def resolve_product4_segment(mm_p4: str | None, mp_p4: str | None) -> str:
-    """Resolves the product4 segment for combined MM and MP."""
-    mm_p4 = (mm_p4 or "").strip()
-    mp_p4 = (mp_p4 or "").strip()
-    if mm_p4 and mp_p4 and mm_p4 == mp_p4:
-        return mm_p4
-    if mm_p4 or mp_p4:
-        return f"mm{slug(mm_p4)}__mp{slug(mp_p4)}"
+def resolve_product4_segment(dd_p4: str | None, dp_p4: str | None) -> str:
+    """Resolves the product4 segment for combined DD and DP."""
+    dd_p4 = (dd_p4 or "").strip()
+    dp_p4 = (dp_p4 or "").strip()
+    if dd_p4 and dp_p4 and dd_p4 == dp_p4:
+        return dd_p4
+    if dd_p4 or dp_p4:
+        return f"dd{slug(dd_p4)}__dp{slug(dp_p4)}"
     return "product4_unknown"
 
 
@@ -260,8 +260,8 @@ def load_dataframe(path: str, log: logging.Logger | None = None) -> pd.DataFrame
         raise
 
 
-def load_mm_matrix(path: str, log: logging.Logger) -> pd.DataFrame:
-    """Loads an MM matrix (square format) from Parquet or Excel."""
+def load_dd_matrix(path: str, log: logging.Logger) -> pd.DataFrame:
+    """Loads an DD matrix (square format) from Parquet or Excel."""
     path_lower = str(path).lower()
     
     try:
@@ -273,17 +273,17 @@ def load_mm_matrix(path: str, log: logging.Logger) -> pd.DataFrame:
         
         # Fallback to Excel
         xl = pd.ExcelFile(path, engine="openpyxl")
-        sheet = pick_excel_sheet(xl, "MM")
+        sheet = pick_excel_sheet(xl, "DD")
         df = xl.parse(sheet, index_col=0)
         if df is None or df.empty:
             raise ValueError(f"Sheet '{sheet}' is empty in {path}")
         return df
     except Exception as e:
-        log.error("Cannot read MM matrix '%s': %s", path, e)
+        log.error("Cannot read DD matrix '%s': %s", path, e)
         raise
 
 
-def load_mp_sm(path: str, log: logging.Logger) -> pd.DataFrame:
+def load_dp_sm(path: str, log: logging.Logger) -> pd.DataFrame:
     """
     Loads an SM long table (patients, RDs, score).
     Supports Parquet, CSV, Excel (multi-sheet SM_*).
@@ -345,7 +345,7 @@ def load_mp_sm(path: str, log: logging.Logger) -> pd.DataFrame:
         return df[list(needed_cols)].dropna(how="any").drop_duplicates()
     
     except Exception as e:
-        log.error("Cannot read MP SM '%s': %s", path, e)
+        log.error("Cannot read DP SM '%s': %s", path, e)
         raise
 
 
@@ -382,12 +382,5 @@ def safe_to_excel(
                 end = min((i + 1) * max_rows, n)
                 sheet_name = f"{sheet_base}_{i+1}" if chunks > 1 else sheet_base
                 df.iloc[start:end].to_excel(writer, index=False, sheet_name=sheet_name)
-    
-    # # CSV.gz backup
-    # try:
-    #     df.to_csv(out_xlsx.with_suffix(".csv.gz"), index=False, compression="gzip")
-    # except Exception as e:
-    #     if log:
-    #         log.warning("Failed to write CSV.gz for %s: %s", out_xlsx, e)
 
 

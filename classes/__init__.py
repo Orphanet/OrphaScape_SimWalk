@@ -15,7 +15,7 @@ from classes.utils import (
     # Normalization
     norm_orpha, orpha_num, freq_to_score,
     # I/O
-    split_csv_list, ensure_parent, load_dataframe, load_mm_matrix, load_mp_sm,
+    split_csv_list, ensure_parent, load_dataframe, load_dd_matrix, load_dp_sm,
     safe_to_excel,
 )
 
@@ -29,6 +29,6 @@ __all__ = [
     "abbr_combine", "abbr_method",
     "alpha_folder", "parse_weights", "to_compact",
     "norm_orpha", "orpha_num", "freq_to_score",
-    "split_csv_list", "ensure_parent", "load_dataframe", "load_mm_matrix", "load_mp_sm",
+    "split_csv_list", "ensure_parent", "load_dataframe", "load_dd_matrix", "load_dp_sm",
     "safe_to_excel",
 ]

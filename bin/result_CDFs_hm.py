@@ -32,7 +32,7 @@ couple_patients.columns = ["patients","RDs"]
  
 dict_df_ra_sm = {}
 
-list_ra= os.listdir(PV.PATH_OUTPUT_SM)
+list_ra= os.listdir(PV.PATH_OUTPUT_DP)
  
 
 list_ra_sm = []
@@ -45,7 +45,7 @@ for ra in list_ra_sm:
     ra_rslt=  ra.rsplit('.', 1)[0] # remore the extension
 
     ## list of df from RA but with different vector 
-    df_sm = pd.read_parquet(f"{PV.PATH_OUTPUT_SM}/{ra}")
+    df_sm = pd.read_parquet(f"{PV.PATH_OUTPUT_DP}/{ra}")
  
     list_sm = df_sm["patients"].drop_duplicates().tolist()
     dict_df_ra_sm[ra_rslt] = df_sm
@@ -124,7 +124,7 @@ df_compare_rank_filtered = df_compare_rank_wide[['patient', 'RD']].join(
 )
 ###################################################
 # grab a colormap with plenty of colors
-cmap   = plt.get_cmap('nipy_spectral', len(methods))
+cmap   = plt.get_cmap('Set2', len(methods))
 colors = cmap(np.arange(len(methods)))
  
  
@@ -167,9 +167,6 @@ for i, col in enumerate(methods):
 
 plt.xlabel('r = rank')
 plt.ylabel('P(rank ≤ r)')
-# plt.title('Cumulative distribution of the candidate ORPHAcode rank across GSSM')
-# plt.title('Cumulative distribution of the candidate ORPHAcode rank with FunSimMaxAsym Resnik GSSM')
-# plt.title('Cumulative distribution of the candidate ORPHAcode rank with the optimal GSSM\n (FunSimMaxAsym + Resnik)  and without removal   of subsum HPO terms')
 
  
 # now sort your handles by auc and re‐draw the legend

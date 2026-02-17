@@ -12,11 +12,11 @@ from classes.concat_sm import ConcatSm
 from set_log import setup_logging, get_logger
 
 def main():
-    p = argparse.ArgumentParser(description="Concat SM/MM exports into one file per combo")
+    p = argparse.ArgumentParser(description="Concat DP/DD exports into one file per combo")
     sub = p.add_subparsers(dest="cmd", required=True)
     
     # MM: ORPHA×ORPHA matrices
-    mm = sub.add_parser("concat_mm", help="Pivot & concatenate MM  matrices")
+    mm = sub.add_parser("concat_dd", help="Pivot & concatenate DD  matrices")
     mm.add_argument("--combine", "-c",default='funSimMax', choices=["funSimMax", "funSimAvg", "BMA", "rsd"],help="Combination method default='funSimMax'")
     mm.add_argument("--sm", "-m",default='resnik',choices=["resnik", "lin", "jc","graphic","ic","relevance"], help="Similarity measure default='resnik'")
     mm.add_argument("--vector-str", "-v",default='1_1_1_1_1', help="Weight vector string, default '1_1_1_1_1'")
@@ -29,7 +29,7 @@ def main():
 
 
     # MP: patients ↔ RDs
-    sm = sub.add_parser("concat_mp", help="Concat & rank SM/CDF outputs")
+    sm = sub.add_parser("concat_dp", help="Concat & rank SM/CDF outputs")
     sm.add_argument("--combine", "-c",default='funSimMax', choices=["funSimMax", "funSimAvg", "BMA", "rsd"],help="Combination method default='funSimMax'")
     sm.add_argument("--sm", "-m",default='resnik',choices=["resnik", "lin", "jc","graphic","ic","relevance"], help="Similarity measure default='resnik'")
     sm.add_argument("--vector-str", "-v",default='1_1_1_1_1', help="Weight vector string, default '1_1_1_1_1'")
@@ -48,7 +48,7 @@ def main():
     setup_logging(level=logging.INFO,console=False,filename=f"{Path(__file__).stem}.log"    )  
     log = get_logger(Path(__file__).stem)
     
-    base_dir = PV.PATH_OUTPUT_MM if args.cmd == "concat_mm" else PV.PATH_OUTPUT_SM
+    base_dir = PV.PATH_OUTPUT_DD if args.cmd == "concat_dd" else PV.PATH_OUTPUT_DP
     
     cx = ConcatSm(
         vector_str=args.vector_str,
@@ -63,10 +63,10 @@ def main():
     )
 
     
-    if args.cmd == "concat_mm":
-        cx.concat_mm()
+    if args.cmd == "concat_dd":
+        cx.concat_dd()
     else:
-        cx.concat_mp(PV.PATH_OUTPUT_DF_PATIENT)
+        cx.concat_dp(PV.PATH_OUTPUT_DF_PATIENT)
 
 if __name__ == "__main__":
     main()
