@@ -1,0 +1,22 @@
+# Run 2a refert to Effect of subsumed HPO terms removal on ranking
+ 
+run_name: run2_raw # raw because no subsummed (its the green curve on the paper)
+# name of the figure (refer to the paper fig_{fig_num+1}, tab_{fig_num} )
+fig_num: 2
+do_subsumed: 0
+
+# e.g. pd4may2025exejan2026 - avoid underscores '_'
+product4: pd4may2025exefev2026
+
+# *(optional)*: restricts computation to a subset of ORPHAcodes instead of the full Orphanet catalogue 
+mini_rd: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:610,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949,ORPHA:35689"
+
+dp:
+  #  aggregation function 
+  combine: ["rsd"]
+  # pairwise similarity measure
+  sm_method: ["resnik"]
+  # weighting vector
+  vector_strs: ["1_1_1_1_1"]
+# type of results chosen ('cdf' for the CDF figure and hm_table or 'gd' for the results related to clincial consistency  table 4 and 5 in the paper)
+steps: ["cdf"]

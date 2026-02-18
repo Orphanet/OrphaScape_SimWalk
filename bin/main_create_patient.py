@@ -1,28 +1,33 @@
 #!/usr/bin/env python3
-# bin/main_create_patient.py 
+
 """
 Script to create patients DataFrame from Phenopacket files.
 """
 
 from pathlib import Path
+import argparse
 import logging
 import pandas as pd
 import path_variable as PV
 from set_log import setup_logging, get_logger
-from classes.dataset import DataSet   
+from classes.dataset import DataSet
 
 def main():
     # Logging configuration
-    setup_logging(level=logging.INFO,console=False,filename=f"{Path(__file__).stem}.log"    )  
+    setup_logging(level=logging.INFO,console=False,filename=f"{Path(__file__).stem}.log"    )
     log = get_logger(Path(__file__).stem)
+
+    p = argparse.ArgumentParser()
+    p.add_argument("--do-subsumed", type=int, default=0, choices=[0, 1],
+                   help="1 = remove subsumed  HPO terms, 0 = keep all")
+    args = p.parse_args()
 
     # Create output directory
     Path(PV.PATH_OUTPUT_PATIENT_SOLVERD).mkdir(parents=True, exist_ok=True)
-    
+
     # Load patients
-    build_patient = DataSet(PV.PATH_INPUT_PATIENTS_FOLDER  ,"") 
-    ## patient solved and unsolved
-    df_patient = build_patient.build_patients_df()
+    build_patient = DataSet(PV.PATH_INPUT_PATIENTS_FOLDER  ,"")
+    df_patient = build_patient.build_patients_df(args.do_subsumed)
     df_raw_info  = df_patient[['phenopacket','hpo_id','hpo_label']]
 
     ########################################################
@@ -60,16 +65,16 @@ def main():
             child_type = value['child_type'].strip()
             
             foundin = ""
-            # si la maladie est dans la colonne child 
+            # if the RD i in the col chidl 
             if disease in child_id:
                 if child_type in valid_types:
                     type_disease = child_type
                     foundin = "child_id"
-                # si non trouver alors il est dans la col parent  
+                # elif RD in the col parent  
                 elif disease in parent_id: 
                     type_disease = parent_type
                     foundin = "child_id but parent "
-                # sinon c'est un subtype meaning the parent are disorder
+                # elfi it s a subtype  meaning the parent are disorder
                 elif parent_type in valid_types:
                     foundin = "child_id_subtype"
                     # get the related parent
@@ -98,8 +103,10 @@ def main():
     df_patient_only_disorder = pd.DataFrame(all_interactions,columns=["phenopacket",'hpo_id','Disease'])
     df_final = df_patient_only_disorder.merge(df1,on = ['Disease'], how='inner').dropna(subset=['phenopacket'])
 
-    df_final.to_excel(PV.PATH_OUTPUT_DF_PATIENT)
-    log.info("Saved patients to %s", PV.PATH_OUTPUT_DF_PATIENT)
+    out_path = PV.get_patient_path(args.do_subsumed)
+    df_final.to_excel(out_path)
+    log.info("Saved patients to %s", out_path)
+    
 
 
 

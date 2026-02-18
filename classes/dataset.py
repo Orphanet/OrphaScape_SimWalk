@@ -1,4 +1,4 @@
-# classes/dataset.py  
+
 """
 DataSet class for manipulation of Orphanet and patient data.
 - Use of utils module for common functions
@@ -67,7 +67,7 @@ class DataSet(DataGenerate):
     # PATIENTS
     # =========================================================================
     
-    def build_patients_df(self) -> pd.DataFrame:
+    def build_patients_df(self,do_subsumed) -> pd.DataFrame:
         """
         Builds a DataFrame of patients from phenopacket files.
         Handles variable JSON formats and extracts HPO, diseases, genes.
@@ -77,7 +77,6 @@ class DataSet(DataGenerate):
         list_case_HPO_f = []
 
         patients_raw = os.listdir(self.input_path)
-
         for onefile in patients_raw:
             filepath = self.input_path / onefile
             try:
@@ -160,16 +159,18 @@ class DataSet(DataGenerate):
                                 ))
                         except (KeyError, TypeError):
                             pass
+                if do_subsumed == 1:
+                    # ---- REMOVE REDUNDANT TERMS (minimal set) ----
+                    hp_ids_in_order = [row[8] for row in patient_rows]
+                    keep_ids = minimal_hpo_ids(hp_ids_in_order)
+                    
+                    for one_row in patient_rows:
+                        if one_row[8] in keep_ids:
+                            list_case_HPO_f.append(one_row)
+                else:
+                    list_case_HPO_f.extend(patient_rows)
 
-                # ---- REMOVE REDUNDANT TERMS (minimal set) ----
-                hp_ids_in_order = [row[8] for row in patient_rows]
-                keep_ids = minimal_hpo_ids(hp_ids_in_order)
-                
-                for one_row in patient_rows:
-                    if one_row[8] in keep_ids:
-                        list_case_HPO_f.append(one_row)
 
-                        
             except (json.JSONDecodeError, UnicodeDecodeError) as e:
                 log.warning("Cannot read %s: %s", onefile, e)
                 continue

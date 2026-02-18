@@ -1,5 +1,5 @@
 
-
+import argparse
 import pandas as pd
 import numpy as np
 import os
@@ -11,41 +11,71 @@ from pathlib import Path
 import logging
 
 
- 
+
 from sklearn.metrics import auc as sk_auc
 from matplotlib import pyplot as plt
 
+"""
+
+script to calculate harmonic mean and get the CDF of each method (no group of disorder analysis here )
+
+"""
 
 
 # Logging configuration
-setup_logging(level=logging.INFO,console=False,filename=f"results.log"    )  
+setup_logging(level=logging.INFO,console=False,filename=f"results.log"    )
 log = get_logger(Path(__file__).stem)
 
-## script to calculate harmonic mean and get the CDF of each method (no group of disorder analysis here )
+p = argparse.ArgumentParser()
+p.add_argument("--run-name", default="default", help="Run name (used for output subfolder)")
+p.add_argument("--fig-num",  default="",        help="Figure number suffix (e.g. 1 → CDF_fig1.svg)")
+p.add_argument("--do-subsumed", type=int, default=0, choices=[0, 1],
+               help="1 = patients_subsumed.xlsx, 0 = patients.xlsx")
+p.add_argument("--product4",   default="",  help="Product4 version string (filter parquets)")
+p.add_argument("--combine",    nargs="+", default=[], help="Combine methods to include")
+p.add_argument("--sm-method",  nargs="+", default=[], help="SM methods to include")
+p.add_argument("--vector-strs",nargs="+", default=[], help="Compact vector strings to include (e.g. 11111)")
+args = p.parse_args()
 
-## files that will regroup all mp_sm results for each patient and disorder (from /mp_sm folder)
- 
-patients = pd.read_excel(PV.PATH_OUTPUT_DF_PATIENT)
+out_dir = Path(PV.PATH_OUTPUT) / args.run_name
+out_dir.mkdir(parents=True, exist_ok=True)
+
+fig_suffix = f"{args.fig_num}" if args.fig_num else ""
+
+
+
+patients = pd.read_excel(PV.get_patient_path(args.do_subsumed))
 couple_patients = patients[["phenopacket","Disease"]].drop_duplicates()
 # rename for the merge with sm df
 couple_patients.columns = ["patients","RDs"]
  
 dict_df_ra_sm = {}
 
-list_ra= os.listdir(PV.PATH_OUTPUT_DP)
+list_ra= os.listdir(PV.get_dp_path(args.do_subsumed))
  
 
 list_ra_sm = []
+# Build expected filenames from config filters (if provided)
+_expected = None
+if args.combine and args.sm_method and args.vector_strs and args.product4:
+    _expected = {
+        f"{c}_{s}_{args.product4}_{v}.parquet"
+        for c in args.combine
+        for s in args.sm_method
+        for v in args.vector_strs
+    }
+
 for ra in list_ra:
-    if ("parquet" in ra) and ('~' not in ra): #folder_pd4 in ra:
-        list_ra_sm.append(ra)
+    if ("parquet" in ra) and ('~' not in ra):
+        if _expected is None or ra in _expected:
+            list_ra_sm.append(ra)
  
 for ra in list_ra_sm:
 # if ('xlsx' in ra) and ('CDF' not in ra): # RDI
     ra_rslt=  ra.rsplit('.', 1)[0] # remore the extension
 
     ## list of df from RA but with different vector 
-    df_sm = pd.read_parquet(f"{PV.PATH_OUTPUT_DP}/{ra}")
+    df_sm = pd.read_parquet(f"{PV.get_dp_path(args.do_subsumed)}/{ra}")
  
     list_sm = df_sm["patients"].drop_duplicates().tolist()
     dict_df_ra_sm[ra_rslt] = df_sm
@@ -104,17 +134,15 @@ for onecol in col_compare_rank_df:
         all_interecation.append((onecol,harmonic_mean))
 
 df_hm_general = pd.DataFrame(all_interecation,columns=['method','mean_hm'])  
-df_hm_general.to_excel(f"{PV.PATH_OUTPUT}/hm_table_1-3.xlsx")
+df_hm_general.to_excel(out_dir / f"hm_table_{fig_suffix}.xlsx")
 
 #######################################################################################
 # -----------  CDF-related to cdf and table hm in the results section---------------#
 #######################################################################################
-  
+# 11 to vizualise well the top 10
 rank_f = 11                              
   
 methods = df_compare_rank_wide.columns.tolist()
- 
-
 
 
 # 3) create a “filtered” version where any rank >10 → NaN
@@ -124,7 +152,7 @@ df_compare_rank_filtered = df_compare_rank_wide[['patient', 'RD']].join(
 )
 ###################################################
 # grab a colormap with plenty of colors
-cmap   = plt.get_cmap('Set2', len(methods))
+cmap   = plt.get_cmap('Set1', len(methods))
 colors = cmap(np.arange(len(methods)))
  
  
@@ -150,7 +178,7 @@ for i, col in enumerate(methods):
     data_rank_na = df_compare_rank_filtered[col].dropna()
     x_auc = np.sort(data_rank_na)
     y_auc = np.arange(1,  len(data_rank_na)+1) / len(data_rank_na)
-    auc_score = sk_auc(x_auc, y_auc)
+    auc_score = sk_auc(x_auc, y_auc) if len(data_rank_na) >= 2 else float('nan')
 
 
     # draw the step curve and grab the handle
@@ -175,12 +203,11 @@ handles_sorted = [h for h,_ in lines_with_auc]
 labels_sorted  = [h.get_label() for h in handles_sorted]
 
 plt.legend(handles_sorted, labels_sorted, loc='best', borderaxespad=0.5)
-
  
-
+fig_cdf_nb = int(fig_suffix) + 1
 plt.grid(True)
 plt.tight_layout(rect=[0, 0, 0.75, 1])
-plt.savefig(f"{PV.PATH_OUTPUT}/CDF.svg", dpi=300)
+plt.savefig(out_dir / f"CDF_fig_{fig_cdf_nb}.svg", dpi=300)
 # plt.savefig(f"{PV.PATH_OUTPUT}/CDF.png", dpi=300)
 
 # plt.show()

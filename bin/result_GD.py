@@ -1,4 +1,5 @@
 
+import argparse
 import numpy as np
 import pandas as pd
 
@@ -101,24 +102,36 @@ def get_related_group(rdi,onep,rd_group_map,name_method_json_key,df_method,get_c
 
 
 if __name__ == "__main__":
+    p = argparse.ArgumentParser()
+    p.add_argument("--run-name",    default="default", help="Run name (output subfolder)")
+    p.add_argument("--do-subsumed", type=int, default=0, choices=[0, 1],
+                   help="1 = use sub1 (subsumed patients), 0 = sub0")
+    args = p.parse_args()
+
+    out_dir = PV.PATH_OUTPUT / args.run_name
+    out_dir.mkdir(parents=True, exist_ok=True)
+
     # ==============================================================================
     # : CONFIGURATION LOG FILE
     # ==============================================================================
 
     # Logging configuration
-    setup_logging(level=logging.INFO,console=False,filename=f"results.log"    )  
+    setup_logging(level=logging.INFO,console=False,filename=f"results.log"    )
     log = get_logger(Path(__file__).stem)
 
 
     # ==============================================================================
     #  DATA LOADING
     # ==============================================================================
-    # Get path random walk with restart results 
+    # Get path random walk with restart results
     most_recent_file_rarw = max(PV.PATH_OUTPUT_FOLDER_RW.glob("*/*/"), key=lambda f: f.stat().st_mtime if f.is_file() else 0)
-     
-    # Load Semantic Similarity results
-    most_recent_file_ra = max(PV.PATH_OUTPUT_DP.glob("*"), key=lambda f: f.stat().st_mtime if f.is_file() else 0)
-    df_sm_all = pd.read_parquet( most_recent_file_ra)
+
+    # Load Semantic Similarity results (only .parquet files from the correct sub folder)
+    most_recent_file_ra = max(
+        PV.get_dp_path(args.do_subsumed).glob("*.parquet"),
+        key=lambda f: f.stat().st_mtime
+    )
+    df_sm_all = pd.read_parquet(most_recent_file_ra)
 
     ## load  patient name from  df_sm_all and not from patient df output because some patient might not be there is subset was done 
     list_patient = df_sm_all['patients'].drop_duplicates().tolist()
@@ -140,7 +153,7 @@ if __name__ == "__main__":
     # -------------------------------------------------------------------------
     # Load patient information with confirmed diagnoses
     # -------------------------------------------------------------------------
-    patients = pd.read_excel(PV.PATH_OUTPUT_DF_PATIENT, index_col=0)
+    patients = pd.read_excel(PV.get_patient_path(args.do_subsumed), index_col=0)
 
 
     # ==============================================================================
@@ -168,7 +181,7 @@ if __name__ == "__main__":
             log.info(f"  No RDI found for patient {user_seed}")
 
         # -------------------------------------------------------------------------
-        ## Process Semantic Similarity (RA) Method Results
+        ## Process Semantic Similarity (pre-RARW) Method Results
         # -------------------------------------------------------------------------
         df_sm_init= df_sm_all[df_sm_all['patients'] == user_seed]
         df_sm_init = df_sm_init.rename(columns={'RDs': 'ORPHAcode'})
@@ -179,18 +192,18 @@ if __name__ == "__main__":
         list_rd_sm = df_sm['ORPHAcode'].tolist()
         if rdi not in list_rd_sm:
             list_rd_sm.append(rdi)
-            log.info(f"  RA: Added RDI ({rdi}) to analysis list")
+            log.info(f"  pre-RARW: Added RDI ({rdi}) to analysis list")
         # Identify relevant classifications for these diseases
         get_classif_sm = df_classif[(df_classif['parent_id'].isin(list_rd_sm)) | (df_classif['child_id'].isin(list_rd_sm))]['root'].drop_duplicates()
 
         # Extract hierarchy relationships Using df_sm_init (not df_sm) to preserve all rank information
-        result_sm =  get_related_group(rdi,user_seed,rd_group_map,"RA",df_sm_init,get_classif_sm,list_rd_sm,df_classif)
+        result_sm =  get_related_group(rdi,user_seed,rd_group_map,"pre-RARW",df_sm_init,get_classif_sm,list_rd_sm,df_classif)
 
-        log.info(f"  RA: Top {user_nb_top_rd} RDs span {len(get_classif_sm)} classifications")
+        log.info(f"  pre-RARW: Top {user_nb_top_rd} RDs span {len(get_classif_sm)} classifications")
 
 
         # -------------------------------------------------------------------------
-        ## Process Semantic Similarity (RA) Method Results
+        ## Process Semantic Similarity post-RARW Method Results
         # -------------------------------------------------------------------------
         # Load and prepare RARW results for this patient
         df_pg_init= pd.read_parquet(f"{most_recent_file_rarw}/{user_seed}.parquet")
@@ -204,13 +217,13 @@ if __name__ == "__main__":
         list_rd_pg = df_pg['ORPHAcode'].tolist()
         if rdi not in list_rd_pg:
             list_rd_pg.append(rdi)
-            log.info(f'{user_seed} RARW :RDI: {rdi} added')
+            log.info(f'{user_seed} post-RARW :RDI: {rdi} added')
 
         get_classif_rarw = df_classif[(df_classif['parent_id'].isin(list_rd_pg)) | (df_classif['child_id'].isin(list_rd_pg))]['root'].drop_duplicates()
 
-        result_pg =  get_related_group(rdi,user_seed,rd_group_map,"RARW",df_pg_init,get_classif_rarw,list_rd_pg,df_classif)
+        result_pg =  get_related_group(rdi,user_seed,rd_group_map,"post-RARW",df_pg_init,get_classif_rarw,list_rd_pg,df_classif)
 
-        log.info(f"  RARW: Top {user_nb_top_rd} RDs span {len(get_classif_rarw)} classifications")
+        log.info(f"  post-RARW: Top {user_nb_top_rd} RDs span {len(get_classif_rarw)} classifications")
 
 
         # -------------------------------------------------------------------------
@@ -346,19 +359,19 @@ if __name__ == "__main__":
                     .fillna(0).astype(int)
 
     # Keep a consistent method order if present
-    col_order = [m for m in ['RA','RARW'] if m in pivot.columns]
+    col_order = [m for m in ['pre-RARW','post-RARW'] if m in pivot.columns]
     pivot = pivot.reindex(columns=col_order)
 
     # Extract cases where methods disagree (TABLE 5 final result)
-    if len(set(pivot['RA']).intersection(pivot['RARW'])) == len(set(pivot['RA'])):
+    if len(set(pivot['pre-RARW']).intersection(pivot['post-RARW'])) == len(set(pivot['pre-RARW'])):
         # condition where RA and RARW have the same values
         df_filter =pivot.copy()
     else:
-        df_filter = pivot[pivot['RA'] != pivot['RARW']]
+        df_filter = pivot[pivot['pre-RARW'] != pivot['post-RARW']]
 
 
  
-    df_filter.to_excel(f"{PV.PATH_OUTPUT}/nb_gp_match_rdi_table5.xlsx")
+    df_filter.to_excel(out_dir / "nb_gp_match_rdi_table5.xlsx")
 
     log.info(f"\nPatients with method disagreement: {len(df_filter)}")
     log.info("\n*** TABLE 5: Group Overlap Comparison ***")
@@ -430,8 +443,8 @@ if __name__ == "__main__":
     )
 
 
-    method_hm_group.to_excel(f"{PV.PATH_OUTPUT}/hm_group_table4.xlsx")
-    log.info("\n*** TABLE 4: Mean Harmonic Mean by Method ***")
+    method_hm_group.to_excel(out_dir / "hm_group_table4.xlsx")
+    log.info("\n  TABLE 4: Mean Harmonic Mean by Method  ")
     log.info(method_hm_group)
 
  

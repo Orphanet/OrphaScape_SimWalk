@@ -8,6 +8,7 @@ from pathlib import Path
 import datetime as dt
 import logging
 
+import argparse
 import yaml
 
 from classes.utils import load_dd_matrix, load_dp_sm
@@ -53,25 +54,28 @@ def get_latest_file(directory: Path, pattern: str = "*.parquet") -> Path:
 # =============================================================================
 
 def main():
+    p = argparse.ArgumentParser()
+    p.add_argument("--do-subsumed", type=int, default=0, choices=[0, 1],
+                   help="1 = use dp_sm/sub1 (subsumed patients), 0 = dp_sm/sub0")
+    args = p.parse_args()
+
     # Logging configuration
-    setup_logging(level=logging.INFO,console=False,filename=f"{Path(__file__).stem}.log"    )  
+    setup_logging(level=logging.INFO,console=False,filename=f"{Path(__file__).stem}.log"    )
     log = get_logger(Path(__file__).stem)
-    
- 
-    
+
     # ==========================================================================
     # AUTO-DETECTION OF LATEST FILES
     # ==========================================================================
-    
+
     try:
         dd_path = get_latest_file(PV.PATH_OUTPUT_DD)
         log.info("DD file (latest): %s", dd_path.name)
     except FileNotFoundError as e:
         log.error("DD error: %s", e)
         return
-    
+
     try:
-        sm_path = get_latest_file(PV.PATH_OUTPUT_DP)
+        sm_path = get_latest_file(PV.get_dp_path(args.do_subsumed))
         log.info("SM file (latest): %s", sm_path.name)
     except FileNotFoundError as e:
         log.error("SM error: %s", e)

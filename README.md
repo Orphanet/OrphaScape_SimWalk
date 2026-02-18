@@ -110,11 +110,69 @@ P3,ORPHA:35689
 **Steps 2-4 requirements:**
 - Step 1 completed successfully
 - Output files from Step 1 present in `output/`
-- Configuration files `config_sm_dd.yaml` and `config_sm_dp.yaml` filled in
 
 **Steps 5-6 requirements:**
 - Steps 2 and 3 completed
-- Configuration file `config_add_rw.yaml` filled in
+
+
+## Run Configuration for all steps : (ajout de cette section modif Maroua)
+The pipeline is compose of 6 steps, for each run of the pipeline we set the config in a single YAML file in `configs/`. This file drives all pipeline steps (`Snakefile.sim`, `Snakefile.rslt`, `Snakefile.add_rw`) - no need to edit multiple config files between runs.
+
+### Config file structure
+Here an exemple of how to run all pipeline steps (see run4.yaml in section 'Example workflow (subset of 10 diseases)' )
+```bash
+# configs/run_example.yaml
+
+run_name: run_example            # output subfolder where figures and tables are : output/run_example/
+fig_num: 1                       # figure suffix: CDF_fig{fig_num+1}.svg, hm_table{fig_num}.xlsx
+do_subsumed: 0                   # 0 = raw HPO terms | 1 = subsumed HPO terms thus removing ancestors terms in the patient profil 
+
+product4: pd4may2025exefev2026   # This refer to the orphanet product version identifier named depending on the user.
+mini_rd: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:610,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949,ORPHA:35689"
+   # optional: restricts computation to a subset of ORPHAcodes instead of the full Orphanet catalogue 
+
+# optional : restricts computation to a subset of patients instead of the full set
+mini_patient: "P1,P2" 
+
+dd:                              # Disease-Disease similarity - omit section to skip
+  combine: ["funSimMax"] #  aggregation function 
+  sm_method: ["resnik"] # pairwise similarity measure
+  vector_strs: ["1_1_1_1_1"]  # weighting vector
+
+dp:                              # Disease-Patient similarity -- omit section to skip
+  combine: ["rsd"] #  aggregation function 
+  sm_method: ["resnik"] # pairwise similarity measure
+  vector_strs: ["1_1_1_1_1", "2_2_2_2_1"]  # weighting vector
+  # Restriction to certain patients (optional dp only )
+  
+
+
+alpha: 0.3                       #  Damping factor for PageRank
+
+steps: ["cdf"]                   # which result steps to run:
+                                 #   "cdf" → CDF plot + harmonic mean table
+                                 #   "gd"  → clinical consistency -based classification (group of disorder) analysis (Tables 4 & 5)
+```
+
+This table map each config parameter to the Snakefile(s) and steps that use it:
+
+| Parameter | Step 1 - Load data<br>`Snakefile.load_input` | Steps 2-3 - Similarity matrices<br>`Snakefile.sim` | Steps 4-5 - Patient integration + RWR<br>`Snakefile.add_rw` | Step 6 - Results<br>`Snakefile.rslt` |
+|-----------|:---:|:---:|:---:|:---:|
+| `do_subsumed`  | ✓ | ✓ | ✓ | ✓ |
+| `run_name`     | x | x | x | ✓ |
+| `fig_num`      | x | x | x | ✓ |
+| `product4`     | x | ✓ | x | ✓ (filter) |
+| `mini_rd`      | ✓ | ✓ (optional) | x | x |
+| `mini_patient` | x | ✓ (Step 3 only optional) | x | ✓ |
+| `dd` (section) | x | ✓ (Step 2 only) | x | x |
+| `dp` (section) | x | ✓ (Step 3 only) | x | x |
+| `vector_strs`        | x | ✓ | x | x |
+| `sm_method`        | x | ✓ | x | x |
+| `combine`        | x | ✓ | x | x |
+| `alpha`        | x | x | ✓ | x |
+| `steps`        | x | x | x | ✓ |
+
+
 
 ---
 
@@ -141,7 +199,8 @@ P3,ORPHA:35689
 │   ├── patient_solverd/
 │   ├── pd_orphanet/
 │   ├── patient_added/
-│   └── RWR/
+│   ├── RWR/
+│   └── run*/ # contain results depending on the run (depending on the configuration file ) (modif Maroua)
 ```
 
 All commands must be executed from the `[project_name]/` directory.
@@ -170,19 +229,30 @@ Contains Orphanet product DDL files downloaded from Orphadata. Required to compu
 
 ---
 
+
+
+
 ## Step-by-step usage
 
-### Step 1 - Load and normalise input data
+### Step 1 - Load and normalise input data  (modif Maroua)
+Converts raw input files (HPO, Orphanet, patients) into the internal standardised format used by the pipeline.
 
 ```bash
-snakemake -s Snakefile.load_input --cores all  #n The number of core Laurent: Meaning AT MOST 8 cores. Otherwise max. Can be removed
--
+# Requires --configfile to set do_subsumed (0 = raw HPO terms, 1 = subsumed HPO terms)
+# Use any run config that contains do_subsumed, or the dedicated config:
+snakemake -s Snakefile.load_input --configfile configs/run_example.yaml --cores all # The number of core  Meaning AT MOST 8 cores. Otherwise max. Can be removed
+
+ 
 # Alternative: run Python scripts directly
 python -m bin.main_load_data
-python -m bin.main_create_patient
+python -m bin.main_create_patient --do-subsumed 0   # → output/patient_solved/patients.xlsx
+python -m bin.main_create_patient --do-subsumed 1   # → output/patient_solved/patients_subsumed.xlsx
+
 ```
 
-Converts raw input files (HPO, Orphanet, patients) into the internal standardised format used by the pipeline.
+
+Parameter mandaroty in the **config** for this step : `do_subsumed`    
+
 
 ### Patient file format
 
@@ -239,39 +309,14 @@ Patient files must follow the **Phenopacket** format (JSON). The most important 
 
 ---
 
-### Step 2 - Build the Disease-Disease (DD) similarity matrix
+### Step 2 - Build the Disease-Disease (DD) similarity matrix (modif Maroua)
+Computes   similarity measure between all ORPHAcodes based on their HPO phenotype annotations, then concatenates the per-ORPHAcode results into a single parquet file per  combination.
 
-Configuration file: `configs/config_sm_dd.yaml`
-
-```yaml
-mode: dd  # do not change
-
-# List format - multiple values allowed
-combine: ["aggregation_method_name"]
-sm_method: ["similarity_measure_name"]
-vector_strs: ["weight_vector"]  # format: 1_1_1_1_1
-
-product4: name-to-define-which-pd4-used  # e.g. pd4may2025exejan2026 - avoid underscores '_'
-
-# Optional: restrict to a subset of ORPHAcodes
-mini_rd_csv: "ORPHA:xxx,ORPHA:xxx..."
-
-# Example: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949"
-```
-
-**Parameter descriptions:**
-- `combine`: semantic aggregation function (e.g. `funSimMax`, `BMA`, `rsd`)
-- `sm_method`: pairwise semantic similarity measure (e.g. `resnik`)
-- `vector_strs`: weighting vector (see Weight Vector section below)
-- `product4`: identifier for the Orphanet product version used
-- `mini_rd_csv` *(optional)*: restricts computation to a subset of ORPHAcodes instead of the full Orphanet catalogue `product4`
-
-**Execution:**
 ```bash
-snakemake -s Snakefile.sim --configfile configs/config_sm_dd.yaml --cores all
+snakemake -s Snakefile.sim --configfile configs/run_example.yaml --cores all
 
 # Alternative: run Python scripts directly
-python -m bin.main_sm dd  -c BMA -m resnik -v "1_1_1_1_1" -pd4 pd4name --mini-rd "ORPHA:610,ORPHA:100985" 
+python -m bin.main_sm dd  -c BMA -m resnik -v "1_1_1_1_1" -pd4 pd4name --mini-rd "ORPHA:610,ORPHA:100985"
 python -m bin.main_concat concat_dd -c BMA -m resnik -v "1_1_1_1_1" --pd4 pd4name
 
 # Help
@@ -282,6 +327,7 @@ python -m bin.main_concat concat_dd -c BMA -m resnik -v "1_1_1_1_1" --pd4 pd4nam
 # python -m bin.main_concat concat_dp --help 
 # python -m bin.main_concat concat_dd --help 
 ```
+Parameter mandaroty in the **config** for this step : `do_subsumed`,`product4`,`dd`,`mini_rd`(optional),`vector_strs`,`sm_method`,`combine`.
 
 **Output** (saved in `output/dd_sm/`):
 - Individual parquet files per disease into folder [aggregation_method]/[similariy_measure]/[n]/[name_to_define_which_pd4_used]/[weight_vector] (format: `{index}_{ORPHA_code}.parquet`)
@@ -304,30 +350,12 @@ Default weight is `1.0` for all positions. Higher values increase emphasis on th
 
 ---
 
-### Step 3 - Build the Disease-Patient (DP) similarity vectors
+### Step 3 - Build the Disease-Patient (DP) similarity vectors (modif Maroua)
+Computes   similarity measure between each patient's HPO phenotype profile and all ORPHAcodes , then concatenates the per-ORPHAcode results into a single parquet file per  combination.
 
-Configuration file to change: `config_sm_dp.yaml`
 
-```yaml
-mode: dp  # do not change
-
-# list format can add multiple items
-combine: ["aggregation_method_name"]
-sm_method: ["similarity_measure_name"]
-vector_strs: ["weight_vector"] # format 1_1_1_1_1
-
-product4: name_to_define_which_pd4_used
-
-# Optional: restrict to a subset of diseases and/or patients
-mini_rd_csv: "ORPHA:xxx,ORPHA:xxx..." 
-mini_patient_csv: "P1,P2..."
-```
-
-Same configuration logic as Step 2. Computation is restricted to diseases present in the DD matrix.
-
-**Execution:**
 ```bash
-snakemake -s Snakefile.sim --configfile configs/config_sm_dp.yaml --cores all
+snakemake -s Snakefile.sim --configfile configs/run_example.yaml --cores all
 
 
 # Alternative: run Python scripts directly
@@ -339,25 +367,21 @@ python -m bin.main_sm dp --help
 python -m bin.main_concat concat_dp --help
 ```
 
+Parameter mandaroty in the **config** for this step : `do_subsumed`,`product4`,`dp`,`mini_rd`(optional),`mini_patient` (optional),`vector_strs`,`sm_method`,`combine`.
+
 **Output** (saved in `output/dp_sm/`):
 - Individual parquet files per disease (same folder structure as DD)
-- Concatenated file: `{combine}_{method}_{product4}_{vector}.parquet` (all patient-disease similarity scores)
+- Concatenated file: `{sub0/1}_{combine}_{method}_{product4}_{vector}.parquet` (all patient-disease similarity scores)
 - Additional file: `RDI_{combine}_{method}_{product4}_{vector}.xlsx` - for each patient, the disease with the highest similarity score
 
 ---
 
-### Steps 4 & 5 - Patient integration and Random Walk with Restart
-
-Configuration file to change: `config_add_rw.yaml`
-
-```yaml
-alphas: [0.3]  # Alpha value(s) for random walk. Multiple values run multiple walks.
-
-```
+### Steps 4 & 5 - Patient integration and Random Walk with Restart (modif Maroua)
+This step integrates patient nodes into the disease similarity matrix, then applies Random Walk with Restart using the NetworkX library.
 
 **Execution:**
 ```bash
-snakemake -s Snakefile.add_rw --configfile configs/config_add_rw.yaml --cores all
+snakemake -s Snakefile.add_rw --configfile configs/run_example.yaml --cores all
 
 # Alternative: run Python scripts directly
 python -m bin.main_add_patients_to_dd
@@ -369,8 +393,8 @@ python -m bin.main_rarw collect -a 0.3
 #python -m bin.main_rarw run --help
 #python -m bin.main_rarw collect --help
 ```
+Parameter mandaroty in the **config** for this step : `do_subsumed`,`alpha`.
 
-This step integrates patient nodes into the disease similarity matrix, then applies Random Walk with Restart using the NetworkX library.
 
 **Output:**
 - `output/patient_added/` - one parquet file per patient containing the DD matrix extended with that patient. A `PROVENANCE.yaml` file records the configuration used.
@@ -380,97 +404,96 @@ This step integrates patient nodes into the disease similarity matrix, then appl
 
 ---
 
-### Step 6 - Results
+### Step 6 - Results (modif Maroua)
 
-The results reported in the paper are reproducible using the scripts orchestrated by `Snakefile.rslt`, computed from the final outputs of Steps 2–5.
+The results reported in the paper are reproducible using the scripts orchestrated by `Snakefile.rslt`, computed from the final outputs of Steps 2-5.
 
-`results_CDFs_hm.py` aggregates all ranking outputs across patients and methods, extracts the rank of the true diagnosis (RDI), and computes global performance summaries including the harmonic mean of ranks and empirical cumulative distribution functions (CDFs). These correspond to Tables 1–3 and the CDF figure in the paper.
-
-`results_GDs.py` produces the classification-based comparisons reported in Tables 4 and 5.
-
-**Execution:**
 ```bash
-snakemake -s Snakefile.rslt --cores all
+snakemake -s Snakefile.rslt --configfile configs/run_example.yaml --cores all  
 
 # Alternative: run Python scripts directly
 python -u bin/results_CDFs_hm.py
 python -u bin/results_GDs.py
 ```
+Parameter mandaroty in the **config** for this step : `do_subsumed`,`alpha`.
+
+**Output :**
+`results_CDFs_hm.py` aggregates all ranking outputs across patients and methods, extracts the rank of the true diagnosis (RDI), and computes global performance summaries including the harmonic mean of ranks and empirical cumulative distribution functions (CDFs). These correspond to Tables 1-3 and the CDF figure in the paper.
+
+`results_GDs.py` produces the classification-based comparisons reported in Tables 4 and 5.
+
 
 ----
 
+
 ## Computational considerations
 
-Building full disease-disease similarity matrices can be computationally expensive. For development, testing, or exploratory analyses (including reproducibility review), it is strongly recommended to restrict computations using the `mini_rd_csv` parameter.
+Building full disease-disease similarity matrices can be computationally expensive. For development, testing, or exploratory analyses (including reproducibility review), it is strongly recommended to restrict computations using the `mini_rd` parameter.
 
 Example restriction:
 ```yaml
-mini_rd_csv: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949"
+mini_rd: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949"
 ```
 
-The Parquet output format is recommended for large-scale analyses due to improved I/O performance and reduced disk usage.
+The Parquet output format is used because it is recommended for large-scale analyses due to improved I/O performance and reduced disk usage.
 
 ---
 
-## Example workflow (subset of 10 diseases)
+## Example workflow (subset of 10 diseases) (modif Maroua)
 
 This quick-start example uses a small subset of diseases and the provided simulated patients to verify the pipeline runs correctly end-to-end.
 
-**1. Load data**
+Four ready-to-use config files are provided in `configs/`, each corresponding to a section of the paper. They can be run independently.
+
+---
+
+**run1** - *"Resnik + FunSimMaxAsym outperforms other groupwise semantic similarity measures"*
 ```bash
-snakemake -s Snakefile.load_input --cores all
+snakemake -s Snakefile.load_input --configfile configs/run1.yaml --cores all
+snakemake -s Snakefile.sim        --configfile configs/run1.yaml --cores all
+snakemake -s Snakefile.rslt       --configfile configs/run1.yaml --cores all
 ```
+**Output :**`output/run1/`  Contains examples of the CDF  and the harmonic mean ranks Table related the to first results.
+---
 
-**2. Build DD matrix (10 diseases)**
+**run2** - *"Effect of subsumed HPO terms removal on ranking"*
 
-The file `configs/config_sm_dd.yaml` contains the following:
-```yaml
-mode: dd
-combine: ["funSimMax"]
-sm_method: ["resnik"]
-vector_strs: ["1_1_1_1_1"]
-product4: pd4may2025exejan2026
-mini_rd_csv: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949,ORPHA:610"
-```
-
-You may edit it to better suit your needs.
-
-
+This result requires two separate runs differing only in `do_subsumed` (0 = raw HPO terms, 1 = subsumed). 
 ```bash
-snakemake -s Snakefile.sim --configfile configs/config_sm_dd.yaml --cores all
+snakemake -s Snakefile.load_input --configfile configs/run2_raw.yaml --cores all
+snakemake -s Snakefile.sim        --configfile configs/run2_raw.yaml --cores all
+snakemake -s Snakefile.rslt       --configfile configs/run2_raw.yaml --cores all
+
+snakemake -s Snakefile.load_input --configfile configs/run2_sub.yaml --cores all
+snakemake -s Snakefile.sim        --configfile configs/run2_sub.yaml --cores all
+snakemake -s Snakefile.rslt       --configfile configs/run2_sub.yaml --cores all
 ```
 
-**3. Build DP vectors**
+**Output :**`output/run2_raw/` and `output/run2_sub/`   Contain both  examples of the CDF  and the harmonic mean ranks Table related the to seconds results.In the paper the two outputs were merged; here they are produced independently.
 
-The file `configs/config_sm_dp.yaml` contains the following:
-```yaml
-mode: dp
-combine: ["rsd"]
-sm_method: ["resnik"]
-vector_strs: ["2_2_2_2_1"]
-product4: pd4may2025exejan2026
-mini_rd_csv: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949,ORPHA:610"
-mini_patient_csv: "P1"
-```
+---
+
+**run3** - *"Effect of frequency-based weighting on ranking performance"*
 ```bash
-snakemake -s Snakefile.sim --configfile configs/config_sm_dp.yaml --cores all
+snakemake -s Snakefile.load_input --configfile configs/run3.yaml --cores all
+snakemake -s Snakefile.sim        --configfile configs/run3.yaml --cores all
+snakemake -s Snakefile.rslt       --configfile configs/run3.yaml --cores all
 ```
+**Output :**`output/run3/`  Contains examples of the CDF  and the harmonic mean ranks Table related the to third results.
 
-**4–5. Patient integration and RWR**
+---
 
-The file `configs/config_add_rw.yaml` contains the following:
-```yaml
-alphas: [0.3]
-```
+**run4** - *"Effect of network propagation on clinical consistency of top-ranked candidates"*
 
+Full pipeline including patient integration in the network and RWR.
 ```bash
-snakemake -s Snakefile.add_rw --configfile configs/config_add_rw.yaml --cores all
+snakemake -s Snakefile.load_input --configfile configs/run4.yaml --cores all
+snakemake -s Snakefile.sim        --configfile configs/run4.yaml --cores all
+snakemake -s Snakefile.add_rw     --configfile configs/run4.yaml --cores all
+snakemake -s Snakefile.rslt       --configfile configs/run4.yaml --cores all
 ```
 
-**6. Results**
-```bash
-snakemake -s Snakefile.rslt --cores all
-```
+**Output :**`output/run4/`  Contains examples of tables (table 4 and 5)related the to fourth results.
 
 ---
 
@@ -480,13 +503,13 @@ snakemake -s Snakefile.rslt --cores all
 Verify that `input/hpo/` contains the three required HPO files from the official HPO website.
 
 **"No patients found"**  
-Ensure Phenopacket files are present in `input/patient/study_population/`.
+Ensure Phenopacket files are present in `input/patient/`.
 
 **"YAML parsing error"**  
 Check YAML indentation - use spaces, never tabs.
 
 **Memory issues on large datasets**  
-Use `mini_rd_csv` and/or `mini_patient_csv` to restrict computation to a smaller subset, and increase available RAM.
+Use `mini_rd` and/or `mini_patient` to restrict computation to a smaller subset, and increase available RAM.
 
 ---
 

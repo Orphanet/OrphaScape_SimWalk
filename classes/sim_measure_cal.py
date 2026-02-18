@@ -1,4 +1,4 @@
-# classes/sim_measure_cal.py  
+
 """
 Calculation of semantic similarity measures between HPO.
 - Global cache for HPO objects and similarity scores
@@ -27,7 +27,6 @@ log.info("HPO Ontology version: %s", Ontology.version())
 # =============================================================================
 # GLOBAL CACHE
 # =============================================================================
-
 _HPO_OBJ_CACHE: dict[str, Optional[object]] = {}  # hpo_id -> Ontology object
 _SIM_CACHE: dict[tuple[str, str, str], float] = {}  # (hpoA, hpoB, method) -> score
 
@@ -399,7 +398,7 @@ class Sim_measure:
 
     
     # =========================================================================
-    # EXPORT AND WRAPPERS
+    # EXPORT  
     # =========================================================================
     
     def export_sm(self, df: pd.DataFrame, path_output: str) -> None:

@@ -1,38 +1,62 @@
 
 import path_variable as PV
 
+run_name    = config.get("run_name", "default")
+fig_num     = config.get("fig_num",  "")
+do_subsumed = config.get("do_subsumed", 0)
+steps       = config.get("steps", ["cdf", "gd"])
+product4    = config.get("product4", "")
 
+# DP filter: only the methods defined in this run's config
+_dp         = config.get("dp", {})
+_vecs_raw   = _dp.get("vector_strs", [])
+dp_combine  = " ".join(_dp.get("combine",   []))
+dp_sm       = " ".join(_dp.get("sm_method", []))
+dp_vecs     = " ".join([v.replace("_", "") for v in _vecs_raw])
+
+fig_suffix  = f"_{fig_num}" if fig_num else ""
+fig_cdf_num = (int(fig_num) + 1) if fig_num else ""
+fig_cdf_suffix = f"_{fig_cdf_num}" if fig_cdf_num != "" else ""
+out_dir     = str(PV.PATH_OUTPUT / run_name)
+
+targets = []
+if "cdf" in steps:
+    targets += [f"{out_dir}/hm_table{fig_suffix}.xlsx",
+                f"{out_dir}/CDF_fig{fig_cdf_suffix}.svg"]
+if "gd" in steps:
+    targets += [f"{out_dir}/nb_gp_match_rdi_table5.xlsx",
+                f"{out_dir}/hm_group_table4.xlsx"]
 
 rule all:
-    input:
-        f"{PV.PATH_OUTPUT}/hm_table_1-3.xlsx",
-        f"{PV.PATH_OUTPUT}/CDF.svg",
-        f"{PV.PATH_OUTPUT}/nb_gp_match_rdi_table5.xlsx",
-        f"{PV.PATH_OUTPUT}/hm_group_table4.xlsx"
+    input: targets
 
- 
+
 #  Rank comparison + HM + CDF
 rule results_rank_cdf:
     output:
-        hm=f"{PV.PATH_OUTPUT}/hm_table_1-3.xlsx",
-        cdf=f"{PV.PATH_OUTPUT}/CDF.svg"
-
+        hm  = f"{out_dir}/hm_table{fig_suffix}.xlsx",
+        cdf = f"{out_dir}/CDF_fig{fig_cdf_suffix}.svg"
     shell:
         r"""
-        rm -f {PV.PATH_OUTPUT}/ADD_RW_DONE.txt
-        PYTHONPATH=.:bin python -u bin/result_CDFs_hm.py 
-
+        PYTHONPATH=.:bin python -u bin/result_CDFs_hm.py \
+          --run-name {run_name} \
+          --fig-num {fig_num} \
+          --do-subsumed {do_subsumed} \
+          --product4 {product4} \
+          --combine {dp_combine} \
+          --sm-method {dp_sm} \
+          --vector-strs {dp_vecs}
         """
 
- 
-#   Classification / Table 4 & 5
+
+#    Table 4 & 5
 rule results_classification:
     output:
-        table5=f"{PV.PATH_OUTPUT}/nb_gp_match_rdi_table5.xlsx",
-        table4=f"{PV.PATH_OUTPUT}/hm_group_table4.xlsx"
-
+        table5 = f"{out_dir}/nb_gp_match_rdi_table5.xlsx",
+        table4 = f"{out_dir}/hm_group_table4.xlsx"
     shell:
         r"""
-        PYTHONPATH=.:bin python -u bin/result_GD.py 
-
+        PYTHONPATH=.:bin python -u bin/result_GD.py \
+          --run-name {run_name} \
+          --do-subsumed {do_subsumed}
         """

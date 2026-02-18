@@ -1,6 +1,0 @@
-# config_add_rw.yaml  Configuration for RARW pipeline
-# Usage: snakemake -s Snakefile.add_rw --configfile config_add_rw.yaml --cores 4
-
-# Damping factor for PageRank
-alpha: 0.3
-

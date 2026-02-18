@@ -1,4 +1,4 @@
-# classes/datagenerate.py  
+
 """
 Base class for data generation: JSON reading, XML->JSON conversion.
 """

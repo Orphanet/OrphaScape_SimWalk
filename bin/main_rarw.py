@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# bin/main_rarw.py 
+ 
 """
 Random Walk with Restart on DD+patient graph.
 Two sub-commands:
@@ -166,7 +166,20 @@ def cmd_aggregate_rdi(args, log):
     log.info("Found %d patient result files", len(result_files))
     
     # Load patient table with their confirmed diagnoses
-    df_patient = pd.read_excel(PV.PATH_OUTPUT_DF_PATIENT, index_col=0, engine="openpyxl")
+    # Detect patient file automatically 
+    patient_dir = Path(PV.PATH_OUTPUT_DF_PATIENT).parent
+    candidate_files = [
+        patient_dir / "patients.xlsx",
+        patient_dir / "patients_subsumed.xlsx"
+    ]
+    patient_file = None
+    for f in candidate_files:
+        if f.exists():
+            patient_file = f
+            break
+    df_patient = pd.read_excel(patient_file, index_col=0, engine="openpyxl")
+
+
     log.info("Loaded patient table: %d rows", len(df_patient))
     
     # Expected columns

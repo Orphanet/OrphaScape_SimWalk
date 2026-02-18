@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-# bin/main_sm.py  
+
 """
-Main script for semantic similarity measure (MM and MP).
+Main script for semantic similarity measure (DD and DP).
 """
 from pathlib import Path
 import argparse
@@ -45,7 +45,7 @@ def run_dd(
     mini_rd: str | None,
     log: logging.Logger = None
 ) -> None:
-    """Executes MM calculation (RD × RD)."""
+    """Executes   calculation (RD × RD).DD """
 
     log = log or get_logger(__name__)
     
@@ -81,14 +81,15 @@ def run_dd(
 
 def run_dp(
     index: int, param_rd: str, combine: str, method: str, pd4: str, vector_str: str,
-    mini_rd: str | None,  
-    mini_patient: str | None = None, log: logging.Logger = None
+    mini_rd: str | None,
+    mini_patient: str | None = None, do_subsumed: int = 0, log: logging.Logger = None
 ) -> None:
-    """Executes MP calculation (Patient × RD)."""
+    """Executes  calculation (Patient × RD) DP."""
     log = log or get_logger(__name__)
-    
+
     # Load patients
-    df_p = pd.read_excel(PV.PATH_OUTPUT_DF_PATIENT, engine="openpyxl", index_col=0)
+    patient_path = PV.get_patient_path(do_subsumed)
+    df_p = pd.read_excel(patient_path, engine="openpyxl", index_col=0)
     
     # Filter patients if requested 
     keep_patients = split_csv_list(mini_patient)
@@ -96,7 +97,7 @@ def run_dp(
         df_p = df_p[df_p[PV.COL_DF_PATIENT_PATIENT].isin(keep_patients)].copy()
         log.info("Filtered patients: %d IDs", len(keep_patients))
     
-    log.info("[MP] Patients after filter: %d uniques", 
+    log.info("[DP] Patients after filter: %d uniques", 
              df_p[PV.COL_DF_PATIENT_PATIENT].nunique())
     
     # Load RDs
@@ -106,7 +107,7 @@ def run_dp(
     weights = parse_weights(vector_str)
     log.info("vector_str=%r -> weights=%s", vector_str, weights)
     
-    out_dir = Path(PV.PATH_OUTPUT_DP) / combine / method / pd4 / str(vector_str)
+    out_dir = PV.get_dp_path(do_subsumed) / combine / method / pd4 / str(vector_str)
     out_dir.mkdir(parents=True, exist_ok=True)
     
     patients_ids = df_p[PV.COL_DF_PATIENT_PATIENT].drop_duplicates().tolist()
@@ -145,6 +146,8 @@ def _add_common_args(sp: argparse.ArgumentParser) -> None:
     
     sp.add_argument("--mini-rd", default=None,
                     help="List of RDs e.g: 'ORPHA:610,ORPHA:100985'")
+    sp.add_argument("--do-subsumed", type=int, default=0, choices=[0, 1],
+                    help="1 = patients_subsumed.xlsx, 0 = patients.xlsx")
 
 
 def main():
@@ -177,7 +180,8 @@ def main():
     if args.mode == "dd":
         run_dd(**common_kwargs)
     else:
-        run_dp(**common_kwargs, mini_patient=getattr(args, "mini_patient", None))
+        run_dp(**common_kwargs, mini_patient=getattr(args, "mini_patient", None),
+               do_subsumed=args.do_subsumed)
  
 
 if __name__ == "__main__":

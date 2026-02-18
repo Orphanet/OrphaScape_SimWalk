@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# bin/main_load_data.py 
+ 
 """
 Script to load and convert Orphanet data.
 Generates DataFrames and YAML needed for the pipeline.

@@ -8,9 +8,14 @@ import path_variable as PV
 def s(p):
     return str(p)
 
+# 1 = remove redundant ancestor HPO terms, 0 = keep all
+do_subsumed = config.get("do_subsumed", 0)
+
+patient_path = s(PV.get_patient_path(do_subsumed))
+
 rule all:
     input:
-        s(PV.PATH_OUTPUT_DF_PATIENT),
+        patient_path,
 
 
 
@@ -42,10 +47,10 @@ rule create_patients:
         s(PV.PATH_OUTPUT_DF_PC_v2),
         s(PV.PATH_OUTPUT_DF_PRODUCT1)
     output:
-        s(PV.PATH_OUTPUT_DF_PATIENT),
+        patient_path,
 
     shell:
         """
         mkdir -p logs
-        PYTHONPATH=.:bin python -u bin/main_create_patient.py 
+        PYTHONPATH=.:bin python -u bin/main_create_patient.py --do-subsumed {do_subsumed}
         """

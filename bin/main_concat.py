@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# bin/main_concat.py  
+
 """
 Script for concatenating SM/MM files.
 """
@@ -36,9 +36,11 @@ def main():
     sm.add_argument("--pd4","-pd4",required=True, help="Version of Orphanet product4 named provided by user ")
 
  
-    ## parameter col option 
+    ## parameter col option
     sm.add_argument("--col1",default='patients',  help="name of the sample col by default patients")
     sm.add_argument("--col2",default='RDs', help="name of the label col by default RDs")
+    sm.add_argument("--do-subsumed", type=int, default=0, choices=[0, 1],
+                    help="1 = sub1 folder (subsumed patients), 0 = sub0 folder")
 
 
     
@@ -48,7 +50,8 @@ def main():
     setup_logging(level=logging.INFO,console=False,filename=f"{Path(__file__).stem}.log"    )  
     log = get_logger(Path(__file__).stem)
     
-    base_dir = PV.PATH_OUTPUT_DD if args.cmd == "concat_dd" else PV.PATH_OUTPUT_DP
+    do_subsumed = getattr(args, "do_subsumed", 0)
+    base_dir = PV.PATH_OUTPUT_DD if args.cmd == "concat_dd" else PV.get_dp_path(do_subsumed)
     
     cx = ConcatSm(
         vector_str=args.vector_str,
@@ -66,7 +69,7 @@ def main():
     if args.cmd == "concat_dd":
         cx.concat_dd()
     else:
-        cx.concat_dp(PV.PATH_OUTPUT_DF_PATIENT)
+        cx.concat_dp(PV.get_patient_path(do_subsumed))
 
 if __name__ == "__main__":
     main()

@@ -1,27 +1,31 @@
-configfile: "configs/config_add_rw.yaml"
-
+ 
 import path_variable as PV
 from pathlib import Path
 
 def s(p): return str(p)
 
-ALPHA = config.get("alpha", 0.3)
+ALPHA       = config.get("alpha", 0.3)
+do_subsumed = config.get("do_subsumed", 0)
 
-DONE = PV.PATH_OUTPUT / "ADD_RW_DONE.txt"
+def alpha_folder(alpha):
+    s = f"{float(alpha):.2f}"
+    return s.rstrip("0").rstrip(".")
+
+RDI_OUT = PV.PATH_OUTPUT_FOLDER_RW / alpha_folder(ALPHA) / "RDI.xlsx"
 
 rule all:
     input:
-        s(DONE)
+        s(RDI_OUT)
 
 rule add_rw_pipeline:
     output:
-        s(DONE)
+        s(RDI_OUT)
     shell:
         r"""
         set -euo pipefail
 
         echo "STEP 1: add patients"
-        python -m bin.main_add_patients_to_dd
+        python -m bin.main_add_patients_to_dd --do-subsumed {do_subsumed}
 
         echo "STEP 2: RARW run"
         MATRIX_DIR=$(ls -td {PV.PATH_OUTPUT_PATIENT_ADDED}/*/ | head -1)
@@ -32,6 +36,4 @@ rule add_rw_pipeline:
 
         echo "STEP 3: collect"
         python -m bin.main_rarw collect --alpha {ALPHA}
-
-        echo "DONE" > {output}
         """

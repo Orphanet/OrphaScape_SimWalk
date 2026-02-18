@@ -1,4 +1,4 @@
-# classes/concat_sm.py — Optimized
+
 """
 Aggregation of SM/MM files by RD into a single workbook.
 - Unified glob patterns

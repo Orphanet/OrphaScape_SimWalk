@@ -22,12 +22,21 @@ COL_DF_PATIENT_PATIENT = "phenopacket"
 PATH_OUTPUT_DP = PATH_OUTPUT / "dp_sm"
 PATH_OUTPUT_DD = PATH_OUTPUT / "dd_sm"
 
+def get_dp_path(do_subsumed: int) -> Path:
+    """Returns the DP output path based on do_subsumed flag (sub0 or sub1)."""
+    return PATH_OUTPUT_DP / f"sub{do_subsumed}"
+
 # =============================================================================
 # FOLDER PATIENTS
 # =============================================================================
 PATH_OUTPUT_PATIENT_SOLVERD = PATH_OUTPUT / "patient_solved"
 PATH_OUTPUT_PATIENT_SOLVERD_UNSOLVED = PATH_OUTPUT_PATIENT_SOLVERD / "patient_solverd_unsolved.xlsx"
 PATH_OUTPUT_DF_PATIENT = PATH_OUTPUT_PATIENT_SOLVERD / "patients.xlsx"
+
+def get_patient_path(do_subsumed: int) -> Path:
+    """Returns the patient file path based on do_subsumed flag."""
+    name = "patients_subsumed.xlsx" if do_subsumed == 1 else "patients.xlsx"
+    return PATH_OUTPUT_PATIENT_SOLVERD / name
 
 # =============================================================================
 # RANDOM WALK
