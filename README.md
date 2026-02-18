@@ -45,20 +45,43 @@ Because the original Solve-RD patient data are confidential and cannot be redist
 
 ## Requirements
 **Core environment**
-- Python 3.12
-- Snakemake 9.3
+- Python 3.12+
 
 **Python dependencies**
-- pandas 2.2.3 
-- numpy 1.26.4
-- xmltodict 0.14.2
-- hpo3 1.4.0 (install with pip)
-- networkx 3.4.2
-- matplotlib 3.10.1  
-- openpyxl 3.1.5 
-- scikit-learn 1.8.0
-- pyarrow
-- fastparquet
+- pandas 2.2-3.0+
+- numpy 1.26-2.4+
+- xmltodict 0.14-1.0+
+- hpo3 1.4-1.5+
+- networkx 3.4-3.6+
+- matplotlib 3.10
+- openpyxl 3.1
+- scikit-learn 1.8
+- snakemake 9.x
+- pyarrow 23.0
+- fastparquet 2025.12
+
+## Install
+
+### Prerequisites
+
+You have to use a python 3.12 environment. The easiest way is to use `conda` which belong to the *Anaconda/Miniconda* distribution. We advise to use *Miniconda*: `https://www.anaconda.com/docs/getting-started/miniconda/main`.
+
+Once miniconda is installed, from a *Terminal/Console*, type:
+
+```bash
+conda create --name simwalk -c conda-forge -c bioconda python=3.12 fastparquet pandas matplotlib networkx openpyxl pyarrow scikit-learn snakemake xmltodict
+conda activate simwalk
+pip install hpo3
+```
+
+### Application
+
+From a terminal, you should `git clone` or download and unzip the application, than change your working directory to `OrphaScape_SimWalk`.
+
+
+## TL;DR:
+
+You don't have much time. Jump directly to section `Example workflow (subset of 10 diseases)` below.
 
 ## Pipeline overview
 
@@ -69,12 +92,9 @@ Because the original Solve-RD patient data are confidential and cannot be redist
 5. Random Walk with Restart
 6. Results
 
-### Prerequisites
-
 Before running any step, ensure the following:
 
 **Step 1 requirements:**
-- Python, Snakemake and libraries installed (see Requirements section)
 - HPO data files are present in `input/hpo/`
 - Orphanet product files are present in `input/pd_orphanet/`
 - Patient files (real or simulated) are placed in `input/patient/`
@@ -403,7 +423,7 @@ snakemake -s Snakefile.load_input --cores all
 
 **2. Build DD matrix (10 diseases)**
 
-Edit `configs/config_sm_dd.yaml`:
+The file `configs/config_sm_dd.yaml` contains the following:
 ```yaml
 mode: dd
 combine: ["funSimMax"]
@@ -412,13 +432,17 @@ vector_strs: ["1_1_1_1_1"]
 product4: pd4may2025exejan2026
 mini_rd_csv: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949,ORPHA:610"
 ```
+
+You may edit it to better suit your needs.
+
+
 ```bash
 snakemake -s Snakefile.sim --configfile configs/config_sm_dd.yaml --cores all
 ```
 
 **3. Build DP vectors**
 
-Edit `configs/config_sm_dp.yaml`:
+The file `configs/config_sm_dp.yaml` contains the following:
 ```yaml
 mode: dp
 combine: ["rsd"]
@@ -434,10 +458,11 @@ snakemake -s Snakefile.sim --configfile configs/config_sm_dp.yaml --cores all
 
 **4–5. Patient integration and RWR**
 
-Edit `configs/config_add_rw.yaml`:
+The file `configs/config_add_rw.yaml` contains the following:
 ```yaml
 alphas: [0.3]
 ```
+
 ```bash
 snakemake -s Snakefile.add_rw --configfile configs/config_add_rw.yaml --cores all
 ```
