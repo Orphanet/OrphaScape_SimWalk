@@ -20,21 +20,21 @@
 	- [Application](#application)
 - [TL;DR:](#tldr)
 - [Pipeline overview](#pipeline-overview)
-- [#Run Configuration for all steps](#run-configuration-for-all-steps)
-	- [#Config file structure](#config-file-structure)
-- [#Project architecture](#project-architecture)
-- [#Step-by-step usage](#step-by-step-usage)
-	- [#Step 1 - Load and normalise input data](#step-1---load-and-normalise-input-data)
-	- [#Patient file format](#patient-file-format)
-	- [#Step 2 - Build the Disease-Disease (DD) similarity matrix](#step-2-build-the-disease-disease-(dd)-similarity-matrix)
-	- [#Weight Vector Explanation](#weight-vector-explanation)
-	- [#Step 3 - Build the Disease-Patient (DP) similarity vectors](#step-3-build-the-disease-patient-(dp)-similarity-vectors)
-	- [#Steps 4 & 5 - Patient integration and Random Walk with Restart](#steps-45-patient-integration-and-random-walk-with-restart)
-	- [#Step 6 - Results](#step-6-results)
-- [#Computational considerations](#computational-considerations)
-- [#Example workflow (subset of 10 diseases)](#example-workflow-(subset-of-10-diseases))
-- [#Troubleshooting](#troubleshooting)
-- [#How to cite](#how-to-cite)
+- [Run Configuration for all steps](#run-configuration-for-all-steps)
+	- [Config file structure](#config-file-structure)
+- [Project architecture](#project-architecture)
+- [Step-by-step usage](#step-by-step-usage)
+	- [Step 1 - Load and normalise input data](#step-1---load-and-normalise-input-data)
+	- [Patient file format](#patient-file-format)
+	- [Step 2 - Build the Disease-Disease (DD) similarity matrix](#step-2-build-the-disease-disease-(dd)-similarity-matrix)
+	- [Weight Vector Explanation](#weight-vector-explanation)
+	- [Step 3 - Build the Disease-Patient (DP) similarity vectors](#step-3-build-the-disease-patient-(dp)-similarity-vectors)
+	- [Steps 4 & 5 - Patient integration and Random Walk with Restart](#steps-45-patient-integration-and-random-walk-with-restart)
+	- [Step 6 - Results](#step-6-results)
+- [Computational considerations](#computational-considerations)
+- [Example workflow (subset of 10 diseases)](#example-workflow-(subset-of-10-diseases))
+- [Troubleshooting](#troubleshooting)
+- [How to cite](#how-to-cite)
 
 ## Project overview
 
@@ -47,6 +47,7 @@ The approach was evaluated on expert-curated cases from the Solve-RD project and
 > See the Materials and Methods section of the paper for a detailed explanation of semantic similarity measures, aggregation methods, and how RWR is applied in this pipeline.
 
 ---
+	[⬆ Retour en haut](#top)
 
 ## Target audience
 
@@ -63,6 +64,8 @@ The pipeline assumes familiarity with:
 
 ---
 
+	[⬆ Retour en haut](#top)
+	
 ## About the provided simulated data
 
 Because the original Solve-RD patient data are confidential and cannot be redistributed, **three simulated patient datasets** are included in this repository to enable full pipeline execution. These datasets are synthetic: they were generated to be structurally consistent with real Phenopacket files and are suitable for reproducing the pipeline steps and verifying code correctness.
@@ -71,6 +74,8 @@ Because the original Solve-RD patient data are confidential and cannot be redist
 
 ---
 
+	[⬆ Retour en haut](#top)
+	
 ## Requirements
 
 **Core environment**
@@ -105,14 +110,19 @@ conda activate simwalk
 pip install hpo3
 ```
 
+		[⬆ Retour en haut](#top)
+
 ### Application
 
 From a terminal, you should `git clone` or download and unzip the application, than change your working directory to `OrphaScape_SimWalk`.
 
+		[⬆ Retour en haut](#top)
 
 ## TL;DR:
 
 You don't have much time? Jump directly to section `Example workflow (subset of 10 diseases)` below.
+
+		[⬆ Retour en haut](#top)
 
 ## Pipeline overview
 
@@ -145,6 +155,7 @@ P3,ORPHA:35689
 **Steps 5-6 requirements:**
 - Steps 2 and 3 completed
 
+		[⬆ Retour en haut](#top)
 
 ## Run Configuration for all steps
 
@@ -208,6 +219,8 @@ This table map each config parameter to the Snakefile(s) and steps that use it:
 
 ---
 
+	[⬆ Retour en haut](#top)
+
 ## Project architecture 
 
 ```text
@@ -261,7 +274,7 @@ Contains Orphanet product DDL files downloaded from Orphadata. Required to compu
 
 ---
 
-
+	[⬆ Retour en haut](#top)
 
 
 ## Step-by-step usage
@@ -340,7 +353,8 @@ Patient files must follow the **Phenopacket** format (JSON). The most important 
 ```
 
 ---
-
+	[⬆ Retour en haut](#top)
+	
 ### Step 2 - Build the Disease-Disease (DD) similarity matrix (modif Maroua)
 Computes   similarity measure between all ORPHAcodes based on their HPO phenotype annotations, then concatenates the per-ORPHAcode results into a single parquet file per  combination.
 
@@ -382,6 +396,8 @@ Default weight is `1.0` for all positions. Higher values increase emphasis on th
 
 ---
 
+		[⬆ Retour en haut](#top)
+
 ### Step 3 - Build the Disease-Patient (DP) similarity vectors (modif Maroua)
 Computes   similarity measure between each patient's HPO phenotype profile and all ORPHAcodes , then concatenates the per-ORPHAcode results into a single parquet file per  combination.
 
@@ -407,6 +423,8 @@ Parameter mandaroty in the **config** for this step: `do_subsumed`,`product4`,`d
 - Additional file: `RDI_{combine}_{method}_{product4}_{vector}.xlsx` - for each patient, the disease with the highest similarity score
 
 ---
+
+	[⬆ Retour en haut](#top)
 
 ### Steps 4 & 5 - Patient integration and Random Walk with Restart (modif Maroua)
 This step integrates patient nodes into the disease similarity matrix, then applies Random Walk with Restart using the NetworkX library.
@@ -436,6 +454,8 @@ Parameter mandaroty in the **config** for this step: `do_subsumed`,`alpha`.
 
 ---
 
+	[⬆ Retour en haut](#top)
+	
 ### Step 6 - Results (modif Maroua)
 
 The results reported in the paper are reproducible using the scripts orchestrated by `Snakefile.rslt`, computed from the final outputs of Steps 2-5.
@@ -457,7 +477,8 @@ Parameter mandaroty in the **config** for this step: `do_subsumed`,`alpha`.
 
 ----
 
-
+	[⬆ Retour en haut](#top)
+	
 ## Computational considerations
 
 Building full disease-disease similarity matrices can be computationally expensive. For development, testing, or exploratory analyses (including reproducibility review), it is strongly recommended to restrict computations using the `mini_rd` parameter.
@@ -471,11 +492,15 @@ The Parquet output format is used because it is recommended for large-scale anal
 
 ---
 
+	[⬆ Retour en haut](#top)
+	
 ## Example workflow (subset of 10 diseases) (modif Maroua)
 
 This quick-start example uses a small subset of diseases and the provided simulated patients to verify the pipeline runs correctly end-to-end.
 
 Four ready-to-use config files are provided in `configs/`, each corresponding to a section of the paper. They can be run independently.
+
+Be sure that you are already running a virtual environnement (e.g. conda activate my_env)
 
 ---
 
@@ -531,6 +556,8 @@ snakemake -s Snakefile.rslt       --configfile configs/run4.yaml --cores all
 
 ---
 
+	[⬆ Retour en haut](#top)
+
 ## Troubleshooting
 
 **"HPO files not found"**  
@@ -547,8 +574,13 @@ Use `mini_rd` and/or `mini_patient` to restrict computation to a smaller subset,
 
 ---
 
+	[⬆ Retour en haut](#top)
+	
 ## How to cite
 
 If you use this pipeline in an academic or scientific context, please cite:
 
 > Chahdil, M. et al. *Combining phenotypic similarity and network propagation to improve performance and clinical consistency of rare disease diagnosis.* (Publication details to be added upon journal release.)
+
+
+	
