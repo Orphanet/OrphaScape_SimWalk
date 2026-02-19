@@ -453,7 +453,9 @@ snakemake -s Snakefile.load_input --configfile configs/run1.yaml --cores all
 snakemake -s Snakefile.sim        --configfile configs/run1.yaml --cores all
 snakemake -s Snakefile.rslt       --configfile configs/run1.yaml --cores all
 ```
+
 **Output :**`output/run1/`  Contains examples of the CDF  and the harmonic mean ranks Table related the to first results.
+
 ---
 
 **run2** - *"Effect of subsumed HPO terms removal on ranking"*
