@@ -71,8 +71,8 @@ Because the original Solve-RD patient data are confidential and cannot be redist
 
 ---
 
-## Requirements
-[⬆ Retour en haut](#top)
+## Requirements[⬆ Retour en haut](#top)
+
 **Core environment**
 - Python 3.12+
 
