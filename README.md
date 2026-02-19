@@ -346,7 +346,7 @@ Patient files must follow the **Phenopacket** format (JSON). The most important 
 
 [⬆ Retour en haut](#top)
 	
-### Step 2 - Build the Disease-Disease (DD) similarity matrix (modif Maroua)
+### Step 2 - Build the Disease-Disease (DD) similarity matrix
 Computes   similarity measure between all ORPHAcodes based on their HPO phenotype annotations, then concatenates the per-ORPHAcode results into a single parquet file per  combination.
 
 ```bash
@@ -387,7 +387,7 @@ Default weight is `1.0` for all positions. Higher values increase emphasis on th
 
 [⬆ Retour en haut](#top)
 
-### Step 3 - Build the Disease-Patient (DP) similarity vectors (modif Maroua)
+### Step 3 - Build the Disease-Patient (DP) similarity vectors
 Computes   similarity measure between each patient's HPO phenotype profile and all ORPHAcodes , then concatenates the per-ORPHAcode results into a single parquet file per  combination.
 
 
@@ -415,7 +415,7 @@ Parameter mandaroty in the **config** for this step: `do_subsumed`,`product4`,`d
 
 
 
-### Steps 4 & 5 - Patient integration and Random Walk with Restart (modif Maroua)
+### Steps 4 & 5 - Patient integration and Random Walk with Restart
 This step integrates patient nodes into the disease similarity matrix, then applies Random Walk with Restart using the NetworkX library.
 
 **Execution:**
@@ -444,7 +444,7 @@ Parameter mandaroty in the **config** for this step: `do_subsumed`,`alpha`.
 [⬆ Retour en haut](#top)
 
 	
-### Step 6 - Results (modif Maroua)
+### Step 6 - Results
 
 The results reported in the paper are reproducible using the scripts orchestrated by `Snakefile.rslt`, computed from the final outputs of Steps 2-5.
 
@@ -480,7 +480,7 @@ The Parquet output format is used because it is recommended for large-scale anal
 [⬆ Retour en haut](#top)
 	
 	
-## Example workflow (subset of 10 diseases) (modif Maroua)
+## Example workflow (subset of 10 diseases)
 
 This quick-start example uses a small subset of diseases and the provided simulated patients to verify the pipeline runs correctly end-to-end.
 
