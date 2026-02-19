@@ -115,8 +115,9 @@ P3,ORPHA:35689
 - Steps 2 and 3 completed
 
 
-## Run Configuration for all steps: (ajout de cette section modif Maroua)
-The pipeline is compose of 6 steps, for each run of the pipeline we set the config in a single YAML file in `configs/`. This file drives all pipeline steps (`Snakefile.sim`, `Snakefile.rslt`, `Snakefile.add_rw`) - no need to edit multiple config files between runs.
+## Run Configuration for all steps
+
+The pipeline consists of 6 steps, all configured through a single YAML file located in `configs/`. Each time the pipeline runs, this one file drives all pipeline steps (`Snakefile.sim`, `Snakefile.rslt`, `Snakefile.add_rw`), so there's no need to edit multiple config files between runs.
 
 ### Config file structure
 Here an exemple of how to run all pipeline steps (see run4.yaml in section 'Example workflow (subset of 10 diseases)' )
@@ -200,7 +201,7 @@ This table map each config parameter to the Snakefile(s) and steps that use it:
 │   ├── pd_orphanet/
 │   ├── patient_added/
 │   ├── RWR/
-│   └── run*/ # contain results depending on the run (depending on the configuration file ) (modif Maroua)
+│   └── run*/ # contain results depending on the run (depending on the configuration file )
 ```
 
 All commands must be executed from the `[project_name]/` directory.
