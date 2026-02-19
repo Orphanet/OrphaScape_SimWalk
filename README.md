@@ -11,11 +11,11 @@
 
 - [Project overview](#project-overview)
 - [Target audience](#target-audience)
-- [About the provided simulated data](#about-the provided-simulated-data)
+- [About the provided simulated data](#about-the-provided-simulated-data)
 - [Requirements](#requirements)
 - [Install](#install)
-	- [Prerequisites](#target-audience)
-	- [Application](#application
+	- [Prerequisites](#prerequisites)
+	- [Application](#application)
 
 
 ## Project overview
