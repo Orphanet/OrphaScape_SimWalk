@@ -26,7 +26,6 @@
 - [Step-by-step usage](#step-by-step-usage)
 	- [Step 1 - Load and normalise input data](#step-1---load-and-normalise-input-data)
 	- [Patient file format](#patient-file-format)
-	- [Step 2 - Build the Disease-Disease (DD) similarity matrix]()
 	- [Step 2 - Build the Disease-Disease (DD) similarity matrix](#step-2---build-the-disease-disease-dd-similarity-matrix)
 	- [Weight Vector Explanation](#weight-vector-explanation)
 	- [Step 3 - Build the Disease-Patient (DP) similarity vectors](#step-3---build-the-disease-patient-dp-similarity-vectors)
