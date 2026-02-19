@@ -16,6 +16,7 @@
 - [Install](#install)
 	- [Prerequisites](#prerequisites)
 	- [Application](#application)
+- [TL;DR:](#tl-dr)
 
 
 ## Project overview
@@ -245,7 +246,7 @@ Contains Orphanet product DDL files downloaded from Orphadata. Required to compu
 
 ## Step-by-step usage
 
-### Step 1 - Load and normalise input data  (modif Maroua)
+### Step 1 - Load and normalise input data
 Converts raw input files (HPO, Orphanet, patients) into the internal standardised format used by the pipeline.
 
 ```bash
@@ -526,7 +527,7 @@ Use `mini_rd` and/or `mini_patient` to restrict computation to a smaller subset,
 
 ---
 
-## Citation
+## How to cite
 
 If you use this pipeline in an academic or scientific context, please cite:
 
