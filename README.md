@@ -36,7 +36,6 @@
 - [Troubleshooting](#troubleshooting)
 - [How to cite](#how-to-cite)
 
-
 ## Project overview
 
 This repository provides a phenotype-based computational pipeline for prioritising rare diseases (ORPHAcodes) from patient phenotypes. The method combines semantic similarity between clinical signs from the Human Phenotype Ontology (HPO) with network-based propagation over the Orphanet nomenclature.
