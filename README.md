@@ -7,6 +7,10 @@
 > The original patient data used in the study cannot be shared due to patient confidentiality constraints. Three **simulated patient datasets** are provided as substitutes to allow reviewers to run and verify the pipeline end-to-end.
 
 ---
+## Table of contents
+
+- [Project overview](#Project overview)
+
 
 ## Project overview
 
