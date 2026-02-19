@@ -115,7 +115,7 @@ P3,ORPHA:35689
 - Steps 2 and 3 completed
 
 
-## Run Configuration for all steps : (ajout de cette section modif Maroua)
+## Run Configuration for all steps: (ajout de cette section modif Maroua)
 The pipeline is compose of 6 steps, for each run of the pipeline we set the config in a single YAML file in `configs/`. This file drives all pipeline steps (`Snakefile.sim`, `Snakefile.rslt`, `Snakefile.add_rw`) - no need to edit multiple config files between runs.
 
 ### Config file structure
@@ -123,7 +123,7 @@ Here an exemple of how to run all pipeline steps (see run4.yaml in section 'Exam
 ```bash
 # configs/run_example.yaml
 
-run_name: run_example            # output subfolder where figures and tables are : output/run_example/
+run_name: run_example            # output subfolder where figures and tables are: output/run_example/
 fig_num: 1                       # figure suffix: CDF_fig{fig_num+1}.svg, hm_table{fig_num}.xlsx
 do_subsumed: 0                   # 0 = raw HPO terms | 1 = subsumed HPO terms thus removing ancestors terms in the patient profil 
 
@@ -131,7 +131,7 @@ product4: pd4may2025exefev2026   # This refer to the orphanet product version id
 mini_rd: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:610,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949,ORPHA:35689"
    # optional: restricts computation to a subset of ORPHAcodes instead of the full Orphanet catalogue 
 
-# optional : restricts computation to a subset of patients instead of the full set
+# optional: restricts computation to a subset of patients instead of the full set
 mini_patient: "P1,P2" 
 
 dd:                              # Disease-Disease similarity - omit section to skip
@@ -251,7 +251,7 @@ python -m bin.main_create_patient --do-subsumed 1   # → output/patient_solved/
 ```
 
 
-Parameter mandaroty in the **config** for this step : `do_subsumed`    
+Parameter mandaroty in the **config** for this step: `do_subsumed`    
 
 
 ### Patient file format
@@ -327,7 +327,7 @@ python -m bin.main_concat concat_dd -c BMA -m resnik -v "1_1_1_1_1" --pd4 pd4nam
 # python -m bin.main_concat concat_dp --help 
 # python -m bin.main_concat concat_dd --help 
 ```
-Parameter mandaroty in the **config** for this step : `do_subsumed`,`product4`,`dd`,`mini_rd`(optional),`vector_strs`,`sm_method`,`combine`.
+Parameter mandaroty in the **config** for this step: `do_subsumed`,`product4`,`dd`,`mini_rd`(optional),`vector_strs`,`sm_method`,`combine`.
 
 **Output** (saved in `output/dd_sm/`):
 - Individual parquet files per disease into folder [aggregation_method]/[similariy_measure]/[n]/[name_to_define_which_pd4_used]/[weight_vector] (format: `{index}_{ORPHA_code}.parquet`)
@@ -367,7 +367,7 @@ python -m bin.main_sm dp --help
 python -m bin.main_concat concat_dp --help
 ```
 
-Parameter mandaroty in the **config** for this step : `do_subsumed`,`product4`,`dp`,`mini_rd`(optional),`mini_patient` (optional),`vector_strs`,`sm_method`,`combine`.
+Parameter mandaroty in the **config** for this step: `do_subsumed`,`product4`,`dp`,`mini_rd`(optional),`mini_patient` (optional),`vector_strs`,`sm_method`,`combine`.
 
 **Output** (saved in `output/dp_sm/`):
 - Individual parquet files per disease (same folder structure as DD)
@@ -393,7 +393,7 @@ python -m bin.main_rarw collect -a 0.3
 #python -m bin.main_rarw run --help
 #python -m bin.main_rarw collect --help
 ```
-Parameter mandaroty in the **config** for this step : `do_subsumed`,`alpha`.
+Parameter mandaroty in the **config** for this step: `do_subsumed`,`alpha`.
 
 
 **Output:**
@@ -415,9 +415,9 @@ snakemake -s Snakefile.rslt --configfile configs/run_example.yaml --cores all
 python -u bin/results_CDFs_hm.py
 python -u bin/results_GDs.py
 ```
-Parameter mandaroty in the **config** for this step : `do_subsumed`,`alpha`.
+Parameter mandaroty in the **config** for this step: `do_subsumed`,`alpha`.
 
-**Output :**
+**Output:**
 `results_CDFs_hm.py` aggregates all ranking outputs across patients and methods, extracts the rank of the true diagnosis (RDI), and computes global performance summaries including the harmonic mean of ranks and empirical cumulative distribution functions (CDFs). These correspond to Tables 1-3 and the CDF figure in the paper.
 
 `results_GDs.py` produces the classification-based comparisons reported in Tables 4 and 5.
@@ -454,7 +454,7 @@ snakemake -s Snakefile.sim        --configfile configs/run1.yaml --cores all
 snakemake -s Snakefile.rslt       --configfile configs/run1.yaml --cores all
 ```
 
-**Output :**`output/run1/`  Contains examples of the CDF  and the harmonic mean ranks Table related the to first results.
+**Output:** `output/run1/`  Contains examples of the CDF  and the harmonic mean ranks Table related the to first results.
 
 ---
 
@@ -471,7 +471,7 @@ snakemake -s Snakefile.sim        --configfile configs/run2_sub.yaml --cores all
 snakemake -s Snakefile.rslt       --configfile configs/run2_sub.yaml --cores all
 ```
 
-**Output :**`output/run2_raw/` and `output/run2_sub/`   Contain both  examples of the CDF  and the harmonic mean ranks Table related the to seconds results.In the paper the two outputs were merged; here they are produced independently.
+**Output:** `output/run2_raw/` and `output/run2_sub/`   Contain both  examples of the CDF  and the harmonic mean ranks Table related the to seconds results.In the paper the two outputs were merged; here they are produced independently.
 
 ---
 
@@ -481,7 +481,7 @@ snakemake -s Snakefile.load_input --configfile configs/run3.yaml --cores all
 snakemake -s Snakefile.sim        --configfile configs/run3.yaml --cores all
 snakemake -s Snakefile.rslt       --configfile configs/run3.yaml --cores all
 ```
-**Output :**`output/run3/`  Contains examples of the CDF  and the harmonic mean ranks Table related the to third results.
+**Output:** `output/run3/`  Contains examples of the CDF  and the harmonic mean ranks Table related the to third results.
 
 ---
 
@@ -495,7 +495,7 @@ snakemake -s Snakefile.add_rw     --configfile configs/run4.yaml --cores all
 snakemake -s Snakefile.rslt       --configfile configs/run4.yaml --cores all
 ```
 
-**Output :**`output/run4/`  Contains examples of tables (table 4 and 5)related the to fourth results.
+**Output:** `output/run4/`  Contains examples of tables (table 4 and 5) related the to fourth results.
 
 ---
 
