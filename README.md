@@ -31,7 +31,7 @@
 	- [Step 3 - Build the Disease-Patient (DP) similarity vectors](#step-3---build-the-disease-patient-dp-similarity-vectors)
 	- [Steps 4 & 5 - Patient integration and Random Walk with Restart](#steps-4--5---patient-integration-and-random-walk-with-restart)
 	- [Step 6 - Results](#step-6---results)
-- [Computational considerations](#cmputational-considerations)
+- [Computational considerations](#computational-considerations)
 - [Example workflow (subset of 10 diseases)](#example-workflow-(subset-of-10-diseases))
 - [Troubleshooting](#troubleshooting)
 - [How to cite](#how-to-cite)
