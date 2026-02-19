@@ -9,7 +9,7 @@
 ---
 ## Table of contents
 
-- [Project overview](#Project overview)
+- [Project overview](#project-overview)
 
 
 ## Project overview
