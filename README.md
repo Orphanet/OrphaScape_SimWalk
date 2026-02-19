@@ -46,8 +46,9 @@ The approach was evaluated on expert-curated cases from the Solve-RD project and
 
 > See the Materials and Methods section of the paper for a detailed explanation of semantic similarity measures, aggregation methods, and how RWR is applied in this pipeline.
 
----
 	[⬆ Retour en haut](#top)
+---
+
 
 ## Target audience
 
@@ -62,9 +63,9 @@ The pipeline assumes familiarity with:
 - YAML configuration files
 - Basic concepts in semantic similarity and graph-based analysis
 
----
-
 	[⬆ Retour en haut](#top)
+
+
 	
 ## About the provided simulated data
 
@@ -72,9 +73,8 @@ Because the original Solve-RD patient data are confidential and cannot be redist
 
 > **Note:** Results obtained with simulated data will differ from those reported in the paper, which used real expert-curated cases. The simulated data are provided solely for code verification and reproducibility review purposes.
 
----
-
 	[⬆ Retour en haut](#top)
+
 	
 ## Requirements
 
