@@ -46,8 +46,7 @@ The approach was evaluated on expert-curated cases from the Solve-RD project and
 
 > See the Materials and Methods section of the paper for a detailed explanation of semantic similarity measures, aggregation methods, and how RWR is applied in this pipeline.
 
-	[⬆ Retour en haut](#top)
----
+[⬆ Retour en haut](#top)
 
 
 ## Target audience
@@ -63,7 +62,7 @@ The pipeline assumes familiarity with:
 - YAML configuration files
 - Basic concepts in semantic similarity and graph-based analysis
 
-	[⬆ Retour en haut](#top)
+[⬆ Retour en haut](#top)
 
 
 	
@@ -72,8 +71,6 @@ The pipeline assumes familiarity with:
 Because the original Solve-RD patient data are confidential and cannot be redistributed, **three simulated patient datasets** are included in this repository to enable full pipeline execution. These datasets are synthetic: they were generated to be structurally consistent with real Phenopacket files and are suitable for reproducing the pipeline steps and verifying code correctness.
 
 > **Note:** Results obtained with simulated data will differ from those reported in the paper, which used real expert-curated cases. The simulated data are provided solely for code verification and reproducibility review purposes.
-
-	[⬆ Retour en haut](#top)
 
 	
 ## Requirements
@@ -94,7 +91,7 @@ Because the original Solve-RD patient data are confidential and cannot be redist
 - pyarrow 23.0
 - fastparquet 2025.12
 
-	[⬆ Retour en haut](#top)
+[⬆ Retour en haut](#top)
 	
 ## Install
 
@@ -110,19 +107,16 @@ conda activate simwalk
 pip install hpo3
 ```
 
-		[⬆ Retour en haut](#top)
 
 ### Application
 
 From a terminal, you should `git clone` or download and unzip the application, than change your working directory to `OrphaScape_SimWalk`.
 
-		[⬆ Retour en haut](#top)
 
 ## TL;DR:
 
 You don't have much time? Jump directly to section `Example workflow (subset of 10 diseases)` below.
 
-		[⬆ Retour en haut](#top)
 
 ## Pipeline overview
 
@@ -155,7 +149,7 @@ P3,ORPHA:35689
 **Steps 5-6 requirements:**
 - Steps 2 and 3 completed
 
-		[⬆ Retour en haut](#top)
+[⬆ Retour en haut](#top)
 
 ## Run Configuration for all steps
 
