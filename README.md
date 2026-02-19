@@ -10,6 +10,12 @@
 ## Table of contents
 
 - [Project overview](#project-overview)
+- [Target audience](#target-audience)
+- [About the provided simulated data](#about-the provided-simulated-data)
+- [Requirements](#requirements)
+- [Install](#install)
+	- [Prerequisites](#target-audience)
+	- [Application](#application
 
 
 ## Project overview
