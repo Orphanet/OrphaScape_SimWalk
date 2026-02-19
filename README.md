@@ -71,7 +71,7 @@ Because the original Solve-RD patient data are confidential and cannot be redist
 
 ---
 
-## Requirements[⬆ Retour en haut](#top)
+## Requirements
 
 **Core environment**
 - Python 3.12+
@@ -89,6 +89,8 @@ Because the original Solve-RD patient data are confidential and cannot be redist
 - pyarrow 23.0
 - fastparquet 2025.12
 
+	[⬆ Retour en haut](#top)
+	
 ## Install
 
 ### Prerequisites
