@@ -7,6 +7,8 @@
 > The original patient data used in the study cannot be shared due to patient confidentiality constraints. Three **simulated patient datasets** are provided as substitutes to allow reviewers to run and verify the pipeline end-to-end.
 
 ---
+
+<a name="top"></a>
 ## Table of contents
 
 - [Project overview](#project-overview)
@@ -70,6 +72,7 @@ Because the original Solve-RD patient data are confidential and cannot be redist
 ---
 
 ## Requirements
+[⬆ Retour en haut](#top)
 **Core environment**
 - Python 3.12+
 
