@@ -1,3 +1,73 @@
+# =========================
+# Python bytecode
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Virtual environments
+# =========================
+venv/
+env/
+.venv/
+ENV/
+
+# =========================
+# Distribution / packaging
+# =========================
+build/
+dist/
+*.egginfo/
+.eggs/
+pipwheelmetadata/
+
+# =========================
+# Logs & databases
+# =========================
+*.log
+*.sqlite3
+db.sqlite3
+
+# =========================
+# Unit test / coverage
+# =========================
+htmlcov/
+.coverage
+.coverage.*
+.pytest_cache/
+.mypy_cache/
+.tox/
+.nox/
+
+# =========================
+# Jupyter Notebook
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# IDEs / Editors
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.*
+
+
+
+
 # Specifics
 logs/
 output/
