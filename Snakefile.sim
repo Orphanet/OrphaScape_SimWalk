@@ -1,6 +1,8 @@
 
 import os
 import re
+import sys
+import subprocess
 import path_variable as PV
 
 
@@ -57,9 +59,6 @@ dp_combine, dp_sm, dp_vecs = _parse_mode_cfg(dp_cfg) if dp_cfg else ([], [], [])
 OUT_DD = s(PV.PATH_OUTPUT_DD)
 OUT_DP = s(PV.get_dp_path(do_subsumed))
 
-MP_EXTRA     = f'--mini-patient "{mini_patient}"' if mini_patient else ""
-DO_SUB_EXTRA = f"--do-subsumed {do_subsumed}"
-
 # =============================================================================
 # RULES
 # =============================================================================
@@ -72,7 +71,7 @@ rule all:
                cdp=dp_combine, sdp=dp_sm, vdp=dp_vecs)
 
 
-### DD  
+### DD
 
 rule run_combo_dd:
     input:
@@ -83,17 +82,17 @@ rule run_combo_dd:
         vdd=r"[0-9]{5}",
         cdd=_wc(dd_combine),
         sdd=_wc(dd_sm)
-    shell:
-        r"""
-        set -euo pipefail
-        echo "Computing DD {wildcards.cdd}/{wildcards.sdd}/{wildcards.vdd}"
-        python -m bin.main_sm dd \
-          --combine {wildcards.cdd} \
-          --sm {wildcards.sdd} \
-          --vector-str {wildcards.vdd} \
-          --pd4 {product4} \
-          --mini-rd "{mini_rd}"
-        """
+    run:
+        print(f"Computing DD {wildcards.cdd}/{wildcards.sdd}/{wildcards.vdd}")
+        cmd = [
+            sys.executable, "-m", "bin.main_sm", "dd",
+            "--combine", wildcards.cdd,
+            "--sm", wildcards.sdd,
+            "--vector-str", wildcards.vdd,
+            "--pd4", product4,
+            "--mini-rd", mini_rd,
+        ]
+        subprocess.check_call(cmd)
 
 rule aggregate_dd:
     input:
@@ -104,18 +103,18 @@ rule aggregate_dd:
         vdd=r"[0-9]{5}",
         cdd=_wc(dd_combine),
         sdd=_wc(dd_sm)
-    shell:
-        r"""
-        python -m bin.main_concat concat_dd \
-          --vector-str {wildcards.vdd} \
-          --col1 OC1 --col2 OC2 \
-          --pd4 {product4} \
-          --combine {wildcards.cdd} \
-          --sm {wildcards.sdd}
-        """
+    run:
+        subprocess.check_call([
+            sys.executable, "-m", "bin.main_concat", "concat_dd",
+            "--vector-str", wildcards.vdd,
+            "--col1", "OC1", "--col2", "OC2",
+            "--pd4", product4,
+            "--combine", wildcards.cdd,
+            "--sm", wildcards.sdd,
+        ])
 
 
-### DP  
+### DP
 
 rule run_combo_dp:
     input:
@@ -126,17 +125,20 @@ rule run_combo_dp:
         vdp=r"[0-9]{5}",
         cdp=_wc(dp_combine),
         sdp=_wc(dp_sm)
-    shell:
-        r"""
-        set -euo pipefail
-        echo "Computing DP {wildcards.cdp}/{wildcards.sdp}/{wildcards.vdp}"
-        python -m bin.main_sm dp \
-          --combine {wildcards.cdp} \
-          --sm {wildcards.sdp} \
-          --vector-str {wildcards.vdp} \
-          --pd4 {product4} \
-          --mini-rd "{mini_rd}" {MP_EXTRA} {DO_SUB_EXTRA}
-        """
+    run:
+        print(f"Computing DP {wildcards.cdp}/{wildcards.sdp}/{wildcards.vdp}")
+        cmd = [
+            sys.executable, "-m", "bin.main_sm", "dp",
+            "--combine", wildcards.cdp,
+            "--sm", wildcards.sdp,
+            "--vector-str", wildcards.vdp,
+            "--pd4", product4,
+            "--mini-rd", mini_rd,
+            "--do-subsumed", str(do_subsumed),
+        ]
+        if mini_patient:
+            cmd += ["--mini-patient", mini_patient]
+        subprocess.check_call(cmd)
 
 rule aggregate_dp:
     input:
@@ -147,13 +149,13 @@ rule aggregate_dp:
         vdp=r"[0-9]{5}",
         cdp=_wc(dp_combine),
         sdp=_wc(dp_sm)
-    shell:
-        r"""
-        python -m bin.main_concat concat_dp \
-          --vector-str {wildcards.vdp} \
-          --col1 patients --col2 RDs \
-          --pd4 {product4} \
-          --combine {wildcards.cdp} \
-          --sm {wildcards.sdp} \
-          --do-subsumed {do_subsumed}
-        """
+    run:
+        subprocess.check_call([
+            sys.executable, "-m", "bin.main_concat", "concat_dp",
+            "--vector-str", wildcards.vdp,
+            "--col1", "patients", "--col2", "RDs",
+            "--pd4", product4,
+            "--combine", wildcards.cdp,
+            "--sm", wildcards.sdp,
+            "--do-subsumed", str(do_subsumed),
+        ])

@@ -1,4 +1,6 @@
 
+import sys
+import subprocess
 import path_variable as PV
 
 run_name    = config.get("run_name", "default")
@@ -36,17 +38,17 @@ rule results_rank_cdf:
     output:
         hm  = f"{out_dir}/hm_table{fig_suffix}.xlsx",
         cdf = f"{out_dir}/CDF_fig{fig_cdf_suffix}.svg"
-    shell:
-        r"""
-        PYTHONPATH=.:bin python -u bin/result_CDFs_hm.py \
-          --run-name {run_name} \
-          --fig-num {fig_num} \
-          --do-subsumed {do_subsumed} \
-          --product4 {product4} \
-          --combine {dp_combine} \
-          --sm-method {dp_sm} \
-          --vector-strs {dp_vecs}
-        """
+    run:
+        subprocess.check_call([
+            sys.executable, "-m", "bin.result_CDFs_hm",
+            "--run-name", run_name,
+            "--fig-num", str(fig_num),
+            "--do-subsumed", str(do_subsumed),
+            "--product4", product4,
+            "--combine", *dp_combine.split(),
+            "--sm-method", *dp_sm.split(),
+            "--vector-strs", *dp_vecs.split(),
+        ])
 
 
 #    Table 4 & 5
@@ -54,9 +56,9 @@ rule results_classification:
     output:
         table5 = f"{out_dir}/nb_gp_match_rdi_table5.xlsx",
         table4 = f"{out_dir}/hm_group_table4.xlsx"
-    shell:
-        r"""
-        PYTHONPATH=.:bin python -u bin/result_GD.py \
-          --run-name {run_name} \
-          --do-subsumed {do_subsumed}
-        """
+    run:
+        subprocess.check_call([
+            sys.executable, "-m", "bin.result_GD",
+            "--run-name", run_name,
+            "--do-subsumed", str(do_subsumed),
+        ])

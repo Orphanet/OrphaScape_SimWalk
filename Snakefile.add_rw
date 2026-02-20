@@ -1,4 +1,7 @@
- 
+
+import os
+import sys
+import subprocess
 import path_variable as PV
 from pathlib import Path
 
@@ -20,20 +23,25 @@ rule all:
 rule add_rw_pipeline:
     output:
         s(RDI_OUT)
-    shell:
-        r"""
-        set -euo pipefail
+    run:
+        print("STEP 1: add patients")
+        subprocess.check_call([
+            sys.executable, "-m", "bin.main_add_patients_to_dd",
+            "--do-subsumed", str(do_subsumed),
+        ])
 
-        echo "STEP 1: add patients"
-        python -m bin.main_add_patients_to_dd --do-subsumed {do_subsumed}
+        print("STEP 2: RARW run")
+        matrix_dir = max(PV.PATH_OUTPUT_PATIENT_ADDED.glob("*/"), key=os.path.getmtime)
+        for pq in sorted(matrix_dir.glob("*.parquet")):
+            patient = pq.stem
+            subprocess.check_call([
+                sys.executable, "-m", "bin.main_rarw", "run",
+                "--seeds", patient,
+                "--alpha", str(ALPHA),
+            ])
 
-        echo "STEP 2: RARW run"
-        MATRIX_DIR=$(ls -td {PV.PATH_OUTPUT_PATIENT_ADDED}/*/ | head -1)
-        for pq in "$MATRIX_DIR"/*.parquet; do
-            PATIENT=$(basename "$pq" .parquet)
-            python -m bin.main_rarw run --seeds "$PATIENT" --alpha {ALPHA}
-        done
-
-        echo "STEP 3: collect"
-        python -m bin.main_rarw collect --alpha {ALPHA}
-        """
+        print("STEP 3: collect")
+        subprocess.check_call([
+            sys.executable, "-m", "bin.main_rarw", "collect",
+            "--alpha", str(ALPHA),
+        ])

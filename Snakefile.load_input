@@ -2,7 +2,10 @@
 1. main_load_data.py (build products, classifs)
 2. main_create_patient.py (build patient datasets)
 """
+import sys
+import subprocess
 import path_variable as PV
+from pathlib import Path
 
 # convert path into str for snakemake
 def s(p):
@@ -16,7 +19,6 @@ patient_path = s(PV.get_patient_path(do_subsumed))
 rule all:
     input:
         patient_path,
-
 
 
 rule load_all_products:
@@ -35,12 +37,9 @@ rule load_all_products:
         s(PV.PATH_OUTPUT_DF_PC_CLASSIF_v2),
         directory(s(PV.PATH_OUTPUT_PRODUCT_CLASSIF)),
         s(PV.PATH_YAML_PRODUCT4),
-
-    shell:
-        """
-        mkdir -p logs
-        PYTHONPATH=.:bin python -u bin/main_load_data.py 
-        """
+    run:
+        Path("logs").mkdir(parents=True, exist_ok=True)
+        subprocess.check_call([sys.executable, "-m", "bin.main_load_data"])
 
 rule create_patients:
     input:
@@ -48,9 +47,9 @@ rule create_patients:
         s(PV.PATH_OUTPUT_DF_PRODUCT1)
     output:
         patient_path,
-
-    shell:
-        """
-        mkdir -p logs
-        PYTHONPATH=.:bin python -u bin/main_create_patient.py --do-subsumed {do_subsumed}
-        """
+    run:
+        Path("logs").mkdir(parents=True, exist_ok=True)
+        subprocess.check_call([
+            sys.executable, "-m", "bin.main_create_patient",
+            "--do-subsumed", str(do_subsumed),
+        ])
