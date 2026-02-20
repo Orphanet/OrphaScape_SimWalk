@@ -46,7 +46,7 @@ The approach was evaluated on expert-curated cases from the Solve-RD project and
 
 > See the Materials and Methods section of the paper for a detailed explanation of semantic similarity measures, aggregation methods, and how RWR is applied in this pipeline.
 
-[⬆ Retour en haut](#top)
+[⬆ Back to top](#top)
 
 
 ## Target audience
@@ -62,7 +62,7 @@ The pipeline assumes familiarity with:
 - YAML configuration files
 - Basic concepts in semantic similarity and graph-based analysis
 
-[⬆ Retour en haut](#top)
+[⬆ Back to top](#top)
 
 
 	
@@ -91,7 +91,7 @@ Because the original Solve-RD patient data are confidential and cannot be redist
 - pyarrow 23.0
 - fastparquet 2025.12
 
-[⬆ Retour en haut](#top)
+[⬆ Back to top](#top)
 	
 ## Install
 
@@ -117,7 +117,7 @@ From a terminal, you should `git clone` or download and unzip the application, t
 
 You don't have much time? Jump directly to section `Example workflow (subset of 10 diseases)` below.
 
-[⬆ Retour en haut](#top)
+[⬆ Back to top](#top)
 
 ## Pipeline overview
 
@@ -150,7 +150,7 @@ P3,ORPHA:35689
 **Steps 5-6 requirements:**
 - Steps 2 and 3 completed
 
-[⬆ Retour en haut](#top)
+[⬆ Back to top](#top)
 
 ## Run Configuration for all steps
 
@@ -211,7 +211,7 @@ This table map each config parameter to the Snakefile(s) and steps that use it:
 | `steps`        | x | x | x | ✓ |
 
 
-[⬆ Retour en haut](#top)
+[⬆ Back to top](#top)
 
 
 
@@ -266,7 +266,7 @@ Contains Orphanet product DDL files downloaded from Orphadata. Required to compu
 - `path_variable.py` - sets all project paths (do not edit)
 - `set_log.py` - configures logging
 
-[⬆ Retour en haut](#top)
+[⬆ Back to top](#top)
 
 
 ## Step-by-step usage
@@ -344,7 +344,7 @@ Patient files must follow the **Phenopacket** format (JSON). The most important 
 }
 ```
 
-[⬆ Retour en haut](#top)
+[⬆ Back to top](#top)
 	
 ### Step 2 - Build the Disease-Disease (DD) similarity matrix
 Computes   similarity measure between all ORPHAcodes based on their HPO phenotype annotations, then concatenates the per-ORPHAcode results into a single parquet file per  combination.
@@ -385,7 +385,7 @@ Example: `2_2_2_2_1`
 
 Default weight is `1.0` for all positions. Higher values increase emphasis on that frequency category.
 
-[⬆ Retour en haut](#top)
+[⬆ Back to top](#top)
 
 ### Step 3 - Build the Disease-Patient (DP) similarity vectors
 Computes   similarity measure between each patient's HPO phenotype profile and all ORPHAcodes , then concatenates the per-ORPHAcode results into a single parquet file per  combination.
@@ -411,7 +411,7 @@ Parameter mandaroty in the **config** for this step: `do_subsumed`,`product4`,`d
 - Concatenated file: `{sub0/1}_{combine}_{method}_{product4}_{vector}.parquet` (all patient-disease similarity scores)
 - Additional file: `RDI_{combine}_{method}_{product4}_{vector}.xlsx` - for each patient, the disease with the highest similarity score
 
-[⬆ Retour en haut](#top)
+[⬆ Back to top](#top)
 
 
 
@@ -441,7 +441,7 @@ Parameter mandaroty in the **config** for this step: `do_subsumed`,`alpha`.
 
 > **Note:** Only patients present in both the DD and DP matrices are processed.
 
-[⬆ Retour en haut](#top)
+[⬆ Back to top](#top)
 
 	
 ### Step 6 - Results
@@ -462,7 +462,7 @@ Parameter mandaroty in the **config** for this step: `do_subsumed`,`alpha`.
 
 `results_GDs.py` produces the classification-based comparisons reported in Tables 4 and 5.
 
-[⬆ Retour en haut](#top)
+[⬆ Back to top](#top)
 
 
 	
@@ -477,7 +477,7 @@ mini_rd: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:329284,ORPHA:34516,ORPHA:41
 
 The Parquet output format is used because it is recommended for large-scale analyses due to improved I/O performance and reduced disk usage.
 
-[⬆ Retour en haut](#top)
+[⬆ Back to top](#top)
 	
 	
 ## Example workflow (subset of 10 diseases)
@@ -540,7 +540,7 @@ snakemake -s Snakefile.rslt       --configfile configs/run4.yaml --cores all
 
 **Output:** `output/run4/`  Contains examples of tables (table 4 and 5) related the to fourth results.
 
-[⬆ Retour en haut](#top)
+[⬆ Back to top](#top)
 
 
 ## Troubleshooting
@@ -557,7 +557,7 @@ Check YAML indentation - use spaces, never tabs.
 **Memory issues on large datasets**  
 Use `mini_rd` and/or `mini_patient` to restrict computation to a smaller subset, and increase available RAM.
 
-[⬆ Retour en haut](#top)
+[⬆ Back to top](#top)
 
 	
 ## How to cite
