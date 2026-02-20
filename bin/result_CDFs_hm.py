@@ -75,7 +75,7 @@ for ra in list_ra_sm:
     ra_rslt=  ra.rsplit('.', 1)[0] # remore the extension
 
     ## list of df from RA but with different vector 
-    df_sm = pd.read_parquet(f"{PV.get_dp_path(args.do_subsumed)}/{ra}")
+    df_sm = pd.read_parquet(PV.get_dp_path(args.do_subsumed) / ra)
  
     list_sm = df_sm["patients"].drop_duplicates().tolist()
     dict_df_ra_sm[ra_rslt] = df_sm

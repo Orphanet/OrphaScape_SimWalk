@@ -47,7 +47,7 @@ def cmd_run_rarw(args, log):
     alpha = args.alpha
 
     matrix_dir =max(PV.PATH_OUTPUT_PATIENT_ADDED.glob("*/"), key=os.path.getmtime)
-    matrix_subdir_file = str(matrix_dir).split("/")[-1]
+    matrix_subdir_file = matrix_dir.name
     
     log.info("Seeds: %s", seeds)
     log.info("Alpha: %s", alpha)
@@ -149,7 +149,7 @@ def cmd_aggregate_rdi(args, log):
     """
 
     matrix_subdir =max(PV.PATH_OUTPUT_PATIENT_ADDED.glob("*/"), key=os.path.getmtime)
-    matrix_subdir_file = str(matrix_subdir).split("/")[-1]
+    matrix_subdir_file = matrix_subdir.name
 
     alpha_str = alpha_folder(args.alpha)
     

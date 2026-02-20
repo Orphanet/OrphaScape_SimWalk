@@ -73,7 +73,7 @@ def run_dd(
         one_param = param_RD[k]
         if one_param not in set(rd_list):
             empty = pd.DataFrame(columns=["OC1", "OC2", "score"], index=[0])
-            sim.export_sm(empty, f"{out_dir}/{k}_{one_param.replace(':','-')}.parquet")
+            sim.export_sm(empty, out_dir / f"{k}_{one_param.replace(':', '-')}.parquet")
         else:
             sim.compute_sm( int(k), one_param, rd_list, combine, method, weights, str(out_dir))
 
@@ -119,7 +119,7 @@ def run_dp(
         sim = Sim_measure(df_p, df_m, PV.COL_DF_PATIENT_PATIENT, "ORPHAcode", logger=log)
         if one_param not in rd_list:
             empty = pd.DataFrame(columns=["RDs", "patients", "score"], index=[0])
-            sim.export_sm(empty, f"{out_dir}/{i}_{one_param.replace(':','-')}.parquet")
+            sim.export_sm(empty, out_dir / f"{i}_{one_param.replace(':', '-')}.parquet")
         else:
             sim.compute_sm_RDI(i, one_param, patients_ids, combine, method, weights, str(out_dir))
 

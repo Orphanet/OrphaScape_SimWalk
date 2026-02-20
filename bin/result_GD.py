@@ -206,7 +206,7 @@ if __name__ == "__main__":
         ## Process Semantic Similarity post-RARW Method Results
         # -------------------------------------------------------------------------
         # Load and prepare RARW results for this patient
-        df_pg_init= pd.read_parquet(f"{most_recent_file_rarw}/{user_seed}.parquet")
+        df_pg_init= pd.read_parquet(most_recent_file_rarw / f"{user_seed}.parquet")
         df_pg_init = df_pg_init.rename(columns={'rank_pg': 'rank'})
         # set index to ORPHAcode name 
         df_pg_init.index.name = "ORPHAcode"
