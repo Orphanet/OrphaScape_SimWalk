@@ -1,0 +1,18 @@
+
+import shutil # for cross plateform (same as rm -rf)
+import path_variable as PV
+from pathlib import Path
+
+FOLDERS_TO_CLEAN = [
+    PV.PATH_OUTPUT,
+    #Path("logs"),
+]
+
+rule clean:
+    run:
+        for folder in FOLDERS_TO_CLEAN:
+            if folder.exists():
+                shutil.rmtree(folder)
+                print(f"Removed: {folder}")
+            else:
+                print(f"Already clean: {folder}")

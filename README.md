@@ -152,6 +152,7 @@ P3,ORPHA:35689
 
 [⬆ Back to top](#top)
 
+
 ## Run Configuration for all steps
 
 The pipeline consists of 6 steps, all configured through a single YAML file located in `configs/`. Each time the pipeline runs, this one file drives all pipeline steps (`Snakefile.sim`, `Snakefile.rslt`, `Snakefile.add_rw`), so there's no need to edit multiple config files between runs.
@@ -270,6 +271,15 @@ Contains Orphanet product DDL files downloaded from Orphadata. Required to compu
 
 
 ## Step-by-step usage
+
+
+### Clean all outputs
+
+To delete all generated files and start from scratch, run the following command from the project root:
+
+```bash
+snakemake -s Snakefile.clean clean --cores all
+```
 
 ### Step 1 - Load and normalise input data
 Converts raw input files (HPO, Orphanet, patients) into the internal standardised format used by the pipeline.
@@ -489,6 +499,14 @@ Four ready-to-use config files are provided in `configs/`, each corresponding to
 Be sure that you are already running a virtual environnement (e.g. conda activate my_env)
 
 ---
+
+
+## Clean all outputs
+
+**snakemake to clan all output and start from scratch**
+```bash
+snakemake -s Snakefile.clean clean --cores all
+```
 
 **run1** - *"Resnik + FunSimMaxAsym outperforms other groupwise semantic similarity measures"*
 ```bash
