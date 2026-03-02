@@ -19,7 +19,7 @@
 	- [Prerequisites](#prerequisites)
 	- [Application](#application)
 - [TL;DR:](#tldr)
-- [How to : Example workflow (subset of 10 diseases)](#example-workflow-(subset-of-10-diseases))
+- [How to: Example workflow (subset of 10 diseases)](#how-to:-example-workflow-(subset-of-10-diseases)) 
 - [Pipeline overview](#pipeline-overview)
 - [Run Configuration for all steps](#run-configuration-for-all-steps)
 	- [Config file structure](#config-file-structure)
