@@ -115,7 +115,7 @@ From a terminal, you should `git clone` or download and unzip the application, t
 
 ## TL;DR:
 
-You don't have much time? Jump directly to section `Example workflow (subset of 10 diseases)` below.
+You don't have much time? Jump directly to section `How to: Example workflow (subset of 10 diseases)` below.
 
 	
 	
