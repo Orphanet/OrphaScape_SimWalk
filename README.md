@@ -135,6 +135,8 @@ Be sure that you are already running a virtual environnement (e.g. conda activat
 ```bash
 snakemake -s Snakefile.clean clean --cores all
 ```
+---
+
 ### Start the example workflow  
 
 **run1** - *"Resnik + FunSimMaxAsym outperforms other groupwise semantic similarity measures"*
