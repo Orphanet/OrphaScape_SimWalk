@@ -19,7 +19,7 @@
 	- [Prerequisites](#prerequisites)
 	- [Application](#application)
 - [TL;DR:](#tldr)
-- [Example workflow (subset of 10 diseases)](#example-workflow-(subset-of-10-diseases))
+- [How to : Example workflow (subset of 10 diseases)](#example-workflow-(subset-of-10-diseases))
 - [Pipeline overview](#pipeline-overview)
 - [Run Configuration for all steps](#run-configuration-for-all-steps)
 	- [Config file structure](#config-file-structure)
@@ -119,7 +119,7 @@ You don't have much time? Jump directly to section `Example workflow (subset of 
 
 	
 	
-## Example workflow (subset of 10 diseases)
+## How to: Example workflow (subset of 10 diseases)
 
 This quick-start example uses a small subset of diseases and the provided simulated patients to verify the pipeline runs correctly end-to-end.
 
