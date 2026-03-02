@@ -19,6 +19,7 @@
 	- [Prerequisites](#prerequisites)
 	- [Application](#application)
 - [TL;DR:](#tldr)
+- [Example workflow (subset of 10 diseases)](#example-workflow-(subset-of-10-diseases))
 - [Pipeline overview](#pipeline-overview)
 - [Run Configuration for all steps](#run-configuration-for-all-steps)
 	- [Config file structure](#config-file-structure)
@@ -32,7 +33,6 @@
 	- [Steps 4 & 5 - Patient integration and Random Walk with Restart](#steps-4--5---patient-integration-and-random-walk-with-restart)
 	- [Step 6 - Results](#step-6---results)
 - [Computational considerations](#computational-considerations)
-- [Example workflow (subset of 10 diseases)](#example-workflow-(subset-of-10-diseases))
 - [Troubleshooting](#troubleshooting)
 - [How to cite](#how-to-cite)
 
@@ -116,6 +116,79 @@ From a terminal, you should `git clone` or download and unzip the application, t
 ## TL;DR:
 
 You don't have much time? Jump directly to section `Example workflow (subset of 10 diseases)` below.
+
+	
+	
+## Example workflow (subset of 10 diseases)
+
+This quick-start example uses a small subset of diseases and the provided simulated patients to verify the pipeline runs correctly end-to-end.
+
+Four ready-to-use config files are provided in `configs/`, each corresponding to a section of the paper. They can be run independently.
+
+Be sure that you are already running a virtual environnement (e.g. conda activate my_env)
+
+---
+
+
+## Clean all outputs
+
+**snakemake to clan all output and start from scratch**
+```bash
+snakemake -s Snakefile.clean clean --cores all
+```
+
+**run1** - *"Resnik + FunSimMaxAsym outperforms other groupwise semantic similarity measures"*
+```bash
+snakemake -s Snakefile.load_input --configfile configs/run1.yaml --cores all
+snakemake -s Snakefile.sim        --configfile configs/run1.yaml --cores all
+snakemake -s Snakefile.rslt       --configfile configs/run1.yaml --cores all
+```
+
+**Output:** `output/run1/`  Contains examples of the CDF  and the harmonic mean ranks Table related the to first results.
+
+---
+
+**run2** - *"Effect of subsumed HPO terms removal on ranking"*
+
+This result requires two separate runs differing only in `do_subsumed` (0 = raw HPO terms, 1 = subsumed). 
+```bash
+snakemake -s Snakefile.load_input --configfile configs/run2_raw.yaml --cores all
+snakemake -s Snakefile.sim        --configfile configs/run2_raw.yaml --cores all
+snakemake -s Snakefile.rslt       --configfile configs/run2_raw.yaml --cores all
+
+snakemake -s Snakefile.load_input --configfile configs/run2_sub.yaml --cores all
+snakemake -s Snakefile.sim        --configfile configs/run2_sub.yaml --cores all
+snakemake -s Snakefile.rslt       --configfile configs/run2_sub.yaml --cores all
+```
+
+**Output:** `output/run2_raw/` and `output/run2_sub/`   Contain both  examples of the CDF  and the harmonic mean ranks Table related the to seconds results.In the paper the two outputs were merged; here they are produced independently.
+
+---
+
+**run3** - *"Effect of frequency-based weighting on ranking performance"*
+```bash
+snakemake -s Snakefile.load_input --configfile configs/run3.yaml --cores all
+snakemake -s Snakefile.sim        --configfile configs/run3.yaml --cores all
+snakemake -s Snakefile.rslt       --configfile configs/run3.yaml --cores all
+```
+**Output:** `output/run3/`  Contains examples of the CDF  and the harmonic mean ranks Table related the to third results.
+
+---
+
+**run4** - *"Effect of network propagation on clinical consistency of top-ranked candidates"*
+
+Full pipeline including patient integration in the network and RWR.
+```bash
+snakemake -s Snakefile.load_input --configfile configs/run4.yaml --cores all
+snakemake -s Snakefile.sim        --configfile configs/run4.yaml --cores all
+snakemake -s Snakefile.add_rw     --configfile configs/run4.yaml --cores all
+snakemake -s Snakefile.rslt       --configfile configs/run4.yaml --cores all
+```
+
+**Output:** `output/run4/`  Contains examples of tables (table 4 and 5) related the to fourth results.
+
+[⬆ Back to top](#top)
+
 
 [⬆ Back to top](#top)
 
@@ -486,77 +559,6 @@ mini_rd: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:329284,ORPHA:34516,ORPHA:41
 ```
 
 The Parquet output format is used because it is recommended for large-scale analyses due to improved I/O performance and reduced disk usage.
-
-[⬆ Back to top](#top)
-	
-	
-## Example workflow (subset of 10 diseases)
-
-This quick-start example uses a small subset of diseases and the provided simulated patients to verify the pipeline runs correctly end-to-end.
-
-Four ready-to-use config files are provided in `configs/`, each corresponding to a section of the paper. They can be run independently.
-
-Be sure that you are already running a virtual environnement (e.g. conda activate my_env)
-
----
-
-
-## Clean all outputs
-
-**snakemake to clan all output and start from scratch**
-```bash
-snakemake -s Snakefile.clean clean --cores all
-```
-
-**run1** - *"Resnik + FunSimMaxAsym outperforms other groupwise semantic similarity measures"*
-```bash
-snakemake -s Snakefile.load_input --configfile configs/run1.yaml --cores all
-snakemake -s Snakefile.sim        --configfile configs/run1.yaml --cores all
-snakemake -s Snakefile.rslt       --configfile configs/run1.yaml --cores all
-```
-
-**Output:** `output/run1/`  Contains examples of the CDF  and the harmonic mean ranks Table related the to first results.
-
----
-
-**run2** - *"Effect of subsumed HPO terms removal on ranking"*
-
-This result requires two separate runs differing only in `do_subsumed` (0 = raw HPO terms, 1 = subsumed). 
-```bash
-snakemake -s Snakefile.load_input --configfile configs/run2_raw.yaml --cores all
-snakemake -s Snakefile.sim        --configfile configs/run2_raw.yaml --cores all
-snakemake -s Snakefile.rslt       --configfile configs/run2_raw.yaml --cores all
-
-snakemake -s Snakefile.load_input --configfile configs/run2_sub.yaml --cores all
-snakemake -s Snakefile.sim        --configfile configs/run2_sub.yaml --cores all
-snakemake -s Snakefile.rslt       --configfile configs/run2_sub.yaml --cores all
-```
-
-**Output:** `output/run2_raw/` and `output/run2_sub/`   Contain both  examples of the CDF  and the harmonic mean ranks Table related the to seconds results.In the paper the two outputs were merged; here they are produced independently.
-
----
-
-**run3** - *"Effect of frequency-based weighting on ranking performance"*
-```bash
-snakemake -s Snakefile.load_input --configfile configs/run3.yaml --cores all
-snakemake -s Snakefile.sim        --configfile configs/run3.yaml --cores all
-snakemake -s Snakefile.rslt       --configfile configs/run3.yaml --cores all
-```
-**Output:** `output/run3/`  Contains examples of the CDF  and the harmonic mean ranks Table related the to third results.
-
----
-
-**run4** - *"Effect of network propagation on clinical consistency of top-ranked candidates"*
-
-Full pipeline including patient integration in the network and RWR.
-```bash
-snakemake -s Snakefile.load_input --configfile configs/run4.yaml --cores all
-snakemake -s Snakefile.sim        --configfile configs/run4.yaml --cores all
-snakemake -s Snakefile.add_rw     --configfile configs/run4.yaml --cores all
-snakemake -s Snakefile.rslt       --configfile configs/run4.yaml --cores all
-```
-
-**Output:** `output/run4/`  Contains examples of tables (table 4 and 5) related the to fourth results.
 
 [⬆ Back to top](#top)
 
