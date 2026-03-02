@@ -129,7 +129,6 @@ Be sure that you are already running a virtual environnement (e.g. conda activat
 
 ---
 
-
 ### Clean all outputs  
 
 **snakemake to clan all output and start from scratch**
@@ -147,7 +146,7 @@ snakemake -s Snakefile.rslt       --configfile configs/run1.yaml --cores all
 
 **Output:** `output/run1/`  Contains examples of the CDF  and the harmonic mean ranks Table related the to first results.
 
----
+ 
 
 **run2** - *"Effect of subsumed HPO terms removal on ranking"*
 
@@ -164,7 +163,7 @@ snakemake -s Snakefile.rslt       --configfile configs/run2_sub.yaml --cores all
 
 **Output:** `output/run2_raw/` and `output/run2_sub/`   Contain both  examples of the CDF  and the harmonic mean ranks Table related the to seconds results.In the paper the two outputs were merged; here they are produced independently.
 
----
+ 
 
 **run3** - *"Effect of frequency-based weighting on ranking performance"*
 ```bash
@@ -173,8 +172,7 @@ snakemake -s Snakefile.sim        --configfile configs/run3.yaml --cores all
 snakemake -s Snakefile.rslt       --configfile configs/run3.yaml --cores all
 ```
 **Output:** `output/run3/`  Contains examples of the CDF  and the harmonic mean ranks Table related the to third results.
-
----
+ 
 
 **run4** - *"Effect of network propagation on clinical consistency of top-ranked candidates"*
 
