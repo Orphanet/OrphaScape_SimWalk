@@ -151,7 +151,7 @@ snakemake -s Snakefile.clean clean --cores all
 
 ### Start the example workflow  
 
-**run1** - *"Resnik + FunSimMaxAsym outperforms other groupwise semantic similarity measures"*
+#### **run1** - *"Resnik + FunSimMaxAsym outperforms other groupwise semantic similarity measures"*
 ```bash
 snakemake -s Snakefile.load_input --configfile configs/run1.yaml --cores all
 snakemake -s Snakefile.sim        --configfile configs/run1.yaml --cores all
@@ -162,7 +162,7 @@ snakemake -s Snakefile.rslt       --configfile configs/run1.yaml --cores all
 
  
 
-**run2** - *"Effect of subsumed HPO terms removal on ranking"*
+#### **run2** - *"Effect of subsumed HPO terms removal on ranking"*
 
 This result requires two separate runs differing only in `do_subsumed` (0 = raw HPO terms, 1 = subsumed). 
 ```bash
@@ -179,7 +179,7 @@ snakemake -s Snakefile.rslt       --configfile configs/run2_sub.yaml --cores all
 
  
 
-**run3** - *"Effect of frequency-based weighting on ranking performance"*
+#### **run3** - *"Effect of frequency-based weighting on ranking performance"*
 ```bash
 snakemake -s Snakefile.load_input --configfile configs/run3.yaml --cores all
 snakemake -s Snakefile.sim        --configfile configs/run3.yaml --cores all
@@ -188,7 +188,7 @@ snakemake -s Snakefile.rslt       --configfile configs/run3.yaml --cores all
 **Output:** `output/run3/`  Contains examples of the CDF  and the harmonic mean ranks Table related the to third results.
  
 
-**run4** - *"Effect of network propagation on clinical consistency of top-ranked candidates"*
+#### **run4** - *"Effect of network propagation on clinical consistency of top-ranked candidates"*
 
 Full pipeline including patient integration in the network and RWR.
 ```bash
