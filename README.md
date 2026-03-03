@@ -114,8 +114,15 @@ From a terminal, you should `git clone` or download and unzip the application, t
 
 /!\ WARNING /!\ 
 
-If you are running on Windows please use ONLY the Download (and unzip) project solution. 
+Before proceeding the `git clone` command, desactivate `autocrlf` option : 
 
+```bash
+git config --global core.autocrlf false
+git clone https://github.com/Orphanet/OrphaScape_SimWalk.git
+
+``` 
+
+You can also use the download and unzip project solution. 
 
 
 ## TL;DR:
