@@ -110,11 +110,11 @@ pip install hpo3
 
 ### Application
 
-From a terminal, you should `git clone` or download and unzip the application, than change your working directory to `OrphaScape_SimWalk`.
-
+In a terminal (or Windows Powershell), clone repo or download and unzip it, then move your path to the working directory "OrphaScape_SimWalk".
+ 
 ### /!\ WARNING FOR WINDOWS USERS /!\ 
 
-Before proceeding the `git clone` command, desactivate `autocrlf` option : 
+If you use the github clone facility, before proceeding it, be sure to desactivate the autocrlf option:
 
 ```bash
 git config --global core.autocrlf false
