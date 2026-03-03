@@ -108,7 +108,7 @@ pip install hpo3
 ```
 
 
-### Application
+### Build OrphaScape_SimWalk environment
 
 In a terminal (or Windows Powershell), clone repo or download and unzip it, then move your path to the working directory "OrphaScape_SimWalk".
  
