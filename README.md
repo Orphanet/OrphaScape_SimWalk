@@ -158,7 +158,7 @@ snakemake -s Snakefile.sim        --configfile configs/run1.yaml --cores all
 snakemake -s Snakefile.rslt       --configfile configs/run1.yaml --cores all
 ```
 
-**Output:** `output/run1/`  Contains examples of the CDF  and the harmonic mean ranks Table related the to first results.
+Output: `output/run1/`  Contains examples of the CDF  and the harmonic mean ranks Table related the to first results.
 
  
 
@@ -175,7 +175,7 @@ snakemake -s Snakefile.sim        --configfile configs/run2_sub.yaml --cores all
 snakemake -s Snakefile.rslt       --configfile configs/run2_sub.yaml --cores all
 ```
 
-**Output:** `output/run2_raw/` and `output/run2_sub/`   Contain both  examples of the CDF  and the harmonic mean ranks Table related the to seconds results.In the paper the two outputs were merged; here they are produced independently.
+Output: `output/run2_raw/` and `output/run2_sub/`   Contain both  examples of the CDF  and the harmonic mean ranks Table related the to seconds results.In the paper the two outputs were merged; here they are produced independently.
 
  
 
@@ -185,7 +185,7 @@ snakemake -s Snakefile.load_input --configfile configs/run3.yaml --cores all
 snakemake -s Snakefile.sim        --configfile configs/run3.yaml --cores all
 snakemake -s Snakefile.rslt       --configfile configs/run3.yaml --cores all
 ```
-**Output:** `output/run3/`  Contains examples of the CDF  and the harmonic mean ranks Table related the to third results.
+Output: `output/run3/`  Contains examples of the CDF  and the harmonic mean ranks Table related the to third results.
  
 
 #### **run4** - *"Effect of network propagation on clinical consistency of top-ranked candidates"*
@@ -198,7 +198,7 @@ snakemake -s Snakefile.add_rw     --configfile configs/run4.yaml --cores all
 snakemake -s Snakefile.rslt       --configfile configs/run4.yaml --cores all
 ```
 
-**Output:** `output/run4/`  Contains examples of tables (table 4 and 5) related the to fourth results.
+Output: `output/run4/`  Contains examples of tables (table 4 and 5) related the to fourth results.
 
 [⬆ Back to top](#top)
 
