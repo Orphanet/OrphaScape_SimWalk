@@ -112,7 +112,7 @@ pip install hpo3
 
 From a terminal, you should `git clone` or download and unzip the application, than change your working directory to `OrphaScape_SimWalk`.
 
-## /!\ WARNING FOR WINDOWS USERS /!\ 
+#### /!\ WARNING FOR WINDOWS USERS /!\ 
 
 Before proceeding the `git clone` command, desactivate `autocrlf` option : 
 
