@@ -102,7 +102,7 @@ You have to use a python 3.12 environment. The easiest way is to use `conda` whi
 Once miniconda is installed, from a *Terminal/Console*, type:
 
 ```bash
-conda create --name simwalk -c conda-forge -c bioconda python=3.12 fastparquet pandas matplotlib networkx openpyxl pyarrow scikit-learn snakemake xmltodict
+conda create --name simwalk -c conda-forge -c bioconda python=3.12 fastparquet matplotlib networkx openpyxl pandas pyarrow scikit-learn snakemake xmltodict
 conda activate simwalk
 pip install hpo3
 ```
