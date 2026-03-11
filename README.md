@@ -97,14 +97,14 @@ Because the original Solve-RD patient data are confidential and cannot be redist
 
 ### Prerequisites
 
-You have to use a python 3.12 environment. The easiest way is to use `conda` which belong to the *Anaconda/Miniconda* distribution. We advise to use *Miniconda*: `https://www.anaconda.com/docs/getting-started/miniconda/main`.
+Our pipeline has been thoroughly tested with Python 3.12 and is expected to work with Python 3.13 and 3.14. The easiest way is to use `conda` which belong to the *Anaconda/Miniconda* distribution. We advise to use *Miniconda*: `https://www.anaconda.com/docs/getting-started/miniconda/main`.
 
 Once miniconda is installed, from a *Terminal/Console*, type:
 
 ```bash
-conda create --name simwalk -c conda-forge -c bioconda python=3.12 fastparquet matplotlib networkx openpyxl pandas pyarrow scikit-learn snakemake xmltodict
+conda create --name simwalk -c conda-forge python=3.12 fastparquet matplotlib networkx openpyxl pandas pyarrow scikit-learn xmltodict
 conda activate simwalk
-pip install hpo3
+pip install hpo3 snakemake
 ```
 
 
