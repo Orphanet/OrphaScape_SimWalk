@@ -143,7 +143,7 @@ Be sure that you are already running a virtual environnement (e.g. conda activat
 
 ### Clean all outputs  
 
-**snakemake to clan all output and start from scratch**
+**Action to clean all outputs and start from scratch**
 ```bash
 snakemake -s Snakefile.clean clean --cores all
 ```
