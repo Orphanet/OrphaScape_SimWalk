@@ -1,0 +1,57 @@
+{
+ "id": "PMID_17110937_Patient_7",
+ "subject": {
+  "id": "PMID_17110937_Patient_7"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001892",
+    "label": "Abnormal bleeding"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025533",
+    "label": "Peau d'orange"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025167",
+    "label": "Fragmented elastic fibers in the dermis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001582",
+    "label": "Redundant skin"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007522",
+    "label": "Increased number of skin folds"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:91135",
+    "label": "Body skin hyperlaxity due to vitamin K-dependent coagulation factor deficiency"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_17110937_Patient_7",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:91135",
+     "label": "Body skin hyperlaxity due to vitamin K-dependent coagulation factor deficiency"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "id": "PMID_7607663_Patient_0542",
+ "subject": {
+  "id": "PMID_7607663_Patient_0542"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001067",
+    "label": "Neurofibroma"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007565",
+    "label": "Multiple cafe-au-lait spots"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0009737",
+    "label": "Lisch nodules"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002650",
+    "label": "Scoliosis"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:363700",
+    "label": "Neurofibromatosis type 1 due to NF1 mutation or intragenic deletion"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_7607663_Patient_0542",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:363700",
+     "label": "Neurofibromatosis type 1 due to NF1 mutation or intragenic deletion"
+    }
+   }
+  }
+ ]
+}

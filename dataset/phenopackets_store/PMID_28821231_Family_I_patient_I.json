@@ -1,0 +1,45 @@
+{
+ "id": "PMID_28821231_Family_I_patient_I",
+ "subject": {
+  "id": "PMID_28821231_Family_I_patient_I"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0002454",
+    "label": "Eye of the tiger anomaly of globus pallidus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001332",
+    "label": "Dystonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002063",
+    "label": "Rigidity"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:157850",
+    "label": "Pantothenate kinase-associated neurodegeneration"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_28821231_Family_I_patient_I",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:157850",
+     "label": "Pantothenate kinase-associated neurodegeneration"
+    }
+   }
+  }
+ ]
+}

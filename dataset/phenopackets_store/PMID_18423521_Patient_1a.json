@@ -1,0 +1,57 @@
+{
+ "id": "PMID_18423521_Patient_1a",
+ "subject": {
+  "id": "PMID_18423521_Patient_1a"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0009794",
+    "label": "Branchial anomaly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000455",
+    "label": "Broad nasal tip"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000582",
+    "label": "Upslanted palpebral fissure"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000268",
+    "label": "Dolichocephaly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002216",
+    "label": "Premature graying of hair"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:1297",
+    "label": "Branchio-oculo-facial syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_18423521_Patient_1a",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:1297",
+     "label": "Branchio-oculo-facial syndrome"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "id": "PMID_2544998_proband",
+ "subject": {
+  "id": "PMID_2544998_proband"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000831",
+    "label": "Insulin-resistant diabetes mellitus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0040270",
+    "label": "Impaired glucose tolerance"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0008283",
+    "label": "Fasting hyperinsulinemia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000956",
+    "label": "Acanthosis nigricans"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:2297",
+    "label": "Insulin-resistance syndrome type A"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_2544998_proband",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:2297",
+     "label": "Insulin-resistance syndrome type A"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "id": "PMID_27977582_male_child",
+ "subject": {
+  "id": "PMID_27977582_male_child"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0004232",
+    "label": "Accessory carpal bones"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000175",
+    "label": "Cleft palate"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0008434",
+    "label": "Hypoplastic cervical vertebrae"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004976",
+    "label": "Knee dislocation"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002827",
+    "label": "Hip dislocation"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010743",
+    "label": "Short metatarsal"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001762",
+    "label": "Talipes equinovarus"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:503",
+    "label": "Larsen syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_27977582_male_child",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:503",
+     "label": "Larsen syndrome"
+    }
+   }
+  }
+ ]
+}

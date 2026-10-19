@@ -1,0 +1,57 @@
+{
+ "id": "PMID_28202457_F2_1_2",
+ "subject": {
+  "id": "PMID_28202457_F2_1_2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001903",
+    "label": "Anemia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001873",
+    "label": "Thrombocytopenia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000639",
+    "label": "Nystagmus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002719",
+    "label": "Recurrent infections"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007018",
+    "label": "Attention deficit hyperactivity disorder"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:2585",
+    "label": "Ataxia-pancytopenia syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_28202457_F2_1_2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:2585",
+     "label": "Ataxia-pancytopenia syndrome"
+    }
+   }
+  }
+ ]
+}

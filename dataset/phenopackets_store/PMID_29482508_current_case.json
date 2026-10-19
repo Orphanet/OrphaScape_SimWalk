@@ -1,0 +1,57 @@
+{
+ "id": "PMID_29482508_current_case",
+ "subject": {
+  "id": "PMID_29482508_current_case"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001822",
+    "label": "Hallux valgus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011987",
+    "label": "Ectopic ossification in muscle tissue"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001847",
+    "label": "Long hallux"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012531",
+    "label": "Pain"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003155",
+    "label": "Elevated circulating alkaline phosphatase concentration"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:337",
+    "label": "Fibrodysplasia ossificans progressiva"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_29482508_current_case",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:337",
+     "label": "Fibrodysplasia ossificans progressiva"
+    }
+   }
+  }
+ ]
+}

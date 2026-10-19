@@ -1,0 +1,63 @@
+{
+ "id": "PMID_34778490_sister",
+ "subject": {
+  "id": "PMID_34778490_sister"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0002194",
+    "label": "Delayed gross motor development"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002353",
+    "label": "EEG abnormality"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0032661",
+    "label": "Generalized convulsive status epilepticus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001252",
+    "label": "Hypotonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000316",
+    "label": "Hypertelorism"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000486",
+    "label": "Strabismus"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:163681",
+    "label": "CNTNAP2-related developmental and epileptic encephalopathy"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_34778490_sister",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:163681",
+     "label": "CNTNAP2-related developmental and epileptic encephalopathy"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "id": "PMID_34920454_Patient_P1",
+ "subject": {
+  "id": "PMID_34920454_Patient_P1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001973",
+    "label": "Autoimmune thrombocytopenia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010702",
+    "label": "Increased circulating immunoglobulin concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000992",
+    "label": "Cutaneous photosensitivity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000988",
+    "label": "Skin rash"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002725",
+    "label": "Systemic lupus erythematosus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0020151",
+    "label": "Anti-dsDNA antibody positivity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001369",
+    "label": "Arthritis"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:697389",
+    "label": "Combined immunodeficiency due to HELIOS deficiency"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_34920454_Patient_P1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:697389",
+     "label": "Combined immunodeficiency due to HELIOS deficiency"
+    }
+   }
+  }
+ ]
+}

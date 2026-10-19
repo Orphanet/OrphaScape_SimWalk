@@ -1,0 +1,81 @@
+{
+ "id": "PMID_37876076_patient",
+ "subject": {
+  "id": "PMID_37876076_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0012471",
+    "label": "Thick vermilion border"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000341",
+    "label": "Narrow forehead"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006970",
+    "label": "Periventricular leukomalacia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001344",
+    "label": "Absent speech"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001270",
+    "label": "Motor delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001263",
+    "label": "Global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001265",
+    "label": "Hyporeflexia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001252",
+    "label": "Hypotonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011968",
+    "label": "Feeding difficulties"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:488632",
+    "label": "TBCK-related encephalopathy-severe hypotonia-craniofacial dysmorphism syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_37876076_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:488632",
+     "label": "TBCK-related encephalopathy-severe hypotonia-craniofacial dysmorphism syndrome"
+    }
+   }
+  }
+ ]
+}

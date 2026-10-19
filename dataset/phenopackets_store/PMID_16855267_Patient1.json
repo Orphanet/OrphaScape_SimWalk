@@ -1,0 +1,63 @@
+{
+ "id": "PMID_16855267_Patient1",
+ "subject": {
+  "id": "PMID_16855267_Patient1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0004918",
+    "label": "Hyperchloremic metabolic acidosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001944",
+    "label": "Dehydration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001392",
+    "label": "Abnormality of the liver"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002024",
+    "label": "Malabsorption"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002013",
+    "label": "Vomiting"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:6001346",
+    "label": "Enteric anendocrinosis"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:83620",
+    "label": "Enteric anendocrinosis"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_16855267_Patient1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:83620",
+     "label": "Enteric anendocrinosis"
+    }
+   }
+  }
+ ]
+}

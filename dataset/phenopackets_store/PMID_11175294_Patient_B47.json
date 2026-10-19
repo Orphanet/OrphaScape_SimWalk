@@ -1,0 +1,45 @@
+{
+ "id": "PMID_11175294_Patient_B47",
+ "subject": {
+  "id": "PMID_11175294_Patient_B47"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000218",
+    "label": "High palate"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001382",
+    "label": "Joint hypermobility"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001519",
+    "label": "Disproportionate tall stature"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:284963",
+    "label": "Marfan syndrome type 1"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_11175294_Patient_B47",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:284963",
+     "label": "Marfan syndrome type 1"
+    }
+   }
+  }
+ ]
+}

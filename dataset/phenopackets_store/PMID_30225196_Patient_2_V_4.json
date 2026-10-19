@@ -1,0 +1,57 @@
+{
+ "id": "PMID_30225196_Patient_2_V_4",
+ "subject": {
+  "id": "PMID_30225196_Patient_2_V_4"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001249",
+    "label": "Intellectual disability"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002069",
+    "label": "Bilateral tonic-clonic seizure"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001288",
+    "label": "Gait disturbance"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001337",
+    "label": "Tremor"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002401",
+    "label": "Stroke-like episode"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:457185",
+    "label": "Neonatal encephalomyopathy-cardiomyopathy-respiratory distress syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_30225196_Patient_2_V_4",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:457185",
+     "label": "Neonatal encephalomyopathy-cardiomyopathy-respiratory distress syndrome"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "id": "PMID_25802881_P7",
+ "subject": {
+  "id": "PMID_25802881_P7"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0003165",
+    "label": "Elevated circulating parathyroid hormone level"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001249",
+    "label": "Intellectual disability"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010049",
+    "label": "Short metacarpal"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0034282",
+    "label": "Subcutaneous ossification"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003072",
+    "label": "Hypercalcemia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004322",
+    "label": "Short stature"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:79443",
+    "label": "Pseudohypoparathyroidism type 1A"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_25802881_P7",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:79443",
+     "label": "Pseudohypoparathyroidism type 1A"
+    }
+   }
+  }
+ ]
+}

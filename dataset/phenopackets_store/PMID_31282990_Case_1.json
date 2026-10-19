@@ -1,0 +1,75 @@
+{
+ "id": "PMID_31282990_Case_1",
+ "subject": {
+  "id": "PMID_31282990_Case_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000161",
+    "label": "Median cleft upper lip"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000175",
+    "label": "Cleft palate"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011800",
+    "label": "Midface retrusion"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0005280",
+    "label": "Depressed nasal bridge"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000457",
+    "label": "Depressed nasal ridge"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000252",
+    "label": "Microcephaly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000601",
+    "label": "Hypotelorism"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006988",
+    "label": "Alobar holoprosencephaly"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:2322",
+    "label": "Kabuki syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_31282990_Case_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:2322",
+     "label": "Kabuki syndrome"
+    }
+   }
+  }
+ ]
+}

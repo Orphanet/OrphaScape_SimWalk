@@ -1,0 +1,69 @@
+{
+ "id": "PMID_32853638_Patient_2",
+ "subject": {
+  "id": "PMID_32853638_Patient_2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001973",
+    "label": "Autoimmune thrombocytopenia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001890",
+    "label": "Autoimmune hemolytic anemia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001945",
+    "label": "Fever"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002014",
+    "label": "Diarrhea"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001904",
+    "label": "Autoimmune neutropenia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001888",
+    "label": "Decreased total lymphocyte count"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004313",
+    "label": "Decreased circulating immunoglobulin concentration"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:619948",
+    "label": "Early-onset autoimmunity-autoinflammation-immunodeficiency syndrome due to SOCS1 haploinsufficiency"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_32853638_Patient_2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:619948",
+     "label": "Early-onset autoimmunity-autoinflammation-immunodeficiency syndrome due to SOCS1 haploinsufficiency"
+    }
+   }
+  }
+ ]
+}

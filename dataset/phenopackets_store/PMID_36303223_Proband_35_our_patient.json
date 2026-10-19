@@ -1,0 +1,57 @@
+{
+ "id": "PMID_36303223_Proband_35_our_patient",
+ "subject": {
+  "id": "PMID_36303223_Proband_35_our_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001083",
+    "label": "Ectopia lentis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0020222",
+    "label": "Hypohomocysteinemia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0032350",
+    "label": "Sulfocysteinuria"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010934",
+    "label": "Xanthinuria"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011814",
+    "label": "Increased urinary hypoxanthine level"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:99731",
+    "label": "Isolated sulfite oxidase deficiency"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_36303223_Proband_35_our_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:99731",
+     "label": "Isolated sulfite oxidase deficiency"
+    }
+   }
+  }
+ ]
+}

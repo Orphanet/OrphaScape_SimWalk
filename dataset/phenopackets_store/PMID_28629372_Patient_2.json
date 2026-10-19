@@ -1,0 +1,45 @@
+{
+ "id": "PMID_28629372_Patient_2",
+ "subject": {
+  "id": "PMID_28629372_Patient_2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0006554",
+    "label": "Acute hepatic failure"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002240",
+    "label": "Hepatomegaly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001744",
+    "label": "Splenomegaly"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:391677",
+    "label": "Short stature-optic atrophy-Pelger-Hu\u00c3\u00abt anomaly syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_28629372_Patient_2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:391677",
+     "label": "Short stature-optic atrophy-Pelger-Hu\u00c3\u00abt anomaly syndrome"
+    }
+   }
+  }
+ ]
+}

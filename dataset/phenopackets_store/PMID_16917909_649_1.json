@@ -1,0 +1,57 @@
+{
+ "id": "PMID_16917909_649_1",
+ "subject": {
+  "id": "PMID_16917909_649_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001631",
+    "label": "Atrial septal defect"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001629",
+    "label": "Ventricular septal defect"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0009777",
+    "label": "Absent thumb"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003974",
+    "label": "Absent radius"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0005792",
+    "label": "Short humerus"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:392",
+    "label": "Holt-Oram syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_16917909_649_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:392",
+     "label": "Holt-Oram syndrome"
+    }
+   }
+  }
+ ]
+}

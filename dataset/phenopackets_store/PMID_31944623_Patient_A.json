@@ -1,0 +1,93 @@
+{
+ "id": "PMID_31944623_Patient_A",
+ "subject": {
+  "id": "PMID_31944623_Patient_A"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000514",
+    "label": "Slow saccadic eye movements"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003487",
+    "label": "Babinski sign"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002075",
+    "label": "Dysdiadochokinesis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001300",
+    "label": "Parkinsonism"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002067",
+    "label": "Bradykinesia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001258",
+    "label": "Spastic paraplegia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001260",
+    "label": "Dysarthria"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000726",
+    "label": "Dementia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001347",
+    "label": "Hyperreflexia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002015",
+    "label": "Dysphagia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001272",
+    "label": "Cerebellar atrophy"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:513436",
+    "label": "Autosomal recessive spastic paraplegia type 78"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_31944623_Patient_A",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:513436",
+     "label": "Autosomal recessive spastic paraplegia type 78"
+    }
+   }
+  }
+ ]
+}

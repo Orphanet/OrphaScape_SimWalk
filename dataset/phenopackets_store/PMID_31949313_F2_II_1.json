@@ -1,0 +1,51 @@
+{
+ "id": "PMID_31949313_F2_II_1",
+ "subject": {
+  "id": "PMID_31949313_F2_II_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000750",
+    "label": "Delayed speech and language development"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002561",
+    "label": "Absent nipple"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002020",
+    "label": "Gastroesophageal reflux"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011968",
+    "label": "Feeding difficulties"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:2322",
+    "label": "Kabuki syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_31949313_F2_II_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:2322",
+     "label": "Kabuki syndrome"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "id": "PMID_12203992_Patient_D10",
+ "subject": {
+  "id": "PMID_12203992_Patient_D10"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001377",
+    "label": "Limited elbow extension"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001083",
+    "label": "Ectopia lentis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000268",
+    "label": "Dolichocephaly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000490",
+    "label": "Deeply set eye"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:284963",
+    "label": "Marfan syndrome type 1"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_12203992_Patient_D10",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:284963",
+     "label": "Marfan syndrome type 1"
+    }
+   }
+  }
+ ]
+}

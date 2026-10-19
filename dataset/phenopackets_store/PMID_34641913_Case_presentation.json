@@ -1,0 +1,51 @@
+{
+ "id": "PMID_34641913_Case_presentation",
+ "subject": {
+  "id": "PMID_34641913_Case_presentation"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001263",
+    "label": "Global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000729",
+    "label": "Autistic behavior"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000733",
+    "label": "Motor stereotypy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002019",
+    "label": "Constipation"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:163681",
+    "label": "CNTNAP2-related developmental and epileptic encephalopathy"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_34641913_Case_presentation",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:163681",
+     "label": "CNTNAP2-related developmental and epileptic encephalopathy"
+    }
+   }
+  }
+ ]
+}

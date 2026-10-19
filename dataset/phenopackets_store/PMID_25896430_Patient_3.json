@@ -1,0 +1,69 @@
+{
+ "id": "PMID_25896430_Patient_3",
+ "subject": {
+  "id": "PMID_25896430_Patient_3"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000637",
+    "label": "Long palpebral fissure"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002553",
+    "label": "Highly arched eyebrow"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0005338",
+    "label": "Sparse lateral eyebrow"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000437",
+    "label": "Depressed nasal tip"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000592",
+    "label": "Blue sclerae"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000400",
+    "label": "Macrotia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001250",
+    "label": "Seizure"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:2322",
+    "label": "Kabuki syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_25896430_Patient_3",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:2322",
+     "label": "Kabuki syndrome"
+    }
+   }
+  }
+ ]
+}

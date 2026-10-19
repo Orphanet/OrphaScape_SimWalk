@@ -1,0 +1,63 @@
+{
+ "id": "PMID_27861123_Patient_2",
+ "subject": {
+  "id": "PMID_27861123_Patient_2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001279",
+    "label": "Syncope"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001692",
+    "label": "Atrial arrhythmia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001657",
+    "label": "Prolonged QT interval"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004758",
+    "label": "Effort-induced polymorphic ventricular tachycardia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001663",
+    "label": "Ventricular fibrillation"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001695",
+    "label": "Cardiac arrest"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:730644",
+    "label": "TECRL-related catecholaminergic polymorphic ventricular tachycardia"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_27861123_Patient_2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:730644",
+     "label": "TECRL-related catecholaminergic polymorphic ventricular tachycardia"
+    }
+   }
+  }
+ ]
+}

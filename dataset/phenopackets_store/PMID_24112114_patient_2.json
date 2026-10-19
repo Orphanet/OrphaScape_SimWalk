@@ -1,0 +1,45 @@
+{
+ "id": "PMID_24112114_patient_2",
+ "subject": {
+  "id": "PMID_24112114_patient_2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0002218",
+    "label": "Silver-gray hair"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000980",
+    "label": "Pallor"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0032499",
+    "label": "Giant neutrophil granules"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:167",
+    "label": "Ch\u00c3\u00a9diak-Higashi syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_24112114_patient_2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:167",
+     "label": "Ch\u00c3\u00a9diak-Higashi syndrome"
+    }
+   }
+  }
+ ]
+}

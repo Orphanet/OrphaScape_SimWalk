@@ -1,0 +1,39 @@
+{
+ "id": "PMID_12203992_Patient_D7",
+ "subject": {
+  "id": "PMID_12203992_Patient_D7"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001166",
+    "label": "Arachnodactyly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001083",
+    "label": "Ectopia lentis"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:284963",
+    "label": "Marfan syndrome type 1"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_12203992_Patient_D7",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:284963",
+     "label": "Marfan syndrome type 1"
+    }
+   }
+  }
+ ]
+}

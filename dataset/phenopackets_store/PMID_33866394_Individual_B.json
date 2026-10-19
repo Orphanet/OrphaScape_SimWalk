@@ -1,0 +1,57 @@
+{
+ "id": "PMID_33866394_Individual_B",
+ "subject": {
+  "id": "PMID_33866394_Individual_B"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001631",
+    "label": "Atrial septal defect"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001199",
+    "label": "Triphalangeal thumb"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001233",
+    "label": "2-3 finger cutaneous syndactyly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001377",
+    "label": "Limited elbow extension"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003834",
+    "label": "Shoulder dislocation"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:392",
+    "label": "Holt-Oram syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_33866394_Individual_B",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:392",
+     "label": "Holt-Oram syndrome"
+    }
+   }
+  }
+ ]
+}

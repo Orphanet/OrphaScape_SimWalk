@@ -1,0 +1,75 @@
+{
+ "id": "PMID_26567009_male_child",
+ "subject": {
+  "id": "PMID_26567009_male_child"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0011951",
+    "label": "Aspiration pneumonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011471",
+    "label": "Gastrostomy tube feeding in infancy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001276",
+    "label": "Hypertonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001347",
+    "label": "Hyperreflexia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0034322",
+    "label": "Reduced tissue galactocerebrosidase activity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000737",
+    "label": "Irritability"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006532",
+    "label": "Recurrent pneumonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001954",
+    "label": "Recurrent fever"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:487",
+    "label": "Krabbe disease"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_26567009_male_child",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:487",
+     "label": "Krabbe disease"
+    }
+   }
+  }
+ ]
+}

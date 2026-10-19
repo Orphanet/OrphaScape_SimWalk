@@ -1,0 +1,57 @@
+{
+ "id": "PMID_10756346_Patient_D22",
+ "subject": {
+  "id": "PMID_10756346_Patient_D22"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001166",
+    "label": "Arachnodactyly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002650",
+    "label": "Scoliosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002616",
+    "label": "Aortic root aneurysm"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001382",
+    "label": "Joint hypermobility"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001519",
+    "label": "Disproportionate tall stature"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:284963",
+    "label": "Marfan syndrome type 1"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_10756346_Patient_D22",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:284963",
+     "label": "Marfan syndrome type 1"
+    }
+   }
+  }
+ ]
+}

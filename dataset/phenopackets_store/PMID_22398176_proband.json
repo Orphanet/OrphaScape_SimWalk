@@ -1,0 +1,75 @@
+{
+ "id": "PMID_22398176_proband",
+ "subject": {
+  "id": "PMID_22398176_proband"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0011273",
+    "label": "Anisocytosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004447",
+    "label": "Poikilocytosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012187",
+    "label": "Increased erythrocyte protoporphyrin concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000486",
+    "label": "Strabismus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001260",
+    "label": "Dysarthria"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001288",
+    "label": "Gait disturbance"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002172",
+    "label": "Postural instability"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0020081",
+    "label": "Pappenheimer bodies"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:2802",
+    "label": "X-linked sideroblastic anemia and spinocerebellar ataxia"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_22398176_proband",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:2802",
+     "label": "X-linked sideroblastic anemia and spinocerebellar ataxia"
+    }
+   }
+  }
+ ]
+}

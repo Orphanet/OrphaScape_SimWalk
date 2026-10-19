@@ -1,0 +1,51 @@
+{
+ "id": "PMID_29037160_Case_1_family_I",
+ "subject": {
+  "id": "PMID_29037160_Case_1_family_I"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001657",
+    "label": "Prolonged QT interval"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0031677",
+    "label": "Polymorphic ventricular tachycardia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0008527",
+    "label": "Congenital sensorineural hearing impairment"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001250",
+    "label": "Seizure"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:90647",
+    "label": "Jervell and Lange-Nielsen syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_29037160_Case_1_family_I",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:90647",
+     "label": "Jervell and Lange-Nielsen syndrome"
+    }
+   }
+  }
+ ]
+}

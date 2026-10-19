@@ -1,0 +1,51 @@
+{
+ "id": "PMID_36189931_12",
+ "subject": {
+  "id": "PMID_36189931_12"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0002108",
+    "label": "Spontaneous pneumothorax"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012727",
+    "label": "Thoracic aortic aneurysm"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004933",
+    "label": "Ascending aortic dissection"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025019",
+    "label": "Arterial rupture"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:286",
+    "label": "Vascular Ehlers-Danlos syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_36189931_12",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:286",
+     "label": "Vascular Ehlers-Danlos syndrome"
+    }
+   }
+  }
+ ]
+}

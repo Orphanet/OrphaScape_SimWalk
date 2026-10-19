@@ -1,0 +1,63 @@
+{
+ "id": "PMID_30315159_Patient_2_Father_of_Patient_1",
+ "subject": {
+  "id": "PMID_30315159_Patient_2_Father_of_Patient_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0011229",
+    "label": "Broad eyebrow"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011228",
+    "label": "Horizontal eyebrow"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000431",
+    "label": "Wide nasal bridge"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000455",
+    "label": "Broad nasal tip"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000664",
+    "label": "Synophrys"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001873",
+    "label": "Thrombocytopenia"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:674653",
+    "label": "Actinomyopathy-associated syndromic thrombocytopenia"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_30315159_Patient_2_Father_of_Patient_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:674653",
+     "label": "Actinomyopathy-associated syndromic thrombocytopenia"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "id": "PMID_18816383_sister",
+ "subject": {
+  "id": "PMID_18816383_sister"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000121",
+    "label": "Nephrocalcinosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003774",
+    "label": "Stage 5 chronic kidney disease"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000010",
+    "label": "Recurrent urinary tract infections"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001508",
+    "label": "Failure to thrive"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000822",
+    "label": "Hypertension"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:31043",
+    "label": "Primary hypomagnesemia with hypercalciuria and nephrocalcinosis without severe ocular involvement"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_18816383_sister",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:31043",
+     "label": "Primary hypomagnesemia with hypercalciuria and nephrocalcinosis without severe ocular involvement"
+    }
+   }
+  }
+ ]
+}

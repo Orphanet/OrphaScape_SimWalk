@@ -1,0 +1,81 @@
+{
+ "id": "PMID_25406581_P1",
+ "subject": {
+  "id": "PMID_25406581_P1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0004315",
+    "label": "Decreased circulating IgG concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002850",
+    "label": "Decreased circulating IgM concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002720",
+    "label": "Decreased circulating IgA concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010976",
+    "label": "Decreased total B cell count"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0040218",
+    "label": "Reduced total natural killer cell count"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0030388",
+    "label": "Decreased class-switched memory B cell proportion"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004429",
+    "label": "Recurrent viral infections"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002718",
+    "label": "Recurrent bacterial infections"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0020087",
+    "label": "BCGosis"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:447731",
+    "label": "NIK deficiency"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_25406581_P1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:447731",
+     "label": "NIK deficiency"
+    }
+   }
+  }
+ ]
+}

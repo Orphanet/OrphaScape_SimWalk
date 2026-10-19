@@ -1,0 +1,63 @@
+{
+ "id": "PMID_19896112_P2",
+ "subject": {
+  "id": "PMID_19896112_P2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001263",
+    "label": "Global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001249",
+    "label": "Intellectual disability"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000750",
+    "label": "Delayed speech and language development"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000729",
+    "label": "Autistic behavior"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000733",
+    "label": "Motor stereotypy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002883",
+    "label": "Hyperventilation"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:163681",
+    "label": "CNTNAP2-related developmental and epileptic encephalopathy"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_19896112_P2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:163681",
+     "label": "CNTNAP2-related developmental and epileptic encephalopathy"
+    }
+   }
+  }
+ ]
+}

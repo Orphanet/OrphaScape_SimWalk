@@ -1,0 +1,51 @@
+{
+ "id": "PMID_18219278_proband",
+ "subject": {
+  "id": "PMID_18219278_proband"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0025092",
+    "label": "Epidermal acanthosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0040162",
+    "label": "Orthokeratosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001019",
+    "label": "Erythroderma"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0008066",
+    "label": "Abnormal blistering of the skin"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:512103",
+    "label": "Autosomal recessive epidermolytic ichthyosis"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_18219278_proband",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:512103",
+     "label": "Autosomal recessive epidermolytic ichthyosis"
+    }
+   }
+  }
+ ]
+}

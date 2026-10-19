@@ -1,0 +1,51 @@
+{
+ "id": "PMID_31057532_Family_F_individual_F_I_1",
+ "subject": {
+  "id": "PMID_31057532_Family_F_individual_F_I_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0010976",
+    "label": "Decreased total B cell count"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0030374",
+    "label": "Decreased memory B cell proportion"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0032129",
+    "label": "Decreased plasmablast proportion"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001744",
+    "label": "Splenomegaly"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:317473",
+    "label": "Common variable immunodeficiency phenotype due to IKAROS functional haploinsufficiency"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_31057532_Family_F_individual_F_I_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:317473",
+     "label": "Common variable immunodeficiency phenotype due to IKAROS functional haploinsufficiency"
+    }
+   }
+  }
+ ]
+}

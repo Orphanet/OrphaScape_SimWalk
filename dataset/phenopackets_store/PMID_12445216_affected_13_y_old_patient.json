@@ -1,0 +1,51 @@
+{
+ "id": "PMID_12445216_affected_13_y_old_patient",
+ "subject": {
+  "id": "PMID_12445216_affected_13_y_old_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0003777",
+    "label": "Pili torti"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0008070",
+    "label": "Sparse hair"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007754",
+    "label": "Macular dystrophy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007663",
+    "label": "Reduced visual acuity"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:1573",
+    "label": "Hypotrichosis with juvenile macular degeneration"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_12445216_affected_13_y_old_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:1573",
+     "label": "Hypotrichosis with juvenile macular degeneration"
+    }
+   }
+  }
+ ]
+}

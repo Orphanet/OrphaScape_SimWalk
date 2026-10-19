@@ -1,0 +1,87 @@
+{
+ "id": "PMID_25852890_patient",
+ "subject": {
+  "id": "PMID_25852890_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000121",
+    "label": "Nephrocalcinosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003774",
+    "label": "Stage 5 chronic kidney disease"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002150",
+    "label": "Hypercalciuria"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012608",
+    "label": "Hypermagnesiuria"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000103",
+    "label": "Polyuria"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001959",
+    "label": "Polydipsia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002149",
+    "label": "Hyperuricemia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002917",
+    "label": "Hypomagnesemia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003165",
+    "label": "Elevated circulating parathyroid hormone level"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000093",
+    "label": "Proteinuria"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:31043",
+    "label": "Primary hypomagnesemia with hypercalciuria and nephrocalcinosis without severe ocular involvement"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_25852890_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:31043",
+     "label": "Primary hypomagnesemia with hypercalciuria and nephrocalcinosis without severe ocular involvement"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "PMID_28202457_F1_II_4",
+ "subject": {
+  "id": "PMID_28202457_F1_II_4"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001875",
+    "label": "Decreased total neutrophil count"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001876",
+    "label": "Pancytopenia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001873",
+    "label": "Thrombocytopenia"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:2585",
+    "label": "Ataxia-pancytopenia syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_28202457_F1_II_4",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:2585",
+     "label": "Ataxia-pancytopenia syndrome"
+    }
+   }
+  }
+ ]
+}

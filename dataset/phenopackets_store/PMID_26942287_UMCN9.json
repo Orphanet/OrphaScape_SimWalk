@@ -1,0 +1,81 @@
+{
+ "id": "PMID_26942287_UMCN9",
+ "subject": {
+  "id": "PMID_26942287_UMCN9"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000540",
+    "label": "Hypermetropia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001263",
+    "label": "Global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002194",
+    "label": "Delayed gross motor development"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000750",
+    "label": "Delayed speech and language development"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001249",
+    "label": "Intellectual disability"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007018",
+    "label": "Attention deficit hyperactivity disorder"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011968",
+    "label": "Feeding difficulties"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000403",
+    "label": "Recurrent otitis media"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002205",
+    "label": "Recurrent respiratory infections"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:468678",
+    "label": "White-Sutton syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_26942287_UMCN9",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:468678",
+     "label": "White-Sutton syndrome"
+    }
+   }
+  }
+ ]
+}

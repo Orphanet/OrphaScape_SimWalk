@@ -1,0 +1,198 @@
+{
+  "id": "23808",
+  "diseases": [
+    {
+      "term": {
+        "id": "Orphanet:363417",
+        "label": "NA"
+      }
+    }
+  ],
+  "phenotypicFeatures": [
+    {
+      "type": {
+        "id": "HP:0009942",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0011297",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0000164",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0001510",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0001999",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0100266",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0010109",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0006304",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0000347",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0025328",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0003834",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0012415",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0000620",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0010891",
+        "label": null
+      }
+    }
+  ],
+  "interpretations": [
+    {
+      "id": "23808",
+      "diagnosis": {
+        "disease": {
+          "id": "ORPHA:363417",
+          "label": "NA"
+        },
+        "genomicInterpretations": [
+          {
+            "subjectOrBiosampleId": "23808",
+            "interpretationStatus": "true_gene",
+            "gene": {
+              "valueId": "ENSG00000131873",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "23808",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000177455",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "23808",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000140368",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "23808",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000021488",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "23808",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000141556",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "23808",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000139515",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "23808",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000205678",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "23808",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000122512",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "23808",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000157404",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "23808",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000131873",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "23808",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000146021",
+              "symbol": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

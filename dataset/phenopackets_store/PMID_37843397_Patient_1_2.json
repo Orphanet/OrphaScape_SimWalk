@@ -1,0 +1,63 @@
+{
+ "id": "PMID_37843397_Patient_1_2",
+ "subject": {
+  "id": "PMID_37843397_Patient_1_2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0003635",
+    "label": "Loss of subcutaneous adipose tissue in limbs"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0009125",
+    "label": "Lipodystrophy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0005978",
+    "label": "Type II diabetes mellitus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001397",
+    "label": "Hepatic steatosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003233",
+    "label": "Decreased circulating HDL-C concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001513",
+    "label": "Obesity"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:2348",
+    "label": "Familial partial lipodystrophy, Dunnigan type"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_37843397_Patient_1_2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:2348",
+     "label": "Familial partial lipodystrophy, Dunnigan type"
+    }
+   }
+  }
+ ]
+}

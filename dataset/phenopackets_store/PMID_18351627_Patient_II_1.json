@@ -1,0 +1,51 @@
+{
+ "id": "PMID_18351627_Patient_II_1",
+ "subject": {
+  "id": "PMID_18351627_Patient_II_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001684",
+    "label": "Secundum atrial septal defect"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0009623",
+    "label": "Proximal placement of thumb"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001634",
+    "label": "Mitral valve prolapse"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010034",
+    "label": "Short 1st metacarpal"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:392",
+    "label": "Holt-Oram syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_18351627_Patient_II_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:392",
+     "label": "Holt-Oram syndrome"
+    }
+   }
+  }
+ ]
+}

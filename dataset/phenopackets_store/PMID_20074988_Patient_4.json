@@ -1,0 +1,81 @@
+{
+ "id": "PMID_20074988_Patient_4",
+ "subject": {
+  "id": "PMID_20074988_Patient_4"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0003128",
+    "label": "Lactic acidosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002151",
+    "label": "Increased circulating lactate concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002014",
+    "label": "Diarrhea"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001508",
+    "label": "Failure to thrive"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002020",
+    "label": "Gastroesophageal reflux"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001399",
+    "label": "Hepatic failure"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002572",
+    "label": "Episodic vomiting"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006581",
+    "label": "Depletion of mitochondrial DNA in liver"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0009141",
+    "label": "Depletion of mitochondrial DNA in muscle tissue"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:255229",
+    "label": "Navajo neurohepatopathy"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_20074988_Patient_4",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:255229",
+     "label": "Navajo neurohepatopathy"
+    }
+   }
+  }
+ ]
+}

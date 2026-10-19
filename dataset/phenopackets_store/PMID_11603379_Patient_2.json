@@ -1,0 +1,75 @@
+{
+ "id": "PMID_11603379_Patient_2",
+ "subject": {
+  "id": "PMID_11603379_Patient_2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0100660",
+    "label": "Dyskinesia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001336",
+    "label": "Myoclonus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001332",
+    "label": "Dystonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002342",
+    "label": "Moderate intellectual disability"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001251",
+    "label": "Ataxia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001350",
+    "label": "Slurred speech"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001250",
+    "label": "Seizure"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025373",
+    "label": "Interictal EEG abnormality"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:71277",
+    "label": "Classic glucose transporter type 1 deficiency syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_11603379_Patient_2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:71277",
+     "label": "Classic glucose transporter type 1 deficiency syndrome"
+    }
+   }
+  }
+ ]
+}

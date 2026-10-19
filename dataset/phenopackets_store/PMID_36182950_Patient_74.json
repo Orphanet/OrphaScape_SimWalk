@@ -1,0 +1,69 @@
+{
+ "id": "PMID_36182950_Patient_74",
+ "subject": {
+  "id": "PMID_36182950_Patient_74"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000729",
+    "label": "Autistic behavior"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001256",
+    "label": "Mild intellectual disability"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001263",
+    "label": "Global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001270",
+    "label": "Motor delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000750",
+    "label": "Delayed speech and language development"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002019",
+    "label": "Constipation"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000316",
+    "label": "Hypertelorism"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:642675",
+    "label": "CHD8 overgrowth syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_36182950_Patient_74",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:642675",
+     "label": "CHD8 overgrowth syndrome"
+    }
+   }
+  }
+ ]
+}

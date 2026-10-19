@@ -1,0 +1,63 @@
+{
+ "id": "PMID_33595912_Patient_2",
+ "subject": {
+  "id": "PMID_33595912_Patient_2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0003016",
+    "label": "Metaphyseal widening"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001873",
+    "label": "Thrombocytopenia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001897",
+    "label": "Normocytic anemia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001923",
+    "label": "Reticulocytosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0005528",
+    "label": "Bone marrow hypocellularity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011974",
+    "label": "Myelofibrosis"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:1802",
+    "label": "Ghosal hematodiaphyseal dysplasia"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_33595912_Patient_2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:1802",
+     "label": "Ghosal hematodiaphyseal dysplasia"
+    }
+   }
+  }
+ ]
+}

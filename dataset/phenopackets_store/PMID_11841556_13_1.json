@@ -1,0 +1,57 @@
+{
+ "id": "PMID_11841556_13_1",
+ "subject": {
+  "id": "PMID_11841556_13_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0003212",
+    "label": "Increased circulating IgE concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000964",
+    "label": "Eczematoid dermatitis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025810",
+    "label": "Ichthyosis linearis circumflexa"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000989",
+    "label": "Pruritus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025811",
+    "label": "Trichorrhexis invaginata"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:634",
+    "label": "Netherton syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_11841556_13_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:634",
+     "label": "Netherton syndrome"
+    }
+   }
+  }
+ ]
+}

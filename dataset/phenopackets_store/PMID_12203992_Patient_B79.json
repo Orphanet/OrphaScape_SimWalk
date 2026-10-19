@@ -1,0 +1,39 @@
+{
+ "id": "PMID_12203992_Patient_B79",
+ "subject": {
+  "id": "PMID_12203992_Patient_B79"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000768",
+    "label": "Pectus carinatum"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001519",
+    "label": "Disproportionate tall stature"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:284963",
+    "label": "Marfan syndrome type 1"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_12203992_Patient_B79",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:284963",
+     "label": "Marfan syndrome type 1"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "id": "PMID_16546111_A_IV_1",
+ "subject": {
+  "id": "PMID_16546111_A_IV_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0007663",
+    "label": "Reduced visual acuity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000550",
+    "label": "Undetectable electroretinogram"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:827",
+    "label": "Stargardt disease"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_16546111_A_IV_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:827",
+     "label": "Stargardt disease"
+    }
+   }
+  }
+ ]
+}

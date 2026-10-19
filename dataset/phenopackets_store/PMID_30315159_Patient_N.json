@@ -1,0 +1,39 @@
+{
+ "id": "PMID_30315159_Patient_N",
+ "subject": {
+  "id": "PMID_30315159_Patient_N"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001873",
+    "label": "Thrombocytopenia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011342",
+    "label": "Mild global developmental delay"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:674653",
+    "label": "Actinomyopathy-associated syndromic thrombocytopenia"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_30315159_Patient_N",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:674653",
+     "label": "Actinomyopathy-associated syndromic thrombocytopenia"
+    }
+   }
+  }
+ ]
+}

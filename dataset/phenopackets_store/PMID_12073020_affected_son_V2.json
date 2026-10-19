@@ -1,0 +1,81 @@
+{
+ "id": "PMID_12073020_affected_son_V2",
+ "subject": {
+  "id": "PMID_12073020_affected_son_V2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000807",
+    "label": "Glanular hypospadias"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001773",
+    "label": "Short foot"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010109",
+    "label": "Short hallux"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0200055",
+    "label": "Small hand"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0009237",
+    "label": "Short 5th finger"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0009778",
+    "label": "Short thumb"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0100499",
+    "label": "Tibial deviation of toes"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0009623",
+    "label": "Proximal placement of thumb"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001245",
+    "label": "Small thenar eminence"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:2438",
+    "label": "Hand-foot-genital syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_12073020_affected_son_V2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:2438",
+     "label": "Hand-foot-genital syndrome"
+    }
+   }
+  }
+ ]
+}

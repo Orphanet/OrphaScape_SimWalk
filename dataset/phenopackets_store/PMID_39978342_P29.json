@@ -1,0 +1,63 @@
+{
+ "id": "PMID_39978342_P29",
+ "subject": {
+  "id": "PMID_39978342_P29"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0006579",
+    "label": "Prolonged neonatal jaundice"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007359",
+    "label": "Focal-onset seizure"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000752",
+    "label": "Hyperactivity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000750",
+    "label": "Delayed speech and language development"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011343",
+    "label": "Moderate global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0031936",
+    "label": "Delayed ability to walk"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:726667",
+    "label": "Houge-Janssens syndrome type 4"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_39978342_P29",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:726667",
+     "label": "Houge-Janssens syndrome type 4"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "PMID_11410597_proband",
+ "subject": {
+  "id": "PMID_11410597_proband"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:6000313",
+    "label": "Incomplete right bundle branch block"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012251",
+    "label": "ST segment elevation"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004756",
+    "label": "Ventricular tachycardia"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:130",
+    "label": "Brugada syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_11410597_proband",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:130",
+     "label": "Brugada syndrome"
+    }
+   }
+  }
+ ]
+}

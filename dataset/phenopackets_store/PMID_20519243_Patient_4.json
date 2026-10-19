@@ -1,0 +1,45 @@
+{
+ "id": "PMID_20519243_Patient_4",
+ "subject": {
+  "id": "PMID_20519243_Patient_4"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001674",
+    "label": "Complete atrioventricular canal defect"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000878",
+    "label": "11 pairs of ribs"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004762",
+    "label": "Hypoplasia of right ventricle"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:392",
+    "label": "Holt-Oram syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_20519243_Patient_4",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:392",
+     "label": "Holt-Oram syndrome"
+    }
+   }
+  }
+ ]
+}

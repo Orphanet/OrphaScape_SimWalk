@@ -1,0 +1,93 @@
+{
+ "id": "PMID_30658709_patient",
+ "subject": {
+  "id": "PMID_30658709_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0031956",
+    "label": "Elevated circulating aspartate aminotransferase concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0031964",
+    "label": "Elevated circulating alanine aminotransferase concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003573",
+    "label": "Increased total bilirubin"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012202",
+    "label": "Increased serum bile acid concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002908",
+    "label": "Conjugated hyperbilirubinemia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001433",
+    "label": "Hepatosplenomegaly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001510",
+    "label": "Growth delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000989",
+    "label": "Pruritus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000952",
+    "label": "Jaundice"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002650",
+    "label": "Scoliosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0100810",
+    "label": "Pointed helix"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:480483",
+    "label": "Progressive familial intrahepatic cholestasis type 4"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_30658709_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:480483",
+     "label": "Progressive familial intrahepatic cholestasis type 4"
+    }
+   }
+  }
+ ]
+}

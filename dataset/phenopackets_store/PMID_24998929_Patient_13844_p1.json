@@ -1,0 +1,63 @@
+{
+ "id": "PMID_24998929_Patient_13844_p1",
+ "subject": {
+  "id": "PMID_24998929_Patient_13844_p1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000717",
+    "label": "Autism"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010864",
+    "label": "Severe intellectual disability"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002376",
+    "label": "Developmental regression"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002019",
+    "label": "Constipation"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003270",
+    "label": "Abdominal distention"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000098",
+    "label": "Tall stature"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:642675",
+    "label": "CHD8 overgrowth syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_24998929_Patient_13844_p1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:642675",
+     "label": "CHD8 overgrowth syndrome"
+    }
+   }
+  }
+ ]
+}

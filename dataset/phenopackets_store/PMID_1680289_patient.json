@@ -1,0 +1,63 @@
+{
+ "id": "PMID_1680289_patient",
+ "subject": {
+  "id": "PMID_1680289_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0031381",
+    "label": "Decreased mitogen-induced T-cell proliferation"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001888",
+    "label": "Decreased total lymphocyte count"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002720",
+    "label": "Decreased circulating IgA concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004430",
+    "label": "Severe combined immunodeficiency"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002090",
+    "label": "Pneumonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002850",
+    "label": "Decreased circulating IgM concentration"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:277",
+    "label": "T-B-NK- severe combined immunodeficiency due to adenosine deaminase deficiency"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_1680289_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:277",
+     "label": "T-B-NK- severe combined immunodeficiency due to adenosine deaminase deficiency"
+    }
+   }
+  }
+ ]
+}

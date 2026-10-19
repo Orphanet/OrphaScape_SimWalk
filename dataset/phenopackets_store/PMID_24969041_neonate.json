@@ -1,0 +1,51 @@
+{
+ "id": "PMID_24969041_neonate",
+ "subject": {
+  "id": "PMID_24969041_neonate"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0002267",
+    "label": "Exaggerated startle response"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001276",
+    "label": "Hypertonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002108",
+    "label": "Spontaneous pneumothorax"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0100660",
+    "label": "Dyskinesia"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:3197",
+    "label": "Hereditary hyperekplexia"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_24969041_neonate",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:3197",
+     "label": "Hereditary hyperekplexia"
+    }
+   }
+  }
+ ]
+}

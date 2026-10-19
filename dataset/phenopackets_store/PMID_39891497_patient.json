@@ -1,0 +1,57 @@
+{
+ "id": "PMID_39891497_patient",
+ "subject": {
+  "id": "PMID_39891497_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001047",
+    "label": "Atopic dermatitis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0410331",
+    "label": "Nut food product allergy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0100845",
+    "label": "Anaphylactic shock"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011971",
+    "label": "Dermatographic urticaria"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025811",
+    "label": "Trichorrhexis invaginata"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:634",
+    "label": "Netherton syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_39891497_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:634",
+     "label": "Netherton syndrome"
+    }
+   }
+  }
+ ]
+}

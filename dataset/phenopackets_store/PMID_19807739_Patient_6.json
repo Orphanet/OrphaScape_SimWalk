@@ -1,0 +1,63 @@
+{
+ "id": "PMID_19807739_Patient_6",
+ "subject": {
+  "id": "PMID_19807739_Patient_6"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0002728",
+    "label": "Recurrent mucocutaneous candidiasis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002024",
+    "label": "Malabsorption"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000829",
+    "label": "Hypoparathyroidism"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000821",
+    "label": "Hypothyroidism"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0100651",
+    "label": "Type I diabetes mellitus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0100806",
+    "label": "Sepsis"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:3453",
+    "label": "Autoimmune polyendocrinopathy type 1"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_19807739_Patient_6",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:3453",
+     "label": "Autoimmune polyendocrinopathy type 1"
+    }
+   }
+  }
+ ]
+}

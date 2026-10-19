@@ -1,0 +1,51 @@
+{
+ "id": "PMID_24736735_G085",
+ "subject": {
+  "id": "PMID_24736735_G085"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0100259",
+    "label": "Postaxial polydactyly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006042",
+    "label": "Y-shaped metacarpals"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010567",
+    "label": "Y-shaped metatarsals"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002164",
+    "label": "Nail dysplasia"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:672",
+    "label": "Pallister-Hall syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_24736735_G085",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:672",
+     "label": "Pallister-Hall syndrome"
+    }
+   }
+  }
+ ]
+}

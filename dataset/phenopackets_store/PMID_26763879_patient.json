@@ -1,0 +1,117 @@
+{
+ "id": "PMID_26763879_patient",
+ "subject": {
+  "id": "PMID_26763879_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000307",
+    "label": "Pointed chin"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002714",
+    "label": "Downturned corners of mouth"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002263",
+    "label": "Exaggerated cupid's bow"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000316",
+    "label": "Hypertelorism"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000286",
+    "label": "Epicanthus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000508",
+    "label": "Ptosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002553",
+    "label": "Highly arched eyebrow"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0005280",
+    "label": "Depressed nasal bridge"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000447",
+    "label": "Pear-shaped nose"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011800",
+    "label": "Midface retrusion"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001263",
+    "label": "Global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000750",
+    "label": "Delayed speech and language development"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001249",
+    "label": "Intellectual disability"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012760",
+    "label": "Reduced social responsiveness"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000744",
+    "label": "Low frustration tolerance"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:468678",
+    "label": "White-Sutton syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_26763879_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:468678",
+     "label": "White-Sutton syndrome"
+    }
+   }
+  }
+ ]
+}

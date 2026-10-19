@@ -1,0 +1,186 @@
+{
+  "id": "22619",
+  "diseases": [
+    {
+      "term": {
+        "id": "Orphanet:98809",
+        "label": "NA"
+      }
+    }
+  ],
+  "phenotypicFeatures": [
+    {
+      "type": {
+        "id": "HP:0001332",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0002072",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0004305",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0001250",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0011105",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0003324",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0100759",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0001373",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0002578",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0030706",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0410397",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0001829",
+        "label": null
+      }
+    }
+  ],
+  "interpretations": [
+    {
+      "id": "22619",
+      "diagnosis": {
+        "disease": {
+          "id": "ORPHA:98809",
+          "label": "NA"
+        },
+        "genomicInterpretations": [
+          {
+            "subjectOrBiosampleId": "22619",
+            "interpretationStatus": "true_gene",
+            "gene": {
+              "valueId": "ENSG00000167371",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "22619",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000167371",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "22619",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000059573",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "22619",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000010671",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "22619",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000183098",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "22619",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000139190",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "22619",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000048342",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "22619",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000119392",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "22619",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000165588",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "22619",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000172071",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "22619",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000166313",
+              "symbol": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+ "id": "PMID_41047924_Case_1",
+ "subject": {
+  "id": "PMID_41047924_Case_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0045075",
+    "label": "Sparse eyebrow"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003212",
+    "label": "Increased circulating IgE concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003765",
+    "label": "Psoriasiform dermatitis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000988",
+    "label": "Skin rash"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001019",
+    "label": "Erythroderma"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010783",
+    "label": "Erythema"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0200034",
+    "label": "Papule"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000989",
+    "label": "Pruritus"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:634",
+    "label": "Netherton syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_41047924_Case_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:634",
+     "label": "Netherton syndrome"
+    }
+   }
+  }
+ ]
+}

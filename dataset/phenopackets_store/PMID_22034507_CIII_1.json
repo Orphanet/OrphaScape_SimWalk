@@ -1,0 +1,57 @@
+{
+ "id": "PMID_22034507_CIII_1",
+ "subject": {
+  "id": "PMID_22034507_CIII_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000103",
+    "label": "Polyuria"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012625",
+    "label": "Stage 3 chronic kidney disease"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003774",
+    "label": "Stage 5 chronic kidney disease"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001997",
+    "label": "Gout"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000822",
+    "label": "Hypertension"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:88950",
+    "label": "UMOD-related autosomal dominant tubulointerstitial kidney disease"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_22034507_CIII_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:88950",
+     "label": "UMOD-related autosomal dominant tubulointerstitial kidney disease"
+    }
+   }
+  }
+ ]
+}

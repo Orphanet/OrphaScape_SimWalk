@@ -1,0 +1,69 @@
+{
+ "id": "PMID_24164096_patient",
+ "subject": {
+  "id": "PMID_24164096_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0008619",
+    "label": "Bilateral sensorineural hearing impairment"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011150",
+    "label": "Myoclonic absence seizure"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010819",
+    "label": "Atonic seizure"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001336",
+    "label": "Myoclonus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001337",
+    "label": "Tremor"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0034295",
+    "label": "Reduced cerebral white matter volume"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003444",
+    "label": "EMG: chronic denervation signs"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:2590",
+    "label": "Spinal muscular atrophy-progressive myoclonic epilepsy syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_24164096_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:2590",
+     "label": "Spinal muscular atrophy-progressive myoclonic epilepsy syndrome"
+    }
+   }
+  }
+ ]
+}

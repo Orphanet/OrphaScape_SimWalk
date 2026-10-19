@@ -1,0 +1,81 @@
+{
+ "id": "PMID_33499149_II_1",
+ "subject": {
+  "id": "PMID_33499149_II_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001149",
+    "label": "Lattice corneal dystrophy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000518",
+    "label": "Cataract"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001138",
+    "label": "Optic neuropathy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001133",
+    "label": "Constriction of peripheral visual field"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001251",
+    "label": "Ataxia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002514",
+    "label": "Cerebral calcification"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012309",
+    "label": "Cutaneous amyloidosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000973",
+    "label": "Cutis laxa"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010750",
+    "label": "Dermatochalasis"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:85448",
+    "label": "AGel amyloidosis"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_33499149_II_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:85448",
+     "label": "AGel amyloidosis"
+    }
+   }
+  }
+ ]
+}

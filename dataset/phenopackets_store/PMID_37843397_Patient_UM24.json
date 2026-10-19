@@ -1,0 +1,45 @@
+{
+ "id": "PMID_37843397_Patient_UM24",
+ "subject": {
+  "id": "PMID_37843397_Patient_UM24"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0003635",
+    "label": "Loss of subcutaneous adipose tissue in limbs"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0009002",
+    "label": "Loss of truncal subcutaneous adipose tissue"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0009125",
+    "label": "Lipodystrophy"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:2348",
+    "label": "Familial partial lipodystrophy, Dunnigan type"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_37843397_Patient_UM24",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:2348",
+     "label": "Familial partial lipodystrophy, Dunnigan type"
+    }
+   }
+  }
+ ]
+}

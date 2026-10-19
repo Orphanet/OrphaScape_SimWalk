@@ -1,0 +1,45 @@
+{
+ "id": "PMID_21739261_Patient_1",
+ "subject": {
+  "id": "PMID_21739261_Patient_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000639",
+    "label": "Nystagmus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001010",
+    "label": "Hypopigmentation of the skin"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0005599",
+    "label": "Hypopigmentation of hair"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:79433",
+    "label": "Oculocutaneous albinism type 3"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_21739261_Patient_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:79433",
+     "label": "Oculocutaneous albinism type 3"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "id": "PMID_27732904_patient",
+ "subject": {
+  "id": "PMID_27732904_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000980",
+    "label": "Pallor"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001511",
+    "label": "Intrauterine growth retardation"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0005518",
+    "label": "Increased mean corpuscular volume"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001903",
+    "label": "Anemia"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:124",
+    "label": "Diamond-Blackfan anemia"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_27732904_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:124",
+     "label": "Diamond-Blackfan anemia"
+    }
+   }
+  }
+ ]
+}

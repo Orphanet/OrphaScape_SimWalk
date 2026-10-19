@@ -1,0 +1,75 @@
+{
+ "id": "PMID_35310830_Individual_V_1",
+ "subject": {
+  "id": "PMID_35310830_Individual_V_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001272",
+    "label": "Cerebellar atrophy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007305",
+    "label": "CNS demyelination"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002317",
+    "label": "Unsteady gait"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001761",
+    "label": "Pes cavus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003487",
+    "label": "Babinski sign"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007979",
+    "label": "Gaze-evoked horizontal nystagmus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001251",
+    "label": "Ataxia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011448",
+    "label": "Ankle clonus"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:631106",
+    "label": "Spinocerebellar ataxia type 49"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_35310830_Individual_V_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:631106",
+     "label": "Spinocerebellar ataxia type 49"
+    }
+   }
+  }
+ ]
+}

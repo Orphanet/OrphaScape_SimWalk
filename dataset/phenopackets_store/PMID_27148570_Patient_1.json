@@ -1,0 +1,93 @@
+{
+ "id": "PMID_27148570_Patient_1",
+ "subject": {
+  "id": "PMID_27148570_Patient_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000486",
+    "label": "Strabismus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001159",
+    "label": "Syndactyly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000252",
+    "label": "Microcephaly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002650",
+    "label": "Scoliosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0034392",
+    "label": "Joint contracture"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001290",
+    "label": "Generalized hypotonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0009879",
+    "label": "Simplified gyral pattern"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001263",
+    "label": "Global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002194",
+    "label": "Delayed gross motor development"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000750",
+    "label": "Delayed speech and language development"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001249",
+    "label": "Intellectual disability"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:468678",
+    "label": "White-Sutton syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_27148570_Patient_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:468678",
+     "label": "White-Sutton syndrome"
+    }
+   }
+  }
+ ]
+}

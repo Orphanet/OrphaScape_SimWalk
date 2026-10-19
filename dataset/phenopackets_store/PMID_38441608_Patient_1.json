@@ -1,0 +1,51 @@
+{
+ "id": "PMID_38441608_Patient_1",
+ "subject": {
+  "id": "PMID_38441608_Patient_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0002342",
+    "label": "Moderate intellectual disability"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000739",
+    "label": "Anxiety"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000303",
+    "label": "Mandibular prognathia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007325",
+    "label": "Generalized dystonia"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:642675",
+    "label": "CHD8 overgrowth syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_38441608_Patient_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:642675",
+     "label": "CHD8 overgrowth syndrome"
+    }
+   }
+  }
+ ]
+}

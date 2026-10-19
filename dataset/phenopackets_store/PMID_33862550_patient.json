@@ -1,0 +1,51 @@
+{
+ "id": "PMID_33862550_patient",
+ "subject": {
+  "id": "PMID_33862550_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0003487",
+    "label": "Babinski sign"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001257",
+    "label": "Spasticity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001347",
+    "label": "Hyperreflexia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007340",
+    "label": "Lower limb muscle weakness"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:513436",
+    "label": "Autosomal recessive spastic paraplegia type 78"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_33862550_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:513436",
+     "label": "Autosomal recessive spastic paraplegia type 78"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "PMID_27939403_D_I_1",
+ "subject": {
+  "id": "PMID_27939403_D_I_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0033222",
+    "label": "Inverted CD4:CD8 ratio"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001973",
+    "label": "Autoimmune thrombocytopenia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002633",
+    "label": "Vasculitis"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:317473",
+    "label": "Common variable immunodeficiency phenotype due to IKAROS functional haploinsufficiency"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_27939403_D_I_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:317473",
+     "label": "Common variable immunodeficiency phenotype due to IKAROS functional haploinsufficiency"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "id": "PMID_34415117_patient_2",
+ "subject": {
+  "id": "PMID_34415117_patient_2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000256",
+    "label": "Macrocephaly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000717",
+    "label": "Autism"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001270",
+    "label": "Motor delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001252",
+    "label": "Hypotonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0400000",
+    "label": "Tall chin"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006855",
+    "label": "Cerebellar vermis atrophy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000336",
+    "label": "Prominent supraorbital ridges"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002451",
+    "label": "Limb dystonia"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:642675",
+    "label": "CHD8 overgrowth syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_34415117_patient_2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:642675",
+     "label": "CHD8 overgrowth syndrome"
+    }
+   }
+  }
+ ]
+}

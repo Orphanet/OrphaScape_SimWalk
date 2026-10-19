@@ -1,0 +1,63 @@
+{
+ "id": "PMID_15673476_proband",
+ "subject": {
+  "id": "PMID_15673476_proband"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000108",
+    "label": "Renal corticomedullary cysts"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003259",
+    "label": "Elevated circulating creatinine concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012623",
+    "label": "Stage 1 chronic kidney disease"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003774",
+    "label": "Stage 5 chronic kidney disease"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001997",
+    "label": "Gout"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002149",
+    "label": "Hyperuricemia"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:88950",
+    "label": "UMOD-related autosomal dominant tubulointerstitial kidney disease"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_15673476_proband",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:88950",
+     "label": "UMOD-related autosomal dominant tubulointerstitial kidney disease"
+    }
+   }
+  }
+ ]
+}

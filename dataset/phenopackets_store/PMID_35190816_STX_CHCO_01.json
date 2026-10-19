@@ -1,0 +1,63 @@
+{
+ "id": "PMID_35190816_STX_CHCO_01",
+ "subject": {
+  "id": "PMID_35190816_STX_CHCO_01"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0002069",
+    "label": "Bilateral tonic-clonic seizure"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010845",
+    "label": "EEG with generalized slow activity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001337",
+    "label": "Tremor"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001298",
+    "label": "Encephalopathy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001263",
+    "label": "Global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007240",
+    "label": "Progressive gait ataxia"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:599373",
+    "label": "STXBP1-related developmental and epileptic encephalopathy"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_35190816_STX_CHCO_01",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:599373",
+     "label": "STXBP1-related developmental and epileptic encephalopathy"
+    }
+   }
+  }
+ ]
+}

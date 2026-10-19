@@ -1,0 +1,81 @@
+{
+ "id": "PMID_33122583_patient",
+ "subject": {
+  "id": "PMID_33122583_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0020103",
+    "label": "Invasive pulmonary aspergillosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001876",
+    "label": "Pancytopenia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001873",
+    "label": "Thrombocytopenia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001875",
+    "label": "Decreased total neutrophil count"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010976",
+    "label": "Decreased total B cell count"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0005528",
+    "label": "Bone marrow hypocellularity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:6000980",
+    "label": "Bone marrow hemophagocytosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004315",
+    "label": "Decreased circulating IgG concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002850",
+    "label": "Decreased circulating IgM concentration"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:317473",
+    "label": "Common variable immunodeficiency phenotype due to IKAROS functional haploinsufficiency"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_33122583_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:317473",
+     "label": "Common variable immunodeficiency phenotype due to IKAROS functional haploinsufficiency"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "id": "PMID_24073597_III_1",
+ "subject": {
+  "id": "PMID_24073597_III_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000485",
+    "label": "Megalocornea"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0100689",
+    "label": "Decreased corneal thickness"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007765",
+    "label": "Deep anterior chamber"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007663",
+    "label": "Reduced visual acuity"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:91489",
+    "label": "Isolated congenital megalocornea"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_24073597_III_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:91489",
+     "label": "Isolated congenital megalocornea"
+    }
+   }
+  }
+ ]
+}

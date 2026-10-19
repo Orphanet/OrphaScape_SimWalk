@@ -1,0 +1,51 @@
+{
+ "id": "PMID_33529166_P1",
+ "subject": {
+  "id": "PMID_33529166_P1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0005403",
+    "label": "Decreased total T cell count"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0032218",
+    "label": "Decreased total CD4+ T cell proportion"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025834",
+    "label": "Impaired phytohemagglutinin-induced T lymphocyte transformation"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0031382",
+    "label": "Decreased anti-CD3/28-induced T-cell proliferation"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:718017",
+    "label": "Combined immunodeficiency due to COPG1 deficiency"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_33529166_P1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:718017",
+     "label": "Combined immunodeficiency due to COPG1 deficiency"
+    }
+   }
+  }
+ ]
+}

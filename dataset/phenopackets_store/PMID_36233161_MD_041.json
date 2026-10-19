@@ -1,0 +1,63 @@
+{
+ "id": "PMID_36233161_MD_041",
+ "subject": {
+  "id": "PMID_36233161_MD_041"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001251",
+    "label": "Ataxia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001252",
+    "label": "Hypotonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001249",
+    "label": "Intellectual disability"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001272",
+    "label": "Cerebellar atrophy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000640",
+    "label": "Gaze-evoked nystagmus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000486",
+    "label": "Strabismus"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:208513",
+    "label": "Spinocerebellar ataxia type 29"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_36233161_MD_041",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:208513",
+     "label": "Spinocerebellar ataxia type 29"
+    }
+   }
+  }
+ ]
+}

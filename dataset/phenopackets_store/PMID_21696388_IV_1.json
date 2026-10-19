@@ -1,0 +1,51 @@
+{
+ "id": "PMID_21696388_IV_1",
+ "subject": {
+  "id": "PMID_21696388_IV_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0003487",
+    "label": "Babinski sign"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000726",
+    "label": "Dementia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001347",
+    "label": "Hyperreflexia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002059",
+    "label": "Cerebral atrophy"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:306674",
+    "label": "Kufor-Rakeb syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_21696388_IV_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:306674",
+     "label": "Kufor-Rakeb syndrome"
+    }
+   }
+  }
+ ]
+}

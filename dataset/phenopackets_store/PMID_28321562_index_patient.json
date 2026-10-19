@@ -1,0 +1,75 @@
+{
+ "id": "PMID_28321562_index_patient",
+ "subject": {
+  "id": "PMID_28321562_index_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0002141",
+    "label": "Gait imbalance"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002497",
+    "label": "Spastic ataxia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006986",
+    "label": "Upper limb spasticity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002061",
+    "label": "Lower limb spasticity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001310",
+    "label": "Dysmetria"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007340",
+    "label": "Lower limb muscle weakness"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001260",
+    "label": "Dysarthria"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006855",
+    "label": "Cerebellar vermis atrophy"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:488594",
+    "label": "Autosomal recessive spastic paraplegia type 76"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_28321562_index_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:488594",
+     "label": "Autosomal recessive spastic paraplegia type 76"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "id": "PMID_33534181_patient",
+ "subject": {
+  "id": "PMID_33534181_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0007381",
+    "label": "Congenital exfoliative erythroderma"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000964",
+    "label": "Eczematoid dermatitis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000962",
+    "label": "Hyperkeratosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025810",
+    "label": "Ichthyosis linearis circumflexa"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025474",
+    "label": "Erythematous plaque"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0100658",
+    "label": "Cellulitis"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:634",
+    "label": "Netherton syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_33534181_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:634",
+     "label": "Netherton syndrome"
+    }
+   }
+  }
+ ]
+}

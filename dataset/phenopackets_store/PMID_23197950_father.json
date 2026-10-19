@@ -1,0 +1,45 @@
+{
+ "id": "PMID_23197950_father",
+ "subject": {
+  "id": "PMID_23197950_father"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0003774",
+    "label": "Stage 5 chronic kidney disease"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000107",
+    "label": "Renal cyst"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002149",
+    "label": "Hyperuricemia"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:88950",
+    "label": "UMOD-related autosomal dominant tubulointerstitial kidney disease"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_23197950_father",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:88950",
+     "label": "UMOD-related autosomal dominant tubulointerstitial kidney disease"
+    }
+   }
+  }
+ ]
+}

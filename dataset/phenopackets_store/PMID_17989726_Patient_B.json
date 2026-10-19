@@ -1,0 +1,69 @@
+{
+ "id": "PMID_17989726_Patient_B",
+ "subject": {
+  "id": "PMID_17989726_Patient_B"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001019",
+    "label": "Erythroderma"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001581",
+    "label": "Recurrent skin infections"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001880",
+    "label": "Increased total eosinophil count"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001510",
+    "label": "Growth delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001025",
+    "label": "Urticaria"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025819",
+    "label": "Palmoplantar peeling"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0100725",
+    "label": "Lichenification"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:634",
+    "label": "Netherton syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_17989726_Patient_B",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:634",
+     "label": "Netherton syndrome"
+    }
+   }
+  }
+ ]
+}

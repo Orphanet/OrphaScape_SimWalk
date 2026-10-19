@@ -1,0 +1,162 @@
+{
+  "id": "4395",
+  "diseases": [
+    {
+      "term": {
+        "id": "Orphanet:2128",
+        "label": "NA"
+      }
+    }
+  ],
+  "phenotypicFeatures": [
+    {
+      "type": {
+        "id": "HP:0001528",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0000028",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0000458",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0000161",
+        "label": null
+      }
+    }
+  ],
+  "interpretations": [
+    {
+      "id": "4395",
+      "diagnosis": {
+        "disease": {
+          "id": "ORPHA:2128",
+          "label": "NA"
+        },
+        "genomicInterpretations": [
+          {
+            "subjectOrBiosampleId": "4395",
+            "interpretationStatus": "true_gene",
+            "gene": {
+              "valueId": "ENSG00000167244",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "4395",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000167244",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "4395",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000174059",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "4395",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000107882",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "4395",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000117385",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "4395",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000163297",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "4395",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000131808",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "4395",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000155850",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "4395",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000135903",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "4395",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000105976",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "4395",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000152661",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "4395",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000119333",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "4395",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000105722",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "4395",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000177189",
+              "symbol": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

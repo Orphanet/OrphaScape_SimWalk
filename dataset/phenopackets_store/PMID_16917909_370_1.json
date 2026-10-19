@@ -1,0 +1,51 @@
+{
+ "id": "PMID_16917909_370_1",
+ "subject": {
+  "id": "PMID_16917909_370_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001631",
+    "label": "Atrial septal defect"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001199",
+    "label": "Triphalangeal thumb"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006394",
+    "label": "Limited pronation/supination of forearm"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011927",
+    "label": "Short digit"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:392",
+    "label": "Holt-Oram syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_16917909_370_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:392",
+     "label": "Holt-Oram syndrome"
+    }
+   }
+  }
+ ]
+}

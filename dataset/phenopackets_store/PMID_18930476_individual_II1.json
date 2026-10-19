@@ -1,0 +1,51 @@
+{
+ "id": "PMID_18930476_individual_II1",
+ "subject": {
+  "id": "PMID_18930476_individual_II1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0030237",
+    "label": "Hand muscle weakness"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0008981",
+    "label": "Calf muscle hypertrophy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003236",
+    "label": "Elevated circulating creatine kinase activity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001761",
+    "label": "Pes cavus"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:488650",
+    "label": "Distal myopathy, Tateyama type"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_18930476_individual_II1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:488650",
+     "label": "Distal myopathy, Tateyama type"
+    }
+   }
+  }
+ ]
+}

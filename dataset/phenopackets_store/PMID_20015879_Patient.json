@@ -1,0 +1,93 @@
+{
+ "id": "PMID_20015879_Patient",
+ "subject": {
+  "id": "PMID_20015879_Patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0100827",
+    "label": "Increased total lymphocyte count"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001744",
+    "label": "Splenomegaly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001971",
+    "label": "Hypersplenism"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012378",
+    "label": "Fatigue"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010532",
+    "label": "Paroxysmal vertigo"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0005502",
+    "label": "Increased red cell osmotic fragility"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001923",
+    "label": "Reticulocytosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004444",
+    "label": "Spherocytosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025066",
+    "label": "Decreased mean corpuscular volume"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011273",
+    "label": "Anisocytosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001878",
+    "label": "Hemolytic anemia"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:398088",
+    "label": "Hereditary cryohydrocytosis with normal stomatin"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_20015879_Patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:398088",
+     "label": "Hereditary cryohydrocytosis with normal stomatin"
+    }
+   }
+  }
+ ]
+}

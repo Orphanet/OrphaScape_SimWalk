@@ -1,0 +1,45 @@
+{
+ "id": "PMID_33529166_P5",
+ "subject": {
+  "id": "PMID_33529166_P5"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0010976",
+    "label": "Decreased total B cell count"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0005403",
+    "label": "Decreased total T cell count"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0032218",
+    "label": "Decreased total CD4+ T cell proportion"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:718017",
+    "label": "Combined immunodeficiency due to COPG1 deficiency"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_33529166_P5",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:718017",
+     "label": "Combined immunodeficiency due to COPG1 deficiency"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,172 @@
+{
+  "id": "14234",
+  "diseases": [
+    {
+      "term": {
+        "id": "Orphanet:40",
+        "label": "NA"
+      }
+    }
+  ],
+  "phenotypicFeatures": [
+    {
+      "type": {
+        "id": "HP:0003086",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0003498",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0005692",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0011220",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0011927",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0011218",
+        "label": null
+      }
+    },
+    {
+      "type": {
+        "id": "HP:0002094",
+        "label": null
+      }
+    }
+  ],
+  "interpretations": [
+    {
+      "id": "14234",
+      "diagnosis": {
+        "disease": {
+          "id": "ORPHA:40",
+          "label": "NA"
+        },
+        "genomicInterpretations": [
+          {
+            "subjectOrBiosampleId": "14234",
+            "interpretationStatus": "true_gene",
+            "gene": {
+              "valueId": "ENSG00000159899",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "14234",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000159899",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "14234",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000198223",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "14234",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000078401",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "14234",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000203908",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "14234",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000182220",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "14234",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000174231",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "14234",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000152818",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "14234",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000163359",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "14234",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000114841",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "14234",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000131482",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "14234",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000106080",
+              "symbol": null
+            }
+          },
+          {
+            "subjectOrBiosampleId": "14234",
+            "interpretationStatus": "candidate_gene",
+            "gene": {
+              "valueId": "ENSG00000184983",
+              "symbol": null
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

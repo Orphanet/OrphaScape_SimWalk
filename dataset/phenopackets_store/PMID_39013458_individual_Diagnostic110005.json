@@ -1,0 +1,45 @@
+{
+ "id": "PMID_39013458_individual_Diagnostic110005",
+ "subject": {
+  "id": "PMID_39013458_individual_Diagnostic110005"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000717",
+    "label": "Autism"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007018",
+    "label": "Attention deficit hyperactivity disorder"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001518",
+    "label": "Small for gestational age"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:261494",
+    "label": "Kleefstra syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_39013458_individual_Diagnostic110005",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:261494",
+     "label": "Kleefstra syndrome"
+    }
+   }
+  }
+ ]
+}

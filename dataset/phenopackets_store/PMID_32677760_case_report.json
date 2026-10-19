@@ -1,0 +1,51 @@
+{
+ "id": "PMID_32677760_case_report",
+ "subject": {
+  "id": "PMID_32677760_case_report"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001056",
+    "label": "Milia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0008070",
+    "label": "Sparse hair"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001274",
+    "label": "Agenesis of corpus callosum"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010705",
+    "label": "4-5 finger cutaneous syndactyly"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:2750",
+    "label": "Orofaciodigital syndrome type 1"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_32677760_case_report",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:2750",
+     "label": "Orofaciodigital syndrome type 1"
+    }
+   }
+  }
+ ]
+}

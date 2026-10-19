@@ -1,0 +1,81 @@
+{
+ "id": "PMID_35060672_Patient_2",
+ "subject": {
+  "id": "PMID_35060672_Patient_2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000028",
+    "label": "Cryptorchidism"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000233",
+    "label": "Thin vermilion border"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000691",
+    "label": "Microdontia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000348",
+    "label": "High forehead"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010751",
+    "label": "Dimple chin"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000506",
+    "label": "Telecanthus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000579",
+    "label": "Nasolacrimal duct obstruction"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000430",
+    "label": "Underdeveloped nasal alae"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000278",
+    "label": "Retrognathia"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:2322",
+    "label": "Kabuki syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_35060672_Patient_2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:2322",
+     "label": "Kabuki syndrome"
+    }
+   }
+  }
+ ]
+}

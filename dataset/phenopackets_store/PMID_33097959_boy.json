@@ -1,0 +1,63 @@
+{
+ "id": "PMID_33097959_boy",
+ "subject": {
+  "id": "PMID_33097959_boy"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001873",
+    "label": "Thrombocytopenia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001875",
+    "label": "Decreased total neutrophil count"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0030388",
+    "label": "Decreased class-switched memory B cell proportion"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002633",
+    "label": "Vasculitis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003493",
+    "label": "Antinuclear antibody positivity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0031190",
+    "label": "Superficial dermal perivascular inflammatory infiltrate"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:317473",
+    "label": "Common variable immunodeficiency phenotype due to IKAROS functional haploinsufficiency"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_33097959_boy",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:317473",
+     "label": "Common variable immunodeficiency phenotype due to IKAROS functional haploinsufficiency"
+    }
+   }
+  }
+ ]
+}

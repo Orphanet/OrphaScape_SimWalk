@@ -1,0 +1,81 @@
+{
+ "id": "PMID_36165187_patient",
+ "subject": {
+  "id": "PMID_36165187_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0003193",
+    "label": "Allergic rhinitis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003212",
+    "label": "Increased circulating IgE concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003765",
+    "label": "Psoriasiform dermatitis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0033605",
+    "label": "Pustular rash"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0410323",
+    "label": "Drug allergy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001880",
+    "label": "Increased total eosinophil count"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0040189",
+    "label": "Scaling skin"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025528",
+    "label": "Annular cutaneous lesion"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000989",
+    "label": "Pruritus"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:634",
+    "label": "Netherton syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_36165187_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:634",
+     "label": "Netherton syndrome"
+    }
+   }
+  }
+ ]
+}

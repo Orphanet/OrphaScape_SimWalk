@@ -1,0 +1,57 @@
+{
+ "id": "PMID_21060763_male_index",
+ "subject": {
+  "id": "PMID_21060763_male_index"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0003259",
+    "label": "Elevated circulating creatinine concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012622",
+    "label": "Chronic kidney disease"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001997",
+    "label": "Gout"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002149",
+    "label": "Hyperuricemia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003138",
+    "label": "Increased blood urea nitrogen"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:88950",
+    "label": "UMOD-related autosomal dominant tubulointerstitial kidney disease"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_21060763_male_index",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:88950",
+     "label": "UMOD-related autosomal dominant tubulointerstitial kidney disease"
+    }
+   }
+  }
+ ]
+}

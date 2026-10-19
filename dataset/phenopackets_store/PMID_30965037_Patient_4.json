@@ -1,0 +1,69 @@
+{
+ "id": "PMID_30965037_Patient_4",
+ "subject": {
+  "id": "PMID_30965037_Patient_4"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0006727",
+    "label": "T-cell acute lymphoblastic leukemias"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006532",
+    "label": "Recurrent pneumonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0020102",
+    "label": "Pneumocystis jirovecii pneumonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010976",
+    "label": "Decreased total B cell count"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0032218",
+    "label": "Decreased total CD4+ T cell proportion"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0032219",
+    "label": "Increased total CD4+ T cell proportion"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004313",
+    "label": "Decreased circulating immunoglobulin concentration"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:317473",
+    "label": "Common variable immunodeficiency phenotype due to IKAROS functional haploinsufficiency"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_30965037_Patient_4",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:317473",
+     "label": "Common variable immunodeficiency phenotype due to IKAROS functional haploinsufficiency"
+    }
+   }
+  }
+ ]
+}

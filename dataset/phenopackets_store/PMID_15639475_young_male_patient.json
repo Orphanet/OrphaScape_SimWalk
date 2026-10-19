@@ -1,0 +1,69 @@
+{
+ "id": "PMID_15639475_young_male_patient",
+ "subject": {
+  "id": "PMID_15639475_young_male_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0005133",
+    "label": "Right ventricular dilatation"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001685",
+    "label": "Myocardial fibrosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0031317",
+    "label": "Fatty replacement of ventricular myocardial tissue"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:6000666",
+    "label": "Right ventricular regional dyskinesia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011710",
+    "label": "Bundle branch block"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004756",
+    "label": "Ventricular tachycardia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010872",
+    "label": "T-wave inversion"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:217656",
+    "label": "Inherited isolated arrhythmogenic cardiomyopathy"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_15639475_young_male_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:217656",
+     "label": "Inherited isolated arrhythmogenic cardiomyopathy"
+    }
+   }
+  }
+ ]
+}

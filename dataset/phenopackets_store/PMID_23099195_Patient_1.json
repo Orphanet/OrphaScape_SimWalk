@@ -1,0 +1,57 @@
+{
+ "id": "PMID_23099195_Patient_1",
+ "subject": {
+  "id": "PMID_23099195_Patient_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0011966",
+    "label": "Elevated circulating citrulline concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001987",
+    "label": "Hyperammonemia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001250",
+    "label": "Seizure"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001254",
+    "label": "Lethargy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002027",
+    "label": "Abdominal pain"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:247525",
+    "label": "Citrullinemia type I"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_23099195_Patient_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:247525",
+     "label": "Citrullinemia type I"
+    }
+   }
+  }
+ ]
+}

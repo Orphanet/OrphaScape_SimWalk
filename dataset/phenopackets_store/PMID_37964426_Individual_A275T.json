@@ -1,0 +1,45 @@
+{
+ "id": "PMID_37964426_Individual_A275T",
+ "subject": {
+  "id": "PMID_37964426_Individual_A275T"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001251",
+    "label": "Ataxia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001252",
+    "label": "Hypotonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000666",
+    "label": "Horizontal nystagmus"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:208513",
+    "label": "Spinocerebellar ataxia type 29"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_37964426_Individual_A275T",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:208513",
+     "label": "Spinocerebellar ataxia type 29"
+    }
+   }
+  }
+ ]
+}

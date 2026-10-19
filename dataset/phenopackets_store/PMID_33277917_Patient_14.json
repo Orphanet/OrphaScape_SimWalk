@@ -1,0 +1,51 @@
+{
+ "id": "PMID_33277917_Patient_14",
+ "subject": {
+  "id": "PMID_33277917_Patient_14"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000219",
+    "label": "Thin upper lip vermilion"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0005280",
+    "label": "Depressed nasal bridge"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001249",
+    "label": "Intellectual disability"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002019",
+    "label": "Constipation"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:468678",
+    "label": "White-Sutton syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_33277917_Patient_14",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:468678",
+     "label": "White-Sutton syndrome"
+    }
+   }
+  }
+ ]
+}

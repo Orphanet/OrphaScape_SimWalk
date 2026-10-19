@@ -1,0 +1,69 @@
+{
+ "id": "PMID_32154675_Family_1_Patient_1",
+ "subject": {
+  "id": "PMID_32154675_Family_1_Patient_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001166",
+    "label": "Arachnodactyly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002758",
+    "label": "Osteoarthritis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000767",
+    "label": "Pectus excavatum"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001382",
+    "label": "Joint hypermobility"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001363",
+    "label": "Craniosynostosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002036",
+    "label": "Hiatus hernia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000369",
+    "label": "Low-set ears"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:284984",
+    "label": "Aneurysm-osteoarthritis syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_32154675_Family_1_Patient_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:284984",
+     "label": "Aneurysm-osteoarthritis syndrome"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "PMID_12789647_K1_II_2",
+ "subject": {
+  "id": "PMID_12789647_K1_II_2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001631",
+    "label": "Atrial septal defect"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0009777",
+    "label": "Absent thumb"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003974",
+    "label": "Absent radius"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:392",
+    "label": "Holt-Oram syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_12789647_K1_II_2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:392",
+     "label": "Holt-Oram syndrome"
+    }
+   }
+  }
+ ]
+}

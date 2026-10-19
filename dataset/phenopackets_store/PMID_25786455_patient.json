@@ -1,0 +1,63 @@
+{
+ "id": "PMID_25786455_patient",
+ "subject": {
+  "id": "PMID_25786455_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0012625",
+    "label": "Stage 3 chronic kidney disease"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000096",
+    "label": "Glomerular sclerosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000092",
+    "label": "Renal tubular atrophy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0032948",
+    "label": "Renal interstitial fibrosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000089",
+    "label": "Renal hypoplasia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002149",
+    "label": "Hyperuricemia"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:88950",
+    "label": "UMOD-related autosomal dominant tubulointerstitial kidney disease"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_25786455_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:88950",
+     "label": "UMOD-related autosomal dominant tubulointerstitial kidney disease"
+    }
+   }
+  }
+ ]
+}

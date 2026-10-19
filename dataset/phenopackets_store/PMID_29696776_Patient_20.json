@@ -1,0 +1,51 @@
+{
+ "id": "PMID_29696776_Patient_20",
+ "subject": {
+  "id": "PMID_29696776_Patient_20"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001263",
+    "label": "Global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001344",
+    "label": "Absent speech"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004322",
+    "label": "Short stature"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010535",
+    "label": "Sleep apnea"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:412069",
+    "label": "AHDC1-related intellectual disability-obstructive sleep apnea-mild dysmorphism syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_29696776_Patient_20",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:412069",
+     "label": "AHDC1-related intellectual disability-obstructive sleep apnea-mild dysmorphism syndrome"
+    }
+   }
+  }
+ ]
+}

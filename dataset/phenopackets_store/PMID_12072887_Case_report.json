@@ -1,0 +1,57 @@
+{
+ "id": "PMID_12072887_Case_report",
+ "subject": {
+  "id": "PMID_12072887_Case_report"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001259",
+    "label": "Coma"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002240",
+    "label": "Hepatomegaly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001943",
+    "label": "Hypoglycemia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0030781",
+    "label": "Increased circulating free fatty acid level"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003215",
+    "label": "Elevated urinary dicarboxylic acid level"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:35701",
+    "label": "3-hydroxy-3-methylglutaryl-CoA synthase deficiency"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_12072887_Case_report",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:35701",
+     "label": "3-hydroxy-3-methylglutaryl-CoA synthase deficiency"
+    }
+   }
+  }
+ ]
+}

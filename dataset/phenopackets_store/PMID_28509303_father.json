@@ -1,0 +1,51 @@
+{
+ "id": "PMID_28509303_father",
+ "subject": {
+  "id": "PMID_28509303_father"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0003259",
+    "label": "Elevated circulating creatinine concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012626",
+    "label": "Stage 4 chronic kidney disease"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001997",
+    "label": "Gout"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002149",
+    "label": "Hyperuricemia"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:88950",
+    "label": "UMOD-related autosomal dominant tubulointerstitial kidney disease"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_28509303_father",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:88950",
+     "label": "UMOD-related autosomal dominant tubulointerstitial kidney disease"
+    }
+   }
+  }
+ ]
+}

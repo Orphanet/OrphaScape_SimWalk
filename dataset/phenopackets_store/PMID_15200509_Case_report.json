@@ -1,0 +1,45 @@
+{
+ "id": "PMID_15200509_Case_report",
+ "subject": {
+  "id": "PMID_15200509_Case_report"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0032451",
+    "label": "Oral melanotic macule"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0032454",
+    "label": "Labial melanotic macule"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004390",
+    "label": "Hamartomatous polyposis"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:2869",
+    "label": "Peutz-Jeghers syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_15200509_Case_report",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:2869",
+     "label": "Peutz-Jeghers syndrome"
+    }
+   }
+  }
+ ]
+}

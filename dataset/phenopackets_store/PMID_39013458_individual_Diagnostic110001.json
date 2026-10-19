@@ -1,0 +1,69 @@
+{
+ "id": "PMID_39013458_individual_Diagnostic110001",
+ "subject": {
+  "id": "PMID_39013458_individual_Diagnostic110001"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000252",
+    "label": "Microcephaly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001263",
+    "label": "Global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000717",
+    "label": "Autism"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001822",
+    "label": "Hallux valgus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004209",
+    "label": "Clinodactyly of the 5th finger"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000098",
+    "label": "Tall stature"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025502",
+    "label": "Overweight"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:261494",
+    "label": "Kleefstra syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_39013458_individual_Diagnostic110001",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:261494",
+     "label": "Kleefstra syndrome"
+    }
+   }
+  }
+ ]
+}

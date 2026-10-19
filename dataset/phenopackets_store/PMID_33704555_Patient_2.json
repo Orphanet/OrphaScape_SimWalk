@@ -1,0 +1,69 @@
+{
+ "id": "PMID_33704555_Patient_2",
+ "subject": {
+  "id": "PMID_33704555_Patient_2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0011968",
+    "label": "Feeding difficulties"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006813",
+    "label": "Focal hemiclonic seizure"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010851",
+    "label": "EEG with burst suppression"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001251",
+    "label": "Ataxia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001257",
+    "label": "Spasticity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001284",
+    "label": "Areflexia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001270",
+    "label": "Motor delay"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:457185",
+    "label": "Neonatal encephalomyopathy-cardiomyopathy-respiratory distress syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_33704555_Patient_2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:457185",
+     "label": "Neonatal encephalomyopathy-cardiomyopathy-respiratory distress syndrome"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "PMID_27861123_Patient_3",
+ "subject": {
+  "id": "PMID_27861123_Patient_3"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001663",
+    "label": "Ventricular fibrillation"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001695",
+    "label": "Cardiac arrest"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001664",
+    "label": "Torsade de pointes"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:730644",
+    "label": "TECRL-related catecholaminergic polymorphic ventricular tachycardia"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_27861123_Patient_3",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:730644",
+     "label": "TECRL-related catecholaminergic polymorphic ventricular tachycardia"
+    }
+   }
+  }
+ ]
+}

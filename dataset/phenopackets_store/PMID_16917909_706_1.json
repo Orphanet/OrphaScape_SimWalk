@@ -1,0 +1,51 @@
+{
+ "id": "PMID_16917909_706_1",
+ "subject": {
+  "id": "PMID_16917909_706_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0009778",
+    "label": "Short thumb"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001199",
+    "label": "Triphalangeal thumb"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001643",
+    "label": "Patent ductus arteriosus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010035",
+    "label": "Aplasia of the 1st metacarpal"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:392",
+    "label": "Holt-Oram syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_16917909_706_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:392",
+     "label": "Holt-Oram syndrome"
+    }
+   }
+  }
+ ]
+}

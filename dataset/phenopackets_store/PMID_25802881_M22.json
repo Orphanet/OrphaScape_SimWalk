@@ -1,0 +1,39 @@
+{
+ "id": "PMID_25802881_M22",
+ "subject": {
+  "id": "PMID_25802881_M22"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0010049",
+    "label": "Short metacarpal"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004322",
+    "label": "Short stature"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:79445",
+    "label": "Pseudopseudohypoparathyroidism"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_25802881_M22",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:79445",
+     "label": "Pseudopseudohypoparathyroidism"
+    }
+   }
+  }
+ ]
+}

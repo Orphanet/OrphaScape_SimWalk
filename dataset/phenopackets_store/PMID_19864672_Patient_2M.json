@@ -1,0 +1,39 @@
+{
+ "id": "PMID_19864672_Patient_2M",
+ "subject": {
+  "id": "PMID_19864672_Patient_2M"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0032515",
+    "label": "Deep dermatophytosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012204",
+    "label": "Recurrent vulvovaginal candidiasis"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:457088",
+    "label": "Predisposition to invasive fungal disease due to CARD9 deficiency"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_19864672_Patient_2M",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:457088",
+     "label": "Predisposition to invasive fungal disease due to CARD9 deficiency"
+    }
+   }
+  }
+ ]
+}

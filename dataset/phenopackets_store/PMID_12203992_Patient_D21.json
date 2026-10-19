@@ -1,0 +1,57 @@
+{
+ "id": "PMID_12203992_Patient_D21",
+ "subject": {
+  "id": "PMID_12203992_Patient_D21"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001166",
+    "label": "Arachnodactyly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001083",
+    "label": "Ectopia lentis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007720",
+    "label": "Flat cornea"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000023",
+    "label": "Inguinal hernia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000098",
+    "label": "Tall stature"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:284963",
+    "label": "Marfan syndrome type 1"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_12203992_Patient_D21",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:284963",
+     "label": "Marfan syndrome type 1"
+    }
+   }
+  }
+ ]
+}

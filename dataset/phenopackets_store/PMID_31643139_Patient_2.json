@@ -1,0 +1,57 @@
+{
+ "id": "PMID_31643139_Patient_2",
+ "subject": {
+  "id": "PMID_31643139_Patient_2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000256",
+    "label": "Macrocephaly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001263",
+    "label": "Global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000750",
+    "label": "Delayed speech and language development"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000744",
+    "label": "Low frustration tolerance"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002119",
+    "label": "Ventriculomegaly"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:597738",
+    "label": "Luscan-Lumish syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_31643139_Patient_2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:597738",
+     "label": "Luscan-Lumish syndrome"
+    }
+   }
+  }
+ ]
+}

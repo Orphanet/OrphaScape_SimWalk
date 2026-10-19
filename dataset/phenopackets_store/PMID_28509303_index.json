@@ -1,0 +1,75 @@
+{
+ "id": "PMID_28509303_index",
+ "subject": {
+  "id": "PMID_28509303_index"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0003259",
+    "label": "Elevated circulating creatinine concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012624",
+    "label": "Stage 2 chronic kidney disease"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000096",
+    "label": "Glomerular sclerosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000092",
+    "label": "Renal tubular atrophy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0032948",
+    "label": "Renal interstitial fibrosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002149",
+    "label": "Hyperuricemia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000822",
+    "label": "Hypertension"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000093",
+    "label": "Proteinuria"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:88950",
+    "label": "UMOD-related autosomal dominant tubulointerstitial kidney disease"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_28509303_index",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:88950",
+     "label": "UMOD-related autosomal dominant tubulointerstitial kidney disease"
+    }
+   }
+  }
+ ]
+}

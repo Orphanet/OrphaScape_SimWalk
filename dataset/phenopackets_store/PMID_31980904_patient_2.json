@@ -1,0 +1,45 @@
+{
+ "id": "PMID_31980904_patient_2",
+ "subject": {
+  "id": "PMID_31980904_patient_2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0012760",
+    "label": "Reduced social responsiveness"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002342",
+    "label": "Moderate intellectual disability"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000336",
+    "label": "Prominent supraorbital ridges"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:642675",
+    "label": "CHD8 overgrowth syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_31980904_patient_2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:642675",
+     "label": "CHD8 overgrowth syndrome"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "id": "PMID_8288049_proband",
+ "subject": {
+  "id": "PMID_8288049_proband"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000141",
+    "label": "Amenorrhea"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000147",
+    "label": "Polycystic ovaries"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0040270",
+    "label": "Impaired glucose tolerance"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0008283",
+    "label": "Fasting hyperinsulinemia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000855",
+    "label": "Insulin resistance"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0030348",
+    "label": "Increased circulating androgen concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000956",
+    "label": "Acanthosis nigricans"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025092",
+    "label": "Epidermal acanthosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001007",
+    "label": "Hirsutism"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:2297",
+    "label": "Insulin-resistance syndrome type A"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_8288049_proband",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:2297",
+     "label": "Insulin-resistance syndrome type A"
+    }
+   }
+  }
+ ]
+}

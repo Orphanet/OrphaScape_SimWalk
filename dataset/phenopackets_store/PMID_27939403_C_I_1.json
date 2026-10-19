@@ -1,0 +1,51 @@
+{
+ "id": "PMID_27939403_C_I_1",
+ "subject": {
+  "id": "PMID_27939403_C_I_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0011108",
+    "label": "Recurrent sinusitis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0033222",
+    "label": "Inverted CD4:CD8 ratio"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010976",
+    "label": "Decreased total B cell count"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004315",
+    "label": "Decreased circulating IgG concentration"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:317473",
+    "label": "Common variable immunodeficiency phenotype due to IKAROS functional haploinsufficiency"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_27939403_C_I_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:317473",
+     "label": "Common variable immunodeficiency phenotype due to IKAROS functional haploinsufficiency"
+    }
+   }
+  }
+ ]
+}

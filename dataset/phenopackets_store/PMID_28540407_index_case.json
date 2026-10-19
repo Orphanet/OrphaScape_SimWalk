@@ -1,0 +1,69 @@
+{
+ "id": "PMID_28540407_index_case",
+ "subject": {
+  "id": "PMID_28540407_index_case"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0002014",
+    "label": "Diarrhea"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002024",
+    "label": "Malabsorption"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006297",
+    "label": "Enamel hypoplasia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000829",
+    "label": "Hypoparathyroidism"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003472",
+    "label": "Hypocalcemic tetany"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0008207",
+    "label": "Primary adrenal insufficiency"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000518",
+    "label": "Cataract"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:3453",
+    "label": "Autoimmune polyendocrinopathy type 1"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_28540407_index_case",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:3453",
+     "label": "Autoimmune polyendocrinopathy type 1"
+    }
+   }
+  }
+ ]
+}

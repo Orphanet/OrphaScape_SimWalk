@@ -1,0 +1,69 @@
+{
+ "id": "PMID_30356099_Patient_11",
+ "subject": {
+  "id": "PMID_30356099_Patient_11"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000512",
+    "label": "Abnormal electroretinogram"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011097",
+    "label": "Epileptic spasm"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0200134",
+    "label": "Epileptic encephalopathy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002375",
+    "label": "Hypokinesia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001263",
+    "label": "Global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002353",
+    "label": "EEG abnormality"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000817",
+    "label": "Reduced eye contact"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:708171",
+    "label": "Facial dysmorphism-corpus callosum hypoplasia-infantile epileptic encephalopathy"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_30356099_Patient_11",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:708171",
+     "label": "Facial dysmorphism-corpus callosum hypoplasia-infantile epileptic encephalopathy"
+    }
+   }
+  }
+ ]
+}

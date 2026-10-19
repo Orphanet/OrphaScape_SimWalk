@@ -1,0 +1,75 @@
+{
+ "id": "PMID_19541485_patient",
+ "subject": {
+  "id": "PMID_19541485_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0009830",
+    "label": "Peripheral neuropathy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003431",
+    "label": "Decreased motor nerve conduction velocity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0009053",
+    "label": "Distal lower limb muscle weakness"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001761",
+    "label": "Pes cavus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003401",
+    "label": "Paresthesia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001251",
+    "label": "Ataxia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002403",
+    "label": "Positive Romberg sign"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007078",
+    "label": "Decreased amplitude of sensory action potentials"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:101083",
+    "label": "Charcot-Marie-Tooth disease type 1C"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_19541485_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:101083",
+     "label": "Charcot-Marie-Tooth disease type 1C"
+    }
+   }
+  }
+ ]
+}

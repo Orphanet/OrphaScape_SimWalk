@@ -1,0 +1,57 @@
+{
+ "id": "PMID_30016041_Case_report",
+ "subject": {
+  "id": "PMID_30016041_Case_report"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0002643",
+    "label": "Neonatal respiratory distress"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007381",
+    "label": "Congenital exfoliative erythroderma"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003228",
+    "label": "Hypernatremia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025811",
+    "label": "Trichorrhexis invaginata"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004779",
+    "label": "Brittle scalp hair"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:634",
+    "label": "Netherton syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_30016041_Case_report",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:634",
+     "label": "Netherton syndrome"
+    }
+   }
+  }
+ ]
+}

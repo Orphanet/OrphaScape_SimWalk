@@ -1,0 +1,57 @@
+{
+ "id": "PMID_30881852_index_case",
+ "subject": {
+  "id": "PMID_30881852_index_case"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0006443",
+    "label": "Patellar aplasia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001252",
+    "label": "Hypotonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001382",
+    "label": "Joint hypermobility"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0008404",
+    "label": "Nail dystrophy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0009781",
+    "label": "Lester's sign"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:2614",
+    "label": "Nail-patella syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_30881852_index_case",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:2614",
+     "label": "Nail-patella syndrome"
+    }
+   }
+  }
+ ]
+}

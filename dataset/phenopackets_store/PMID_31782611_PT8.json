@@ -1,0 +1,69 @@
+{
+ "id": "PMID_31782611_PT8",
+ "subject": {
+  "id": "PMID_31782611_PT8"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0100704",
+    "label": "Cerebral visual impairment"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000486",
+    "label": "Strabismus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000252",
+    "label": "Microcephaly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002188",
+    "label": "Delayed CNS myelination"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002194",
+    "label": "Delayed gross motor development"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000750",
+    "label": "Delayed speech and language development"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000729",
+    "label": "Autistic behavior"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:468678",
+    "label": "White-Sutton syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_31782611_PT8",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:468678",
+     "label": "White-Sutton syndrome"
+    }
+   }
+  }
+ ]
+}

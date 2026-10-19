@@ -1,0 +1,51 @@
+{
+ "id": "PMID_24331334_DM_patient",
+ "subject": {
+  "id": "PMID_24331334_DM_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0025388",
+    "label": "Thyroid nodule"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003528",
+    "label": "Elevated circulating calcitonin concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002666",
+    "label": "Pheochromocytoma"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0100735",
+    "label": "Hypertensive crisis"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:247698",
+    "label": "Multiple endocrine neoplasia type 2A"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_24331334_DM_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:247698",
+     "label": "Multiple endocrine neoplasia type 2A"
+    }
+   }
+  }
+ ]
+}

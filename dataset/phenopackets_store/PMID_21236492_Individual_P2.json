@@ -1,0 +1,57 @@
+{
+ "id": "PMID_21236492_Individual_P2",
+ "subject": {
+  "id": "PMID_21236492_Individual_P2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000083",
+    "label": "Renal insufficiency"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000093",
+    "label": "Proteinuria"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000639",
+    "label": "Nystagmus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000609",
+    "label": "Optic nerve hypoplasia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001104",
+    "label": "Macular hypoplasia"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:306507",
+    "label": "LAMB2-related infantile-onset nephrotic syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_21236492_Individual_P2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:306507",
+     "label": "LAMB2-related infantile-onset nephrotic syndrome"
+    }
+   }
+  }
+ ]
+}

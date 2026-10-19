@@ -1,0 +1,81 @@
+{
+ "id": "PMID_29903538_0_year_old_child",
+ "subject": {
+  "id": "PMID_29903538_0_year_old_child"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000750",
+    "label": "Delayed speech and language development"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001249",
+    "label": "Intellectual disability"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002067",
+    "label": "Bradykinesia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001300",
+    "label": "Parkinsonism"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001337",
+    "label": "Tremor"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000726",
+    "label": "Dementia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001332",
+    "label": "Dystonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002063",
+    "label": "Rigidity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002359",
+    "label": "Frequent falls"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:306674",
+    "label": "Kufor-Rakeb syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_29903538_0_year_old_child",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:306674",
+     "label": "Kufor-Rakeb syndrome"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "id": "PMID_27108798_SVP",
+ "subject": {
+  "id": "PMID_27108798_SVP"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001251",
+    "label": "Ataxia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001272",
+    "label": "Cerebellar atrophy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001321",
+    "label": "Cerebellar hypoplasia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007676",
+    "label": "Hypoplasia of the iris"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001328",
+    "label": "Specific learning disability"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:1065",
+    "label": "Aniridia-cerebellar ataxia-intellectual disability syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_27108798_SVP",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:1065",
+     "label": "Aniridia-cerebellar ataxia-intellectual disability syndrome"
+    }
+   }
+  }
+ ]
+}

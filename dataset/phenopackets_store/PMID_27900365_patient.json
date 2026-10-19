@@ -1,0 +1,99 @@
+{
+ "id": "PMID_27900365_patient",
+ "subject": {
+  "id": "PMID_27900365_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0007017",
+    "label": "Progressive forgetfulness"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0031987",
+    "label": "Diminished ability to concentrate"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001260",
+    "label": "Dysarthria"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002527",
+    "label": "Falls"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001268",
+    "label": "Mental deterioration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001251",
+    "label": "Ataxia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003651",
+    "label": "Foam cells"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0031833",
+    "label": "Hypometric upward saccades"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003349",
+    "label": "Low cholesterol esterification rate"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006579",
+    "label": "Prolonged neonatal jaundice"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002240",
+    "label": "Hepatomegaly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001744",
+    "label": "Splenomegaly"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:646",
+    "label": "Niemann-Pick disease type C"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_27900365_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:646",
+     "label": "Niemann-Pick disease type C"
+    }
+   }
+  }
+ ]
+}

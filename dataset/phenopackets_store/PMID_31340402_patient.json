@@ -1,0 +1,81 @@
+{
+ "id": "PMID_31340402_patient",
+ "subject": {
+  "id": "PMID_31340402_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001251",
+    "label": "Ataxia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0031936",
+    "label": "Delayed ability to walk"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002080",
+    "label": "Intention tremor"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006855",
+    "label": "Cerebellar vermis atrophy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001348",
+    "label": "Brisk reflexes"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000508",
+    "label": "Ptosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007676",
+    "label": "Hypoplasia of the iris"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000526",
+    "label": "Aniridia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011499",
+    "label": "Mydriasis"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:1065",
+    "label": "Aniridia-cerebellar ataxia-intellectual disability syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_31340402_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:1065",
+     "label": "Aniridia-cerebellar ataxia-intellectual disability syndrome"
+    }
+   }
+  }
+ ]
+}

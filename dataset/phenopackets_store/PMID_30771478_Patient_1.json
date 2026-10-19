@@ -1,0 +1,69 @@
+{
+ "id": "PMID_30771478_Patient_1",
+ "subject": {
+  "id": "PMID_30771478_Patient_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0025190",
+    "label": "Bilateral tonic-clonic seizure with generalized onset"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002119",
+    "label": "Ventriculomegaly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001263",
+    "label": "Global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001252",
+    "label": "Hypotonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002151",
+    "label": "Increased circulating lactate concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001987",
+    "label": "Hyperammonemia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003648",
+    "label": "Lacticaciduria"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:369897",
+    "label": "Mitochondrial DNA depletion syndrome, encephalomyopathic form with variable craniofacial anomalies"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_30771478_Patient_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:369897",
+     "label": "Mitochondrial DNA depletion syndrome, encephalomyopathic form with variable craniofacial anomalies"
+    }
+   }
+  }
+ ]
+}

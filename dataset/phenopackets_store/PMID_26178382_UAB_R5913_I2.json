@@ -1,0 +1,57 @@
+{
+ "id": "PMID_26178382_UAB_R5913_I2",
+ "subject": {
+  "id": "PMID_26178382_UAB_R5913_I2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001480",
+    "label": "Freckling"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007565",
+    "label": "Multiple cafe-au-lait spots"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000767",
+    "label": "Pectus excavatum"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000768",
+    "label": "Pectus carinatum"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002650",
+    "label": "Scoliosis"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:363700",
+    "label": "Neurofibromatosis type 1 due to NF1 mutation or intragenic deletion"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_26178382_UAB_R5913_I2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:363700",
+     "label": "Neurofibromatosis type 1 due to NF1 mutation or intragenic deletion"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "id": "PMID_27743463_S2",
+ "subject": {
+  "id": "PMID_27743463_S2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0002415",
+    "label": "Leukodystrophy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001508",
+    "label": "Failure to thrive"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001263",
+    "label": "Global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001252",
+    "label": "Hypotonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002092",
+    "label": "Pulmonary arterial hypertension"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001712",
+    "label": "Left ventricular hypertrophy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001667",
+    "label": "Right ventricular hypertrophy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002151",
+    "label": "Increased circulating lactate concentration"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:369897",
+    "label": "Mitochondrial DNA depletion syndrome, encephalomyopathic form with variable craniofacial anomalies"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_27743463_S2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:369897",
+     "label": "Mitochondrial DNA depletion syndrome, encephalomyopathic form with variable craniofacial anomalies"
+    }
+   }
+  }
+ ]
+}

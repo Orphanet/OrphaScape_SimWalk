@@ -1,0 +1,45 @@
+{
+ "id": "PMID_28074573_MA2",
+ "subject": {
+  "id": "PMID_28074573_MA2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0011220",
+    "label": "Prominent forehead"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0005280",
+    "label": "Depressed nasal bridge"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004322",
+    "label": "Short stature"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:648",
+    "label": "Noonan syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_28074573_MA2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:648",
+     "label": "Noonan syndrome"
+    }
+   }
+  }
+ ]
+}

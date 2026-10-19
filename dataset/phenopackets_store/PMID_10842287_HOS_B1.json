@@ -1,0 +1,51 @@
+{
+ "id": "PMID_10842287_HOS_B1",
+ "subject": {
+  "id": "PMID_10842287_HOS_B1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001631",
+    "label": "Atrial septal defect"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0009778",
+    "label": "Short thumb"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011939",
+    "label": "3-4 finger cutaneous syndactyly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0009460",
+    "label": "Aplasia of the 3rd finger"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:392",
+    "label": "Holt-Oram syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_10842287_HOS_B1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:392",
+     "label": "Holt-Oram syndrome"
+    }
+   }
+  }
+ ]
+}

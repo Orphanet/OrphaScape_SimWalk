@@ -1,0 +1,81 @@
+{
+ "id": "PMID_19683336_Patient_2",
+ "subject": {
+  "id": "PMID_19683336_Patient_2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0002090",
+    "label": "Pneumonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002205",
+    "label": "Recurrent respiratory infections"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007381",
+    "label": "Congenital exfoliative erythroderma"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001581",
+    "label": "Recurrent skin infections"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000964",
+    "label": "Eczematoid dermatitis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0031123",
+    "label": "Recurrent gastroenteritis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0100806",
+    "label": "Sepsis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004906",
+    "label": "Hypernatremic dehydration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001508",
+    "label": "Failure to thrive"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:634",
+    "label": "Netherton syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_19683336_Patient_2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:634",
+     "label": "Netherton syndrome"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "id": "PMID_11118249_PATIENT_III_3",
+ "subject": {
+  "id": "PMID_11118249_PATIENT_III_3"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001263",
+    "label": "Global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001251",
+    "label": "Ataxia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012187",
+    "label": "Increased erythrocyte protoporphyrin concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001288",
+    "label": "Gait disturbance"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0020081",
+    "label": "Pappenheimer bodies"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001272",
+    "label": "Cerebellar atrophy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002363",
+    "label": "Abnormal brainstem morphology"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:2802",
+    "label": "X-linked sideroblastic anemia and spinocerebellar ataxia"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_11118249_PATIENT_III_3",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:2802",
+     "label": "X-linked sideroblastic anemia and spinocerebellar ataxia"
+    }
+   }
+  }
+ ]
+}

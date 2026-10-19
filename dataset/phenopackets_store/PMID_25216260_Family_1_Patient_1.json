@@ -1,0 +1,57 @@
+{
+ "id": "PMID_25216260_Family_1_Patient_1",
+ "subject": {
+  "id": "PMID_25216260_Family_1_Patient_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001631",
+    "label": "Atrial septal defect"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011682",
+    "label": "Perimembranous ventricular septal defect"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002092",
+    "label": "Pulmonary arterial hypertension"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001199",
+    "label": "Triphalangeal thumb"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001643",
+    "label": "Patent ductus arteriosus"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:392",
+    "label": "Holt-Oram syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_25216260_Family_1_Patient_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:392",
+     "label": "Holt-Oram syndrome"
+    }
+   }
+  }
+ ]
+}

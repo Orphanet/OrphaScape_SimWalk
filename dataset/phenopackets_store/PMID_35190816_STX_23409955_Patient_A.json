@@ -1,0 +1,87 @@
+{
+ "id": "PMID_35190816_STX_23409955_Patient_A",
+ "subject": {
+  "id": "PMID_35190816_STX_23409955_Patient_A"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0010851",
+    "label": "EEG with burst suppression"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012469",
+    "label": "Infantile spasms"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002266",
+    "label": "Focal clonic seizure"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011166",
+    "label": "Focal myoclonic seizure"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012736",
+    "label": "Profound global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0040288",
+    "label": "Nasogastric tube feeding"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001257",
+    "label": "Spasticity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001531",
+    "label": "Failure to thrive in infancy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010841",
+    "label": "Multifocal epileptiform discharges"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011203",
+    "label": "EEG with abnormally slow frequencies"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:599373",
+    "label": "STXBP1-related developmental and epileptic encephalopathy"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_35190816_STX_23409955_Patient_A",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:599373",
+     "label": "STXBP1-related developmental and epileptic encephalopathy"
+    }
+   }
+  }
+ ]
+}

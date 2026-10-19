@@ -1,0 +1,63 @@
+{
+ "id": "PMID_39978342_P9",
+ "subject": {
+  "id": "PMID_39978342_P9"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0002197",
+    "label": "Generalized-onset seizure"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025373",
+    "label": "Interictal EEG abnormality"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003376",
+    "label": "Steppage gait"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001344",
+    "label": "Absent speech"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011342",
+    "label": "Mild global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0031936",
+    "label": "Delayed ability to walk"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:726667",
+    "label": "Houge-Janssens syndrome type 4"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_39978342_P9",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:726667",
+     "label": "Houge-Janssens syndrome type 4"
+    }
+   }
+  }
+ ]
+}

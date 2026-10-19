@@ -1,0 +1,51 @@
+{
+ "id": "PMID_33248444_Case_Description",
+ "subject": {
+  "id": "PMID_33248444_Case_Description"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000303",
+    "label": "Mandibular prognathia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000098",
+    "label": "Tall stature"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001513",
+    "label": "Obesity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002308",
+    "label": "Chiari malformation"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:597738",
+    "label": "Luscan-Lumish syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_33248444_Case_Description",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:597738",
+     "label": "Luscan-Lumish syndrome"
+    }
+   }
+  }
+ ]
+}

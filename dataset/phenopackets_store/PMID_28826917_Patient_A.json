@@ -1,0 +1,93 @@
+{
+ "id": "PMID_28826917_Patient_A",
+ "subject": {
+  "id": "PMID_28826917_Patient_A"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0100021",
+    "label": "Cerebral palsy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002070",
+    "label": "Limb ataxia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001252",
+    "label": "Hypotonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001260",
+    "label": "Dysarthria"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000514",
+    "label": "Slow saccadic eye movements"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0033257",
+    "label": "Delayed ability to walk with support"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002505",
+    "label": "Loss of ambulation"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001336",
+    "label": "Myoclonus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002411",
+    "label": "Myokymia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006855",
+    "label": "Cerebellar vermis atrophy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002174",
+    "label": "Postural tremor"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:208513",
+    "label": "Spinocerebellar ataxia type 29"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_28826917_Patient_A",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:208513",
+     "label": "Spinocerebellar ataxia type 29"
+    }
+   }
+  }
+ ]
+}

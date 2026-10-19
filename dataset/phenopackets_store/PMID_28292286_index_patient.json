@@ -1,0 +1,105 @@
+{
+ "id": "PMID_28292286_index_patient",
+ "subject": {
+  "id": "PMID_28292286_index_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0011220",
+    "label": "Prominent forehead"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0040218",
+    "label": "Reduced total natural killer cell count"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004315",
+    "label": "Decreased circulating IgG concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001508",
+    "label": "Failure to thrive"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006579",
+    "label": "Prolonged neonatal jaundice"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0032247",
+    "label": "Persistent CMV viremia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002240",
+    "label": "Hepatomegaly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001034",
+    "label": "Hypermelanotic macule"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0005585",
+    "label": "Spotty hyperpigmentation"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001019",
+    "label": "Erythroderma"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0030948",
+    "label": "Elevated gamma-glutamyltransferase level"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003073",
+    "label": "Hypoalbuminemia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006515",
+    "label": "Interstitial pneumonitis"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:84064",
+    "label": "Trichohepatoenteric syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_28292286_index_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:84064",
+     "label": "Trichohepatoenteric syndrome"
+    }
+   }
+  }
+ ]
+}

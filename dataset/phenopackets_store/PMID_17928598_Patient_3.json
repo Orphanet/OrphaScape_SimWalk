@@ -1,0 +1,45 @@
+{
+ "id": "PMID_17928598_Patient_3",
+ "subject": {
+  "id": "PMID_17928598_Patient_3"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0012270",
+    "label": "Decreased muscle glycogen content"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003803",
+    "label": "Type 1 muscle fiber predominance"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0031295",
+    "label": "Left atrial enlargement"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:137625",
+    "label": "Glycogen storage disease due to muscle and heart glycogen synthase deficiency"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_17928598_Patient_3",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:137625",
+     "label": "Glycogen storage disease due to muscle and heart glycogen synthase deficiency"
+    }
+   }
+  }
+ ]
+}

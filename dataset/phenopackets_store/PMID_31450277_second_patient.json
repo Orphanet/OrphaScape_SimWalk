@@ -1,0 +1,63 @@
+{
+ "id": "PMID_31450277_second_patient",
+ "subject": {
+  "id": "PMID_31450277_second_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0045075",
+    "label": "Sparse eyebrow"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000653",
+    "label": "Sparse eyelashes"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0008064",
+    "label": "Ichthyosis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0040189",
+    "label": "Scaling skin"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0010783",
+    "label": "Erythema"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025811",
+    "label": "Trichorrhexis invaginata"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:634",
+    "label": "Netherton syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_31450277_second_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:634",
+     "label": "Netherton syndrome"
+    }
+   }
+  }
+ ]
+}

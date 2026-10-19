@@ -1,0 +1,63 @@
+{
+ "id": "PMID_24219130_boy",
+ "subject": {
+  "id": "PMID_24219130_boy"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0008191",
+    "label": "Thyroid agenesis"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000175",
+    "label": "Cleft palate"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000453",
+    "label": "Choanal atresia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000821",
+    "label": "Hypothyroidism"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001262",
+    "label": "Excessive daytime somnolence"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011968",
+    "label": "Feeding difficulties"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:1226",
+    "label": "Bamforth-Lazarus syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_24219130_boy",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:1226",
+     "label": "Bamforth-Lazarus syndrome"
+    }
+   }
+  }
+ ]
+}

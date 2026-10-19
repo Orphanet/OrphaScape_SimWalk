@@ -1,0 +1,81 @@
+{
+ "id": "PMID_30558828_Patient",
+ "subject": {
+  "id": "PMID_30558828_Patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0031964",
+    "label": "Elevated circulating alanine aminotransferase concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0031956",
+    "label": "Elevated circulating aspartate aminotransferase concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001987",
+    "label": "Hyperammonemia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001943",
+    "label": "Hypoglycemia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002151",
+    "label": "Increased circulating lactate concentration"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006554",
+    "label": "Acute hepatic failure"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0008151",
+    "label": "Prolonged prothrombin time"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002240",
+    "label": "Hepatomegaly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001414",
+    "label": "Microvesicular hepatic steatosis"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:391677",
+    "label": "Short stature-optic atrophy-Pelger-Hu\u00c3\u00abt anomaly syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_30558828_Patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:391677",
+     "label": "Short stature-optic atrophy-Pelger-Hu\u00c3\u00abt anomaly syndrome"
+    }
+   }
+  }
+ ]
+}

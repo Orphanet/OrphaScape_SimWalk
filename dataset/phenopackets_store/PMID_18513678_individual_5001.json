@@ -1,0 +1,81 @@
+{
+ "id": "PMID_18513678_individual_5001",
+ "subject": {
+  "id": "PMID_18513678_individual_5001"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001300",
+    "label": "Parkinsonism"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002067",
+    "label": "Bradykinesia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003487",
+    "label": "Babinski sign"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012407",
+    "label": "Scissor gait"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001347",
+    "label": "Hyperreflexia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000338",
+    "label": "Hypomimic face"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001762",
+    "label": "Talipes equinovarus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002063",
+    "label": "Rigidity"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0031435",
+    "label": "Monotonic speech"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:171695",
+    "label": "Parkinsonian-pyramidal syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_18513678_individual_5001",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:171695",
+     "label": "Parkinsonian-pyramidal syndrome"
+    }
+   }
+  }
+ ]
+}

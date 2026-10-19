@@ -1,0 +1,57 @@
+{
+ "id": "PMID_23829229_Patient_2",
+ "subject": {
+  "id": "PMID_23829229_Patient_2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001541",
+    "label": "Ascites"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002240",
+    "label": "Hepatomegaly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001508",
+    "label": "Failure to thrive"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001399",
+    "label": "Hepatic failure"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001252",
+    "label": "Hypotonia"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:255229",
+    "label": "Navajo neurohepatopathy"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_23829229_Patient_2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:255229",
+     "label": "Navajo neurohepatopathy"
+    }
+   }
+  }
+ ]
+}

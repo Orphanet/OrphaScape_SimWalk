@@ -1,0 +1,63 @@
+{
+ "id": "PMID_18828908_4_year_old_male_patient",
+ "subject": {
+  "id": "PMID_18828908_4_year_old_male_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001631",
+    "label": "Atrial septal defect"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011623",
+    "label": "Muscular ventricular septal defect"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011705",
+    "label": "First degree atrioventricular block"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000343",
+    "label": "Long philtrum"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000347",
+    "label": "Micrognathia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000894",
+    "label": "Short clavicles"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:392",
+    "label": "Holt-Oram syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_18828908_4_year_old_male_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:392",
+     "label": "Holt-Oram syndrome"
+    }
+   }
+  }
+ ]
+}

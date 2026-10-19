@@ -1,0 +1,69 @@
+{
+ "id": "PMID_33776626_fetus",
+ "subject": {
+  "id": "PMID_33776626_fetus"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0011803",
+    "label": "Bifid nose"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000369",
+    "label": "Low-set ears"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002084",
+    "label": "Encephalocele"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000316",
+    "label": "Hypertelorism"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001841",
+    "label": "Preaxial foot polydactyly"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025706",
+    "label": "Absent fetal nasal bone"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004987",
+    "label": "Mesomelic leg shortening"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:1827",
+    "label": "Acromelic frontonasal dysplasia"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_33776626_fetus",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:1827",
+     "label": "Acromelic frontonasal dysplasia"
+    }
+   }
+  }
+ ]
+}

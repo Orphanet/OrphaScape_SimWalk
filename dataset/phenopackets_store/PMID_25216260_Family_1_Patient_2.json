@@ -1,0 +1,39 @@
+{
+ "id": "PMID_25216260_Family_1_Patient_2",
+ "subject": {
+  "id": "PMID_25216260_Family_1_Patient_2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0011682",
+    "label": "Perimembranous ventricular septal defect"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0009778",
+    "label": "Short thumb"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:392",
+    "label": "Holt-Oram syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_25216260_Family_1_Patient_2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:392",
+     "label": "Holt-Oram syndrome"
+    }
+   }
+  }
+ ]
+}

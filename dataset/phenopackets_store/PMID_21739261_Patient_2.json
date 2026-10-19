@@ -1,0 +1,39 @@
+{
+ "id": "PMID_21739261_Patient_2",
+ "subject": {
+  "id": "PMID_21739261_Patient_2"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001010",
+    "label": "Hypopigmentation of the skin"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002297",
+    "label": "Red hair"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:79433",
+    "label": "Oculocutaneous albinism type 3"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_21739261_Patient_2",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:79433",
+     "label": "Oculocutaneous albinism type 3"
+    }
+   }
+  }
+ ]
+}

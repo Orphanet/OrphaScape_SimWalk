@@ -1,0 +1,75 @@
+{
+ "id": "PMID_30057544_patient",
+ "subject": {
+  "id": "PMID_30057544_patient"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0002064",
+    "label": "Spastic gait"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011448",
+    "label": "Ankle clonus"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0006895",
+    "label": "Lower limb hypertonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007340",
+    "label": "Lower limb muscle weakness"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0008969",
+    "label": "Leg muscle stiffness"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002312",
+    "label": "Clumsiness"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012534",
+    "label": "Dysesthesia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003401",
+    "label": "Paresthesia"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:100991",
+    "label": "Autosomal dominant spastic paraplegia type 10"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_30057544_patient",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:100991",
+     "label": "Autosomal dominant spastic paraplegia type 10"
+    }
+   }
+  }
+ ]
+}

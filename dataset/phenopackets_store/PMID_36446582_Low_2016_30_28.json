@@ -1,0 +1,63 @@
+{
+ "id": "PMID_36446582_Low_2016_30_28",
+ "subject": {
+  "id": "PMID_36446582_Low_2016_30_28"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000729",
+    "label": "Autistic behavior"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0007018",
+    "label": "Attention deficit hyperactivity disorder"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001155",
+    "label": "Abnormality of the hand"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0004322",
+    "label": "Short stature"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000405",
+    "label": "Conductive hearing impairment"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011968",
+    "label": "Feeding difficulties"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:2332",
+    "label": "KBG syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_36446582_Low_2016_30_28",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:2332",
+     "label": "KBG syndrome"
+    }
+   }
+  }
+ ]
+}

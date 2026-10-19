@@ -1,0 +1,51 @@
+{
+ "id": "PMID_31782611_PT23",
+ "subject": {
+  "id": "PMID_31782611_PT23"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000545",
+    "label": "Myopia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000483",
+    "label": "Astigmatism"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000750",
+    "label": "Delayed speech and language development"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001249",
+    "label": "Intellectual disability"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:468678",
+    "label": "White-Sutton syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_31782611_PT23",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:468678",
+     "label": "White-Sutton syndrome"
+    }
+   }
+  }
+ ]
+}

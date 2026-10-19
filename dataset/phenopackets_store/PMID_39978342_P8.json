@@ -1,0 +1,81 @@
+{
+ "id": "PMID_39978342_P8",
+ "subject": {
+  "id": "PMID_39978342_P8"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0000348",
+    "label": "High forehead"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000490",
+    "label": "Deeply set eye"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0002197",
+    "label": "Generalized-onset seizure"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025373",
+    "label": "Interictal EEG abnormality"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:5200057",
+    "label": "Limited pointing"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000729",
+    "label": "Autistic behavior"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0011344",
+    "label": "Severe global developmental delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025335",
+    "label": "Delayed ability to stand"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0025336",
+    "label": "Delayed ability to sit"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:726667",
+    "label": "Houge-Janssens syndrome type 4"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_39978342_P8",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:726667",
+     "label": "Houge-Janssens syndrome type 4"
+    }
+   }
+  }
+ ]
+}

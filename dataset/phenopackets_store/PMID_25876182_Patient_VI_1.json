@@ -1,0 +1,63 @@
+{
+ "id": "PMID_25876182_Patient_VI_1",
+ "subject": {
+  "id": "PMID_25876182_Patient_VI_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001873",
+    "label": "Thrombocytopenia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0005537",
+    "label": "Decreased mean platelet volume"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000967",
+    "label": "Petechiae"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000132",
+    "label": "Menorrhagia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0003010",
+    "label": "Prolonged bleeding time"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000225",
+    "label": "Gingival bleeding"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:566192",
+    "label": "Congenital autosomal recessive small-platelet thrombocytopenia"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_25876182_Patient_VI_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:566192",
+     "label": "Congenital autosomal recessive small-platelet thrombocytopenia"
+    }
+   }
+  }
+ ]
+}

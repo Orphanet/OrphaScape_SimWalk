@@ -1,0 +1,57 @@
+{
+ "id": "PMID_35743164_P15",
+ "subject": {
+  "id": "PMID_35743164_P15"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001251",
+    "label": "Ataxia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001252",
+    "label": "Hypotonia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001270",
+    "label": "Motor delay"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001272",
+    "label": "Cerebellar atrophy"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0000639",
+    "label": "Nystagmus"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:208513",
+    "label": "Spinocerebellar ataxia type 29"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_35743164_P15",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:208513",
+     "label": "Spinocerebellar ataxia type 29"
+    }
+   }
+  }
+ ]
+}

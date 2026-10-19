@@ -1,0 +1,33 @@
+{
+ "id": "PMID_19768645_Patient_1",
+ "subject": {
+  "id": "PMID_19768645_Patient_1"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0001003",
+    "label": "Multiple lentigines"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:500",
+    "label": "Noonan syndrome with multiple lentigines"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_19768645_Patient_1",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:500",
+     "label": "Noonan syndrome with multiple lentigines"
+    }
+   }
+  }
+ ]
+}

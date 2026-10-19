@@ -1,0 +1,51 @@
+{
+ "id": "PMID_18513678_individual_5039",
+ "subject": {
+  "id": "PMID_18513678_individual_5039"
+ },
+ "phenotypicFeatures": [
+  {
+   "type": {
+    "id": "HP:0003487",
+    "label": "Babinski sign"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0012407",
+    "label": "Scissor gait"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001347",
+    "label": "Hyperreflexia"
+   }
+  },
+  {
+   "type": {
+    "id": "HP:0001762",
+    "label": "Talipes equinovarus"
+   }
+  }
+ ],
+ "diseases": [
+  {
+   "term": {
+    "id": "Orphanet:171695",
+    "label": "Parkinsonian-pyramidal syndrome"
+   }
+  }
+ ],
+ "interpretations": [
+  {
+   "id": "PMID_18513678_individual_5039",
+   "diagnosis": {
+    "disease": {
+     "id": "ORPHA:171695",
+     "label": "Parkinsonian-pyramidal syndrome"
+    }
+   }
+  }
+ ]
+}
