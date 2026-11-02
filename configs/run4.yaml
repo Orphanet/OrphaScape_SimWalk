@@ -4,8 +4,7 @@ run_name: run4
 # subsumed done on patient profil
 do_subsumed: 1
 
-# e.g. pd4may2025exejan2026 - avoid underscores '_'
-product4: pd4may2025exefev2026
+product4: pd4jul2026
 
 # *(optional)*: restricts computation to a subset of ORPHAcodes instead of all ORPHAcodes 
 mini_rd: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:610,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949,ORPHA:35689"
@@ -15,20 +14,20 @@ mini_rd: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:610,ORPHA:329284,ORPHA:3451
 
 dd:
   #  aggregation function 
-  combine: ["funSimMax"]
+  combine: ["funSimAvg"]
   # pairwise similarity measure
   sm_method: ["resnik"]
   vector_strs: ["1_1_1_1_1"]
 
 dp:
   #  aggregation function 
-  combine: ["rsd"]
+  combine: ["funSimAvg"]
   # pairwise similarity measure
-  sm_method: ["resnik"]
+  sm_method: ["jc"]
   # weighting vector
-  vector_strs: ["2_2_2_2_1"]
+  vector_strs: ["1_1_1_1_1"]
 
 # Damping factor for PageRank
-alpha: 0.3
+alpha: 0.23
 # type of results chosen ('cdf' for the CDF figure and hm_table or 'gd' for the results related to clincial consistency  table 4 and 5 in the paper)
 steps: ["gd"]
