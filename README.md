@@ -278,9 +278,9 @@ Here an example of how to run all pipeline steps with the configuration of the p
 
 run_name: run_example            # output subfolder where figures and tables are: output/run_example/
 fig_num: 1                       # figure suffix: CDF_fig{fig_num+1}.svg, hm_table{fig_num}.xlsx
-do_subsumed: 0                   # 0 = raw HPO terms | 1 = subsumed HPO terms thus removing ancestors terms in the patient profil 
+do_subsumed: 1                   # 0 = raw HPO terms | 1 = subsumed HPO terms thus removing ancestors terms in the patient profil 
 
-product4: pd4may2025exefev2026   # This refer to the orphanet product version identifier named depending on the user.
+product4: pd4jul2026   # This refer to the orphanet product version identifier named depending on the user.
 mini_rd: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:610,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949,ORPHA:35689"
    # optional: restricts computation to a subset of ORPHAcodes instead of the full Orphanet catalogue 
 
@@ -288,19 +288,19 @@ mini_rd: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:610,ORPHA:329284,ORPHA:3451
 mini_patient: "P1,P2" 
 
 dd:                              # Disease-Disease similarity - omit section to skip
-  combine: ["funSimMax"] #  aggregation function 
+  combine: ["funSimAvg"] #  aggregation function 
   sm_method: ["resnik"] # pairwise similarity measure
   vector_strs: ["1_1_1_1_1"]  # weighting vector
 
 dp:                              # Disease-Patient similarity -- omit section to skip
-  combine: ["rsd"] #  aggregation function 
-  sm_method: ["resnik"] # pairwise similarity measure
+  combine: ["funSimAvg"] #  aggregation function 
+  sm_method: ["jc"] # pairwise similarity measure
   vector_strs: ["1_1_1_1_1", "2_2_2_2_1"]  # weighting vector
   # Restriction to certain patients (optional dp only )
   
 
 
-alpha: 0.3                       #  Damping factor for PageRank
+alpha: 0.2                       #  Damping factor for PageRank
 
 steps: ["cdf"]                   # which result steps to run:
                                  #   "cdf" → CDF plot + harmonic mean table
@@ -517,7 +517,8 @@ Example: `2_2_2_2_1`
 
 Default weight is `1.0` for all positions. Higher values increase emphasis on that frequency category.
 
-[justif]
+In the paper, frequency weighting had no effect on the SHEPHERD cohorts. On the small Solve-RD cohort, 2_2_2_2_1 (very rare signs count half) performed best, followed by 1_1_1_1_0, so the weighting is offered as an optional tuning parameter. 
+Diseases annotated with an "excluded" HPO term that the patient presents are always removed from the candidate list.
 
 [⬆ Back to top](#top)
 
@@ -642,9 +643,12 @@ If you use this pipeline in an academic or scientific context, please cite:
 
 > Chahdil, M. et al. *Combining phenotypic similarity and network propagation to improve performance and clinical consistency of rare disease diagnosis.* (Publication details to be added upon journal release.)
 
+
 For the Dataset :
+
+- Lagorce D, Lebreton E, Matalonga L, Hongnat O, Chahdil M, Piscia D, et al. Phenotypic similarity-based approach for variant prioritization for unsolved rare disease: a preliminary methodological report. Eur J Hum Genet. 2024;32:182–189. doi:10.1038/s41431-023-01486-7
 - Alsentzer E, Li MM, Kobren SN, Noori A, Kohane IS, Zitnik M. Few shot learning for phenotype-driven diagnosis of patients with rare genetic diseases. *npj Digit Med.* 2025;8:380. doi:10.1038/s41746-025-01749-1
 - Alsentzer E, Li MM, Kobren SN, Undiagnosed Diseases Network, Kohane IS, Zitnik M. Deep Learning for diagnosing patients with rare genetic diseases. Harvard Dataverse; 2024. doi:10.7910/DVN/TZTPFL
 - *Danis D, Bamshad MJ, Bridges Y, et al. A corpus of GA4GH phenopackets: Case-level phenotyping for genomic diagnostics and discovery. *HGG Adv.* 2024;6:100371. doi:10.1016/j.xhgg.2024.100371
-[ SOLVE RD]
+ 
 	
