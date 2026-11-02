@@ -7,8 +7,8 @@ fig_num: 1
 
 do_subsumed: 0
 
-# e.g. pd4may2025exejan2026 - avoid underscores '_'
-product4: pd4may2025exefev2026
+# e.g. pd4jul2026exeoct2026 - avoid underscores '_'
+product4: pd4jul2026
 
 # *(optional)*: restricts computation to a subset of ORPHAcodes instead of the full Orphanet catalogue 
 mini_rd: "ORPHA:100985,ORPHA:100991,ORPHA:1465,ORPHA:610,ORPHA:329284,ORPHA:34516,ORPHA:412057,ORPHA:663,ORPHA:79445,ORPHA:99949,ORPHA:35689"
@@ -17,7 +17,7 @@ dp:
   #  aggregation function 
   combine: ["funSimMax", "funSimAvg", "rsd"]
   # pairwise similarity measure
-  sm_method: ["resnik", "ic"]
+  sm_method: ["jc", "ic"]
   # weighting vector
   vector_strs: ["1_1_1_1_1"]
 # type of results chosen ('cdf' for the CDF figure and hm_table or 'gd' for the results related to clincial consistency  table 4 and 5 in the paper)
